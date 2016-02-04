@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.23)  4 FEB 2016 16:33
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.23)  4 FEB 2016 18:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1325,7 +1325,7 @@ LaTeX Font Warning: Font shape `OMS/pplx/m/n' undefined
 \titlepageleftcolumnwidth=\skip82
 \titlepagerightcolumnwidth=\skip83
 
-<figures/aau_logo_en.pdf, id=75, 115.43124pt x 77.28876pt>
+<figures/aau_logo_en.pdf, id=159, 115.43124pt x 77.28876pt>
 File: figures/aau_logo_en.pdf Graphic file (type pdf)
 
 <use figures/aau_logo_en.pdf>
@@ -1364,7 +1364,7 @@ Package babel Info: Redefining danish shorthand "|
 Package babel Info: Redefining danish shorthand "~
 (babel)             in language  on input line 36.
 
-<figures/aau_logo_da.pdf, id=92, 121.45375pt x 77.28876pt>
+<figures/aau_logo_da.pdf, id=176, 121.45375pt x 77.28876pt>
 File: figures/aau_logo_da.pdf Graphic file (type pdf)
 
 <use figures/aau_logo_da.pdf>
@@ -1400,98 +1400,160 @@ Package babel Info: Redefining danish shorthand "~
 ]
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <20.74> not available
 (Font)              Font shape `T1/pplx/b/n' tried instead on input line 31.
- (./master.toc)
+ (./master.toc [7
+
+
+])
 \tf@toc=\write6
 \openout6 = `master.toc'.
 
- [7
 
-
-] [8
-
-
-] (./master.tdo)
-\tf@tdo=\write7
-\openout7 = `master.tdo'.
-
-
-(./sections/preface.tex [9] [10
-
-
-]) [11] [12
-
-
-] (./sections/introduction.tex
-Chapter 1.
-LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 8.
-Package hyperref Info: bookmark level for unknown exa defaults to 0 on input li
-ne 10.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 16.
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-Overfull \hbox (1.555pt too wide) in paragraph at lines 19--19
- |[]\T1/pplx/b/n/14.4 How Does Sec-tions, Sub-sec-tions, and Sub-sec-tions Look
-?| 
- []
-
-LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <12> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 21.
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 29.
-[1
-
-
-]) (./sections/ch2name.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2]
-Chapter 2.
-) (./sections/discussion.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--1
+[8] (./master.tdo)
+\tf@tdo=\write7
+\openout7 = `master.tdo'.
+
+ (./sections/preface.tex [9
+
+
+] [10
+
+
+]) [11] [12
+
+
+]
+(./sections/introduction.tex
+Chapter 1.
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 4.
+) (./sections/scenario.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--1
 
  []
 
-[3
+[1
 
 
-] [4
+] [2
 
 
 ]
+Chapter 2.
+LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 4.
+LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <12> not available
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 5.
+<figures/pipelinesurvey.png, id=265, 1228.59pt x 921.4425pt>
+File: figures/pipelinesurvey.png Graphic file (type png)
+
+<use figures/pipelinesurvey.png>
+Package pdftex.def Info: figures/pipelinesurvey.png used on input line 12.
+(pdftex.def)             Requested size: 216.81pt x 162.60461pt.
+LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <9> not available
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 14.
+ [3 <./figures/pipelinesurvey.png>])
+(./sections/hardwaresetup.tex
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4]
 Chapter 3.
-) (./sections/conclusion.tex [5] [6
+<figures/eBee.png, id=275, 804.00375pt x 536.0025pt>
+File: figures/eBee.png Graphic file (type png)
+ <use figures/eBee.png>
+Package pdftex.def Info: figures/eBee.png used on input line 7.
+(pdftex.def)             Requested size: 289.07999pt x 192.7154pt.
+)
+(./sections/telecommunication.tex [5
+
+
+ <./figures/eBee.png (PNG copy)>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6]
+Chapter 4.
+) (./sections/verification.tex [7
+
+
+] [8
 
 
 ]
-Chapter 4.
-) [7] [8
+Chapter 5.
+) (./sections/simulation.tex [9] [10
 
 
-] (./sections/appAname.tex [9] [10
+]
+Chapter 6.
+) (./sections/discussion.tex [11] [12
+
+
+]
+Chapter 7.
+) (./sections/conclusion.tex [13] [14
+
+
+]
+Chapter 8.
+) [15] [16
+
+
+]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 46.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+(./sections/appAname.tex [17] [18
 
 
 ]
 Appendix A.
-)
+Package hyperref Info: bookmark level for unknown exa defaults to 0 on input li
+ne 5.
+
+Overfull \hbox (5.55818pt too wide) in paragraph at lines 14--14
+ |[]\T1/pplx/b/n/14.4 How Does Sec-tions, Sub-sec-tions, and Sub-sec-tions Look
+?| 
+ []
+
+[19])
 \tf@thm=\write8
 \openout8 = `master.thm'.
 
  
 AED: lastpage setting LastPage
-[11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 45.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 45.
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--50
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[20]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 50.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 50.
  (./master.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 45.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 45.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 50.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 50.
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: 1D388DA9C238001D7A1AF2DCB72023B0;814.
+(rerunfilecheck)             Checksum: CCA529877275B27F814AB7644A67E102;2175.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1501,11 +1563,11 @@ Package logreq Info: Writing requests to 'master.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23110 strings out of 493304
- 395567 string characters out of 6139870
- 730997 words of memory out of 5000000
- 26012 multiletter control sequences out of 15000+600000
- 50094 words of font info for 84 fonts, out of 8000000 for 9000
+ 23208 strings out of 493304
+ 397033 string characters out of 6139870
+ 731997 words of memory out of 5000000
+ 26062 multiletter control sequences out of 15000+600000
+ 52658 words of font info for 88 fonts, out of 8000000 for 9000
  962 hyphenation exceptions out of 8191
  65i,14n,80p,895b,2748s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texliv
@@ -1518,10 +1580,10 @@ ts/type1/public/cm-super/sftt1095.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palati
 no/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.p
 fb>
-Output written on master.pdf (23 pages, 160186 bytes).
+Output written on master.pdf (32 pages, 5292108 bytes).
 PDF statistics:
- 262 PDF objects out of 1000 (max. 8388607)
- 223 compressed objects within 3 object streams
- 51 named destinations out of 1000 (max. 500000)
- 135 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 418 PDF objects out of 1000 (max. 8388607)
+ 366 compressed objects within 4 object streams
+ 83 named destinations out of 1000 (max. 500000)
+ 313 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,5 +1,20 @@
-doc/report/master.pdf
-doc/worksheets/master.pdf
-doc/worksheets/master.toc
-doc/worksheets/master.log
-doc/worksheets/master.aux
+## Core latex/pdflatex auxiliary files:
+doc/worksheets/*.aux
+doc/worksheets/*.lof
+doc/worksheets/*.log
+doc/worksheets/*.lot
+doc/worksheets/*.fls
+doc/worksheets/*.out
+doc/worksheets/*.toc
+doc/worksheets/*.fmt
+doc/worksheets/*.pdf
+
+doc/report/*.aux
+doc/report/*.lof
+doc/report/*.log
+doc/report/*.lot
+doc/report/*.fls
+doc/report/*.out
+doc/report/*.toc
+doc/report/*.fmt
+doc/report/*.pdf

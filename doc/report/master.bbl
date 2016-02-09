@@ -1,0 +1,73 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{Madsen2010}{booklet}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Madsen}{M.}%
+     {Lars}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{ML1}
+  \strng{fullhash}{ML1}
+  \field{sortinit}{M}
+  \field{howpublished}{\url{http://www.imf.au.dk/system/latex/bog/}}
+  \field{title}{Introduktion til {LaTeX}}
+  \field{year}{2010}
+\endentry
+
+\entry{Mittelbach2005}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Mittelbach}{M.}%
+     {Frank}{F.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Addison-Wesley}%
+  }
+  \strng{namehash}{MF1}
+  \strng{fullhash}{MF1}
+  \field{sortinit}{M}
+  \field{edition}{2. ed.}
+  \field{title}{The LATEX companion}
+  \field{year}{2005}
+\endentry
+
+\entry{Oetiker2010}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Oetiker}{O.}%
+     {Tobias}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{OT1}
+  \strng{fullhash}{OT1}
+  \field{sortinit}{O}
+  \field{howpublished}{\url{http://tobi.oetiker.ch/lshort/lshort.pdf}}
+  \field{title}{The Not So Short A Introduction to {LaTeX2e}}
+  \field{year}{2010}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

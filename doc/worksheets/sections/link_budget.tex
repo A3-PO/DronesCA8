@@ -1,1 +1,11 @@
-\section{Communication}
+\section{Link Budget}
+\paragraph{}
+A link budget is accounting of all of the gains and losses from the transmitter, through the medium (free space, cable, waveguide, fiber, etc.) to the receiver in a telecommunication system. It accounts for the attenuation of the transmitted signal due to propagation, as well as the antenna gains, feedline and miscellaneous losses. Randomly varying channel gains such as fading are taken into account by adding some margin depending on the anticipated severity of its effects. The amount of margin required can be reduced by the use of mitigating techniques such as antenna diversity or frequency hopping.
+
+A simple link budget equation looks like this:
+
+\begin{equation*}\label{eq:link_budget} 
+ 		\text{Received Power (dBm)} = \text{Transmitted Power (dBm)} + \text{Gains (dB)} - \text{Losses(dB)}
+\end{equation*}
+
+Note that decibels are logarithmic measurements, so adding decibels is equivalent to multiplying the actual numeric ratios.

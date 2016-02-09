@@ -1,20 +1,39 @@
 \chapter{Scenario}\label{ch:scenario}
 
-\section{Communication}
-\section{Rescue missions}
-\subsection{What do they do today?}
-\subsection{Compare the rescue missions}
+\section{Problem: Forest fire}
+Wildfires in some countries can be a huge problem. Devastating forests, plantations or even habitations, the causes of such fires can be natural or criminal.
+Each year wildfires destroy 6 to 14 million hectares of fire-sensitive forests worldwide. Throughout the world, forest fires are out of control. As an example at least one hundred villages are burned every year in Nepal, and some of them are destroyed by forest fires.
 
-\section{Pipeline survey}
-The pipeline survey could be to transport oil from a factory to another facility. To ensure that there is no thiefs that want to steal the oil, they have to hire people to patrol. Instead they could use a drone to search the area.
-\begin{figure}[hb]
-  \centering
-  %\includegraphics[width=3in]{figures/pipelinesurvey.png}
-  \caption[Pipeline survey]
-   {Pipeline survey}
-\end{figure}
-Potential danger
-\begin{itemize}
-\item Terrorist
-\item Thiefs
+In order to prevent these catastrophes, fire lookout towers, public hotlines, ground and aerial patrols are used to detect fire starts. However, this surveillance has to be done day and night in large areas, resulting in high costs and risks for the patrols.
+
+\section{Solution: UAVs}
+Early location and identification of fires is needed. A solution to improve the actual surveillance could be to use Unmanned Aerial Vessels (UAV) flying long distances and covering a large area to find any fire start. Also, this will minimize the risks and time spent of such operations. 
+
+\subsection*{Project Scope}
+\begin{itemize}  
+        \item{Assure permanent connection between UAV and base station}
+        \item Use directional antennas for both UAV and base station em 
+        \item Control both antennas to have maximum directivity (pointing directly at each other)
 \end{itemize}
+
+\subsection*{Constraints}
+\begin{itemize}  
+        \item{Limited frequency and bandwidth by means of the Law}
+        \item{Limited antenna power and size}
+\end{itemize}
+
+\subsection*{Scenario parameters}
+We assume that the risk area that the UAV will cover is a rectangle:
+\begin{equation*}\label{eq:scenario_parameters1} 
+ 		A_{zone} = xy
+\end{equation*}
+\begin{figure}[hb]
+  	\centering
+ 	\includegraphics[width=0.8\textwidth]{figures/pic1.png}
+  	\caption[Pipeline survey]{Scenario}
+\end{figure}
+Given the area of the rectangle we can compute the maximum distances of communication, which is the diagonal of the rectangle: 
+\begin{equation*}\label{eq:scenario_parameters2} 
+ 		d_{max} = \sqrt{x^2 + y^2}
+\end{equation*}
+This distance will be taken into account when computing the radio link communication between the UAV and base station.

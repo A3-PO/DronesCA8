@@ -1,13 +1,13 @@
 
-\subsection*{Path loss}\label{subsection:path_loss}
+\subsection*{Free space path loss}\label{subsection:path_loss}
 
-The free space path loss (FSPL) is the loss in signal strength that occurs when an electromagnetic wave travels over a line of sight path in free space. In these circumstances there are no obstacles that might cause the signal to be reflected, refracted, or that might cause additional attenuation. Equation \ref{eq:path_losses} represents the loss in signal strength.
+The free space path loss (FSPL) is the loss in signal strength that occurs when an electromagnetic wave travels over a line of sight path in free space. In these circumstances there are no obstacles that might cause the signal to be reflected, refracted, or that might cause additional attenuation. Equation \ref{eq:path_losses} represents the loss in signal strength in dB.
 
 \begin{equation}\label{eq:path_losses}
-L = 20log\left (\frac{4\pi d}{\lambda} \right)
+L_{FS} = 20log\left (\frac{4\pi d}{\lambda} \right)
 \end{equation}
 
-The wave length can also be described by a relationship between the frequency and the velocity which is the light speed because radio waves are electromagnetic waves. This relationship is described by the equation \ref{eq:vel_freq_wavelen1}.
+The wave length can also be described by a relationship between the frequency and the velocity of light. This relationship is described by the equation \ref{eq:vel_freq_wavelen1}.
 
 \begin{equation}\label{eq:vel_freq_wavelen1}
 \lambda = \frac{c}{f}
@@ -22,11 +22,11 @@ Explanation of the parameters.
 \item f - frequency of signal [Hz]
 \end{itemize}
 
-Consider our scenario we will assume that the distance is the maximum communication distance between the base station and the UAV. 
+Considering our problem we will look into the worst case scenario, which would be maximum distance between the base station and the UAV. 
 \begin{equation*}
 Assume \begin{cases}
-d = max\{ d_{com} \} = \sqrt{x^2+y^2} \text{km}\\
-\text{f} = \text{MHz (Permitted frequency by law})\\
+d_{max} = \sqrt{x^2+y^2}\\
+\text{f} = \text{MHz (35 MHz permitted frequency by law})\\
 \end{cases}
 \end{equation*}
 

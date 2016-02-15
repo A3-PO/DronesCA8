@@ -6,6 +6,7 @@ doc/worksheets/*.lot
 doc/worksheets/*.fls
 doc/worksheets/*.out
 doc/worksheets/*.toc
+doc/worksheets/*.tdo
 doc/worksheets/*.fmt
 doc/worksheets/*.pdf
 
@@ -16,5 +17,6 @@ doc/report/*.lot
 doc/report/*.fls
 doc/report/*.out
 doc/report/*.toc
+doc/report/*.tdo
 doc/report/*.fmt
 doc/report/*.pdf

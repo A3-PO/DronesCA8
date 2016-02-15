@@ -1,5 +1,5 @@
 \section*{Technical Scenario}
-As mentioned before we need to assure the maximum distance of communication possible between basestation and the drone at a certain working frequency:
+As mentioned before we need to assure the maximum distance of communication possible between the basestation and the drone at a certain working frequency:
 
 \begin{equation*}\label{eq:tech_parameters1} 
  	\begin{cases}
@@ -19,6 +19,8 @@ A parabolic antenna in an antenna that uses a parabolic reflector and a curved s
 
 Parabolic antennas, due to their high gain, are intensively used for carry telephone and television signals between nearby cities. In our specific case, it’s possible to use this property to receive the information provided by the thermal camera through the UAS.
 
+Patch antenna, which is the original type of microstrip, is a low profile antenna that can be mounted on a flat surface and it consists in a rectangular sheet of metal. These antennas are very useful because they are very thin and their directivity varies from 5 to 7 dB.
+
 \begin{table}[h!]
 \centering
 	\begin{tabular}{|c||c|c|}
@@ -28,8 +30,8 @@ Parabolic antennas, due to their high gain, are intensively used for carry telep
 		Polarization & Linear & Linear\\ \hline
 		Frequency [GHz] & $2.4$ & $2.4$\\ \hline
 		Gain [dB] & $24$ & $14$\\ \hline
-		HPBW/$H(^{\circ})$ & $14^{\circ}$ & $45^{\circ}$\\ \hline
-		HPBW/$V(^{\circ})$ & $10^{\circ}$ & $45^{\circ}$\\ \hline
+		HPBW/$H(^{\circ})$ & $14$ & $45$\\ \hline
+		HPBW/$V(^{\circ})$ & $10$ & $45$\\ \hline
 	\end{tabular}
 	\caption{Table of antennas parameters}
 	\label{table:1}
@@ -42,10 +44,24 @@ Computing signal wavelength ($\lambda$) for the working frequency stated above:
 	\lambda = \frac{c}{f} = \frac{3*10^{8}}{2.4*10^{9}} = 0.125 \text{m}
 \end{equation*}
 
-Computing the path loss:
+Computing the path loss for a distance of 50 kilometers and the signal wavelength:
 \begin{equation*}\label{eq:tech_parameters4}
-	L = 20log\left (\frac{4\pi*d_{max}}{\lambda} \right)
-	  = 20log\left (\frac{4\pi*50}{0.125*10^{-3}} \right)
-	  = 134 dB 
+	L = 20lg\left (\frac{4\pi*d_{max}}{\lambda} \right)
+	  = 20lg\left (\frac{4\pi*50}{0.125*10^{-3}} \right)
+	  = 134 \text{dB} 
+\end{equation*}
+
+
+Computing the output power of the transmitting antenna of 1 Watt:
+\begin{equation*}\label{eq:tech_parameters3}
+	P_{TX} = 10lg\left (\frac{1}{10^{-3}} \right)  
+	       = 30 \text{dBm}
+\end{equation*}
+
+
+A simplified link budget omitting some losses of the UAS:
+\begin{equation*}\label{eq:tech_parameters3}
+	P_{RX} = P_{TX} + G_{TX} + G_{RX} - L  
+	       = 30 + 24 + 14 - 134 = -126 \text{dBm}
 \end{equation*}
 

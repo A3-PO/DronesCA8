@@ -20,3 +20,5 @@ doc/report/*.toc
 doc/report/*.tdo
 doc/report/*.fmt
 doc/report/*.pdf
+src/report/master.pdf
+doc/worksheets/master.synctex.gz

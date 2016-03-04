@@ -28,37 +28,52 @@ step_x = 1;                 % Step of distsance vector X [km]
 step_y = 1;                 % Step of height vector Y [km]
 prec_d = 200;               % Precision of the distance vector
 
+freq = 2.4 * 10^9;          % Frequency [Hz]
+lambda = 3*10^8/freq;       % Wavelength [m]
+Ptx = 10*log10(1/(10^-3));  % 1mW power transmiter
+
+% Small function to draw arrows
+drawArrow = @(x,y) quiver(x(1),y(1),x(2)-x(1),y(2)-y(1),'LineWidth',2.5,'MaxHeadSize',0.5);  
+
 y_gs = 0;                   % The position Y of the GROUND STATION
 x_gs = 50;                  % The position X of the GROUND STATION              
 y_drone = 50;               % The position Y of the DRONE
-x_drone = -10;              % The position X of the DRONE
+x_drone = 0;              % The position X of the DRONE
 
 % LOS distance vector construction
 if x_gs > x_drone % Drone is first in the X axis
     dxVector = [x_drone:(x_gs - x_drone)/prec_d:x_gs];
     if y_gs > y_drone % Drone is first in the Y axis
         dyVector = [y_drone:(y_gs - y_drone)/prec_d:y_gs];
-    else
+    elseif y_gs < y_drone
         dyVector = [y_drone:-(y_drone - y_gs)/prec_d:y_gs];
+    else
+        dyVector = y_gs*ones(1,prec_d+1);
     end
-else % GS is first in the X axis
+elseif x_gs < x_drone % GS is first in the X axis
     dxVector = [x_drone:-(x_drone - x_gs)/prec_d:x_gs];
     if y_gs > y_drone % Drone is first in the Y axis
         dyVector = [y_drone:(y_gs - y_drone)/prec_d:y_gs];
-    else
+    elseif y_gs < y_drone
         dyVector = [y_drone:-(y_drone - y_gs)/prec_d:y_gs];
+    else
+        dyVector = y_gs*ones(1,prec_d+1);
     end
+else
+    dxVector = x_gs*ones(1,prec_d+1);
+     if y_gs > y_drone % Drone is first in the Y axis
+        dyVector = [y_drone:(y_gs - y_drone)/prec_d:y_gs];
+    elseif y_gs < y_drone
+        dyVector = [y_drone:-(y_drone - y_gs)/prec_d:y_gs];
+    else
+        dyVector = y_gs*ones(1,prec_d+1);
+     end
 end
+
         
 xVector = [min([x_gs x_drone]):step_x:max([x_gs x_drone])];    % World vector X [km]
 yVector = [min([y_gs y_drone]):step_y:max([y_gs y_drone])];    % World Vector Y [km]
 
-freq = 2.4 * 10^9;          % Frequency [Hz]
-lambda = 3*10^8/freq;       % Wavelength [m]
-Ptx = 10*log10(1/(10^-3));  % 1mW power transmiter
-
-% Small function to draw arrows
-drawArrow = @(x,y) quiver( x(1),y(1),x(2)-x(1),y(2)-y(1),0,'LineWidth',2.5,'MaxHeadSize',0.5);  
 
 %% Ground Station definition
 
@@ -109,12 +124,13 @@ plot(x_gs,y_gs,'X','LineWidth',2);
 drawArrow([x_start_gs,x_end_gs],[y_start_gs,y_end_gs]);
 drawArrow([x_start_d,x_end_d],[y_start_d,y_end_d]);
 plot(dxVector,dyVector,'LineWidth',1.5);
+axis([0 100 0 50]);
 grid on;
 grid minor;
 str = sprintf('Scenario Simulation 2D \n GS Antenna Gain: %.3f dB \n Drone Antenna Gain: %.3f dB',GSgain,Dgain);
 title(str);
 xlabel('X world axis');
 ylabel('Y world axis');
-legend('Drone','Ground Station','GS Frame','Drone Frame','LOS distance');
+legend('Drone','Ground Station','GS Frame','Drone Frame','LOS distance','Location','Best');
 
 

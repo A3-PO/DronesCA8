@@ -1,6 +1,6 @@
 %**************************************************************************
 %
-% CA8 - DRONES
+% Dronesim_2D.m - CA8 - DRONES
 %
 %**************************************************************************
 %
@@ -10,10 +10,16 @@
 %
 %**************************************************************************
 %
-% Description:
-% In order to understant better how it works the supervisor told us that
-% cold be important to construct the graph of the antenna intensity 
-% radiation.
+% DESCRIPTION:
+% Code to test the DYNAMIC SCENARIO of our drone and ground
+% station in 2D.
+%
+% Functions used during the code:
+% - LOS_distance.m
+% - angle_frames.m
+% - GSantenna.m
+%
+%**************************************************************************
 
 clear all;
 close all;
@@ -38,7 +44,7 @@ drawArrow = @(x,y) quiver(x(1),y(1),x(2)-x(1),y(2)-y(1),'LineWidth',2.5,'MaxHead
 y_gs = 0;                   % The position Y of the GROUND STATION
 x_gs = 50;                  % The position X of the GROUND STATION              
 y_drone = 50;               % The position Y of the DRONE
-x_drone = [0:0.5:100];              % The position X of the DRONE
+x_drone = [0:0.5:100];      % The position X of the DRONE
 
 % LOS distance vector construction
 for i = 1:length(x_drone)
@@ -65,7 +71,7 @@ y_end_gs = y_gs + x_gs/5*sin(angle_gs);
 %% Drone definition
 
 % Angle of rotation the GROUND STATION FRAME with respecto to the X world
-angle_d = 3*pi/2 + pi/9;
+angle_d = 3*pi/2;
 % angle_d = atan(abs(x_gs-x_drone)/abs(y_drone-y_gs)) + 3/2*pi;
 
 for i = 1:length(x_drone)
@@ -101,8 +107,8 @@ for i = 1:length(x_drone)
     axis([0 100 0 50]);
     grid on;
     grid minor;
-    str = sprintf('Scenario Simulation 2D \n GS Antenna Gain: %.3f dB \n Drone Antenna Gain: %.3f dB',GSgain,Dgain);
-    title(str);
+%     str = sprintf('Scenario Simulation 2D \n GS Antenna Gain: %.3f dB \n Drone Antenna Gain: %.3f dB',GSgain,Dgain);
+%     title(str);
     xlabel('X world axis');
     ylabel('Y world axis');
     legend('Drone','Ground Station','GS Frame','Drone Frame','LOS distance','Location','Best');     
@@ -114,7 +120,7 @@ plot(x_drone,Prx);
 grid on;
 grid minor;
 % str = sprintf('Prx');
-title(str);
+% title(str);
 xlabel('X world axis');
 ylabel('Y world axis');
 axis([0 100 -200 0]);

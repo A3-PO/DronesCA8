@@ -1,6 +1,6 @@
 %**************************************************************************
 %
-% CA8 - DRONES
+% Scenario_simulation_2D.m - CA8 - DRONES
 %
 %**************************************************************************
 %
@@ -10,10 +10,16 @@
 %
 %**************************************************************************
 %
-% Description:
-% In order to understant better how it works the supervisor told us that
-% cold be important to construct the graph of the antenna intensity 
-% radiation.
+% DESCRIPTION:
+% Code to test and check out a STATIONARY SCENARIO of our drone and ground
+% station in 2D
+%
+% Functions used during the code:
+% - LOS_distance.m
+% - angle_frames.m
+% - GSantenna.m
+%
+%**************************************************************************
 
 clear all;
 close all;
@@ -38,38 +44,10 @@ drawArrow = @(x,y) quiver(x(1),y(1),x(2)-x(1),y(2)-y(1),'LineWidth',2.5,'MaxHead
 y_gs = 0;                   % The position Y of the GROUND STATION
 x_gs = 50;                  % The position X of the GROUND STATION              
 y_drone = 50;               % The position Y of the DRONE
-x_drone = 0;              % The position X of the DRONE
+x_drone = 0;                % The position X of the DRONE
 
 % LOS distance vector construction
-if x_gs > x_drone % Drone is first in the X axis
-    dxVector = [x_drone:(x_gs - x_drone)/prec_d:x_gs];
-    if y_gs > y_drone % Drone is first in the Y axis
-        dyVector = [y_drone:(y_gs - y_drone)/prec_d:y_gs];
-    elseif y_gs < y_drone
-        dyVector = [y_drone:-(y_drone - y_gs)/prec_d:y_gs];
-    else
-        dyVector = y_gs*ones(1,prec_d+1);
-    end
-elseif x_gs < x_drone % GS is first in the X axis
-    dxVector = [x_drone:-(x_drone - x_gs)/prec_d:x_gs];
-    if y_gs > y_drone % Drone is first in the Y axis
-        dyVector = [y_drone:(y_gs - y_drone)/prec_d:y_gs];
-    elseif y_gs < y_drone
-        dyVector = [y_drone:-(y_drone - y_gs)/prec_d:y_gs];
-    else
-        dyVector = y_gs*ones(1,prec_d+1);
-    end
-else
-    dxVector = x_gs*ones(1,prec_d+1);
-     if y_gs > y_drone % Drone is first in the Y axis
-        dyVector = [y_drone:(y_gs - y_drone)/prec_d:y_gs];
-    elseif y_gs < y_drone
-        dyVector = [y_drone:-(y_drone - y_gs)/prec_d:y_gs];
-    else
-        dyVector = y_gs*ones(1,prec_d+1);
-     end
-end
-
+[dxVector,dyVector] = LOS_distance(x_drone,y_drone,x_gs,y_gs,prec_d);
         
 xVector = [min([x_gs x_drone]):step_x:max([x_gs x_drone])];    % World vector X [km]
 yVector = [min([y_gs y_drone]):step_y:max([y_gs y_drone])];    % World Vector Y [km]
@@ -102,13 +80,9 @@ y_end_d = y_drone + y_drone/5*sin(angle_d);
 
 %% Calculation 
 
-beta = atan(abs(y_drone-y_gs)/abs(x_gs-x_drone));
-phi_gs = pi - angle_gs - beta;
-phi_gs = phi_gs*180/pi;
-phi_d = 2*pi-(beta + angle_d);
-phi_d = phi_d*180/pi;
+[phi_d,phi_gs] = angle_frames(x_drone,y_drone,angle_d,x_gs,y_gs,angle_gs);
 
-[GSgain,angle3db_gs] = GSantenna(phi_gs,0);
+[GSgain,angle3db_gs] = GSantenna(phi_gs,1);
 [Dgain,angle3db_d] = GSantenna(phi_d,0);
 
 los_d = sqrt((dxVector(end)-dxVector(1)).^2 + (dyVector(1)-dyVector(end)).^2);

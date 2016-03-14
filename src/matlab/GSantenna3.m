@@ -1,7 +1,7 @@
-function [GSgain,angle3db] = GSantenna(thetaGS,plotting)
+function [GSgain,angle3db] = GSantenna3(thetaGS,phiGS,plotting)
 %**************************************************************************
 %
-% GSantenna.m - CA8 - DRONES
+% GSantenna3.m - CA8 - DRONES
 %
 %**************************************************************************
 %
@@ -35,6 +35,8 @@ f = 5;              % + freq = + secondary lobes = - HPBW
 
 % Angle for ploting
 theta = [-pi:2*pi/precision:pi-(2*pi/precision)];
+phi = [0:pi/precision:pi];
+[THETA,PHI] = meshgrid(theta,phi);
 
 % Transforming the input angle to degrees
 thetaGS = deg2rad(thetaGS);
@@ -48,14 +50,14 @@ temp = abs(theta - thetaGS);
 tvalue = theta(ind);
 
 % Radiation Intensity
-U = sin(f*theta)./(f*theta);
-U(precision/2 + 1) = 1;
+R = sqrt(THETA.^2 + PHI.^2) + eps;
+U = sin(f*R)./(f*R);
 U = abs(U);
 
 % Transform to dB
 Udb = 20*log10(abs(U));
 GSgain = Udb(ind);
-[ind3db, ind3db] = find(Udb==-3);
+[ind3db ind3db] = find(Udb==-3);
 angle3db = rad2deg(theta(ind));
 Udb = Udb + aprox;
 Udb(find(Udb<0)) = 0;

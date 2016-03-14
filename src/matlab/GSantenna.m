@@ -52,13 +52,23 @@ U = sin(f*theta)./(f*theta);
 U(precision/2 + 1) = 1;
 U = abs(U);
 
-% Transform to dB
-Udb = 20*log10(abs(U));
+% Transform to dB:
+% - Define in terms of dB
+Udb = 20*log10(U);
+
+% Calculate gain of the given angles before transforming to plot
 GSgain = Udb(ind);
-[ind3db, ind3db] = find(Udb==-3);
-angle3db = rad2deg(theta(ind));
+
+% Calculate the angle in which decays 3dB
+temp = abs(Udb + 3);
+[~, ind3db] = min(temp);
+angle3db = rad2deg(theta(ind3db));
+
+% Transform to dB:
+% - We add the scale we want to plot
+% - Set whatever is less than the scale to 0
 Udb = Udb + aprox;
-Udb(find(Udb<0)) = 0;
+Udb(Udb<0) = 0;
 
 if plotting == 1  
     figure();

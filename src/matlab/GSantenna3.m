@@ -35,62 +35,82 @@ f = 5;              % + freq = + secondary lobes = - HPBW
 
 % Angle for ploting
 theta = [-pi:2*pi/precision:pi-(2*pi/precision)];
-phi = [0:pi/precision:pi];
+phi = [-pi:2*pi/precision:pi-(2*pi/precision)];
 [THETA,PHI] = meshgrid(theta,phi);
 
 % Transforming the input angle to degrees
 thetaGS = deg2rad(thetaGS);
+phiGS = deg2rad(phiGS);
 % Maping from 0:2pi to -pi:pi
 if thetaGS > pi
     thetaGS = thetaGS - 2*pi;
 end
-% Aproximating to the closet value of theta in our vector
-temp = abs(theta - thetaGS);
-[ind, ind] = min(temp);
-tvalue = theta(ind);
+if phiGS > pi
+    phiGS = phiGS - 2*pi;
+end
+% Aproximating to the closet value of angles in our vector
+temp_theta = abs(theta - thetaGS);
+[minval_theta, ind_theta] = min(temp_theta);
+tvalue_theta = theta(ind_theta);
+temp_phi = abs(phi - phiGS);
+[minval_phi, ind_phi] = min(temp_phi);
+tvalue_phi = phi(ind_phi);
 
 % Radiation Intensity
 R = sqrt(THETA.^2 + PHI.^2) + eps;
 U = sin(f*R)./(f*R);
 U = abs(U);
 
-% Transform to dB
-Udb = 20*log10(abs(U));
-GSgain = Udb(ind);
-[ind3db ind3db] = find(Udb==-3);
-angle3db = rad2deg(theta(ind));
+% Transform to dB:
+% - Define in terms of dB
+Udb = 20*log10(U);
+
+% Calculate gain of the given angles before transforming to plot
+GSgain = Udb(ind_phi,ind_theta);
+
+% Calculate the angle in which decays 3dB
+% temp = abs(Udb + 3);
+% [~, ind3db] = min(temp);
+% angle3db = rad2deg(theta(ind3db));
+angle3db = 0;
+
+% Transform to dB:
+% - We add the scale we want to plot
+% - Set whatever is less than the scale to 0
 Udb = Udb + aprox;
-Udb(find(Udb<0)) = 0;
+Udb(Udb<0) = 0;
 
 if plotting == 1  
+    % 3D PLOT
     figure();
-    subplot(211);
-    plot(theta,U);
-    axis([-pi pi 0 1]);
+    % mesh(THETA,PHI,U3db);
+    % mesh(xf,yf,zf);
+    contourf(Udb,'ShowText','off');
     grid on;
     grid minor;
-    str = sprintf('Radiation Intensity');
+    str = sprintf('Radiation Intensity(Theta)(Phi)\n[dB]');
     title(str);
-    subplot(212);
-    plot(theta,Udb);
-    axis([-pi pi 0 aprox]);
-    grid on;
-    grid minor;
-    str = sprintf('Radiation Intensity [dB]');
-    title(str);
+    ax = gca;
+    ax.XTick = [1 (precision/4+1) (precision/2+1) (3*precision/4+1) (precision)];
+    ax.YTick = [1 (precision/4+1) (precision/2+1) (3*precision/4+1) (precision)];
+    ax.XTickLabel = {'-180','-90','0','90','180'};
+    ax.YTickLabel = {'-180','-90','0','90','180'};
+    xlabel('Theta');
+    ylabel('Phi');
     
+    % Radiation patterns 3D
     figure();
-    polar(theta,U);
+    subplot(121);
+    mmpolar(theta,Udb(:,size(phi,2)/2 +1),'TGridColor',[0 0 0],'RGridColor',[0 0 0],'RTickLabel',ticks);
     grid on;
     grid minor;
-    str = sprintf('Radiation Intensity');
+    str = sprintf('Radiation Intensity(Theta)\nPhi = 0\n[dB]');
     title(str);
-    
-    figure();
-    mmpolar(theta,Udb,'TGridColor',[0 0 0],'RGridColor',[0 0 0],'RTickLabel',ticks);
+    subplot(122);
+    mmpolar(theta,Udb(size(theta,2)/2 +1,:),'TGridColor',[0 0 0],'RGridColor',[0 0 0],'RTickLabel',ticks);
     grid on;
     grid minor;
-    str = sprintf('Radiation Intensity [dB]');
+    str = sprintf('Radiation Intensity(Phi)\nTheta = 0\n[dB]');
     title(str);
 end
 

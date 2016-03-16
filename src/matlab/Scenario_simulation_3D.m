@@ -39,10 +39,10 @@ Ptx = 10*log10(1/(10^-3));  % 1mW power transmiter
 % Small function to draw arrows
 drawArrow = @(x,y,z) quiver3(x(1),y(1),z(1),x(2)-x(1),y(2)-y(1),z(2)-z(1),'LineWidth',2.5,'MaxHeadSize',1.5);  
 
-x_gs = 50;                  % The position X of the GROUND STATION
+x_gs = 0;                  % The position X of the GROUND STATION
 y_gs = 0;                   % The position Y of the GROUND STATION
 z_gs = 0;                   % The position Z of the GROUND STATION
-x_drone = 0;                % The position X of the DRONE
+x_drone = 50;                % The position X of the DRONE
 y_drone = 50;               % The position Y of the DRONE
 z_drone = 50;              % The position Z of the DRONE
 
@@ -54,8 +54,9 @@ yVector = [min([y_gs y_drone]):step_y:max([y_gs y_drone])];    % World Vector Y 
 zVector = [min([z_gs z_drone]):step_z:max([z_gs z_drone])];    % World Vector Z [km]
 
 % Optimal Angle
-opTheta = atan2(abs(y_drone-y_gs),abs(x_gs-x_drone));
-opPhi = atan2(abs(z_drone-z_gs),sqrt(abs(x_gs-x_drone)^2+abs(y_gs-y_drone)^2));
+opTheta = atan2(y_drone-y_gs,x_drone-x_gs);
+opPhi = atan2(z_drone-z_gs,sqrt(abs(x_gs-x_drone)^2+...
+        abs(y_gs-y_drone)^2));
 
 %% Ground Station definition
 
@@ -66,7 +67,7 @@ phi_gs = opPhi;
 % Azimuthal angle: of the GROUND STATION FRAME [-pi:pi]. 0 = pointing along
 % X axis
 % theta_gs = pi/2;
-theta_gs = pi - opTheta;
+theta_gs = opTheta;
 
 % X axis of the GROUND STATION FRAME
 x_start_gs = x_gs;
@@ -84,7 +85,7 @@ z_end_gs = z_gs + los_d/10*sin(phi_gs);
 phi_d = -opPhi;
 % Azimuthal angle: of the DRONE[-pi:pi]. 0 = pointing along X axis
 % theta_d = -pi/2;
-theta_d = -opTheta;
+theta_d = -pi + opTheta;
 
 % X axis of the DRONE FRAME
 x_start_d = x_drone;

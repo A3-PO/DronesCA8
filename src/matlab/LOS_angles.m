@@ -30,31 +30,67 @@ function [alpha_d,alpha_gs,gamma_d,gamma_gs] = LOS_angles(x_drone,y_drone,z_dron
 %   LINE OF SIGHT that joins ground station and drone.
 %
 %**************************************************************************
-
-% Theta: Azimuthal angle - [-pi:pi] - 0 = pointing along X axis
-beta = atan2(abs(y_drone-y_gs),abs(x_gs-x_drone));
-% If the drone is lower than the Ground Station the angles are exchanged
-if x_gs < x_drone
-    alpha_gs = abs(abs(theta_gs) - beta);
-    alpha_gs = rad2deg(alpha_gs);
-    alpha_d = abs(pi - (beta + abs(theta_d)));
-    alpha_d = rad2deg(alpha_d);
+% Transform theta to 0:2*pi for simpler calculations
+if (theta_gs) < 0
+    theta_gs = theta_gs + 2*pi;
 end
-if x_gs >= x_drone
-    alpha_gs = abs(pi - (beta + abs(theta_gs)));
-    alpha_gs = rad2deg(alpha_gs);
-    alpha_d = abs(abs(theta_d) - beta);
-    alpha_d = rad2deg(alpha_d);
+if (theta_d) < 0 
+    theta_d = theta_d + 2*pi;
 end
 
-% Polar angle - [-pi/2:pi/2]. 0 = X-Y plane axis
-beta = atan2(abs(z_drone-z_gs),sqrt(abs(x_gs-x_drone)^2+...
-    abs(y_gs-y_drone)^2));
-% If the drone is lower than the Ground Station the angles are exchanged
+% Transform phi to 0:pi for simpler calculations
+if (phi_gs) > 0
+    phi_gs = pi/2 - phi_gs;
+else
+    phi_gs = pi/2 + abs(phi_gs);
+end
+if (phi_d) > 0
+    phi_d = pi/2 - phi_d;
+else
+    phi_d = pi/2 + abs(phi_d);
+end
 
-gamma_gs = abs(abs(phi_gs) - beta);
+%% Theta error calculations: ALPHA
+% Optimal angles
+if y_drone > y_gs
+    opt_theta_gs = atan2(y_drone-y_gs,x_drone-x_gs);
+    opt_theta_d = pi + opt_theta_gs;
+else
+    opt_theta_d = atan2(y_gs-y_drone,x_gs-x_drone);
+    opt_theta_gs = pi + opt_theta_d;
+end
+
+% Error angles
+alpha_gs = abs(theta_gs - opt_theta_gs);
+alpha_gs = rad2deg(alpha_gs);
+alpha_d = abs(theta_d - opt_theta_d);
+alpha_d = rad2deg(alpha_d);
+
+% Transform to -180:180
+if alpha_gs > 180
+    alpha_gs = 360 - alpha_gs;
+end
+if alpha_d > 180
+    alpha_d = 360 - alpha_gs;
+end
+
+%% Phi error calculations: GAMMA
+%Optimal angles
+if z_drone > z_gs
+    opt_phi_gs = pi/2 - atan2(z_drone-z_gs,sqrt(abs(x_gs-x_drone)^2+...
+        abs(y_gs-y_drone)^2));
+    opt_phi_d = pi/2 + atan2(z_drone-z_gs,sqrt(abs(x_gs-x_drone)^2+...
+        abs(y_gs-y_drone)^2));
+else
+    opt_phi_gs = pi/2 - atan2(z_drone-z_gs,sqrt(abs(x_gs-x_drone)^2+...
+        abs(y_gs-y_drone)^2));
+    opt_phi_gs = pi/2 + atan2(z_drone-z_gs,sqrt(abs(x_gs-x_drone)^2+...
+        abs(y_gs-y_drone)^2));
+end
+
+gamma_gs = abs(phi_gs - opt_phi_gs);
 gamma_gs = rad2deg(gamma_gs);
-gamma_d = abs(abs(phi_d)-beta);
+gamma_d = abs(phi_d- opt_phi_d);
 gamma_d = rad2deg(gamma_d);
 
 end

@@ -26,9 +26,6 @@ close all;
 clc;
 
 %% Enviroment parameters
-% Definition of some variables which will be important to draw the
-% environment. It is going to be considered that one of the elements is
-% going to be iin one axis.
 
 step_x = 1;                 % Step of distsance vector X [km]
 step_y = 1;                 % Step of height vector Y [km]
@@ -57,36 +54,38 @@ yVector = [min([y_gs y_drone]):step_y:max([y_gs y_drone])];    % World Vector Y 
 
 %% Ground Station definition
 
-% Angle of rotation the GROUND STATION FRAME with respecto to the X world
-angle_gs = pi/2;
-% angle_gs = 2*pi/3;
+% Azimuthal angle: of the GROUND STATION FRAME [-pi:pi]. 0 = pointing along
+% X axis
+theta_gs = 3*pi/4;
 % angle_gs = atan(abs(x_gs-x_drone)/abs(y_drone-y_gs)) + pi/2;
 
 % X axis of the GROUND STATION FRAME
 x_start_gs = x_gs;
 y_start_gs = y_gs;
-x_end_gs = x_gs + x_gs/5*cos(angle_gs);
-y_end_gs = y_gs + x_gs/5*sin(angle_gs);
+x_end_gs = x_gs + x_gs/5*cos(theta_gs);
+y_end_gs = y_gs + x_gs/5*sin(theta_gs);
 
 %% Drone definition
 
 % Angle of rotation the GROUND STATION FRAME with respecto to the X world
-angle_d = 3*pi/2;
+theta_d = -pi/4;
 % angle_d = atan(abs(x_gs-x_drone)/abs(y_drone-y_gs)) + 3/2*pi;
 
 for i = 1:length(x_drone)
     % X axis of the DRONE FRAME
     x_start_d(i) = x_drone(i);
     y_start_d = y_drone;
-    x_end_d(i) = x_drone(i) + y_drone/5*cos(angle_d);
-    y_end_d = y_drone + y_drone/5*sin(angle_d);
+    x_end_d(i) = x_drone(i) + y_drone/5*cos(theta_d);
+    y_end_d = y_drone + y_drone/5*sin(theta_d);
 
 %% Calculation
 
-    [phi_d(i),phi_gs(i)] = angle_frames(x_drone(i),y_drone,angle_d,x_gs,y_gs,angle_gs);
+    [alpha_d(i),alpha_gs(i)] = angle_frames(x_drone(i),y_drone,theta_d,x_gs,y_gs,theta_gs);
+    fprintf('Alpha Drone: %.3f \nAlpha GS: %.3f\n',alpha_d(i),alpha_gs(i));
     
-    [GSgain(i),angle3db_gs] = GSantenna(phi_gs(i),0);
-    [Dgain(i),angle3db_d] = GSantenna(phi_d(i),0);
+    [GSgain(i),angle3db_gs] = GSantenna(alpha_gs(i),0);
+    [Dgain(i),angle3db_d] = GSantenna(alpha_d(i),0);
+    fprintf('Gain Drone: %.3f \nGain GS: %.3f\n',Dgain(i),GSgain(i));
     
     los_d(i) = sqrt((dxVector(i,end)-dxVector(i,1)).^2 + (dyVector(i,1)-dyVector(i,end)).^2);
     Lfs(i) = -20*log10(4*pi*los_d(i)*10^3/lambda);
@@ -119,10 +118,21 @@ figure(2);
 plot(x_drone,Prx);
 grid on;
 grid minor;
-% str = sprintf('Prx');
-% title(str);
+str = sprintf('Prx');
+title(str);
 xlabel('X world axis');
-ylabel('Y world axis');
+ylabel('Relative Amplitude');
 axis([0 100 -200 0]);
 
+figure(3);
+plot(x_drone,alpha_d);
+hold on;
+plot(x_drone,alpha_gs);
+grid on;
+grid minor;
+str = sprintf('Prx');
+title(str);
+xlabel('Degrees');
+ylabel('Relative Amplitude');
+legend('Alpha D','Alpha GS');
 

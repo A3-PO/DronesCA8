@@ -39,12 +39,12 @@ Ptx = 10*log10(1/(10^-3));  % 1mW power transmiter
 % Small function to draw arrows
 drawArrow = @(x,y,z) quiver3(x(1),y(1),z(1),x(2)-x(1),y(2)-y(1),z(2)-z(1),'LineWidth',2.5,'MaxHeadSize',1.5);  
 
-x_gs = 0;                  % The position X of the GROUND STATION
-y_gs = 0;                   % The position Y of the GROUND STATION
+x_gs = 50;                  % The position X of the GROUND STATION
+y_gs = 50;                   % The position Y of the GROUND STATION
 z_gs = 0;                   % The position Z of the GROUND STATION
-x_drone = 50;                % The position X of the DRONE
-y_drone = 50;               % The position Y of the DRONE
-z_drone = 50;              % The position Z of the DRONE
+x_drone = 0;                % The position X of the DRONE
+y_drone = 0;               % The position Y of the DRONE
+z_drone = -50;              % The position Z of the DRONE
 
 % LOS distance vector construction
 [dxVector,dyVector,dzVector,los_d] = LOS_distance_3D(x_drone,y_drone,z_drone,x_gs,y_gs,z_gs,prec_d);

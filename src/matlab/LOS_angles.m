@@ -12,22 +12,34 @@ function [alpha_d,alpha_gs,gamma_d,gamma_gs] = LOS_angles(x_drone,y_drone,z_dron
 %**************************************************************************
 %
 % DESCRIPTION:
-% Function that performs the calculation for a 2 DIMENSION - 1 DEGREE OF
+% Function that performs the calculation for a 3 DIMENSION - 2 DEGREE OF
 % FREEDOM 
 %
 % INPUTS:
 % - x_drone = Position of the drone in X
 % - y_drone = Position of the drone in Y
+% - z_drone = Position of the drone in Z
 % - x_gs = Position of the ground station in X
 % - y_gs = Position of the ground station in Y
+% - z_gs = Position of the ground station in Z
 % - theta_d = ANGLE of the drone with respect to the X world
+% - phi_d = ANGLE of the drone with respect to the Z world
 % - theta_gs = ANGLE of the ground station with respect to the X world
+% - phi_gs = ANGLE of the ground station with respect to the Z world
 %
 % OUTPUTS:
 % - alpha_gs = Angle from the direction of the pointing antenna of the ground station 
-%   to the LINE OF SIGHT that joins ground station and drone.
+%   to the LINE OF SIGHT that joins ground station and drone. (SPHERICAL
+%   COORDINATES)
 % - alpha_d = Angle from the direction of the pointing antenna of the drone to the 
-%   LINE OF SIGHT that joins ground station and drone.
+%   LINE OF SIGHT that joins ground station and drone. (SPHERICAL
+%   COORDINATES)
+% - phi_gs = Angle from the direction of the pointing antenna of the ground station 
+%   to the LINE OF SIGHT that joins ground station and drone. (SPHERICAL
+%   COORDINATES)
+% - phi_d = Angle from the direction of the pointing antenna of the drone to the 
+%   LINE OF SIGHT that joins ground station and drone. (SPHERICAL
+%   COORDINATES)
 %
 %**************************************************************************
 % Transform theta to 0:2*pi for simpler calculations
@@ -71,7 +83,7 @@ if alpha_gs > 180
     alpha_gs = 360 - alpha_gs;
 end
 if alpha_d > 180
-    alpha_d = 360 - alpha_gs;
+    alpha_d = 360 - alpha_d;
 end
 
 %% Phi error calculations: GAMMA
@@ -84,7 +96,7 @@ if z_drone > z_gs
 else
     opt_phi_gs = pi/2 - atan2(z_drone-z_gs,sqrt(abs(x_gs-x_drone)^2+...
         abs(y_gs-y_drone)^2));
-    opt_phi_gs = pi/2 + atan2(z_drone-z_gs,sqrt(abs(x_gs-x_drone)^2+...
+    opt_phi_d = pi/2 + atan2(z_drone-z_gs,sqrt(abs(x_gs-x_drone)^2+...
         abs(y_gs-y_drone)^2));
 end
 

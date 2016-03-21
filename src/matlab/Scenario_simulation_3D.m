@@ -16,8 +16,8 @@
 %
 % Functions used during the code:
 % - LOS_distance_3D.m
-% - angle_frames.m
-% - GSantenna.m
+% - LOS_angles.m
+% - GSantenna3.m
 %
 %**************************************************************************
 
@@ -106,7 +106,7 @@ z_end_d = z_drone + los_d/10*sin(phi_d);
 Lfs = -20*log10(4*pi*los_d*10^3/lambda);
 Prx = Ptx + GSgain + Dgain + Lfs;
 
-%% Representation
+%% Representation SCENARIO 3D
 
 f = figure();
 view(45,25);
@@ -130,6 +130,7 @@ zlabel('Z world axis');
 legend('Drone','Ground Station','GS Frame','Drone Frame','LOS distance','Location','Best');
 movegui(f,'north');
 
+% Ploting the SCENARIO in the XZ PLANE
 f = figure();
 view(0,0);
 hold on
@@ -152,6 +153,7 @@ zlabel('Z world axis');
 legend('Drone','Ground Station','GS Frame','Drone Frame','LOS distance','Location','Best');
 movegui(f,'west');
 
+% Ploting the SCENARIO in the YZ PLANE
 f = figure();
 view(90,0);
 hold on
@@ -174,6 +176,7 @@ zlabel('Z world axis');
 legend('Drone','Ground Station','GS Frame','Drone Frame','LOS distance','Location','Best');
 movegui(f,'east');
 
+% Ploting the SCENARIO in the XY PLANE
 f = figure();
 view(0,90);
 hold on

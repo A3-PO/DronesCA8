@@ -155,8 +155,11 @@ for i = 1:length(x_drone)
     legend('Drone','Ground Station','GS Frame','Drone Frame',...
         'LOS distance','Location','Best');
     pause(0.1);
+    M(i) = getframe;
 %     movegui(f,'north');
 end
+% Save movie
+movie2avi(M,'fig/Dronesim_3D.avi','compression','None');
 
 % Plotting Power in the receiver
 figure(2);
@@ -168,6 +171,7 @@ title(str);
 xlabel('Time sample');
 ylabel('Relative Amplitude');
 axis([0 length(Prx) -200 0]);
+print('fig/Prx','-depsc');
 
 % Plotting error angles for DRONE
 figure(3);
@@ -182,6 +186,7 @@ xlabel('Time sample');
 ylabel('Relative Amplitude');
 legend('Alpha D','Gamma D');
 axis([0 length(gamma_d) 0 180]);
+print('fig/Drone_angles','-depsc');
 
 % Plotting error angles for GS
 figure(4);
@@ -196,3 +201,4 @@ xlabel('Time sample');
 ylabel('Relative Amplitude');
 legend('Alpha GS','Gamma GS');
 axis([0 length(gamma_gs) 0 180]);
+print('fig/GS_angles','-depsc');

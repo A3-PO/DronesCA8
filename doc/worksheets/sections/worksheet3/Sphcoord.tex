@@ -1,6 +1,12 @@
 \subsection*{Spherical Coordinate}
 \paragraph{Introduction}
 
+\begin{figure}%
+   \centering
+    \includestandalone[width=.40\textwidth]{figures/3D_sphcoord} 
+    \label{fig:GeometricDist_droneBasestation}
+    \caption{Geometrical distance to the horizon, Pythahorean theorem}
+\end{figure}
 
 \paragraph{Geometrical model}
 
@@ -11,14 +17,4 @@ First, we are going to derive a general expression and after that apply it to a 
 &\Rightarrow d = \sqrt{2hR + h^2}\numberthis \label{eq:los_distToHorizon}
 \end{align*} 
 
-\begin{figure}%
-    \centering
-    \subfloat[Geometrical distance to the horizon]{{\includegraphics[width=6cm]{figures/GeometricDistanceToHorizonOneTriangle.png} 
-\label{fig:GeometricDist_general}   }}%
-    \qquad
-    \subfloat[Geometrical distance from drone to basestation]{{
-    \includegraphics[width=6cm]{figures/GeometricDistanceToHorizonTwoTriangle.png} 
-    \label{fig:GeometricDist_droneBasestation}  }}%
-    \caption{Geometrical distance to the horizon, Pythahorean theorem}%
-    \label{fig:GeometricDistanceToHorizon}%
-\end{figure}
+

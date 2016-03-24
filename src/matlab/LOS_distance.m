@@ -1,4 +1,4 @@
-function [dxVector,dyVector] = LOS_distance(x_drone,y_drone,x_gs,y_gs,prec_d)
+function [dxVector,dyVector,los_d] = LOS_distance(x_drone,y_drone,x_gs,y_gs,prec_d)
 %**************************************************************************
 %
 % LOS_distance.m - CA8 - DRONES
@@ -46,6 +46,9 @@ elseif y_gs < y_drone
 else
     dyVector = y_gs*ones(1,prec_d+1);
 end
+
+los_d = sqrt(abs((dxVector(end)-dxVector(1))).^2 + ...
+    (abs(dyVector(end)-dyVector(1))).^2);
 
 end
 

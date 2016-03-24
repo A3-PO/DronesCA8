@@ -82,7 +82,8 @@ for i = 1:length(x_drone)
     % Polar angle: of the GROUND STATION FRAME [-pi/2:pi/2]. 0 = X-Y plane
     % axis
     phi_gs = opPhi(i);
-    
+%     phi_gs = pi/3;
+
     % Azimuthal angle: of the GROUND STATION FRAME [-pi:pi]. 0 = pointing 
     % along X axis
     theta_gs = opTheta(i);
@@ -91,9 +92,9 @@ for i = 1:length(x_drone)
     x_start_gs = x_gs;
     y_start_gs = y_gs;
     z_start_gs = z_gs;
-    x_end_gs = x_gs + los_d/10*cos(phi_gs)*cos(theta_gs);
-    y_end_gs = y_gs + los_d/10*cos(phi_gs)*sin(theta_gs);
-    z_end_gs = z_gs + los_d/10*sin(phi_gs);
+    x_end_gs = x_gs + los_d(i)/10*cos(phi_gs)*cos(theta_gs);
+    y_end_gs = y_gs + los_d(i)/10*cos(phi_gs)*sin(theta_gs);
+    z_end_gs = z_gs + los_d(i)/5000*sin(phi_gs);
     
     
     %% Drone definition
@@ -112,7 +113,7 @@ for i = 1:length(x_drone)
     z_end_d(i) = z_drone(i) + los_d(i)/10*sin(phi_d);
     
     %% Error Angle and Gain calculations
-    [alpha_d(i),alpha_gs(i),gamma_d(i),gamma_gs(i)] = LOS_angles(...
+    [alpha_d(i),alpha_gs(i),gamma_d(i),gamma_gs(i)] = LOS_angles_3D(...
         x_drone(i),y_drone(i),z_drone(i),theta_d,phi_d,x_gs,y_gs,z_gs,...
         theta_gs,phi_gs);
     fprintf('Alpha Drone: %.3f | Gamma Drone: %.3f\n',alpha_d(i),...

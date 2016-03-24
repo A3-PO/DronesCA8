@@ -82,7 +82,7 @@ y_end_d = y_drone + r*sin(theta_d);
 
 %% Calculation 
 
-[alpha_d,alpha_gs] = angle_frames(x_drone,y_drone,theta_d,x_gs,y_gs,theta_gs);
+[alpha_d,alpha_gs] = LOS_angles(x_drone,y_drone,theta_d,x_gs,y_gs,theta_gs);
 
 [GSgain,angle3db_gs] = GSantenna(alpha_gs,0);
 [Dgain,angle3db_d] = GSantenna(alpha_d,0);

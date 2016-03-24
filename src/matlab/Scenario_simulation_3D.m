@@ -44,7 +44,7 @@ y_gs = 50;                   % The position Y of the GROUND STATION
 z_gs = 0;                   % The position Z of the GROUND STATION
 x_drone = 0;                % The position X of the DRONE
 y_drone = 0;               % The position Y of the DRONE
-z_drone = -50;              % The position Z of the DRONE
+z_drone = 0.1;              % The position Z of the DRONE
 
 % LOS distance vector construction
 [dxVector,dyVector,dzVector,los_d] = LOS_distance_3D(x_drone,y_drone,z_drone,x_gs,y_gs,z_gs,prec_d);
@@ -62,8 +62,8 @@ opPhi = atan2(z_drone-z_gs,sqrt(abs(x_gs-x_drone)^2+...
 
 % Polar angle: of the GROUND STATION FRAME [-pi/2:pi/2]. 0 = X-Y plane
 % axis
-% phi_gs = pi/4;
-phi_gs = opPhi;
+phi_gs = pi/3;
+% phi_gs = opPhi;
 % Azimuthal angle: of the GROUND STATION FRAME [-pi:pi]. 0 = pointing along
 % X axis
 % theta_gs = pi/2;
@@ -75,7 +75,7 @@ y_start_gs = y_gs;
 z_start_gs = z_gs;
 x_end_gs = x_gs + los_d/10*cos(phi_gs)*cos(theta_gs);
 y_end_gs = y_gs + los_d/10*cos(phi_gs)*sin(theta_gs);
-z_end_gs = z_gs + los_d/10*sin(phi_gs);
+z_end_gs = z_gs + los_d/5000*sin(phi_gs);
 
 
 %% Drone definition
@@ -97,7 +97,7 @@ z_end_d = z_drone + los_d/10*sin(phi_d);
 
 % Calculation 
 
-[alpha_d,alpha_gs,gamma_d,gamma_gs] = LOS_angles(x_drone,y_drone,...
+[alpha_d,alpha_gs,gamma_d,gamma_gs] = LOS_angles_3D(x_drone,y_drone,...
     z_drone,theta_d,phi_d,x_gs,y_gs,z_gs,theta_gs,phi_gs);
 
 [GSgain,angle3db_gs] = GSantenna3(alpha_gs,gamma_gs,0);

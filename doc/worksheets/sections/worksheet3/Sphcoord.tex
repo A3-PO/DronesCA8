@@ -1,20 +1,24 @@
-\subsection*{Spherical Coordinate}
-\paragraph{Introduction}
+\subsection*{Spherical Coordinate System}
 
-\begin{figure}%
+In mathematics, a spherical coordinate system is a coordinate system for three-dimensional space where the position of a point is specified by three numbers: the \textbf{radial distance} of that point from a fixed origin ($\rho$), its \textbf{polar angle} measured from a fixed zenith direction ($\theta$), and the \textbf{elevation angle} of its orthogonal projection on a reference plane, measured from a fixed reference direction on that plane ($\phi$).
+
+\begin{figure}[H]
    \centering
-    \includestandalone[width=.40\textwidth]{figures/3D_sphcoord} 
-    \label{fig:GeometricDist_droneBasestation}
-    \caption{Geometrical distance to the horizon, Pythahorean theorem}
+    \includestandalone[width=.50\textwidth]{figures/3D_sphcoord} 
+    \label{fig:Spherical1}
+    \caption{Spherical Coordinates}
 \end{figure}
-
-\paragraph{Geometrical model}
-
-First, we are going to derive a general expression and after that apply it to a scenario with a drone and a basestation. In figure  \ref{fig:GeometricDist_general} the relationship between the height of the observer above sea level (O point) and the distance d which is between it and the horizon (H point) is shown. Finding this distance is done by the use of the pythagorean theorem. With some simple mathematical calculations the distance d is derived in the following:
+In our case the coordinates will be limited as follows:
 \begin{align*}
-&(R+h)^2 = R^2+d^2\nonumber \\
-&\Rightarrow R^2+2hR+h^2 = R^2+d^2 \Rightarrow d^2 = 2hR + h^2 \\
-&\Rightarrow d = \sqrt{2hR + h^2}\numberthis \label{eq:los_distToHorizon}
+& \rho \geq 0 \\
+& -\pi \leq \theta < \pi\\
+& \frac{-\pi}{2} \leq \phi \leq \frac{\pi}{2}
+\label{eq:los_distToHorizon}
 \end{align*} 
 
-
+\begin{figure}[H]
+   \centering
+    \includestandalone[width=.50\textwidth]{figures/Angles1} 
+    \label{fig:TEST}
+    \caption{TEST}
+\end{figure}

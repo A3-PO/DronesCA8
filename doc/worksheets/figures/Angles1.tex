@@ -1,0 +1,60 @@
+\documentclass[crop,tikz]{standalone} 
+
+\begin{document}
+
+%Angle Definitions
+%-----------------
+%set the plot display orientation
+%synatax: \tdplotsetdisplay{\phi_d}{\theta_d}
+\tdplotsetmaincoords{60}{110}
+
+%define polar coordinates for some vector
+%TODO: look into using 3d spherical coordinate system
+\pgfmathsetmacro{\rvec}{1}
+\pgfmathsetmacro{\phivec}{50}
+\pgfmathsetmacro{\thetavec}{60}
+%
+\begin{tikzpicture}[scale=5,tdplot_main_coords]
+
+%set up some coordinates 
+%-----------------------
+    \coordinate (O) at (0,0,0);
+
+%determine a coordinate (P) using (r,\phi,\theta) coordinates.  This command
+%also determines (Pxy), (Pxz), and (Pyz): the xy-, xz-, and yz-projections
+%of the point (P).
+%syntax: \tdplotsetcoord{Coordinate name without parentheses}{r}{\phi}{\theta}
+    \tdplotsetcoord{P}{\rvec}{\phivec}{\thetavec}
+
+%draw figure contents
+%--------------------
+%draw the main coordinate system axes    
+    \draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$x$};
+    %\draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
+    \draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
+
+
+%draw a vector from origin to point (P) 
+    \draw[-stealth,color=red] (O) -- (P) ;
+    \shade[shading=ball, ball color=green] (P) circle (.3mm) node[above right] {$Drone$};
+
+%draw projection on xy plane, and a connecting line   
+    %\draw[dashed, color=red] (O) -- (Pxy);
+    \draw[dashed, color=red] (P) -- (Pxy);
+
+%draw the angle \theta, and label it
+%syntax: \tdplotdrawarc[coordinate frame, draw options]{center point}{r}{starting angle}{ending angle}{label options}{label}
+    %\tdplotdrawarc{(O)}{0.2}{0}{\thetavec}{anchor=north}{$\theta$}
+
+%set the rotated coordinate system so the x'-y' plane lies within the
+%"phi plane" of the main coordinate system
+%syntax: \tdplotsetphiplanecoords{\theta}
+    \tdplotsetthetaplanecoords{\thetavec}
+
+%draw phi arc and label, using rotated coordinate system
+    \tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{0.2}{\phivec}{90}{anchor=west}{$\phi$}
+
+\shade[shading=ball, ball color=blue] (0,0,0) circle (.3mm);
+
+\end{tikzpicture}
+\end{document}

@@ -19,6 +19,7 @@ function [GSgain,angle3db] = GSantenna3(thetaGS,phiGS,plotting)
 %
 % INPUTS:
 % - thetaGS = Angle on which the gain of the antenna wants to be checked.
+% - phiGS = Angle on which the gain of the antenna wants to be checked.
 % - plotting = Variable to chose if display plot or not. 1 -> YES. 0 -> NO
 %
 % OUTPUTS:
@@ -68,6 +69,7 @@ Udb = 20*log10(U);
 % Calculate gain of the given angles before transforming to plot
 GSgain = Udb(ind_phi,ind_theta);
 
+% NOT WORKING ATM
 % Calculate the angle in which decays 3dB
 % temp = abs(Udb + 3);
 % [~, ind3db] = min(temp);
@@ -75,7 +77,7 @@ GSgain = Udb(ind_phi,ind_theta);
 angle3db = 0;
 
 % Transform to dB:
-% - We add the scale we want to plot
+% - We add the scale we want to plot ("aprox" variable)
 % - Set whatever is less than the scale to 0
 Udb = Udb + aprox;
 Udb(Udb<0) = 0;

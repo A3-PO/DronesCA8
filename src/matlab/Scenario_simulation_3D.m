@@ -16,8 +16,8 @@
 %
 % Functions used during the code:
 % - LOS_distance_3D.m
-% - angle_frames.m
-% - GSantenna.m
+% - LOS_angles.m
+% - GSantenna3.m
 %
 %**************************************************************************
 
@@ -39,12 +39,12 @@ Ptx = 10*log10(1/(10^-3));  % 1mW power transmiter
 % Small function to draw arrows
 drawArrow = @(x,y,z) quiver3(x(1),y(1),z(1),x(2)-x(1),y(2)-y(1),z(2)-z(1),'LineWidth',2.5,'MaxHeadSize',1.5);  
 
-x_gs = 0;                  % The position X of the GROUND STATION
-y_gs = 0;                   % The position Y of the GROUND STATION
+x_gs = 50;                  % The position X of the GROUND STATION
+y_gs = 50;                   % The position Y of the GROUND STATION
 z_gs = 0;                   % The position Z of the GROUND STATION
-x_drone = 50;                % The position X of the DRONE
-y_drone = 50;               % The position Y of the DRONE
-z_drone = 50;              % The position Z of the DRONE
+x_drone = 0;                % The position X of the DRONE
+y_drone = 0;               % The position Y of the DRONE
+z_drone = 0.1;              % The position Z of the DRONE
 
 % LOS distance vector construction
 [dxVector,dyVector,dzVector,los_d] = LOS_distance_3D(x_drone,y_drone,z_drone,x_gs,y_gs,z_gs,prec_d);
@@ -62,8 +62,8 @@ opPhi = atan2(z_drone-z_gs,sqrt(abs(x_gs-x_drone)^2+...
 
 % Polar angle: of the GROUND STATION FRAME [-pi/2:pi/2]. 0 = X-Y plane
 % axis
-% phi_gs = pi/4;
-phi_gs = opPhi;
+phi_gs = pi/3;
+% phi_gs = opPhi;
 % Azimuthal angle: of the GROUND STATION FRAME [-pi:pi]. 0 = pointing along
 % X axis
 % theta_gs = pi/2;
@@ -75,7 +75,7 @@ y_start_gs = y_gs;
 z_start_gs = z_gs;
 x_end_gs = x_gs + los_d/10*cos(phi_gs)*cos(theta_gs);
 y_end_gs = y_gs + los_d/10*cos(phi_gs)*sin(theta_gs);
-z_end_gs = z_gs + los_d/10*sin(phi_gs);
+z_end_gs = z_gs + los_d/5000*sin(phi_gs);
 
 
 %% Drone definition
@@ -97,7 +97,7 @@ z_end_d = z_drone + los_d/10*sin(phi_d);
 
 % Calculation 
 
-[alpha_d,alpha_gs,gamma_d,gamma_gs] = LOS_angles(x_drone,y_drone,...
+[alpha_d,alpha_gs,gamma_d,gamma_gs] = LOS_angles_3D(x_drone,y_drone,...
     z_drone,theta_d,phi_d,x_gs,y_gs,z_gs,theta_gs,phi_gs);
 
 [GSgain,angle3db_gs] = GSantenna3(alpha_gs,gamma_gs,0);
@@ -106,7 +106,7 @@ z_end_d = z_drone + los_d/10*sin(phi_d);
 Lfs = -20*log10(4*pi*los_d*10^3/lambda);
 Prx = Ptx + GSgain + Dgain + Lfs;
 
-%% Representation
+%% Representation SCENARIO 3D
 
 f = figure();
 view(45,25);
@@ -130,6 +130,7 @@ zlabel('Z world axis');
 legend('Drone','Ground Station','GS Frame','Drone Frame','LOS distance','Location','Best');
 movegui(f,'north');
 
+% Ploting the SCENARIO in the XZ PLANE
 f = figure();
 view(0,0);
 hold on
@@ -152,6 +153,7 @@ zlabel('Z world axis');
 legend('Drone','Ground Station','GS Frame','Drone Frame','LOS distance','Location','Best');
 movegui(f,'west');
 
+% Ploting the SCENARIO in the YZ PLANE
 f = figure();
 view(90,0);
 hold on
@@ -174,6 +176,7 @@ zlabel('Z world axis');
 legend('Drone','Ground Station','GS Frame','Drone Frame','LOS distance','Location','Best');
 movegui(f,'east');
 
+% Ploting the SCENARIO in the XY PLANE
 f = figure();
 view(0,90);
 hold on

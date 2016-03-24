@@ -1,4 +1,4 @@
-function [alpha_d,alpha_gs,gamma_d,gamma_gs] = LOS_angles(x_drone,y_drone,z_drone,theta_d,phi_d,x_gs,y_gs,z_gs,theta_gs,phi_gs)
+function [alpha_d,alpha_gs] = LOS_angles(x_drone,y_drone,theta_d,x_gs,y_gs,theta_gs)
 %**************************************************************************
 %
 % angle_frames.m - CA8 - DRONES
@@ -30,24 +30,13 @@ function [alpha_d,alpha_gs,gamma_d,gamma_gs] = LOS_angles(x_drone,y_drone,z_dron
 %   LINE OF SIGHT that joins ground station and drone.
 %
 %**************************************************************************
+
 % Transform theta to 0:2*pi for simpler calculations
 if (theta_gs) < 0
     theta_gs = theta_gs + 2*pi;
 end
 if (theta_d) < 0 
     theta_d = theta_d + 2*pi;
-end
-
-% Transform phi to 0:pi for simpler calculations
-if (phi_gs) > 0
-    phi_gs = pi/2 - phi_gs;
-else
-    phi_gs = pi/2 + abs(phi_gs);
-end
-if (phi_d) > 0
-    phi_d = pi/2 - phi_d;
-else
-    phi_d = pi/2 + abs(phi_d);
 end
 
 %% Theta error calculations: ALPHA
@@ -71,27 +60,26 @@ if alpha_gs > 180
     alpha_gs = 360 - alpha_gs;
 end
 if alpha_d > 180
-    alpha_d = 360 - alpha_gs;
+    alpha_d = 360 - alpha_d;
 end
 
-%% Phi error calculations: GAMMA
-%Optimal angles
-if z_drone > z_gs
-    opt_phi_gs = pi/2 - atan2(z_drone-z_gs,sqrt(abs(x_gs-x_drone)^2+...
-        abs(y_gs-y_drone)^2));
-    opt_phi_d = pi/2 + atan2(z_drone-z_gs,sqrt(abs(x_gs-x_drone)^2+...
-        abs(y_gs-y_drone)^2));
-else
-    opt_phi_gs = pi/2 - atan2(z_drone-z_gs,sqrt(abs(x_gs-x_drone)^2+...
-        abs(y_gs-y_drone)^2));
-    opt_phi_gs = pi/2 + atan2(z_drone-z_gs,sqrt(abs(x_gs-x_drone)^2+...
-        abs(y_gs-y_drone)^2));
-end
+% 
+% beta = atan2(abs(y_drone-y_gs),abs(x_gs-x_drone));
+% 
+% % If the drone is lower than the Ground Station the angles are exchanged
+% if x_gs < x_drone
+%     alpha_gs = abs(abs(theta_gs) - beta);
+%     alpha_gs = rad2deg(alpha_gs);
+%     alpha_d = abs(pi - (beta + abs(theta_d)));
+%     alpha_d = rad2deg(alpha_d);
+% end
+% if x_gs >= x_drone
+%     alpha_gs = abs(pi - (beta + abs(theta_gs)));
+%     alpha_gs = rad2deg(alpha_gs);
+%     alpha_d = abs(abs(theta_d) - beta);
+%     alpha_d = rad2deg(alpha_d);
+% end
 
-gamma_gs = abs(phi_gs - opt_phi_gs);
-gamma_gs = rad2deg(gamma_gs);
-gamma_d = abs(phi_d- opt_phi_d);
-gamma_d = rad2deg(gamma_d);
 
 end
 

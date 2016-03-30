@@ -29,7 +29,7 @@ clc;
 
 step_x = 1;                 % Step of vector X [km]
 step_y = 1;                 % Step of vector Y [km]
-step_z = 1;                 % Step of vector Z [km]
+step_z = 0.01;                 % Step of vector Z [km]
 prec_d = 200;               % Precision of the distance vector
 
 freq = 2.4 * 10^9;          % Frequency [Hz]
@@ -52,17 +52,17 @@ x_r = 50;
 y_r = 30;
 x_0 = 0;
 y_0 = 0;
-circle_angle = [-pi:0.1:pi];
-x_drone = x_0 + x_r*sin(circle_angle);       % The position X of the DRONE
-y_drone = y_0 + y_r*cos(circle_angle);       % The position Y of the DRONE
-z_drone = 0.05*ones(1,length(circle_angle)); % The position Z of the DRONE
-%z_drone = 0.05*abs(sin(circle_angle));  
+circle_angle = [-pi:0.2:pi];
+x_drone = x_0 + x_r*sin(circle_angle);          % The position X of the DRONE
+y_drone = y_0 + y_r*cos(circle_angle);          % The position Y of the DRONE
+% z_drone = 0.05*ones(1,length(circle_angle));  % The position Z of the DRONE
+z_drone = 0.05*abs(sin(circle_angle));  
 
 %% NOT USED AT THE MOMENT
 % World vectors X, Y, Z [km]
-xVector = [min([x_gs x_drone]):step_x:max([x_gs x_drone])];    
-yVector = [min([y_gs y_drone]):step_y:max([y_gs y_drone])];    
-zVector = [min([z_gs z_drone]):step_z:max([z_gs z_drone])];   
+xVector = [floor(min([x_gs x_drone])):step_x:ceil(max([x_gs x_drone]))];    
+yVector = [floor(min([y_gs y_drone])):step_y:ceil(max([y_gs y_drone]))];    
+zVector = [floor(min([z_gs z_drone])):step_z:ceil(max([z_gs z_drone])*1000)/1000];   
 
 %% Actual calculations
 % LOS distance vector construction
@@ -87,19 +87,21 @@ for i = 1:length(x_drone)
     % Azimuthal angle: of the GROUND STATION FRAME [-pi:pi]. 0 = pointing 
     % along X axis
     theta_gs = opTheta(i);
+%     theta_gs = pi/2;
     
     % POINTING ANTENNA GS FRAME
     x_start_gs = x_gs;
     y_start_gs = y_gs;
     z_start_gs = z_gs;
-    x_end_gs = x_gs + los_d(i)/10*cos(phi_gs)*cos(theta_gs);
-    y_end_gs = y_gs + los_d(i)/10*cos(phi_gs)*sin(theta_gs);
-    z_end_gs = z_gs + los_d(i)/5000*sin(phi_gs);
+    x_end_gs = x_gs + los_d(i)/3*cos(phi_gs)*cos(theta_gs);
+    y_end_gs = y_gs + los_d(i)/3*cos(phi_gs)*sin(theta_gs);
+    z_end_gs = z_gs + los_d(i)/3*sin(phi_gs);
     
     
     %% Drone definition
     % Polar angle: of the DRONE [-pi/2:pi/2]. 0 = X-Y plane
     phi_d = -opPhi(i);
+%     phi_d = pi/3;
     
     % Azimuthal angle: of the DRONE [-pi:pi]. 0 = pointing along X axis
     theta_d = -pi + opTheta(i);
@@ -108,9 +110,9 @@ for i = 1:length(x_drone)
     x_start_d(i) = x_drone(i);
     y_start_d(i) = y_drone(i);
     z_start_d(i) = z_drone(i);
-    x_end_d(i) = x_drone(i) + los_d(i)/10*cos(phi_d)*cos(theta_d);
-    y_end_d(i) = y_drone(i) + los_d(i)/10*cos(phi_d)*sin(theta_d);
-    z_end_d(i) = z_drone(i) + los_d(i)/10*sin(phi_d);
+    x_end_d(i) = x_drone(i) + los_d(i)/3*cos(phi_d)*cos(theta_d);
+    y_end_d(i) = y_drone(i) + los_d(i)/3*cos(phi_d)*sin(theta_d);
+    z_end_d(i) = z_drone(i) + los_d(i)/3*sin(phi_d);
     
     %% Error Angle and Gain calculations
     [alpha_d(i),alpha_gs(i),gamma_d(i),gamma_gs(i)] = LOS_angles_3D(...
@@ -142,7 +144,9 @@ for i = 1:length(x_drone)
         [z_start_d(i),z_end_d(i)]);
     plot3(dxVector(i,:),dyVector(i,:),dzVector(i,:),'LineWidth',1.5);
     plot3(x_drone(1:i),y_drone(1:i),z_drone(1:i));
-    axis([-100 100 -100 100 0 0.1]);
+%     axis([-100 100 -100 100 0 0.1]);
+    axis([xVector(1) xVector(end) yVector(1) yVector(end) ...
+        zVector(1) zVector(end)]);
     grid on;
     grid minor;
     str = sprintf('Scenario Simulation 3D - Full View');
@@ -177,43 +181,61 @@ for i = 1:length(x_drone)
     % Plotting error angles for DRONE
     f3 = figure(3);
     clf(f3);
+    subplot(211);
     plot(alpha_d);
     hold on;
-    plot(gamma_d);
     grid on;
-    grid minor;
-    str = sprintf('Error angles Drone');
+    grid minor;    
+    str = sprintf('Error angle Theta Drone');
     title(str);
     xlabel('Time sample');
     ylabel('Relative Amplitude');
-    legend('Alpha D','Gamma D');
+    axis([0 length(x_drone) 0 180]);    
+    subplot(212);
+    plot(alpha_gs);
+    hold on;
+    grid on;
+    grid minor;
+    str = sprintf('Error angle Theta Ground Station');
+    title(str);
+    xlabel('Time sample');
+    ylabel('Relative Amplitude');
     axis([0 length(x_drone) 0 180]);
     pause(0.1);
     movegui(f3,'east');
     
     % Plotting error angles for GS
     f4 = figure(4);
-    clf(f4);
-    plot(alpha_gs);
+    clf(f4);   
+    subplot(211);
+    plot(gamma_d);
     hold on;
-    plot(gamma_gs);
     grid on;
-    grid minor;
-    str = sprintf('Error angles Ground Station');
+    grid minor;    
+    str = sprintf('Error angle Phi Drone');
     title(str);
     xlabel('Time sample');
     ylabel('Relative Amplitude');
-    legend('Alpha GS','Gamma GS');
-    axis([0 length(x_drone) 0 180]);
+    xlim([0 length(x_drone)]);   
+    subplot(212);
+    plot(gamma_gs);
+    hold on;
+    grid on;
+    grid minor;
+    str = sprintf('Error angle Phi Ground Station');
+    title(str);
+    xlabel('Time sample');
+    ylabel('Relative Amplitude');
+    xlim([0 length(x_drone)]);
     pause(0.1);
     movegui(f4,'west');    
 end
 
 % Save movie and figures
-movie2avi(M,'fig/Dronesim_3D.avi','compression','None');
-print(2,'fig/Prx','-depsc');
-print(3,'fig/Drone_angles','-depsc');
-print(4,'fig/GS_angles','-depsc');
+% movie2avi(M,'fig/Dronesim_3D.avi','compression','None');
+% print(2,'fig/Prx','-depsc');
+% print(3,'fig/Drone_angles','-depsc');
+% print(4,'fig/GS_angles','-depsc');
 
 %% STATIONARY PLOTS (JUST IN CASE)
 

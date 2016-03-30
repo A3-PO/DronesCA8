@@ -75,7 +75,7 @@ y_start_gs = y_gs;
 z_start_gs = z_gs;
 x_end_gs = x_gs + los_d/10*cos(phi_gs)*cos(theta_gs);
 y_end_gs = y_gs + los_d/10*cos(phi_gs)*sin(theta_gs);
-z_end_gs = z_gs + los_d/5000*sin(phi_gs);
+z_end_gs = z_gs + los_d/10*sin(phi_gs);
 
 
 %% Drone definition
@@ -116,7 +116,7 @@ plot3(x_gs,y_gs,z_gs,'X','LineWidth',2);
 drawArrow([x_start_gs,x_end_gs],[y_start_gs,y_end_gs],[z_start_gs,z_end_gs]);
 drawArrow([x_start_d,x_end_d],[y_start_d,y_end_d],[z_start_d,z_end_d]);
 plot3(dxVector,dyVector,dzVector,'LineWidth',1.5);
-% axis([0 100 0 50]);
+axis([0 100 0 50 0 50]);
 grid on;
 grid minor;
 str = sprintf('Scenario Simulation 3D - Full View');

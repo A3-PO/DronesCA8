@@ -8,17 +8,28 @@ In mathematics, a spherical coordinate system is a coordinate system for three-d
     \label{fig:Spherical1}
     \caption{Spherical Coordinates}
 \end{figure}
-In our case the coordinates will be limited as follows:
+
+ It is necessary to define a unique set of spherical coordinates for each point, and therefore restricting their range is required. In our case the coordinates will be limited as follows:
 \begin{align*}
 & \rho \geq 0 \\
-& -\pi \leq \theta < \pi\\
+& -\pi \leq \theta < \pi \\
 & \frac{-\pi}{2} \leq \phi \leq \frac{\pi}{2}
 \label{eq:los_distToHorizon}
 \end{align*} 
 
+These constraints define the conversion between Cartesian and Spherical coordinates such that:
+\begin{align*}
+x &=  \rho\cos\phi\cos\theta	&	\rho &= \sqrt{x^{2} + y^{2} + z^{2}} \\
+y &= \rho\cos\phi\sin\theta		&	\theta &= \text{atan2}\left(\frac{y}{x}\right)\\
+z &= \rho\sin\phi				&	\phi &=  \text{atan2}\left(\frac{z}{\sqrt{x^2 + y^2}}\right)
+\label{eq:los_distToHorizon}
+\end{align*} 
+
+Our general scenario is going to be something like this:
 \begin{figure}[H]
    \centering
-    \includestandalone[width=.50\textwidth]{figures/Angles1} 
+    \includestandalone[width=.60\textwidth]{figures/Angles1} 
     \label{fig:TEST}
     \caption{TEST}
 \end{figure}
+

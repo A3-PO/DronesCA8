@@ -1,8 +1,8 @@
-%% 832 Group Project - Signal Coverage Map
+%% 832 Group Project - LOS Coverage Map
 clear all; close all; clc;
 % Input parameters
-h_g = 20;     % [m] groundstation altitude
-h_d = 100;    % [m] drone altitude
+h_g = input('Input ground station altitude: ');   % [m] station altitude 
+h_d = input('Input ground station altitude: ');   % [m] drone altitude
 
 %% 1. Import map as a Web Map Service (WMS)
 latDK = [53 58];
@@ -33,7 +33,7 @@ worldmap(latDK, lonDK)
 geoshow(A, R, 'DisplayType', 'texturemap')
 demcmap(double(A))   
 title({'GTOPO30 Elevation Model',gtopo30Layer.LayerTitle})
-[latG lonG] = inputm(1);  % input groundstation location
+[latG lonG] = inputm(1);  % input ground station location
 Re = earthRadius('meters');
 [vmap, vmapl] = viewshed(Z, R, latG(1), lonG(1), h_g, h_d, ...
     'AGL', 'AGL', Re, 4/3*Re);

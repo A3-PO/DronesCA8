@@ -1,8 +1,5 @@
 %% 832 Group Project - LOS Coverage Map
 clear all; close all; clc;
-% Input parameters
-h_g = input('Input ground station altitude: ');   % [m] station altitude 
-h_d = input('Input drone altitude: ');            % [m] drone altitude
 
 %% 1. Import map as a Web Map Service (WMS)
 % Denmark latitudes and longitudes
@@ -17,6 +14,8 @@ oceanColor = [0 170 255];
 [A, R] = wmsread(gtopo30Layer, 'BackgroundColor', oceanColor);
 
 %% 2. LOS distance from ground station to drone (2 points)
+h_g = input('Input ground station altitude: ');   % [m] station altitude 
+h_d = input('Input drone altitude: ');            % [m] drone altitude
 figure
 worldmap(latDK, lonDK)
 geoshow(A, R, 'DisplayType', 'texturemap')
@@ -25,10 +24,10 @@ title({'GTOPO30 Elevation Model',gtopo30Layer.LayerTitle})
 Z = double(A(:,:,1));       % map layer
 e_g = ltln2val(Z, R, lat(1), lon(1)) + h_g; % [m] terrain + station height
 e_d = ltln2val(Z, R, lat(2), lon(2)) + h_d; % [m] terrain + drone height
-D = 3.57*(sqrt(e_g) + sqrt(e_d)) % [km] theoretical horizon (LOS) distance 
+H = 3.57*(sqrt(e_g) + sqrt(e_d)) % [km] theoretical horizon (LOS) distance 
 los2(Z, R, lat(1), lon(1), lat(2), lon(2), h_g, h_d)
 
-%% 3. LOS coverage map (Area)
+%% 3. LOS Coverage Map (Area)
 figure
 worldmap(latDK, lonDK)
 geoshow(A, R, 'DisplayType', 'texturemap')

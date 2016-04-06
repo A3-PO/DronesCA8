@@ -8,6 +8,7 @@ doc/worksheets/*.out
 doc/worksheets/*.toc
 doc/worksheets/*.tdo
 doc/worksheets/*.fmt
+doc/worksheets/*.bib
 doc/worksheets/*.pdf
 
 doc/report/*.aux

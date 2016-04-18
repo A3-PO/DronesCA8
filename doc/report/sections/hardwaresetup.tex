@@ -1,4 +1,4 @@
-\chapter{Hardware setup}\label{ch:hardwaresetup}
+\chapter{Hardware Setup}\label{ch:hardwaresetup}
 
 \section{Unmanned Aerial System (UAS)}
 In some cases it is necessary to talk about our system as a whole, such that we use it further. The UAS can be seen in Figure \ref{fig:uas} and it is composed of the following:
@@ -108,10 +108,10 @@ A simplified link budget omitting some losses of the UAS:
 	       = 30 + 24 + 14 - 134 = -66 \text{dBm}
 \end{equation*}
 
-\section{Controller system}
+\section{Controller System}
 \href{http://ctms.engin.umich.edu/CTMS/index.php?example=MotorPosition&section=SystemModeling}{DC Motor Position: System Modeling}
 
-\subsection{Physical setup}
+\subsection{Physical Setup}
 A common actuator in control systems is the DC motor. It directly provides rotary motion and, coupled with wheels or drums and cables, can provide translational motion. The electric equivalent circuit of the armature and the free-body diagram of the rotor are shown in the following figure. 
 
 \begin{figure}[h!]\label{fig:motor_model}
@@ -127,7 +127,7 @@ From the figure above, we can derive the following governing equations based on 
 	L\frac{di}{dt} + Ri = V - K\dot{\Theta}
 \end{equation}
 
-\subsection{Transfer function}
+\subsection{Transfer Function}
 Applying the Laplace transform, the above modeling equations can be expressed in terms of the Laplace variable s. On the link they dont consider initial condition and we want them.
 
 \begin{equation}

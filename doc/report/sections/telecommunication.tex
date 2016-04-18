@@ -20,10 +20,10 @@ One of the main goal of drone surveillance is to procure relevant data. This is 
 
 !!! HOW WE USE IT ? !!!
 
-\section{MAVLink protocol}
+\section{MAVLink Protocol}
 When speaking of digital communication it is required to have a certain communication protocol. Given the fact that, this project deals with drones, a special protocol, namely Micro Air Vehicle Link (MAVLink) has been taken into consideration. This protocol is used in a GNS and drones scenario, where inter-communication between systems is needed in order to transmit GPS location, heading angle and speed.  
 
-\subsection{Packet structure}
+\subsection{Packet Structure}
 For further understanding the packet structure of such a protocol is needed as seen in Table \ref{tab:mavlink}.
 
 \begin{table}[h]
@@ -100,13 +100,13 @@ To calculate the distance $D_{DB}$:
 	D_{DB}[km]	 &= D_D + D_B \approx 3.57\cdot \sqrt{h_D} + 3.57\cdot \sqrt{h_B} = {3.57\cdot (\sqrt{h_D} + \sqrt{h_B}} )
 \end{align}
 
-\subsection{Example with drone = 100m and basestation = 20m}
+\subsection{LOS Distance Example}
 Lets take an example if the drone is at $h_D = 100m$ and the basestation at $h_B = 20m$. The distance between the drone and the basestation is as follows:
 \begin{equation*}
 	D_{DB}[km] = 3.57\cdot (\sqrt{100} + \sqrt{20}) = 51.67km
 \end{equation*}
 
-\subsection{Free space path loss}\label{subsec:path_loss}
+\subsection{Free Space Path Loss}\label{subsec:path_loss}
 \paragraph{}
 The free space path loss (FSPL) is the loss in signal strength that occurs when an electromagnetic wave travels over a line of sight path in free space. In these circumstances there are no obstacles that might cause the signal to be reflected, refracted, or that might cause additional attenuation. Equation \ref{eq:path_losses} represents the loss in signal strength in dB.
 
@@ -168,7 +168,7 @@ In more detailed a common radio link looks like this:
 Note that decibels are logarithmic measurements, so adding decibels is equivalent to multiplying the actual numeric ratios.
 
 
-\section{Fresnel zones}
+\section{Fresnel Zones}
 Taking into account that the application at hand involves radio communication it is important to talk about the Fresnel zones. Thus, it can be seen in Figure \ref{fig:fresnel_zones} the three Fresnel zones on the transmission path between A and B. 
 
 \begin{figure}[h]

@@ -26,17 +26,24 @@ z &= \rho\sin\phi				&	\phi &=  \text{atan2}\left(\frac{z}{\sqrt{x^2 + y^2}}\rig
 \end{align*} 
 
 \subsection*{Simulation 3D}
-Once the coordinate system has been defined the general scenario of the project will be introduced.
+\paragraph{} Once the coordinate system has been defined the general scenario of the project will be introduced.
 \begin{figure}[H]
    \centering
     \includestandalone[width=.60\textwidth]{figures/Scenario1} 
-    \label{fig:TEST}
-    \caption{TEST}
+    \label{fig:Scenario1}
+    \caption{Representation of the general scenario.}
 \end{figure}
 where ($x_d,y_d,z_d$) are the coordinates that describe the position of the drone and ($x_{gs},y_{gs},z_{gs}$) are the coordinates that describe the position of the ground station.
+The blue and green arrow represent the \textbf{antenna pointing vectors} of the ground station and drone, respectively.
 
-The \textbf{Line Of Sight} (LOS) distance is then given by the former defined variable $\rho$ and the \textbf{LOS angles} are given by the former defined variables $\theta$ and $\phi$.
+\paragraph{} The \textbf{Line Of Sight (LOS) distance} is then given by the former defined variable $\rho$ and the \textbf{LOS angles} are given by the former defined variables $\theta$ and $\phi$.
+Note that the drone and the ground station antenna pointing vector, generally, will not be equal to the optimal angles. It is precisely our main task in this project to design a controller that drives these antennas to point to each other and, that way, we can get the best performance in the radio-communication link.
 
-The drone and the ground station will have their antennas pointing vector which, generally, will not be equal to the optimal angles. It is precisely our main task in this project to design a controller than drives these antennas to point to each other and, that way, we can get the best performance in the radio-communication link.
+\paragraph{} These angles will be referred during the rest of the text as \textit{optimal angles} or \textit{reference angles}.
 
-These angles will be referred during the rest of the text as \textit{optimal angles} or \textit{reference angles}.
+\begin{figure}[H]
+   \centering
+    \includestandalone[width=.60\textwidth]{figures/OptimalAngles1} 
+    \label{fig:OptimalAngles1}
+    \caption{Optimal Angles 1}
+\end{figure}

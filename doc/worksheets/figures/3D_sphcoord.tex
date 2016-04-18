@@ -45,9 +45,8 @@
 %syntax: \tdplotdrawarc[coordinate frame, draw options]{center point}{r}{starting angle}{ending angle}{label options}{label}
     \tdplotdrawarc{(O)}{0.2}{0}{\thetavec}{anchor=north}{$\theta$}
 
-%set the rotated coordinate system so the x'-y' plane lies within the
-%"phi plane" of the main coordinate system
-%syntax: \tdplotsetphiplanecoords{\theta}
+%set the rotated coordinate system 
+%syntax: \tdplotsetphiplanecoords{rotation-z-axis}{rotation-y-axis}{rotation-x-axis}
     \tdplotsetthetaplanecoords{\thetavec}
 
 %draw phi arc and label, using rotated coordinate system

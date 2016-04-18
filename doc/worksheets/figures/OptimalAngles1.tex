@@ -1,5 +1,5 @@
 \documentclass[crop,tikz]{standalone} 
-
+\usetikzlibrary{calc}
 \begin{document}
 %----------------------------------------------------------------
 % ANGLES IN TIKZ:
@@ -18,7 +18,7 @@
 %----------------------------------------------------------------
 %set the plot display orientation
 %syntax: \tdplotsetdisplay{\phi_d}{\theta_d}
-\tdplotsetmaincoords{60}{110}
+\tdplotsetmaincoords{0}{0}
 
 %----------------------------------------------------------------
 % POINT DEFINITIONS
@@ -33,7 +33,7 @@
 \pgfmathsetmacro{\GSz}{cos(\GSphivec)*\GSrvec}
 %GS ANTENNA POINTING ROTATION 
 \pgfmathsetmacro{\GSArvec}{0.3}
-\pgfmathsetmacro{\GSAphivec}{30}
+\pgfmathsetmacro{\GSAphivec}{70}
 \pgfmathsetmacro{\GSAthetavec}{80}
 \pgfmathsetmacro{\GSAx}{(sin(\GSAphivec)*\GSArvec)*cos(\GSAthetavec)}
 \pgfmathsetmacro{\GSAy}{(sin(\GSAphivec)*\GSArvec)*sin(\GSAthetavec)}
@@ -47,13 +47,17 @@
 \pgfmathsetmacro{\Dx}{(sin(\Dphivec)*\Drvec)*cos(\Dthetavec)}
 \pgfmathsetmacro{\Dy}{(sin(\Dphivec)*\Drvec)*sin(\Dthetavec)}
 \pgfmathsetmacro{\Dz}{cos(\Dphivec)*\Drvec}
-%GS ANTENNA POINTING ROTATION 
+%DRONE ANTENNA POINTING ROTATION 
 \pgfmathsetmacro{\DArvec}{0.3}
 \pgfmathsetmacro{\DAphivec}{110}
-\pgfmathsetmacro{\DAthetavec}{-20}
+\pgfmathsetmacro{\DAthetavec}{-80}
 \pgfmathsetmacro{\DAx}{(sin(\DAphivec)*\DArvec)*cos(\DAthetavec)}
 \pgfmathsetmacro{\DAy}{(sin(\DAphivec)*\DArvec)*sin(\DAthetavec)}
 \pgfmathsetmacro{\DAz}{cos(\DAphivec)*\DArvec}
+
+%OPTIMAL ANGLES
+\pgfmathsetmacro{\thetaGSopt}{\Dthetavec}
+\pgfmathsetmacro{\thetaDopt}{-180 + \Dthetavec}
 
 %----------------------------------------------------------------
 % ACTUAL FIGURE
@@ -83,28 +87,13 @@
 %draw the main coordinate system axes    
     \draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$x$};
     \draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
-    \draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
-
-%draw the proyections of the LOS
-    \draw[dashed, color=red] (GS) -- (DRONExy);
-    \draw[dashed, color=red] (DRONE) -- (DRONExy);
-    \draw[dashed, color=red] (DRONEx) -- (DRONExy);
-    \draw[dashed, color=red] (DRONEy) -- (DRONExy);
-    \draw[dashed, color=red] (DRONEz) -- (DRONE);
+    %\draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
 
 %draw LOS VECTOR in WORLD COORDINATE
     \draw[-stealth,color=red] (GS) -- (DRONE) node[midway, above] {\small{$\rho$}};
 
-%draw the angle \theta, and label it
-    %syntax: \tdplotdrawarc[coordinate frame, draw options]{center point}{r}{starting angle}{ending angle}{label options}{label}
-    \tdplotdrawarc{(O)}{0.2}{0}{\Dthetavec}{anchor=north}{$\theta$}
-
-%set the rotated coordinate system so the x'-y' plane lies within the
-    %"phi plane" of the main coordinate system
-    %syntax: \tdplotsetphiplanecoords{\theta}
-    \tdplotsetthetaplanecoords{\Dthetavec}
-%draw phi arc and label, using rotated coordinate system
-    \tdplotdrawarc[tdplot_rotated_coords]{(0}{0.3}{\Dphivec}{90}{anchor=south west}{$\phi$}
+%draw X line to compare theta_d
+    \draw[dashed,color=green] (0,\Dy,\Dz) -- (0.8,\Dy,\Dz);
 
 %--------------------
 % Draw GROUND STATION
@@ -114,7 +103,11 @@
     \tdplotsetrotatedcoords{0}{0}{0};
     \tdplotsetrotatedcoordsorigin{(GS)};
     \draw[thick,color=blue,tdplot_rotated_coords,->] (0,0,0) -- (\GSAx,\GSAy,\GSAz);
-   
+    %draw theta_gs
+    \tdplotdrawarc[tdplot_rotated_coords, color=blue,]{(0,0,0)}{0.1}{0}{\GSAthetavec}{anchor= west, color=blue}{$\theta_{gs}$}
+    %draw the angle \theta_opt , and label it
+    %syntax: \tdplotdrawarc[coordinate frame, draw options]{center point}{r}{starting angle}{ending angle}{label options}{label}
+    \tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{0.3}{0}{\thetaGSopt}{anchor= west}{$\theta_{GSopt}$}
 
 %--------------------
 % Draw DRONE
@@ -124,8 +117,11 @@
     \tdplotsetrotatedcoords{0}{0}{0};
     \tdplotsetrotatedcoordsorigin{(D)};
     \draw[thick,color=green,tdplot_rotated_coords,->] (0,0,0) -- (\DAx,\DAy,\DAz);
-
-
+    %draw theta_gs
+    \tdplotdrawarc[tdplot_rotated_coords, color=green,]{(0,0,0)}{0.1}{0}{\DAthetavec}{anchor= west, color=green}{$\theta_{d}$}
+    %draw the angle \theta_opt , and label it
+    %syntax: \tdplotdrawarc[coordinate frame, draw options]{center point}{r}{starting angle}{ending angle}{label options}{label}
+    \tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{0.25}{0}{\thetaDopt}{anchor= west,xshift=0.3cm}{$\theta_{Dopt}$}
 
 \end{tikzpicture}
 \end{document}

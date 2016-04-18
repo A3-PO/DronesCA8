@@ -1,0 +1,5 @@
+With a view to ensure a tracking communication between the Drone and its ground station, and thus, keep a proper angle of the directions of the antennas, a controller has been designed.\par
+
+The actuator to be controlled is a servo motor having the desired characteristics for this application.  Reaching speed, accuracy and weight of the antenna were taken into account to determine the appropriate motor. Based on the above mentioned, a PID controller was chosen to perform this task. (WHY PID ?) (explanation of P I and D?)\par
+
+Can be seen on the figure below, the structure of the controller. Taking as input the error angle (PSIe) and outputting the necessary voltage Vm for the motor, this controller has the final task of converting a value in radian into voltage.\par

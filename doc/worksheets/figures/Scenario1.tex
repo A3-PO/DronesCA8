@@ -1,0 +1,109 @@
+\documentclass[crop,tikz]{standalone} 
+
+\begin{document}
+%----------------------------------------------------------------
+% ANGLES IN TIKZ:
+% PHI : ELEVATION ANGLE from -360 to 360
+%       0 = along +Z axis  
+%       90 = along XY plane
+%       180 = along -Z axis 
+% THETA : POLAR ANGLE from -360 to 360
+%       0 = along +X axis  
+%       90 = along +Y axis
+%       180 = along -X axis 
+%----------------------------------------------------------------
+
+%----------------------------------------------------------------
+% POINT OF VIEW OF THE FIGURE
+%----------------------------------------------------------------
+%set the plot display orientation
+%syntax: \tdplotsetdisplay{\phi_d}{\theta_d}
+\tdplotsetmaincoords{60}{110}
+
+%----------------------------------------------------------------
+% POINT DEFINITIONS
+%----------------------------------------------------------------
+%GROUND STATION POSITION
+\pgfmathsetmacro{\GSrvec}{0}
+\pgfmathsetmacro{\GSphivec}{0}
+\pgfmathsetmacro{\GSthetavec}{0}
+%DRONE POSITION
+\pgfmathsetmacro{\Drvec}{1}
+\pgfmathsetmacro{\Dphivec}{50}
+\pgfmathsetmacro{\Dthetavec}{60}
+
+%GS ANTENNA POINTING VECTOR
+%(END POINT OF THE VECTOR) 
+\pgfmathsetmacro{\GSArvec}{0.3}
+\pgfmathsetmacro{\GSAphivec}{70}
+\pgfmathsetmacro{\GSAthetavec}{170}
+%DRONE ANTENNA POINTING VECTOR
+%(END POINT OF THE VECTOR) 
+\pgfmathsetmacro{\DArvec}{0.8}
+\pgfmathsetmacro{\DAphivec}{60}
+\pgfmathsetmacro{\DAthetavec}{50}
+
+
+%----------------------------------------------------------------
+% ACTUAL FIGURE
+%----------------------------------------------------------------
+\begin{tikzpicture}[scale=5,tdplot_main_coords]
+
+%-----------------------
+%set up some coordinates 
+%-----------------------
+    \coordinate (O) at (0,0,0);
+
+%----------------------------------------------------------------
+% DETERMINE VECTOR COORDINATES    
+%----------------------------------------------------------------
+%determine a coordinate (P) using (r,\phi,\theta) coordinates.  This command
+%also determines (Pxy), (Pxz), and (Pyz): the xy-, xz-, and yz-projections
+%of the point (P).
+%syntax: \tdplotsetcoord{Coordinate name without parentheses}{r}{\phi}{\theta}
+    \tdplotsetcoord{GS}{\GSrvec}{\GSphivec}{\GSthetavec}
+    \tdplotsetcoord{DRONE}{\Drvec}{\Dphivec}{\Dthetavec}
+    \tdplotsetcoord{GS_A}{\GSArvec}{\GSAphivec}{\GSAthetavec}
+    \tdplotsetcoord{D_A}{\DArvec}{\DAphivec}{\DAthetavec}
+
+%----------------------------------------------------------------
+% DRAW FIGURE CONTENTS  
+%----------------------------------------------------------------
+%draw the main coordinate system axes    
+    \draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$x$};
+    \draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
+    \draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
+
+%draw LOS VECTOR
+    \draw[-stealth,color=red] (GS) -- (DRONE) node[midway, above] {\small{$\rho$}};
+
+%draw ANTENNA POINTING VECTORS
+    \draw[-stealth,color=blue] (GS) -- (GS_A);
+    \draw[-stealth,color=green] (DRONE) -- (D_A);
+
+%draw GROUND STATION and DRONE
+    \shade[shading=ball, ball color=blue] (GS) circle (.3mm) node[above left] {\small{$(x_{gs},y_{gs},z_{gs})$}};
+    \shade[shading=ball, ball color=green] (DRONE) circle (.3mm) node[above right] {\small{$(x_{d},y_{d},z_{d})$}};
+
+%draw projection on xy plane, and a connecting line   
+    \draw[dashed, color=red] (O) -- (DRONExy);
+    \draw[dashed, color=red] (DRONE) -- (DRONExy);
+    \draw[dashed, color=red] (DRONEx) -- (DRONExy);
+    \draw[dashed, color=red] (DRONEy) -- (DRONExy);
+    \draw[dashed, color=red] (DRONEz) -- (DRONE);
+
+%draw the angle \theta, and label it
+%syntax: \tdplotdrawarc[coordinate frame, draw options]{center point}{r}{starting angle}{ending angle}{label options}{label}
+    \tdplotdrawarc{(O)}{0.2}{0}{\Dthetavec}{anchor=north}{$\theta$}
+
+%set the rotated coordinate system so the x'-y' plane lies within the
+%"phi plane" of the main coordinate system
+%syntax: \tdplotsetphiplanecoords{\theta}
+    \tdplotsetthetaplanecoords{\Dthetavec}
+
+%draw phi arc and label, using rotated coordinate system
+    \tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{0.3}{\Dphivec}{90}{anchor=south west}{$\phi$}
+
+
+\end{tikzpicture}
+\end{document}

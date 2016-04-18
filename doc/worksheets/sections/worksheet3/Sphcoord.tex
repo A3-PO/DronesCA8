@@ -25,11 +25,18 @@ z &= \rho\sin\phi				&	\phi &=  \text{atan2}\left(\frac{z}{\sqrt{x^2 + y^2}}\rig
 \label{eq:los_distToHorizon}
 \end{align*} 
 
-Our general scenario is going to be something like this:
+\subsection*{Simulation 3D}
+Once the coordinate system has been defined the general scenario of the project will be introduced.
 \begin{figure}[H]
    \centering
-    \includestandalone[width=.60\textwidth]{figures/Angles1} 
+    \includestandalone[width=.60\textwidth]{figures/Scenario1} 
     \label{fig:TEST}
     \caption{TEST}
 \end{figure}
+where ($x_d,y_d,z_d$) are the coordinates that describe the position of the drone and ($x_{gs},y_{gs},z_{gs}$) are the coordinates that describe the position of the ground station.
 
+The \textbf{Line Of Sight} (LOS) distance is then given by the former defined variable $\rho$ and the \textbf{LOS angles} are given by the former defined variables $\theta$ and $\phi$.
+
+The drone and the ground station will have their antennas pointing vector which, generally, will not be equal to the optimal angles. It is precisely our main task in this project to design a controller than drives these antennas to point to each other and, that way, we can get the best performance in the radio-communication link.
+
+These angles will be referred during the rest of the text as \textit{optimal angles} or \textit{reference angles}.

@@ -1,5 +1,15 @@
 \chapter{Telecommunication}\label{ch:telecommunication}
-Our telecommunication.
+
+Drone communication links are generally either radio frequency (RF) or lasercom (optical). Even though both types currently suffer from bandwidth limitations, lasercom could surpass RF in terms of airborne data transfer rate. However, RF will continue to dominate at the lower altitudes for some time into the future because of its better all-weather capability. Additionally, RF links have the advantage of being much more efficient and usually much less complex than lasercom links.
+Data rates for RF links have traditionally been restricted due to limited spectrum and
+minimization of communication system size, weight, and power.
+
+Radio waves are a form of electromagnetic radiation with frequencies ranging from 3 kHz to 300 GHz. The size and profile constraints of small drones cannot facilitate communication links on the low-frequency (large wavelength) end of the spectrum. 
+On the other hand, atmospheric attenuation as well as attenuation by rain, both
+exponential in character, becomes a serious limiting factor to the link distance in
+the millimeter wavelength region (>300MHz). 
+	
+Due to these limitations, small drone communication links are restricted to the very high frequency (VHF), the ultrahigh frequency (UHF), and rarely the super-high frequency (SHF) bands.
 
 \section{Telemetry}
 One of the main goal of drone surveillance is to procure relevant data. This is done by means of telemetry which is an automated communication process. In this process the data collected is transmitted to a receiving equipment for further processing and monitoring. 
@@ -50,19 +60,6 @@ To be noted that the XML document describes the logical ordering of the fields f
 
 
 \section{Compute Link Budget}
-
-\subsection{Frequency}\label{subsec:frequency}
-\paragraph{}
-Drone communication links are generally either radio frequency (RF) or lasercom (optical). Even though both types currently suffer from bandwidth limitations, lasercom could surpass RF in terms of airborne data transfer rate. However, RF will continue to dominate at the lower altitudes for some time into the future because of its better all-weather capability. Additionally, RF links have the advantage of being much more efficient and usually much less complex than lasercom links.
-Data rates for RF links have traditionally been restricted due to limited spectrum and
-minimization of communication system size, weight, and power.
-
-Radio waves are a form of electromagnetic radiation with frequencies ranging from 3 kHz to 300 GHz. The size and profile constraints of small drones cannot facilitate communication links on the low-frequency (large wavelength) end of the spectrum. 
-On the other hand, atmospheric attenuation as well as attenuation by rain, both
-exponential in character, becomes a serious limiting factor to the link distance in
-the millimeter wavelength region (>300MHz). 
-	
-Due to these limitations, small drone communication links are restricted to the very high frequency (VHF), the ultrahigh frequency (UHF), and rarely the super-high frequency (SHF) bands.
 
 \subsection{Line-Of-Sight Propagation}\label{subsec:los_propagation}
 At low frequency (below approximately 3 MHz) radio signals travel as ground waves, which follow the Earth's curvature due to diffraction with the layers of the atmosphere.
@@ -169,3 +166,20 @@ In more detailed a common radio link looks like this:
 \end{equation*}
 
 Note that decibels are logarithmic measurements, so adding decibels is equivalent to multiplying the actual numeric ratios.
+
+
+\section{Fresnel zones}
+Taking into account that the application at hand involves radio communication it is important to talk about the Fresnel zones. Thus, it can be seen in Figure \ref{fig:fresnel_zones} the three Fresnel zones on the transmission path between A and B. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.65]{figures/fresnel_zones.png}
+	\caption{Fresnel zones between transmitter and receiver}
+	\label{fig:fresnel_zones}
+\end{figure}
+
+
+ADD MORE RELEVEANT THINGS 
+
+! ! ! ! \url{https://en.wikipedia.org/wiki/Fresnel_zone}  ! ! ! !
+

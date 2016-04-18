@@ -10,6 +10,8 @@ doc/worksheets/*.tdo
 doc/worksheets/*.fmt
 doc/worksheets/*.bib
 doc/worksheets/*.pdf
+doc/worksheets/master.synctex.gz
+doc/worksheets/master-blx.bib
 
 doc/report/*.aux
 doc/report/*.lof
@@ -21,5 +23,5 @@ doc/report/*.toc
 doc/report/*.tdo
 doc/report/*.fmt
 doc/report/*.pdf
-src/report/master.pdf
-doc/worksheets/master.synctex.gz
+doc/report/master.synctex.gz
+doc/report/master-blx.bib

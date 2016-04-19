@@ -1,8 +1,8 @@
 \subsection*{DC Servomotor}
 
-In the last few years, increasing the distance between the ground station and the UAV has become one of the biggest challenges for the researchers. The communication between the antennas that are installed on both devices needs to be improved. So that, it will be necessary to develop a system able to control both antennas in order to put them pointing at each other.
+The current legislation prevents the people to control UAVs out of the line of sight, which means that the users need to see the aircraft when they are piloting it. However, this legislation will change and it will be possible to control this device using a camera and a system which allows the communication between the ground station and the UAV. This connection between the antennas that are installed on both devices needs, thus, to be improved. So that, it will be necessary to develop a system able to control both antennas to put them pointing at each other.
 
-In order to control both antennas is necessary to use motors which will be able to change its orientation. In this project, the DC servomotor was chosen because it can be either a rotary or a linear actuator which allows a precise control of angular or linear position, velocity and acceleration. The servomotor is basically constituted by a motor coupled to a sensor responsible for the position feedback. As a result, this motor requires a sophisticated controller designed specifically for servomotors.
+In order to control both antennas, it is necessary to use motors which will be able to change its orientation. In this project, the DC servomotor was chosen because it can be either a rotary or a linear actuator which allows a precise control of angular or linear position, velocity and acceleration. The servomotor is basically constituted by a motor coupled to a sensor responsible for the position feedback. As a result, this motor requires a sophisticated controller designed specifically for servomotors.
 
 Generally, a DC motor is an actuator which converts electrical energy to mechanical rotation. In the figure \ref{DC_servomotor_circuit} it is possible to see the model of a DC servomotor. The resistance and the inductance are responsible for the stability of the system. The equations \ref{DC_servomotor_equation1} and \ref{DC_servomotor_equation2} are the time and the frequency description of the circuit.
 
@@ -32,7 +32,7 @@ I_{a}(s)= \frac{V_{a}(s)-V_{b}(s)}{R_{a}+sL_{a}} , I_{a}(s)= G_{I}(V_{a}(s)-V_{b
 \label{model1}
 \end{figure}
 
-On the other hand, the sum of torques applied on the motor depends on the load attached to the motor shaft. The inertial and damping behaviours of the load can be represented as a inertia coefficient, $J_{e}$, and a viscous damping coefficient, $D_{e}$. This total tendency of a force to rotate an object about an axis is represented by $T_{m}$ which is descrived through th equations \ref{torque_time} and \ref{torque_frequency_theta}.
+On the other hand, the sum of torques applied on the motor depends on the load attached to the motor shaft. The inertial and damping behaviours of the load can be represented as a inertia coefficient, $J_{e}$, and a viscous damping coefficient, $D_{e}$. This total tendency of a force to rotate an object about an axis is represented by $T_{m}$ which is described through the equations \ref{torque_time} and \ref{torque_frequency_theta}.
 
 \begin{equation}\label{torque_time}
 T_{m}(t)= J_{e}\frac{\partial^2 \theta_{m}(t)}{\partial t^2}+D_{e}\frac{\mathrm{d} \theta_{m}(t)}{\mathrm{d} t}

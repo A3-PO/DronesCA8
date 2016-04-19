@@ -81,8 +81,8 @@ for i = 1:length(x_drone)
     %% Ground Station definition
     % Polar angle: of the GROUND STATION FRAME [-pi/2:pi/2]. 0 = X-Y plane
     % axis
-    phi_gs = opPhi(i);
-%     phi_gs = pi/8;
+%     phi_gs = opPhi(i);
+    phi_gs = pi/8;
 
     % Azimuthal angle: of the GROUND STATION FRAME [-pi:pi]. 0 = pointing 
     % along X axis
@@ -95,7 +95,7 @@ for i = 1:length(x_drone)
     z_start_gs = z_gs;
     x_end_gs = x_gs + los_d(i)/3*cos(phi_gs)*cos(theta_gs);
     y_end_gs = y_gs + los_d(i)/3*cos(phi_gs)*sin(theta_gs);
-    z_end_gs = z_gs + los_d(i)/3000*sin(phi_gs);
+    z_end_gs = z_gs + los_d(i)/3*sin(phi_gs);
     
     
     %% Drone definition

@@ -25,7 +25,7 @@ z &= \rho\sin\phi				&	\phi &=  \text{atan2}\left(\frac{z}{\sqrt{x^2 + y^2}}\rig
 \label{eq:los_distToHorizon}
 \end{align*} 
 
-\subsection{Simulation 3D}
+\subsection{The Real Scenario}
 \paragraph{} Once the coordinate system has been defined the general scenario of the project will be introduced.
 \begin{figure}[H]
    \centering
@@ -37,7 +37,7 @@ where ($x_d,y_d,z_d$) are the coordinates that describe the position of the dron
 The blue and green arrow represent the \textbf{antenna pointing vectors} of the ground station and drone, respectively.
 
 \paragraph{} The \textbf{Line Of Sight (LOS) distance} is then given by the former defined variable $\rho$ and the \textbf{LOS angles} are given by the former defined variables $\theta$ and $\phi$.
-\paragraph{} These angles will be referred during the rest of the text as \textit{optimal angles} or \textit{reference angles}, being $\theta_{GSopt}$ and $\phi_{GSopt}$ the corresponding to the Ground Station and $\theta_{Dopt}$ and $\phi_{Dopt}$ the analogous to the Drone.
+\paragraph{} These angles will be referred during the rest of the text as \textit{optimal angles} or \textit{reference angles}, being $\theta_{GSopt}$ and $\phi_{GSopt}$ the corresponding to the Ground Station and $\theta_{Dopt}$ and $\phi_{Dopt}$ the analogous to the drone.
 Note that the drone and the ground station antenna pointing vector, generally, will not be equal to the optimal angles. It is precisely our main task in this project to design a controller that drives these antennas to point to each other and, that way, we can get the best performance in the radio-communication link.
 
 

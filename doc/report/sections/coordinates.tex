@@ -57,7 +57,7 @@ Note that the drone and the ground station antenna pointing vector, generally, w
 As the next step, it is required to calculate the \textit{error angles}. This is the difference in both the $\theta$ and $\phi$ direction with respect to the optimal or LOS angles.
 Note that, even though there is a clear relationship between the optimal angles for the ground station and the drone, the value is not exactly the same.
 
-When aproaching this step, transforming the angles $\theta$ to the range $[0:2\pi]$ and $\phi$ to the range has proven to ease the calculations, ending up with the optimal angles described as:
+When aproaching this step, transforming the angles $\theta$ to the range $[0:2\pi]$ and $\phi$ to the range $[0:\pi]$ has proven to ease the calculations, ending up with the optimal angles described as:
 
 \begin{equation}
   \theta_{GSopt}=
@@ -69,9 +69,32 @@ When aproaching this step, transforming the angles $\theta$ to the range $[0:2\p
 
 \begin{equation*}
   \phi_{GSopt}= 
-  \begin{dcases}
-    \dfrac{\pi}{2} - {\rm atan2}\left(y_{d}-y_{gs}, x_{d}-x_{gs}\right),      & \text{if } y_{d}\geq y_{gs}\\
-    \pi + {\rm atan2}\left(y_{gs}-y_{d}, x_{gs}-x_{d}\right), & \text{if } y_{d} < y_{gs}
-    \label{eq1:thetaGS}
-  \end{dcases}
+  \dfrac{\pi}{2} - {\rm atan2}\left(z_{d}-z_{gs}, \sqrt{|x_{gs}-x_{d}|^{2}+|y_{gs}-y_{d}|^{2}}\right)
+  \label{eq:OptGS}
 \end{equation*}
+
+\begin{equation}
+  \theta_{Dopt}=
+  \begin{dcases}
+    \pi + {\rm atan2}\left(y_{d}-y_{gs}, x_{d}-x_{gs}\right), & \text{if } y_{d} \geq y_{gs}\\
+    {\rm atan2}\left(y_{gs}-y_{d}, x_{gs}-x_{d}\right), & \text{if } y_{d} < y_{gs}
+  \end{dcases}
+\end{equation}
+
+\begin{equation*}
+  \phi_{Dopt}= 
+  \dfrac{\pi}{2} + {\rm atan2}\left(z_{d}-z_{gs}, \sqrt{|x_{gs}-x_{d}|^{2}+|y_{gs}-y_{d}|^{2}}\right)
+  \label{eq:OptD}
+\end{equation*}
+
+\paragraph{} Figures "Add 6 figures here" show the mentioned angles in order to fit the equations \ref{eq:OptGs} and \ref{eq:OptD}.
+
+\paragraph{} !!!FIGURES!!
+
+\paragraph{} Finally, the LOS distance will be calculated as expected:
+\begin{equation*}
+  LOS_{distance}= 
+  \sqrt{|x_{gs}-x_{d}|^{2}+|y_{gs}-y_{d}|^{2}+|z_{gs}-z_{d}|^{2}}
+  \label{eq:OptD}
+\end{equation*}
+

@@ -29,7 +29,7 @@ z &= \rho\sin\phi				&	\phi &=  \text{atan2}\left(\frac{z}{\sqrt{x^2 + y^2}}\rig
 \paragraph{} Once the coordinate system has been defined the general scenario of the project will be introduced.
 \begin{figure}[H]
    \centering
-    \includestandalone[width=.60\textwidth]{figures/Scenario1} 
+    \includestandalone[width=.60\textwidth]{../figures/Scenario1} 
     \label{fig:Scenario1}
     \caption{Representation of the general scenario.}
 \end{figure}
@@ -43,12 +43,35 @@ Note that the drone and the ground station antenna pointing vector, generally, w
 
 \begin{figure}[H]
    \centering
-    \includestandalone[width=.60\textwidth]{figures/OptimalAngles1} 
+    \includestandalone[width=.60\textwidth]{../figures/OptimalAngles1} 
     \label{fig:OptimalAngles1}
 \end{figure}
 
 \begin{figure}[H]
    \centering
-    \includestandalone[width=.60\textwidth]{figures/OptimalAngles2} 
+    \includestandalone[width=.60\textwidth]{../figures/OptimalAngles2} 
     \label{fig:OptimalAngles1}  
 \end{figure}
+
+
+As the next step, it is required to calculate the \textit{error angles}. This is the difference in both the $\theta$ and $\phi$ direction with respect to the optimal or LOS angles.
+Note that, even though there is a clear relationship between the optimal angles for the ground station and the drone, the value is not exactly the same.
+
+When aproaching this step, transforming the angles $\theta$ to the range $[0:2\pi]$ and $\phi$ to the range has proven to ease the calculations, ending up with the optimal angles described as:
+
+\begin{equation}
+  \theta_{GSopt}=
+  \begin{dcases}
+    {\rm atan2}\left(y_{d}-y_{gs}, x_{d}-x_{gs}\right), & \text{if } y_{d}\geq y_{gs}\\
+    \pi + {\rm atan2}\left(y_{gs}-y_{d}, x_{gs}-x_{d}\right), & \text{if } y_{d} < y_{gs}
+  \end{dcases}
+\end{equation}
+
+\begin{equation*}
+  \phi_{GSopt}= 
+  \begin{dcases}
+    \dfrac{\pi}{2} - {\rm atan2}\left(y_{d}-y_{gs}, x_{d}-x_{gs}\right),      & \text{if } y_{d}\geq y_{gs}\\
+    \pi + {\rm atan2}\left(y_{gs}-y_{d}, x_{gs}-x_{d}\right), & \text{if } y_{d} < y_{gs}
+    \label{eq1:thetaGS}
+  \end{dcases}
+\end{equation*}

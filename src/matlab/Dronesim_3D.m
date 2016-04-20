@@ -27,9 +27,6 @@ clc;
 
 %% Enviroment parameters
 
-step_x = 1;                 % Step of vector X [km]
-step_y = 1;                 % Step of vector Y [km]
-step_z = 0.01;                 % Step of vector Z [km]
 prec_d = 200;               % Precision of the distance vector
 
 freq = 2.4 * 10^9;          % Frequency [Hz]
@@ -38,7 +35,8 @@ Ptx = 10*log10(1/(10^-3));  % 1mW power transmiter
 
 % Small function to draw arrows
 drawArrow = @(x,y,z) quiver3(x(1),y(1),z(1),x(2)-x(1),y(2)-y(1),...
-    z(2)-z(1),'LineWidth',2.5,'MaxHeadSize',1.5);  
+    z(2)-z(1),'LineWidth',2.5,'MaxHeadSize', 1/norm([x(2)-x(1);y(2)-y(1)...
+    ;z(2)-z(1)]));  
 
 %% Location of GS and DRONE 
 
@@ -48,21 +46,37 @@ y_gs = 0;                  % The position Y of the GROUND STATION
 z_gs = 0;                  % The position Z of the GROUND STATION
 
 % Drone position: DYNAMIC (Circle)
-x_r = 50;
-y_r = 30;
+x_r = 52;
+y_r = 52;
 x_0 = 0;
 y_0 = 0;
 circle_angle = [-pi:0.2:pi];
 x_drone = x_0 + x_r*sin(circle_angle);          % The position X of the DRONE
 y_drone = y_0 + y_r*cos(circle_angle);          % The position Y of the DRONE
-% z_drone = 0.05*ones(1,length(circle_angle));  % The position Z of the DRONE
-z_drone = 0.05*abs(sin(circle_angle));  
+z_drone = 0*ones(1,length(circle_angle));    % The position Z of the DRONE
+% z_drone = 0.05*abs(sin(circle_angle));
+% x_drone = 52*ones(1,50);
+% y_drone = [0:10/50:10];
+% z_drone = 0*ones(1,50);
 
-%% NOT USED AT THE MOMENT
+
+%% WEIRD STUFF
+offsetX = 1;
+offsetY = 0.1;
+offsetZ = 0.1;
+xUpLim = ceil(max([x_gs x_drone]))+offsetX;
+xDownLim = floor(min([z_gs x_drone])) - offsetX;
+xVector = [xDownLim:(xUpLim-xDownLim)/prec_d:xUpLim];    % World Vector Z [km]
+yUpLim = ceil(max([y_gs y_drone])*1000)/1000+offsetY;
+yDownLim = floor(min([y_gs y_drone])*1000)/1000 - offsetY;
+yVector = [yDownLim:(yUpLim-yDownLim)/prec_d:yUpLim];    % World Vector Z [km]
+zUpLim = ceil(max([z_gs z_drone])*1000)/1000 +offsetZ;
+zDownLim = floor(min([z_gs z_drone])*1000)/1000 - offsetZ;
+zVector = [zDownLim:(zUpLim-zDownLim)/prec_d:zUpLim];    % World Vector Z [km]
 % World vectors X, Y, Z [km]
-xVector = [floor(min([x_gs x_drone])):step_x:ceil(max([x_gs x_drone]))];    
-yVector = [floor(min([y_gs y_drone])):step_y:ceil(max([y_gs y_drone]))];    
-zVector = [floor(min([z_gs z_drone])):step_z:ceil(max([z_gs z_drone])*1000)/1000];   
+% xVector = [floor(min([x_gs x_drone])):step_x:ceil(max([x_gs x_drone]))];    
+% yVector = [floor(min([y_gs y_drone])):step_y:ceil(max([y_gs y_drone]))];    
+% zVector = [floor(min([z_gs z_drone])):step_z:ceil(max([z_gs z_drone])*1000)/1000];   
 
 %% Actual calculations
 % LOS distance vector construction
@@ -81,13 +95,13 @@ for i = 1:length(x_drone)
     %% Ground Station definition
     % Polar angle: of the GROUND STATION FRAME [-pi/2:pi/2]. 0 = X-Y plane
     % axis
-%     phi_gs = opPhi(i);
-    phi_gs = pi/8;
+    phi_gs = opPhi(i);
+%     phi_gs = pi/8;
 
     % Azimuthal angle: of the GROUND STATION FRAME [-pi:pi]. 0 = pointing 
     % along X axis
-    theta_gs = opTheta(i);
-%     theta_gs = pi/2;
+%     theta_gs = opTheta(i);
+    theta_gs = 3*pi/2;
     
     % POINTING ANTENNA GS FRAME
     x_start_gs = x_gs;
@@ -104,7 +118,9 @@ for i = 1:length(x_drone)
 %     phi_d = pi/3;
     
     % Azimuthal angle: of the DRONE [-pi:pi]. 0 = pointing along X axis
-    theta_d = -pi + opTheta(i);
+%     theta_d = -pi + opTheta(i);
+    theta_d = -3*pi/2;
+    
     
     % POINTING ANNTENA DRONE FRAME
     x_start_d(i) = x_drone(i);
@@ -113,6 +129,11 @@ for i = 1:length(x_drone)
     x_end_d(i) = x_drone(i) + los_d(i)/3*cos(phi_d)*cos(theta_d);
     y_end_d(i) = y_drone(i) + los_d(i)/3*cos(phi_d)*sin(theta_d);
     z_end_d(i) = z_drone(i) + los_d(i)/3*sin(phi_d);
+    
+%     x_end_d(i) = x_drone(i) + 5*cos(phi_d)*cos(theta_d);
+%     y_end_d(i) = y_drone(i) + 0.02*cos(phi_d)*sin(theta_d);
+%     z_end_d(i) = z_drone(i) + 0*sin(phi_d);
+    
     
     %% Error Angle and Gain calculations
     [alpha_d(i),alpha_gs(i),gamma_d(i),gamma_gs(i)] = LOS_angles_3D(...
@@ -144,7 +165,7 @@ for i = 1:length(x_drone)
         [z_start_d(i),z_end_d(i)]);
     plot3(dxVector(i,:),dyVector(i,:),dzVector(i,:),'LineWidth',1.5);
     plot3(x_drone(1:i),y_drone(1:i),z_drone(1:i));
-%     axis([-100 100 -100 100 0 0.1]);
+%     axis([0 60 0 1 0 0.1]);
     axis([xVector(1) xVector(end) yVector(1) yVector(end) ...
         zVector(1) zVector(end)]);
     grid on;

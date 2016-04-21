@@ -4,7 +4,7 @@
 
 clear all; close all;
 
-% Motor parameters
+%% Motor parameters
 Ra  = 2.6;               % Resistor [Ohm]
 La  = 180*10^(-6);       % Inductance [H]
 Kt  = 7.67*10^(-3);      % Torque constant [N*m/A]
@@ -18,8 +18,8 @@ De  = 7.7*10^(-6);       % Damping behavior [N*m/(r/s)]
 
 % PID parameters
 % The 'Good gain method' has been used to tune the PID
-Kp  =  0.3
+Kp  =  0.3;
 
-Ti  = 0.2 %Kp/Ki
-Td  = Ti/4 %Kd/Kp
+Ti  = 0.2; %Kp/Ki
+Td  = Ti/4; %Kd/Kp
 

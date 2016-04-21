@@ -5,14 +5,14 @@ clear all; close all; clc;
 
 %% Initial values
 % Drone position
-x_drone = 1:1:100;                      % The position X of the DRONE
-y_drone = 50*ones(1,length(x_drone));   % The position Y of the DRONE
+x_drone = 1:1:100;                       % The position X of the DRONE
+y_drone = -50*ones(1,length(x_drone));   % The position Y of the DRONE
 time = linspace(0,100,length(x_drone));
 
 % Ground station position
-x_gs = 10;                 % The position X of the GROUND STATION 
-y_gs = 0;                  % The position Y of the GROUND STATION
-prec_d = 200;              % Precision of the distance vector
+x_gs = 10*ones(1,length(x_drone));      % The position X of the GS 
+y_gs = zeros(1,length(x_drone));        % The position Y of the GS
+prec_d = 200;                           % Precision of the distance vector
 
 % Plant and Controller constants
 Ra  = 25.6;                % Resistor [Ohm]

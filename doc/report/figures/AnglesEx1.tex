@@ -1,0 +1,127 @@
+\documentclass[crop,tikz]{standalone} 
+\usetikzlibrary{calc}
+\begin{document}
+%----------------------------------------------------------------
+% ANGLES IN TIKZ:
+% PHI : ELEVATION ANGLE from -360 to 360
+%       0 = along +Z axis  
+%       90 = along XY plane
+%       180 = along -Z axis 
+% THETA : POLAR ANGLE from -360 to 360
+%       0 = along +X axis  
+%       90 = along +Y axis
+%       180 = along -X axis 
+%----------------------------------------------------------------
+
+%----------------------------------------------------------------
+% POINT OF VIEW OF THE FIGURE
+%----------------------------------------------------------------
+%set the plot display orientation
+%syntax: \tdplotsetdisplay{\phi_d}{\theta_d}
+\tdplotsetmaincoords{0}{0}
+
+%----------------------------------------------------------------
+% POINT DEFINITIONS
+%----------------------------------------------------------------
+%GROUND STATION POSITION RESPECT WORLD 
+\pgfmathsetmacro{\GSrvec}{0}
+\pgfmathsetmacro{\GSphivec}{0}
+\pgfmathsetmacro{\GSthetavec}{0}
+%GROUND STATION POSITION Cartesian
+\pgfmathsetmacro{\GSx}{(sin(\GSphivec)*\GSrvec)*cos(\GSthetavec)}
+\pgfmathsetmacro{\GSy}{(sin(\GSphivec)*\GSrvec)*sin(\GSthetavec)}
+\pgfmathsetmacro{\GSz}{cos(\GSphivec)*\GSrvec}
+%GS ANTENNA POINTING ROTATION 
+\pgfmathsetmacro{\GSArvec}{0.3}
+\pgfmathsetmacro{\GSAphivec}{70}
+\pgfmathsetmacro{\GSAthetavec}{80}
+\pgfmathsetmacro{\GSAx}{(sin(\GSAphivec)*\GSArvec)*cos(\GSAthetavec)}
+\pgfmathsetmacro{\GSAy}{(sin(\GSAphivec)*\GSArvec)*sin(\GSAthetavec)}
+\pgfmathsetmacro{\GSAz}{cos(\GSAphivec)*\GSArvec}
+
+%DRONE POSITION Spherical RESPECT WORLD
+\pgfmathsetmacro{\Drvec}{1}
+\pgfmathsetmacro{\Dphivec}{50}
+\pgfmathsetmacro{\Dthetavec}{60}
+%DRONE POSITION Cartesian
+\pgfmathsetmacro{\Dx}{(sin(\Dphivec)*\Drvec)*cos(\Dthetavec)}
+\pgfmathsetmacro{\Dy}{(sin(\Dphivec)*\Drvec)*sin(\Dthetavec)}
+\pgfmathsetmacro{\Dz}{cos(\Dphivec)*\Drvec}
+%DRONE ANTENNA POINTING ROTATION 
+\pgfmathsetmacro{\DArvec}{0.3}
+\pgfmathsetmacro{\DAphivec}{110}
+\pgfmathsetmacro{\DAthetavec}{-80}
+\pgfmathsetmacro{\DAx}{(sin(\DAphivec)*\DArvec)*cos(\DAthetavec)}
+\pgfmathsetmacro{\DAy}{(sin(\DAphivec)*\DArvec)*sin(\DAthetavec)}
+\pgfmathsetmacro{\DAz}{cos(\DAphivec)*\DArvec}
+
+%OPTIMAL ANGLES
+\pgfmathsetmacro{\thetaGSopt}{\Dthetavec}
+\pgfmathsetmacro{\thetaDopt}{-180 + \Dthetavec}
+
+%----------------------------------------------------------------
+% ACTUAL FIGURE
+%----------------------------------------------------------------
+\begin{tikzpicture}[scale=5,tdplot_main_coords]
+
+%-----------------------
+%set up some coordinates 
+%-----------------------
+    \coordinate (O) at (0,0,0);
+    \coordinate (GS) at (\GSx,\GSy,\GSz);
+    \coordinate (D) at (\Dx,\Dy,\Dz);
+
+%----------------------------------------------------------------
+% DETERMINE VECTOR COORDINATES    
+%----------------------------------------------------------------
+%determine a coordinate (P) using (r,\phi,\theta) coordinates.  This command
+%also determines (Pxy), (Pxz), and (Pyz): the xy-, xz-, and yz-projections
+%of the point (P).
+%syntax: \tdplotsetcoord{Coordinate name without parentheses}{r}{\phi}{\theta}
+    \tdplotsetcoord{GS}{\GSrvec}{\GSphivec}{\GSthetavec};
+    \tdplotsetcoord{DRONE}{\Drvec}{\Dphivec}{\Dthetavec};
+
+%----------------------------------------------------------------
+% DRAW FIGURE CONTENTS  
+%----------------------------------------------------------------
+%draw the main coordinate system axes    
+    \draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$x$};
+    \draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
+    %\draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
+
+%draw LOS VECTOR in WORLD COORDINATE
+    \draw[-stealth,color=red] (GS) -- (DRONE) node[midway, above] {\small{$\rho$}};
+
+%draw X line to compare theta_d
+    \draw[dashed,color=green] (0,\Dy,\Dz) -- (0.8,\Dy,\Dz);
+
+%--------------------
+% Draw GROUND STATION
+%--------------------
+    \shade[shading=ball, ball color=blue] (GS) circle (.3mm) node[above left] {\small{$(x_{gs},y_{gs},z_{gs})$}};
+    %Rotate to pointing antenna frame
+    \tdplotsetrotatedcoords{0}{0}{0};
+    \tdplotsetrotatedcoordsorigin{(GS)};
+    \draw[thick,color=blue,tdplot_rotated_coords,->] (0,0,0) -- (\GSAx,\GSAy,\GSAz);
+    %draw theta_gs
+    \tdplotdrawarc[tdplot_rotated_coords, color=blue,]{(0,0,0)}{0.1}{0}{\GSAthetavec}{anchor= west, color=blue}{$\theta_{gs}$}
+    %draw the angle \theta_opt , and label it
+    %syntax: \tdplotdrawarc[coordinate frame, draw options]{center point}{r}{starting angle}{ending angle}{label options}{label}
+    \tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{0.3}{0}{\thetaGSopt}{anchor= west}{$\theta_{GSopt}$}
+
+%--------------------
+% Draw DRONE
+%--------------------
+    \shade[shading=ball, ball color=green] (DRONE) circle (.3mm) node[above right] {\small{$(x_{d},y_{d},z_{d})$}};
+    %Rotate to pointing antenna frame
+    \tdplotsetrotatedcoords{0}{0}{0};
+    \tdplotsetrotatedcoordsorigin{(D)};
+    \draw[thick,color=green,tdplot_rotated_coords,->] (0,0,0) -- (\DAx,\DAy,\DAz);
+    %draw theta_gs
+    \tdplotdrawarc[tdplot_rotated_coords, color=green,]{(0,0,0)}{0.1}{0}{\DAthetavec}{anchor= west, color=green}{$\theta_{d}$}
+    %draw the angle \theta_opt , and label it
+    %syntax: \tdplotdrawarc[coordinate frame, draw options]{center point}{r}{starting angle}{ending angle}{label options}{label}
+    \tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{0.25}{0}{\thetaDopt}{anchor= west,xshift=0.3cm}{$\theta_{Dopt}$}
+
+\end{tikzpicture}
+\end{document}

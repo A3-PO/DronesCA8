@@ -94,10 +94,10 @@ opt_phi_gs = pi/2 - atan2(z_drone-z_gs,sqrt(abs(x_gs-x_drone)^2+...
 opt_phi_d = pi/2 + atan2(z_drone-z_gs,sqrt(abs(x_gs-x_drone)^2+...
     abs(y_gs-y_drone)^2));
 
-gamma_gs = abs(phi_gs - opt_phi_gs)
-gamma_gs = rad2deg(gamma_gs)
-gamma_d = abs(phi_d- opt_phi_d)
-gamma_d = rad2deg(gamma_d)
+gamma_gs = abs(phi_gs - opt_phi_gs);
+gamma_gs = rad2deg(gamma_gs);
+gamma_d = abs(phi_d- opt_phi_d);
+gamma_d = rad2deg(gamma_d);
 
 end
 

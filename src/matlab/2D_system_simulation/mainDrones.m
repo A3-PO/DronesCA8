@@ -10,7 +10,7 @@ y_drone = 50*ones(1,length(x_drone));   % The position Y of the DRONE
 time = linspace(0,100,length(x_drone));
 
 % Ground station position
-x_gs = 10;                 % The position X of the GROUND STATION 
+x_gs = 0;                 % The position X of the GROUND STATION 
 y_gs = 0;                  % The position Y of the GROUND STATION
 prec_d = 200;              % Precision of the distance vector
 

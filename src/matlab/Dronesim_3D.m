@@ -28,6 +28,12 @@ clc;
 %% Enviroment parameters
 
 prec_d = 200;               % Precision of the distance vector
+opPhi = [];
+opTheta = [];
+theta_gs_vec = [];
+theta_d_vec = [];
+phi_gs_vec = [];
+phi_d_vec = [];
 
 freq = 2.4 * 10^9;          % Frequency [Hz]
 lambda = 3*10^8/freq;       % Wavelength [m]
@@ -35,8 +41,7 @@ Ptx = 10*log10(1/(10^-3));  % 1mW power transmiter
 
 % Small function to draw arrows
 drawArrow = @(x,y,z) quiver3(x(1),y(1),z(1),x(2)-x(1),y(2)-y(1),...
-    z(2)-z(1),'LineWidth',2.5,'MaxHeadSize', 1/norm([x(2)-x(1);y(2)-y(1)...
-    ;z(2)-z(1)]));  
+    z(2)-z(1),'LineWidth',2.5,'MaxHeadSize',1.5);  
 
 %% Location of GS and DRONE 
 
@@ -51,18 +56,19 @@ y_r = 52;
 x_0 = 0;
 y_0 = 0;
 circle_angle = [-pi:0.2:pi];
-x_drone = x_0 + x_r*sin(circle_angle);          % The position X of the DRONE
-y_drone = y_0 + y_r*cos(circle_angle);          % The position Y of the DRONE
-z_drone = 0*ones(1,length(circle_angle));    % The position Z of the DRONE
+
+% x_drone = x_0 + x_r*sin(circle_angle);          % The position X of the DRONE
+% y_drone = y_0 + y_r*cos(circle_angle);          % The position Y of the DRONE
+% z_drone = 0*ones(1,length(circle_angle));    % The position Z of the DRONE
 % z_drone = 0.05*abs(sin(circle_angle));
-% x_drone = 52*ones(1,50);
-% y_drone = [0:10/50:10];
-% z_drone = 0*ones(1,50);
+x_drone = 1:2:50;                     % The position X of the DRONE
+y_drone = 50*ones(1,length(x_drone));   % The position Y of the DRONE
+z_drone = 0.1*ones(1,length(x_drone));  % The position Z of the DRONE
 
 
 %% WEIRD STUFF
-offsetX = 1;
-offsetY = 0.1;
+offsetX = 10;
+offsetY = 10;
 offsetZ = 0.1;
 xUpLim = ceil(max([x_gs x_drone]))+offsetX;
 xDownLim = floor(min([z_gs x_drone])) - offsetX;
@@ -88,6 +94,7 @@ end
 
 % Optimal Angles
 for i = 1:length(x_drone)
+%     % Just to make the trick
     opTheta(i) = atan2(y_drone(i)-y_gs,x_drone(i)-x_gs);
     opPhi(i) = atan2(z_drone(i)-z_gs,sqrt(abs(x_gs-x_drone(i))^2+...
         abs(y_gs-y_drone(i))^2));
@@ -95,40 +102,44 @@ for i = 1:length(x_drone)
     %% Ground Station definition
     % Polar angle: of the GROUND STATION FRAME [-pi/2:pi/2]. 0 = X-Y plane
     % axis
-    phi_gs = opPhi(i);
-%     phi_gs = pi/8;
+%     phi_gs = opPhi(i);
+    phi_gs = 0;
+    phi_gs_vec = [phi_gs_vec phi_gs];
 
     % Azimuthal angle: of the GROUND STATION FRAME [-pi:pi]. 0 = pointing 
     % along X axis
 %     theta_gs = opTheta(i);
-    theta_gs = 3*pi/2;
+    theta_gs = 0;
+    theta_gs_vec = [theta_gs_vec theta_gs];
     
     % POINTING ANTENNA GS FRAME
     x_start_gs = x_gs;
     y_start_gs = y_gs;
     z_start_gs = z_gs;
-    x_end_gs = x_gs + los_d(i)/3*cos(phi_gs)*cos(theta_gs);
-    y_end_gs = y_gs + los_d(i)/3*cos(phi_gs)*sin(theta_gs);
-    z_end_gs = z_gs + los_d(i)/3*sin(phi_gs);
+    x_end_gs = x_gs + los_d(i)/5*cos(phi_gs)*cos(theta_gs);
+    y_end_gs = y_gs + los_d(i)/5*cos(phi_gs)*sin(theta_gs);
+    z_end_gs = z_gs + los_d(i)/5*sin(phi_gs);
     
     
     %% Drone definition
     % Polar angle: of the DRONE [-pi/2:pi/2]. 0 = X-Y plane
-    phi_d = -opPhi(i);
-%     phi_d = pi/3;
+%     phi_d = -opPhi(i)
+    phi_d = 0;
+    phi_d_vec = [phi_d_vec phi_d];
     
     % Azimuthal angle: of the DRONE [-pi:pi]. 0 = pointing along X axis
-%     theta_d = -pi + opTheta(i);
-    theta_d = -3*pi/2;
+%     theta_d = pi + opTheta(i);
+    theta_d = 0;
+    theta_d_vec = [theta_d_vec theta_d];
     
     
     % POINTING ANNTENA DRONE FRAME
     x_start_d(i) = x_drone(i);
     y_start_d(i) = y_drone(i);
     z_start_d(i) = z_drone(i);
-    x_end_d(i) = x_drone(i) + los_d(i)/3*cos(phi_d)*cos(theta_d);
-    y_end_d(i) = y_drone(i) + los_d(i)/3*cos(phi_d)*sin(theta_d);
-    z_end_d(i) = z_drone(i) + los_d(i)/3*sin(phi_d);
+    x_end_d(i) = x_drone(i) + los_d(i)/5*cos(phi_d)*cos(theta_d);
+    y_end_d(i) = y_drone(i) + los_d(i)/5*cos(phi_d)*sin(theta_d);
+    z_end_d(i) = z_drone(i) + los_d(i)/5*sin(phi_d);
     
 %     x_end_d(i) = x_drone(i) + 5*cos(phi_d)*cos(theta_d);
 %     y_end_d(i) = y_drone(i) + 0.02*cos(phi_d)*sin(theta_d);
@@ -136,7 +147,8 @@ for i = 1:length(x_drone)
     
     
     %% Error Angle and Gain calculations
-    [alpha_d(i),alpha_gs(i),gamma_d(i),gamma_gs(i)] = LOS_angles_3D(...
+    [alpha_d(i),alpha_gs(i),gamma_d(i),gamma_gs(i),opt_theta_gs(i),...
+    opt_theta_d(i),opt_phi_gs(i),opt_phi_d(i)] = LOS_angles_3D(...
         x_drone(i),y_drone(i),z_drone(i),theta_d,phi_d,x_gs,y_gs,z_gs,...
         theta_gs,phi_gs);
     fprintf('Alpha Drone: %.3f | Gamma Drone: %.3f\n',alpha_d(i),...
@@ -211,7 +223,7 @@ for i = 1:length(x_drone)
     title(str);
     xlabel('Time sample');
     ylabel('Relative Amplitude');
-    axis([0 length(x_drone) 0 180]);    
+%     axis([0 length(x_drone) 0 180]);    
     subplot(212);
     plot(alpha_gs);
     hold on;
@@ -221,9 +233,9 @@ for i = 1:length(x_drone)
     title(str);
     xlabel('Time sample');
     ylabel('Relative Amplitude');
-    axis([0 length(x_drone) 0 180]);
+%     axis([0 length(x_drone) 0 180]);
     pause(0.1);
-    movegui(f3,'east');
+    movegui(f3,'northwest');
     
     % Plotting error angles for GS
     f4 = figure(4);
@@ -249,7 +261,65 @@ for i = 1:length(x_drone)
     ylabel('Relative Amplitude');
     xlim([0 length(x_drone)]);
     pause(0.1);
-    movegui(f4,'west');    
+    movegui(f4,'southwest');    
+    
+    f5 = figure(5);
+    clf(f5);   
+    subplot(211);
+    hold on;
+    plot(theta_gs_vec);
+    plot(opt_theta_gs);
+    grid on;
+    grid minor;    
+    str = sprintf('Theta GS and Optimal');
+    title(str);
+    xlabel('Time sample');
+    ylabel('Relative Amplitude');
+    legend('Theta','Optimal','Location','Best');
+    xlim([0 length(x_drone)]);   
+    subplot(212);
+    hold on;
+    plot(phi_gs_vec);
+    plot(opt_phi_gs);
+    grid on;
+    grid minor;
+    str = sprintf('Phi GS and Optimal');
+    title(str);
+    xlabel('Time sample');
+    ylabel('Relative Amplitude');
+    legend('Phi','Optimal','Location','Best');
+    xlim([0 length(x_drone)]);
+    pause(0.1);
+    movegui(f5,'northeast'); 
+    
+    f6 = figure(6);
+    clf(f6);   
+    subplot(211);
+    hold on;
+    plot(theta_d_vec);
+    plot(opt_theta_d);
+    grid on;
+    grid minor;    
+    str = sprintf('Theta Drone and Optimal');
+    title(str);
+    xlabel('Time sample');
+    ylabel('Relative Amplitude');
+    legend('Theta','Optimal','Location','Best');
+    xlim([0 length(x_drone)]);   
+    subplot(212);
+    hold on;
+    plot(phi_d_vec);
+    plot(opt_phi_d);
+    grid on;
+    grid minor;
+    str = sprintf('Phi GS and Optimal');
+    title(str);
+    xlabel('Time sample');
+    ylabel('Relative Amplitude');
+    legend('Phi','Optimal','Location','Best');
+    xlim([0 length(x_drone)]);
+    pause(0.1); 
+    movegui(f6,'southeast'); 
 end
 
 % Save movie and figures

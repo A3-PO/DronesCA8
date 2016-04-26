@@ -41,8 +41,8 @@ Ptx = 10*log10(1/(10^-3));  % 1mW power transmiter
 
 %% Initial values
 % Drone position
-x_drone = 0:vel_dx:5;                   % The position X of the DRONE
-y_drone = 5*ones(1,length(x_drone));    % The position Y of the DRONE
+x_drone = 0:vel_dx:50;                   % The position X of the DRONE
+y_drone = 50*ones(1,length(x_drone));    % The position Y of the DRONE
 z_drone = 0.1*ones(1,length(x_drone));  % The position Z of the DRONE
 
 % Ground station position

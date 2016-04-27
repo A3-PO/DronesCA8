@@ -108,7 +108,7 @@ z_end_d = z_drone + los_d/10*sin(phi_d);
 [alpha_d,alpha_gs,gamma_d,gamma_gs] = LOS_angles_3D(x_drone,y_drone,...
     z_drone,theta_d,phi_d,x_gs,y_gs,z_gs,theta_gs,phi_gs);
 
-[GSgain,angle3db_gs] = GSantenna3(alpha_gs,gamma_gs,0);
+[GSgain,angle3db_gs] = GSantenna3(alpha_gs,gamma_gs,1);
 [Dgain,angle3db_d] = GSantenna3(alpha_d,gamma_d,0);
 
 Lfs = -20*log10(4*pi*los_d*10^3/lambda);

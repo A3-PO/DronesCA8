@@ -21,7 +21,7 @@ clear all; close all; clc;
 
 %% VARIABLES
 % Simulation variables
-plotr = 0;
+plotr = 1;
 fsampling = 5;              % Sampling frequency. Samples per second
 vel_dx = 0.1/fsampling;     % Velocity of the drone per m/sample
 prec_d = 200;               % Precision of the distance vector
@@ -42,8 +42,8 @@ Ptx = 10*log10(1/(10^-3));  % 1mW power transmiter
 
 %% Initial values
 % Drone position
-x_drone = 0:vel_dx:1;                   % The position X of the DRONE
-y_drone = 1*ones(1,length(x_drone));    % The position Y of the DRONE
+x_drone = 0:vel_dx:10;                   % The position X of the DRONE
+y_drone = 10*ones(1,length(x_drone));    % The position Y of the DRONE
 z_drone = 0.1*ones(1,length(x_drone));  % The position Z of the DRONE
 
 % Ground station position
@@ -288,4 +288,4 @@ str = sprintf('Prx');
 title(str);
 xlabel('Time sample');
 ylabel('Relative Amplitude');
-axis([0 length(x_drone) -140 -40]);
+axis([1 length(x_drone) -140 -40]);

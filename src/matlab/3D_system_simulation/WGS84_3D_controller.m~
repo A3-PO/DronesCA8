@@ -47,19 +47,17 @@ lat_end_d = 56.15166933;
 long_init_d = 8.26781273;
 long_end_d = 10.20492554;
 
-lat_drone = lat_init_d:(lat_end_d-lat_init_d)/prec_geo:lat_end_d;       
-long_drone = long_init_d:(long_end_d - long_init_d)/prec_geo:long_end_d;   
-alt_drone = 100*ones(1,length(lat_drone));   
+lat_drone = lat_init_d:(lat_end_d-lat_init_d)/prec_geo:lat_end_d;        % The position X of the DRONE
+long_drone = long_init_d:(long_end_d - long_init_d)/prec_geo:long_end_d;   % The position Y of the DRONE
+alt_drone = 100*ones(1,length(lat_drone));   % The position Z of the DRONE
 
-% Drone deviation
 yaw = 0;
 pitch = 0;
 roll = 0;
 for i = 2:length(lat_drone)
-    yaw = [yaw yaw(end)+5*round(rand(1))];
-    pitch = [pitch pitch(end)+5*round(rand(1))];
-    roll = [roll roll(end)+5*round(rand(1))];
-end
+yaw = [yaw yaw(end)];
+pitch = 0*ones(1,length(lat_drone));
+roll = 0*ones(1,length(lat_drone));
 
 % Ground station position
 lat_gs = 56.08736247 * ones(1,length(lat_drone));       % The position X of the GROUND STATION 

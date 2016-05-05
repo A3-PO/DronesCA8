@@ -1,5 +1,5 @@
 \newpage
-\section{2D System Simulation}
+\section{2D System Simulation}\label{sec:2d_sim}
 As it is mentioned earlier, the whole idea of the project is to make the antenna of the drone and the ground stations point at each others. To achieve this its needed to know the angle of the antennas and their optimal angle, which is when they point exactly at each others. To be able to point the antennas towards each others two controllers will be implemented. In this section an algorithm to calculate the optimal angle for the 2d system will be introduced. Furthermore the implementation of the controllers will be explained.
 \subsection{Scenario}
 In Figure \ref{fig:drone_gs} it is shown a scenario where the antennas of both GS and drone change after some periods of time. In the top part of the figure it shows the angle of the drone ($\theta_{d}$) and the optimal angle ($\theta_{opt\_d}$) that the antenna want to be in. In the lower part of the figure it shows the angle of the ground station ($\theta_{gs}$) and the optimal angle ($\theta_{opt\_gs}$). 

@@ -34,27 +34,37 @@
 \cleardoublepage
 %mainmatter
 \pagenumbering{arabic} %use arabic page numbering in the mainmatter
-\input{sections/introduction.tex}
-%\input{sections/scenario.tex}
 
-\input{sections/hardwaresetup.tex}
-\input{sections/uas.tex}
-\input{sections/servo_motor.tex}
-%\input{sections/controller_system.tex}
+\input{sections/intro/introduction.tex}
+%\input{sections/intro/scenario.tex}
 
-\input{sections/telecommunication.tex}
-\input{sections/telemetry.tex}
-\input{sections/mavlink.tex}
-\input{sections/link_budget.tex}
-\input{sections/fresnel.tex}
+\input{sections/uas/uas.tex}
+\input{sections/uas/drone.tex}
+\input{sections/uas/ground_station.tex}
+\input{sections/uas/antennas.tex}
+\input{sections/uas/servo_motor.tex}
+\input{sections/uas/tech_scenario.tex}
 
-\input{sections/simulation.tex}
-\input{sections/coordinates.tex}
-\input{sections/drone_model.tex}
-\input{sections/pid_tunning.tex}
-\input{sections/controller_simulation.tex}
-\input{sections/2d_system_simulation.tex}
-\input{sections/los_map.tex}
+\input{sections/frames/frames.tex}
+\input{sections/frames/coordinates.tex}
+\input{sections/frames/ned.tex}
+\input{sections/frames/body.tex}
+
+\input{sections/tele/telecommunication.tex}
+\input{sections/tele/telemetry.tex}
+\input{sections/tele/mavlink.tex}
+\input{sections/tele/link_budget.tex}
+\input{sections/tele/fresnel.tex}
+
+\input{sections/model/model.tex}
+\input{sections/model/servo_model.tex}
+\input{sections/model/controller.tex}
+\input{sections/model/controller_system.tex}
+
+\input{sections/sim/simulation.tex}
+\input{sections/sim/2d_system_simulation.tex}
+\input{sections/sim/3d_system_simulation.tex}
+\input{sections/sim/los_map.tex}
 
 \input{sections/verification.tex}
 \input{sections/discussion.tex}

@@ -1,4 +1,4 @@
-function [body] = geo2ecef(geoPos)
+function [bodyPos] = ned2body(nedPos,yaw,pitch,roll)
 %**************************************************************************
 %
 % ned2body.m - CA8 - DRONES
@@ -21,24 +21,24 @@ function [body] = geo2ecef(geoPos)
 %
 %**************************************************************************
 
-lat = geoPos(1);
-long = geoPos(2);
-alt = geoPos(3);
+xNED = nedPos(1);
+yNED = nedPos(2);
+zNED = nedPos(3);
 
-% WGS84 Parameters
-Rea = 6378137;                  % Semi-major axis [Meters]
-f = 1/298.257223563;            % Flattening factor
-Reb = Rea*(1-f);                 % Semi-minor axis [Meters]
-e = sqrt(Rea^2 - Reb^2)/Rea;    % First eccentricity
-Me = (Rea*(1-e^2))/((1-e^2*sind(lat)^2)^(3/2));          % Meridian radius of curvature
-Ne = Rea/(sqrt(1 - e^2*sind(lat)^2));        % Prime vertical radius of curvature
+% PSI = YAW = Rotate on the Z axis
+% THETA = PITCH = Rotate on the Y axis
+% PHI = ROLL = Rotate on the X axis
+psi = yaw;
+theta = pitch;
+phi = roll;
+
+% Rotation Matrix from ECEF to local NED
+Rbnv = [             cosd(theta)*cosd(psi)                                       cosd(theta)*sind(psi)                                -sind(theta);
+        sind(phi)*sind(theta)*cosd(psi) - cosd(phi)*sind(psi)       sind(phi)*sind(theta)*sind(psi) + cosd(phi)*cosd(psi)     sind(phi)*cosd(theta);
+        cosd(phi)*sind(theta)*cosd(psi) + sind(phi)*sind(psi)       cosd(phi)*sind(theta)*sind(psi) - sind(phi)*cosd(psi)     cosd(phi)*cosd(theta)];
 
 % Transformation
-xECEF = (Ne + alt)*cosd(lat)*cosd(long);
-yECEF = (Ne + alt)*cosd(lat)*sind(long);
-zECEF = (Ne*(1-e^2) + alt)*sind(lat);
-
-ecefPos = [xECEF; yECEF; zECEF];
+bodyPos = Rbnv*nedPos;
 
 end
 

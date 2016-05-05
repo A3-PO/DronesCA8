@@ -33,13 +33,15 @@ op_theta_d = rad2deg(op_theta_d.Data);    % optimal drone angle
 op_theta_gs = rad2deg(op_theta_gs.Data);  % optimal ground station angle
 
 %% Plot current vs optimal angle of drone and ground station 
-figure(1)
+fig1 = figure(1)
 subplot(2,1,1);plot(t,theta_d,'LineWidth',2);hold on;plot(t,op_theta_d,'r');
-xlabel('Time [s]');ylabel('Angle [deg]');legend('Drone','Optimal');
+xlabel('Time [s]');ylabel('Angle [deg]');legend('Drone \theta_{d}','Optimal \theta\_opt\_d');
 title('Drone angle vs optimal');grid on;
 subplot(2,1,2);plot(t,theta_gs,'LineWidth',2);hold on;plot(t,op_theta_gs,'r');
-xlabel('Time [s]');ylabel('Angle [deg]');legend('Ground station','Optimal');
+xlabel('Time [s]');ylabel('Angle [deg]');legend('Ground station \theta_{gs}','Optimal \theta\_opt\_gs');
 title('Ground station angle vs optimal');grid on;
+
+print(fig1,'gs_angle_vs_optimal','-dpng')
 
 %% 2D Simulation of drone-groundstation scenario    
 % for i=1:length(x_drone)

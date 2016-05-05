@@ -21,7 +21,7 @@ clear all; close all; clc;
 
 %% VARIABLES
 % Simulation variables
-plotr = 1;
+plotr = 0;
 fsampling = 5;              % Sampling frequency. Samples per second
 vel_dx = 0.1/fsampling;     % Velocity of the drone per m/sample
 prec_d = 200;               % Precision of the distance vector

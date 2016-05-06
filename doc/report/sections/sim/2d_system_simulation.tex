@@ -37,10 +37,7 @@ The first block of the system takes as inputs the parameters below and computes 
 	\item Groundstation's antenna angle ($\theta_{gs}$)
 	\item Drone position ($x_{drone},y_{drone}$)
 	\item Groundstation position ($x_{gs},y_{gs}$)
-\end{itemize}
-
-\subsection{Optimal angle}
-The right part of figure \ref{fig:2d_system} shows two PD controllers where each of them have a servomotor connected. The PD controller is explained in chapter \ref{dcmotor_circuit} and the servo is explained in chapter \ref{ch:simulation}. The left block have two output which is $\theta\_opt\_d$ and $\theta\_opt\_gs$. They are the optimal angle that the drone and ground station need to have to be pointing at each other (Figure \ref{fig:drone_gs}). The PD controllers purpose is to make the servomotors rotate the antenna to the correct position. The PD controllers take the error ($\theta\_opt\_d$ -$\theta\_d$) for the drone and ($\theta\_opt\_gs$ - $\theta\_gs$) for the ground station, and make the servomotors rotate the antenna to the correct position. When the error is zero, which means the input to the PD controller is zero, the antennas are at the correct angles.   
+\end{itemize}   
 
 \subsection{Simulations}
 To verify that the 2D simulations work, some simulations are made. In the first simulation the drone is simulated by starting in (0,50) and going to (100,50), which means that the drone is only moving in the x-axis. The simulation is shown in figure \ref{fig:gs_angle_vs_optimal} where the top one is showing the Drone angle versus the optimal angle and the bottom one is showing the ground station angle versus the optimal one. 

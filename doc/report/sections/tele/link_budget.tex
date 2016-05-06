@@ -21,7 +21,7 @@ First, we are going to derive a general expression and after that apply it to a 
     	\includegraphics[scale=4]{figures/GeometricDistanceToHorizonOneTriangle.png} 
 		\label{fig:GeometricDist_general}}
 	\hfill
-    \subfigure[Geometrical distance from drone to GNS]{
+    \subfigure[Geometrical distance from drone to GS]{
     	\includegraphics[scale=0.3]{figures/GeometricDistanceToHorizonTwoTriangle.png} 
     	\label{fig:GeometricDist_droneBasestation}}
     \hfill
@@ -67,7 +67,7 @@ Explanation of the parameters.
 	\item f - frequency of signal [Hz]
 \end{itemize}
 
-Considering our problem we will look into the worst case scenario, which would be maximum distance between the GNS and the drone. 
+Considering our problem we will look into the worst case scenario, which would be maximum distance between the GS and the drone. 
 \begin{equation*}
 	Assume 
 	\begin{cases}
@@ -89,7 +89,7 @@ Computing path loss:
 	 &= 20\lg\left (\frac{4\pi \sqrt{x^2+y^2}}{\frac{3}{10f}} \right) dB\\ 
 	 &= 20\lg\left (\frac{4\pi \sqrt{x^2+y^2}\cdot 10f}{ 3} \right) dB
 \end{align*}
-\noindent \textbf{As an observation, higher distance value between GNS and drone will result in higher path loss.}
+\noindent \textbf{As an observation, higher distance value between GS and drone will result in higher path loss.}
 
 \subsection{Link Budget}\label{subsec:link_budget}
 \paragraph{}

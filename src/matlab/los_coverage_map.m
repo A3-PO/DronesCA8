@@ -1,5 +1,8 @@
 %% 832 Group Project - LOS Coverage Map
 clear all; close all; clc;
+% Input parameters
+h_g = input('Input ground station altitude: ');   % [m] GS altitude 
+h_d = input('Input drone altitude: ');            % [m] DRONE altitude
 
 %% 1. Import map as a Web Map Service (WMS)
 % Denmark latitudes and longitudes
@@ -13,13 +16,11 @@ gtopo30Layer.Lonlim = lonDK;
 oceanColor = [0 170 255];
 [A, R] = wmsread(gtopo30Layer, 'BackgroundColor', oceanColor);
 
-%% 2. LOS distance from ground station to drone (2 points)
-h_g = input('Input ground station altitude: ');   % [m] station altitude 
-h_d = input('Input drone altitude: ');            % [m] drone altitude
+%% 2. LOS Distance from GS to DRONE (2 points)
 figure
 worldmap(latDK, lonDK)
 geoshow(A, R, 'DisplayType', 'texturemap')
-title({'GTOPO30 Elevation Model',gtopo30Layer.LayerTitle})
+title('Denmark Topographic Map')
 [lat lon] = inputm(2);      % input 2 points on map to get lat and lon
 Z = double(A(:,:,1));       % map layer
 e_g = ltln2val(Z, R, lat(1), lon(1)) + h_g; % [m] terrain + station height
@@ -32,7 +33,7 @@ figure
 worldmap(latDK, lonDK)
 geoshow(A, R, 'DisplayType', 'texturemap')
 demcmap(double(A))   
-title({'GTOPO30 Elevation Model',gtopo30Layer.LayerTitle})
+title('Denmark Topographic Map')
 [latG lonG] = inputm(1);  % input ground station location
 Re = earthRadius('meters');
 [vmap, vmapl] = viewshed(Z, R, latG(1), lonG(1), h_g, h_d, ...
@@ -42,7 +43,7 @@ for i=1:3
 end
 map = A + vis;
 geoshow(map, R, 'DisplayType', 'texturemap')
-title({'LOS COVERAGE MAP',gtopo30Layer.LayerTitle})
+title('LOS Coverage Map')
 plotm(latG,lonG,'bo')
 
 

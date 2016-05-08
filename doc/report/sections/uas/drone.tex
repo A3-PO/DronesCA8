@@ -1,13 +1,35 @@
-\section{Drone}\label{sec:drone}
+\section{Unmanned Aerial Vehicle}\label{sec:drone}
 
+The unmanned aerial vehicle, UAV, commonly called drone, is an aircraft which doesn't need to be piloted by a person inside of the vehicle. Thus, it is necessary a system which is able to control the UAV in order to accomplish the desired task. This system gives parcial or total automony to the aircraft, which means that it can be, respectively, a remote control from an operator or onboard computers which are prepared to act depending on the situation with which the drone is dealing. The remote control from an operator can be either on the ground, in a GS, either in the air, in another vehicles.
 
-			! !	! ! ! ! ! ! ! ! ! ! ! !
-! ! ! ! ! ! ! WE NEED SOMETHING HERE ! ! ! ! ! !
-			! ! ! ! ! ! ! ! ! ! ! ! ! !
+Nowadays, the use of UAVs is increasing due to the huge number of tasks that these vehicles can perform. Surveying, mapping, aerial photography, monitoring and militar applications are some examples of tasks are executed by these aircrafts.  
 
+In this project, the operator will be on the ground and, therefore, the UAV will be controlled by a couple of tracking antennas. One antenna will be on board and the other will be on the ground in a base station which will receive and send information from and to the aircraft. 
+
+The UAV that was chosen for this project is the eBee (figure \ref{fig:ebee}). This aircraft was developed by a company called senseFly and has three different models: eBee, the mapping drone, eBee RTK, the survey-grade mapping drone, eBee Ag, the precision agriculture drone. Each model was created for a specific task, however the main caracteristics are common to every model. The shape of these aircrafts is the same as the airplanes, the weight varies between 0.69 Kg and 0.73 Kg, the wingspan is 96 cm and they are made of EPP foam and carbon. They are equipped with a 11,1 V baterry, which allows a flight time between 40 and 50 minutes, and with a WX camera (18.2 MP) which can be changed by another cameras like the thermoMAP. The thermoMAP captures thermal videos and still images which allows the creation of a full thermal map of a site. The Ground Sampling Distance (GSD), that is the distance measured on the ground between the center of two consecutive pixels when the picture was taken from the air, varies between 1.5 cm and 2 cm (maximum values). 
+ 
 \begin{figure}[H]
   \centering
   \includegraphics[width=4in]{figures/eBee.png}
   \caption[The professional mapping drone eBee]
    {The professional mapping drone \textit{eBee} \href{https://www.sensefly.com/drones/ebee.html}{(www.sensefly.com)}. Fully autonomous drone to capture high-resolution aerial photos that can transform into accurate 2D orthomosaics \& 3D models.}
+   \label{fig:ebee}
 \end{figure}
+
+The accuracy related to the position depends on the existance of ground control points (GCP). In the table \ref{accuracy} it is described the vertical and horizontal accuracy for each model.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c||c|c|c|}
+		\hline
+		Parameter & eBee & eBee RTK & eBee Ag\\ \hline\hline
+		Horizontal Accuracy (with GCPs) & Down to 3 cm & - & Down to 4 cm\\ \hline
+		Vertical Accuracy (with GCPs) & Down to 5 cm & - & Down to 7 cm\\ \hline
+		Horizontal Accuracy (without GCPs) & 1-5 m & Down to 3 cm & 1-5 m\\ \hline
+		Vertical Accuracy (without GCPs) & 1-5 m & Down to 5 cm & 1-5 m\\ \hline
+	\end{tabular}
+	\caption{Table of horizontal and vertical accuracy of the eBee models}
+	\label{accuracy}
+\end{table}
+
+The software that is responsible for controlling and planning the flight is called eMotion. This is a ground station software and is supplied with every eBee model.

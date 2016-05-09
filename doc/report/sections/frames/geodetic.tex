@@ -1,4 +1,21 @@
 \section{Geodetic Coordinates}\label{sec:coord}
+
+\begin{figure}[H]
+   \centering
+    \includegraphics[width=.60\textwidth]{figures/GeoTemp1.png} 
+    \label{fig:Geodetic}
+    \caption{Geodetic, ECEF and local NED Frames.}  
+\end{figure}
+
+\paragraph{}The geodetic coordinate system is widely used in GPS-based navigation. Note that it is not an usual Cartesian coordinate system but a system that
+characterizes a coordinate point near the earth’s surface in terms of longitude, latitude, and altitude (or height), which are respectively denoted by $\lambda$, $\varphi$, and h (yellow lines) in figure \ref{fig:Geodetic}.
+
+\paragraph{}The \textit{World Geodetic System} is a standard used in cartography, geodesy and navigation. This standard sets reference points based on an ellipsoidal model of the earth and a gravitational equipotential surface that defines the nominal sea level. Its latest version is \textbf{WGS84}, and that is the one used throughout this project. 
+
+The longitude measures the rotational angle (ranging from $-180$ to $180$ degrees) between the Prime Meridian and the measured point. The latitude measures the angle (ranging from $-90$ to $90$ degrees) between the equatorial plane and the normal of the reference ellipsoid that passes through the measured point. The height (or altitude) is the local vertical distance between the measured point and the reference ellipsoid.
+
+\subsection{The Real Scenario}
+
 IN PROGRESS...UNDER CONSTRUCTION
 
 In mathematics, a spherical coordinate system is a coordinate system for three-dimensional space where the position of a point is specified by three numbers: the \textbf{radial distance} of that point from a fixed origin ($\rho$), its \textbf{polar angle} measured from a fixed zenith direction ($\theta$), and the \textbf{elevation angle} of its orthogonal projection on a reference plane, measured from a fixed reference direction on that plane ($\phi$).
@@ -20,13 +37,12 @@ In mathematics, a spherical coordinate system is a coordinate system for three-d
 
 These constraints define the conversion between Cartesian and Spherical coordinates such that:
 \begin{align*}
-x &=  \rho\cos\phi\cos\theta	&	\rho &= \sqrt{x^{2} + y^{2} + z^{2}} \\
-y &= \rho\cos\phi\sin\theta		&	\theta &= \text{atan2}\left(\frac{y}{x}\right)\\
-z &= \rho\sin\phi				&	\phi &=  \text{atan2}\left(\frac{z}{\sqrt{x^2 + y^2}}\right)
+x &=  \rho\cos\phi\cos\theta  & \rho &= \sqrt{x^{2} + y^{2} + z^{2}} \\
+y &= \rho\cos\phi\sin\theta   & \theta &= \text{atan2}\left(\frac{y}{x}\right)\\
+z &= \rho\sin\phi       & \phi &=  \text{atan2}\left(\frac{z}{\sqrt{x^2 + y^2}}\right)
 \label{eq:los_distToHorizon}
 \end{align*} 
 
-\subsection{The Real Scenario}
 THIS SHOULD BE SOMEWHERE ELSE...MAYBE ANGLE SYSTEM ?????
 \paragraph{} Once the coordinate system has been defined the general scenario of the project will be introduced.
 \begin{figure}[H]
@@ -52,7 +68,7 @@ Note that the drone and the ground station antenna pointing vector, generally, w
 \begin{figure}[H]
    \centering
     \includestandalone[width=.60\textwidth]{figures/OptimalAngles2} 
-    \label{fig:OptimalAngles1}  
+    \label{fig:OptimalAngles2}  
 \end{figure}
 
 

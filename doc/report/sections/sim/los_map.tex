@@ -1,5 +1,5 @@
 \section{LOS Coverage Map}\label{sec:los_map}
-A point of interest of the project is to know if there is Line-Of-Sight (LOS) between the ground station (GS) and the drone. This has been done on a topographic map which takes into account:
+A point of interest of the project is to know if there is Line-Of-Sight (LOS) between the ground station (GS) and the UAV. This has been done on a topographic map which takes into account:
 
 \begin{itemize}
 	\item Terrain elevation
@@ -21,12 +21,12 @@ In this sense, a MATLAB script has been addressed which at first imports a Web M
 \end{figure}
 
 \subsection{LOS Distance}
-Given the map and the topographic data in Figure \ref{fig:dk_map}, now it is possible to input the desired points for the GS and the drone. As mentioned above, there are some parameters taken into account for plotting the LOS distance between the two points of interest. This distance can be seen in Figure \ref{fig:los_2p}, where the LOS is lost after 45 kilometers from the GS.
+Given the map and the topographic data in Figure \ref{fig:dk_map}, now it is possible to input the desired points for the GS and the UAV. As mentioned above, there are some parameters taken into account for plotting the LOS distance between the two points of interest. This distance can be seen in Figure \ref{fig:los_2p}, where the LOS is lost after 45 kilometers from the GS.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.75]{figures/los_2p.jpg}
-	\caption{LOS between GS and drone \\ X axis - LOS distance [m] \\ Y axis - Altitude [m]}
+	\caption{LOS between GS and UAV \\ X axis - LOS distance [m] \\ Y axis - Altitude [m]}
    	\label{fig:los_2p}
 \end{figure}
 
@@ -40,7 +40,7 @@ Moving further, for the same map (Figure \ref{fig:dk_map}) a location for the GS
    	\label{fig:los_area}
 \end{figure}
 
-It can be observed from Figure \ref{fig:los_area} that in some areas of the map there is no visibility, due to higher terrain elevation. This can be overcome by increasing the GS and/or drone altitude, such that we achieve LOS.  
+It can be observed from Figure \ref{fig:los_area} that in some areas of the map there is no visibility, due to higher terrain elevation. This can be overcome by increasing the GS and/or UAV altitude, such that we achieve LOS.  
 
 
 !!! !!! !!! NEED EXAMPLE OF COAST !!! !!! !!!
@@ -49,7 +49,7 @@ It can be observed from Figure \ref{fig:los_area} that in some areas of the map 
 Taking into account that a MATLAB script has been achieved, a thourough working principle has to be addressed in the following steps:
 \begin{itemize}
 	\item Aquire topography map 
-	\item Input GS and drone altitudes
-	\item Choose locations for GS and drone on (click) the map in order to plot LOS distance
+	\item Input GS and UAV altitudes
+	\item Choose locations for GS and UAV on (click) the map in order to plot LOS distance
 	\item Choose (click) location of the GS in order to plot LOS coverage map
 \end{itemize}

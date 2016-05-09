@@ -1,78 +1,11 @@
 \section{Controller}\label{sec:controller}
 
-With a view to ensure a tracking communication between the Drone and its ground station, and thus, keep a proper angle of the directions of the antennas, a controller has been designed.\par
 
-The actuator to be controlled is a servo motor having the desired characteristics for this application.  Reaching speed, accuracy and weight of the antenna were taken into account to determine the appropriate motor. Based on the above mentioned, different controllers were tested as the PID, PI, PD and P controllers.\par 	
-As a first try, a PID controller was designed using the Good Gain method. Later, a comparison between P, PI, PD and PID controllers was perform with the Simulink box of the same name, in order to choose the most effective one for our application.\par 	
+\input{sections/model/pid_theory.tex}
 
-\begin{Large}
-  \begin{itemize}
-   \item PID tuning using the Good Gain method
-  \end{itemize}
-\end{Large}
+\input{sections/model/tuning_methods.tex}
 
-Can be seen on the figure below, the structure of the controller. Taking as input the error angle \textbf{$\phi_{e}$} and outputting the necessary voltage \textit{Vm} for the motor, this controller has the final task of converting a value in radian into voltage.\par
+\input{sections/model/controllers_comparison.tex}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.5]{figures/PID_2D.png}
-  \caption[LABEL] {Block diagram of the PID controller}
-\end{figure}
-  
-Different methods can be used to tune a PID controller as the, Zieggler-Nichols, Skogestad and Good Gain method, having in common the same goal : Get a fast response and provide a good stability. The Good Gain is the method that has been chosen as a first try to determine the parameters of the controller.\par
-  
-The steps of the experiment based method, the Good Gain, are the followings :\par 
-  
-\begin{itemize}
-  \item Set Ti = inf , Td = 0 and Kp = 1
-\end{itemize}
-  
-  \begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.4]{figures/GG1.jpg}
-    \caption[LABEL] {Good Gain method : stage 1} 
-  \end{figure}
-  
+\input{sections/model/conclusion_controller.tex}
 
-\begin{itemize}
-  \item Increase or decrease Kp until finding a slight overshoot but a well damped response
-\end{itemize}
-  
-  \begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.4]{figures/GG2.jpg}
-    \caption[LABEL] {Good Gain method : stage 2} 
-  \end{figure}
-    
-    
-\begin{itemize}
-  \item Set Ti = 1.5$\cdot T_{out}$
-\end{itemize}
-  
-  \begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.4]{figures/GG3.jpg}
-    \caption[LABEL] {Good Gain method : stage 3} 
-  \end{figure}
-    
-    
-\begin{itemize}
-  \item Set Td = $\frac{Ti}{4}$
-\end{itemize}
-  
-  \begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.4]{figures/GG4.jpg}
-    \caption[LABEL] {Good Gain method : stage 4} 
-  \end{figure}
-    
-    
-\begin{itemize}
-  \item Play arround with the values
-\end{itemize}
-  
-  \begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.4]{figures/GG5.jpg}
-    \caption[LABEL] {Good Gain method : stage 5} 
-  \end{figure}

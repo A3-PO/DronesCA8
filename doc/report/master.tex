@@ -46,8 +46,8 @@
 \input{sections/uas/tech_scenario.tex}
 
 \input{sections/frames/frames.tex}
-\input{sections/frames/coordinates.tex}
-\input{sections/frames/wgs.tex}
+\input{sections/frames/geodetic.tex}
+\input{sections/frames/ecef.tex}
 \input{sections/frames/ned.tex}
 \input{sections/frames/body.tex}
 
@@ -59,8 +59,8 @@
 
 \input{sections/model/model.tex}
 \input{sections/model/servo_model.tex}
+\input{sections/model/optimal_angle.tex}
 \input{sections/model/controller.tex}
-\input{sections/model/controller_system.tex}
 
 \input{sections/sim/simulation.tex}
 \input{sections/sim/2d_system_simulation.tex}
@@ -73,6 +73,8 @@
 
 \printbibliography[heading=bibintoc]
 \label{bib:mybiblio}
-%\appendix
-%\input{sections/appAname.tex}
+
+\appendix
+\input{sections/model/controller_system.tex}
+
 \end{document}

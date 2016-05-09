@@ -28,13 +28,6 @@ roll = [1,0,0];
 prec = 180;
 
 % Rotation Angles
-yawIni = 0;
-yawEnd = 90;
-pitchIni = 0;
-pitchEnd = 1;
-rollIni = 0;
-rollEnd = 360;
-
 yawAngle = 0;
 pitchAngle = 0;
 rollAngle = 0;
@@ -43,10 +36,6 @@ for i = 2:prec
     pitchAngle = [pitchAngle pitchAngle(end)+round(-1 + 2*rand(1))];
     rollAngle = [rollAngle rollAngle(end)+round(-1 + 2*rand(1))];
 end
-
-% yawAngle = yawIni:(yawEnd-yawIni)/prec:yawEnd;
-% pitchAngle = pitchIni:(pitchEnd-pitchIni)/prec:pitchEnd;
-% rollAngle = rollIni:(rollEnd-rollIni)/prec:rollEnd;
 
 % Define arrow
 figure(2);

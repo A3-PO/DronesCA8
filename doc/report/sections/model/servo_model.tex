@@ -1,6 +1,8 @@
-\section{DC Servomotor}\label{servo_model}
+e\section{Moving angle system}\label{servo_model}
 
-As was presented in the section \ref{sec:servo_motor}, the servomotor can be divided in two different groups: the DC motor and the servomechanism.
+The use of a tracking antenna system requires a device to change the orientation of the antennas. The moving angle system is performing this task and is composed of a DC servomotor for the rotational movement of the antennas, a gear to have a precise change of the angles, and a sensor to keep track of the actual angle and compare it to the reference.
+
+The DC servomotor, presented in the section \ref{sec:servo_motor}, can be divided in two different groups: the DC motor and the servomechanism.
 
 DC motor is an actuator which converts electrical energy to mechanical rotation. In the figure \ref{dcmotor_circuit} it is possible to see the model of this motor. DC motors are a type of motors which were built to receive a voltage as an input and, after converting this voltage, to apply a specific velocity on its shaft. In other words, DC motors are able to control the velocity of the shaft.
 
@@ -102,3 +104,33 @@ V_{b}(s)= sK_{b}\theta_{m}(s)
 \caption{Model of a servomotor}
 \label{model4}
 \end{figure}
+
+A gear was added to the servomotor to reduce its speed and obtain a better precision for the output angle. Time to reach the desired angle and required precision were taken into account to choose a gear ratio.
+For instance, a gear ratio of 0.001 means that 1000 rotations of the motor will result in a single rotation at the end of the system.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{figures/servo+gear.png}
+\caption{Servomotor with a gear}
+\label{model4}
+\end{figure}
+
+In order to control the antennas, the input of the system is the desired angle. However, the servomotor requires an electrical signal input (voltage) that represents the rotations needed. This voltage is the output of a controller whose input is a comparison between the reference angle and the actual one (error angle). The current angle of the system is given by a sensor.
+Assuming that the sensor is not ideal, the disturbances caused by it can be simulated by adding a white noise to the feedback of the plant.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{figures/servo+gear+noise.png}
+\caption{Limitation of the voltage into the servomotor and its gear}
+\label{model4}
+\end{figure}
+
+High voltage value can be the consequence of the controller trying to reach the desired value in the fastest way. With a view to procure a range of voltage that the motor can handle and prevent any damage, a saturation box was included.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{figures/complete_model.png}
+\caption{Model of the Moving Angle System}
+\label{model4}
+\end{figure}
+

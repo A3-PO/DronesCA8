@@ -21,6 +21,8 @@ worldmap(latDK, lonDK) % this doesnt work anymore...
 geoshow(A, R, 'DisplayType', 'texturemap')
 title('Denmark Topographic Map')
 [lat lon] = inputm(2);  % Input 2 points on map to get lat and lon
+plotm(lat(1),lon(1),'ro','LineWidth',3);textm(lat(1),lon(1),'GS');
+plotm(lat(2),lon(2),'bo','LineWidth',3);textm(lat(2),lon(2),'UAV');
 Z = double(A(:,:,1));   
 e_g = ltln2val(Z, R, lat(1), lon(1)) + h_g; % [m] terrain + station height
 e_d = ltln2val(Z, R, lat(2), lon(2)) + h_d; % [m] terrain + drone height
@@ -38,5 +40,6 @@ Re = earthRadius('meters');
 [vmap, vmapl] = viewshed(Z, R, latG(1), lonG(1), h_g, h_d, ...
     'AGL', 'AGL', Re, 4/3*Re);
 plotm(latG,lonG,'ro','LineWidth',4);  % GS point on map
+textm(latG,lonG,'GS');
 contourm(vmap,R,'LineColor','w');     % LOS area from the GS
 title('LOS COVERAGE MAP')

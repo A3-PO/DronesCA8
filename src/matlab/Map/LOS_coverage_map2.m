@@ -3,8 +3,8 @@ clear all; close all; clc;
 % Input parameters
 h_g = input('Input ground station altitude: ');   % [m] GS altitude 
 h_d = input('Input drone altitude: ');            % [m] DRONE altitude
-latlim = [43 58];   % map latitude limits
-lonlim = [3 18];    % map longitude limits
+latlim = [45 55];   % map latitude limits
+lonlim = [5 15];    % map longitude limits
 
 %% 1. Import map as a Web Map Service (WMS)
 layers = wmsfind('nasa.network*elev', 'SearchField', 'serverurl');
@@ -23,6 +23,8 @@ geoshow(ZA, RA, 'DisplayType', 'texturemap')
 demcmap(double(ZA))
 title({'Central Europe Topographic Map'});
 [lat lon] = inputm(2);                       % Input GS and UAV locations
+plotm(lat(1),lon(1),'ro','LineWidth',3);textm(lat(1),lon(1),'GS');
+plotm(lat(2),lon(2),'bo','LineWidth',3);textm(lat(2),lon(2),'UAV');
 los2(Z, RA, lat(1), lon(1), lat(2), lon(2), h_g, h_d)
 e_g = ltln2val(Z, RA, lat(1), lon(1)) + h_g; % [m] terrain + station height
 e_d = ltln2val(Z, RA, lat(2), lon(2)) + h_d; % [m] terrain + drone height
@@ -38,6 +40,7 @@ title('Central Europe Topographic Map')
 Re = earthRadius('meters');
 [vmap, vmapl] = viewshed(Z, RA, latG(1), lonG(1), h_g, h_d, ...
     'AGL', 'AGL', Re, 4/3*Re);
-plotm(latG,lonG,'ro','LineWidth',4);    % GS point on map
+plotm(latG,lonG,'ro','LineWidth',3);    % GS point on map
+textm(latG,lonG,'GS');
 contourm(vmap,RA,'LineColor','w');      % LOS area from the GS
 title('LOS COVERAGE MAP');

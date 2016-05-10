@@ -18,60 +18,55 @@ Can be seen on the figure below, the structure of the controller. Taking as inpu
 Different methods can be used to tune a PID controller as the, Zieggler-Nichols, Skogestad and Good Gain method, having in common the same goal : Get a fast response and provide a good stability. The Good Gain is the method that has been chosen as a first try to determine the parameters of the controller.\par
   
 The steps of the experiment based method, the Good Gain, are the followings :\par 
+ 
+
+\begin{figure}[H]
+\hfill
+\subfigure[Set Ti = inf , Td = 0 and Kp = 1]{
+\includegraphics[scale=0.3]{figures/GG1.jpg}
+\label{fig:subim11}}
+\hfill
+\subfigure[Increase or decrease Kp until finding a slight overshoot but a well damped response]{
+\includegraphics[scale=0.3]{figures/GG2.jpg}
+\label{fig:subim12}}
+\hfill
+\subfigure[Set Ti = 1.5$\cdot T_{out}$]{
+\includegraphics[scale=0.29]{figures/GG3.jpg}
+\label{fig:subim12}}
+\hfill
+\subfigure[Set Td = $\frac{Ti}{4}$]{
+\includegraphics[scale=0.31]{figures/GG4.jpg}
+\label{fig:subim12}}
+\hfill
+\subfigure[Final settings]{
+\includegraphics[scale=0.3]{figures/GG5.jpg}
+\label{fig:subim12}}
+\hfill
+
+\caption{Step response for the different steps of the Good Gain method}
+
+\end{figure}
+
+
+
   
-\begin{itemize}
-  \item Set Ti = inf , Td = 0 and Kp = 1
-\end{itemize}
-  
-  \begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.4]{figures/GG1.jpg}
-    \caption[LABEL] {Good Gain method : stage 1} 
-  \end{figure}
+\subsubsection{PID Simulink box}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{figures/PID_window.png}
+\caption{Inside of the PID box}
+\label{dcmotor_circuit}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{figures/PID_param.png}
+\caption{Tuning tool of the PID box}
+\label{dcmotor_circuit}
+\end{figure}
   
 
-\begin{itemize}
-  \item Increase or decrease Kp until finding a slight overshoot but a well damped response
-\end{itemize}
-  
-  \begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.4]{figures/GG2.jpg}
-    \caption[LABEL] {Good Gain method : stage 2} 
-  \end{figure}
-    
-    
-\begin{itemize}
-  \item Set Ti = 1.5$\cdot T_{out}$
-\end{itemize}
-  
-  \begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.4]{figures/GG3.jpg}
-    \caption[LABEL] {Good Gain method : stage 3} 
-  \end{figure}
-    
-    
-\begin{itemize}
-  \item Set Td = $\frac{Ti}{4}$
-\end{itemize}
-  
-  \begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.4]{figures/GG4.jpg}
-    \caption[LABEL] {Good Gain method : stage 4} 
-  \end{figure}
-    
-    
-\begin{itemize}
-  \item Play arround with the values
-\end{itemize}
-  
-  \begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.4]{figures/GG5.jpg}
-    \caption[LABEL] {Good Gain method : stage 5} 
-  \end{figure} 
-  
-  
-  \subsubsection{PID Simulink box}
+

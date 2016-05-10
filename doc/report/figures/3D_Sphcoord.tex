@@ -6,7 +6,7 @@
 %-----------------
 %set the plot display orientation
 %synatax: \tdplotsetdisplay{\phi_d}{\theta_d}
-\tdplotsetmaincoords{60}{110}
+\tdplotsetmaincoords{60}{130}
 
 %define polar coordinates for some vector
 %TODO: look into using 3d spherical coordinate system
@@ -29,13 +29,13 @@
 %draw figure contents
 %--------------------
 %draw the main coordinate system axes    
-    \draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$x$};
-    \draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
-    \draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
+    \draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$y$};
+    \draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$x$};
+    \draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south]{$-z$};
 
 
 %draw a vector from origin to point (P) 
-    \draw[-stealth,color=red] (O) -- (P) node[midway, above left] {\small{$\rho$}}node[above right] {$P$};
+    \draw[-stealth,color=red] (O) -- (P) node[midway,  above right] {\small{$\rho$}}node[above right] {$P$};
 
 %draw projection on xy plane, and a connecting line   
     \draw[dashed, color=red] (O) -- (Pxy);
@@ -43,14 +43,14 @@
 
 %draw the angle \theta, and label it
 %syntax: \tdplotdrawarc[coordinate frame, draw options]{center point}{r}{starting angle}{ending angle}{label options}{label}
-    \tdplotdrawarc{(O)}{0.2}{0}{\thetavec}{anchor=north}{$\theta$}
+    \tdplotdrawarc[->]{(O)}{0.2}{0}{\thetavec}{anchor=north}{$\theta$}
 
 %set the rotated coordinate system 
 %syntax: \tdplotsetphiplanecoords{rotation-z-axis}{rotation-y-axis}{rotation-x-axis}
     \tdplotsetthetaplanecoords{\thetavec}
 
 %draw phi arc and label, using rotated coordinate system
-    \tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{0.3}{\phivec}{90}{anchor=south west}{$\phi$}
+    \tdplotdrawarc[tdplot_rotated_coords,->]{(0,0,0)}{0.3}{90}{\phivec}{anchor=west, xshift=0.3cm}{$\phi$}
 
 
 \end{tikzpicture}

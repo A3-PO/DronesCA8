@@ -1,1 +1,77 @@
-\section{Body}\label{sec:body}
+\section{Body Coordinate System}\label{sec:body}
+This frame has also the origin in the center of gravity of the UAV, however, unlike the vehicle-carried NED, the axis rotate with the craft:
+\begin{itemize}
+\item{The origin (\textbf{$O_{b}$}) is located at the center of gravity of the UAV.}
+\item{The X-axis (\textbf{$X_{b}$}) points in the forward direction.}
+\item{The Y-axis (\textbf{$Y_{b}$}) points towards starboard, the right side of the UAV.}
+\item{The Z-axis (\textbf{$Z_{b}$}) points downward, set by the right-hand rule.}
+\end{itemize}
+\begin{figure}[H]
+   \centering
+    \includegraphics[width=.70\textwidth]{figures/NEDtemp1.png} 
+    \caption{Body, vehicle-carried and local NED Frames.}  
+    \label{fig:NED1}
+\end{figure}
+
+\section{Transformations}\label{sec:body}
+
+\subsection*{From NED to Body}
+\paragraph{} The orientation of a Cartesian coordinate system with respect to another can be described in three successive Euler rotations, usually performed about each of the three cartesian axes consequently. During this work we will mainly focus on the transformation between the vehicle-carried NED and the body frame. In order to do this we will follow a specific rotation sequence, moving the reference frame to the referred frame by a Z-Y-X (also called 3-2-1) sequence. These three Euler angles are also known respectively as \textbf{yaw}($\psi$), \textbf{pitch}($\xi$) and \textbf{roll}($\gamma$).
+
+\paragraph{} This way, the transformation from the vehicle-carried NED frame to the Body frame is given by:
+\begin{align}
+\textbf{P}_{b} = \textbf{R}_{b/nv}\textbf{P}_{nv}
+\end{align}
+where \textbf{R}$_{b/nv}$ is the \textbf{Rotation matrix}: 
+\begin{align*}
+\textbf{R}_{b/nv} =
+\begin{bmatrix}
+\cos(\xi)\cos(\psi) & \cos(\xi)\sin(\psi) & -\sin(\xi)\\
+\sin(\gamma)\sin(\xi)\cos(\psi) - \cos(\gamma)\sin(\psi) & \sin(\gamma)\sin(\xi)\sin(\psi) + \cos(\gamma)\cos(\psi) & \sin(\gamma)\cos(\xi)\\
+\cos\gamma)\sin(\xi)\cos(\psi) + \sin(\gamma)\sin(\psi) & \cos(\gamma)\sin(\xi)\sin(\psi) - \sin(\gamma)\cos(\psi) & \cos(\gamma)\cos(\xi)
+\end{bmatrix}
+\end{align*}
+
+\paragraph{} However, even though the local NED cordinates is what is necesary to transform to the Body frame, the primary resource that we will have is the GPS position measurements of each of our devices (Ground station and UAV). Therefore a transformation from Geodetic Coordinate Frame to local NED frame is in due. The ECEF Coordinate Frame will be used as an intermediate step during this process.
+
+\subsection*{From Geodetic to ECEF}
+Being \textbf{P}$_{g}$ the position of a point in the geodetic system such that is defined by its latitude, longitude and height:
+\begin{align}
+\textbf{P}_{g} = 
+\begin{bmatrix}
+\lambda \\
+\varphi\\
+h
+\end{bmatrix}
+\end{align}
+By using the parameters set by the \textbf{WGS84} standard in section \ref{sec:coord} the tranformed point, \textbf{P}$_{e}$ will be given by
+\begin{align}
+\textbf{P}_{e} = 
+\begin{bmatrix}
+\lambda \\
+\varphi\\
+h
+\end{bmatrix}
+=
+\begin{bmatrix}
+(N_{E}+h)\cos(\varphi)\cos(\lambda) \\
+(N_{E}+h)\cos(\varphi)\sin(\lambda) \\
+(N_{E}(1-\textbf{e}^2)+h)\sin(\varphi)
+\end{bmatrix}
+\end{align}
+
+\subsection*{From ECEF to NED}
+Analogusly to the former transformation, we have
+\begin{align}
+\textbf{P}_{n} = \textbf{R}_{n/e}\left(\textbf{P}_{e} - \textbf{P}_{e,ref}\right)
+\end{align}
+where \textbf{P}$_{e,ref}$ is the position of the origin of the local NED frame in ECEF frame and \textbf{R}$_{n/e}$ is the \textbf{Rotation matrix} given by: 
+\begin{align*}
+\textbf{R}_{n/e} =
+\begin{bmatrix}
+-\sin(\varphi_{ref})\cos(\lambda_{ref}) & -\sin(\varphi_{ref})\sin(\lambda_{ref}) & \cos(\varphi_{ref})\\
+-\sin(\lambda_{ref}) & \cos(\lambda_{ref}) & 0\\
+-\cos(\varphi_{ref})\cos(\lambda_{ref}) & -\cos(\varphi_{ref})\sin(\lambda_{ref}) & -\sin(\varphi_{ref})\\
+\end{bmatrix}
+\end{align*}
+where $\varphi_{ref}$ and $\lambda_{ref}$ are the latitude and longitude of the reference point in Geodetic frame.

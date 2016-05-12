@@ -1,8 +1,6 @@
 \section{Link Budget}\label{subsec:link_budget}
 \paragraph{}
-As the next step, once it is assured that there is Line-Of-Sight connection, it is important to calculate what is termed as the \textbf{Link budget}. This calculation is an accounting of all the gains and losses from the transmitter, through the medium,  to the receiver in a telecommunication system. It includes terms on it for the attenuation of the transmitted signal due to propagation, as well as the antenna gains, feedline and miscellaneous losses. It is precesily by assesing the link budget that is possible to design the system so that it meets the requirements and performs as desired.
-
-Its general form is:
+As the next step, once it is assured that there is Line-Of-Sight connection, it is important to calculate what is termed as the \textbf{Link budget}. This calculation is an accounting of all the gains and losses from the transmitter, through the medium,  to the receiver in a telecommunication system. It includes terms on it for the attenuation of the transmitted signal due to propagation, as well as the antenna gains, feedline and miscellaneous losses. It is precesily by assesing the link budget that is possible to design the system so that it meets the requirements and performs as desired. Its general form is:
 \begin{equation*}\label{eq:link_budget} 
  		\text{Received Power (dBm)} = \text{Transmitted Power (dBm)} + \text{Gains (dB)} - \text{Losses(dB)}
 \end{equation*}
@@ -15,14 +13,18 @@ And, in a more detailed look, it can divided down into:
 where,
 \begin{itemize}
 \item{$P_{RX} =$ Recieved power [dBm]}
-\item{$P_{RX} =$ Recieved power [dBm]}
-\item{$P_{RX} =$ Recieved power [dBm]}
-\item{$P_{RX} =$ Recieved power [dBm]}
-\item{$P_{RX} =$ Recieved power [dBm]}
+\item{$P_{TX} =$ Transmitter Output Power [dBm]}
+\item{$G_{TX} =$ Transmitter Antenna Gain [dBi]}
+\item{$L_{TX} =$ Transmitter feeder and associated losses (transmission line, connectors, etc.) [dB]}
+\item{$L_{FS} =$ \textbf{Free Space Loss} or \textbf{Path Loss} [dB]}
+\item{$L_{M} =$ Miscellaneus signal propagation losses (fading margin, polarization mismatch, other losses...) [dB]} 
+\item{$G_{RX} =$ Receiver Antenna Gain [dBi]}
+\item{$L_{RX} =$ Receiver feeder and associated losses (transmission line, connectors, etc.) [dB]} 
 \end{itemize}
-Note that decibels are logarithmic measurements, so adding decibels is equivalent to multiplying the actual numeric ratios.
+Note that losses are treated as possitive numbers and therefore they appear as a substraction in the link budget. Also highlight that decibels are logarithmic measurements, so adding decibels is equivalent to multiplying the actual numeric ratios.
+\paragraph{}Later on Chapter 6 some of these parameters would be evaluated within a range of values in order to see how they limit the performance of the system. 
 
-\subsection{Free Space Path Loss}\label{subsec:path_loss}
+\subsection{Free Space Loss}\label{subsec:path_loss}
 \paragraph{}
 The free space path loss (FSPL) is the loss in signal strength that occurs when an electromagnetic wave travels over a line of sight path in free space. In these circumstances there are no obstacles that might cause the signal to be reflected, refracted, or that might cause additional attenuation. Equation \ref{eq:path_losses} represents the loss in signal strength in dB.
 
@@ -67,3 +69,8 @@ Computing path loss:
 	 &= 20\lg\left (\frac{4\pi \sqrt{x^2+y^2}\cdot 10f}{ 3} \right) dB
 \end{align*}
 \noindent \textbf{As an observation, higher distance value between GS and UAV will result in higher path loss.}
+
+\subsection*{Effect of multipath propagation}
+\paragraph{}For true free space propagation such as that encountered for satellites there will be no noticeable reflections and there will only be one major path. However for terrestrial systems, the signal may reach the receiver via a number of different paths as a result of reflections, etc that will occur as a result of the objects around the path. Buildings, trees, objects around the office and home can all cause reflections that will result in the signal variations.
+
+\paragraph{}The multipath propagation will cause variations of the signal strength when compared to that calculated from the free space path loss. If the signals arrive in phase with the direct signal, then the reflected signals will tend to reinforce the direct signal. If they are out of phase, then they will tend to cancel the signal. If either the transmitter or receiver moves, then the signal strength will be seen to vary as the relative strengths and phases of the different signals change.

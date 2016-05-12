@@ -1,51 +1,17 @@
-\section{Link Budget and its components}\label{sec:link_budget}
-
-\subsection{Line-Of-Sight Propagation}\label{subsec:los_propagation}
-\paragraph{}At low frequency (below approximately 3 MHz) radio signals travel as ground waves, which follow the Earth's curvature due to diffraction with the layers of the atmosphere.
-However, at higher frequencies and in lower levels of the atmosphere, neither of these effects are significant. Thus any obstruction between the transmitting antenna (transmitter) and the receiving antenna (receiver) will block the signal, just like the light that the eye may sense. Therefore, since the ability to visually see a transmitting antenna (disregarding the limitations of the eye's resolution) roughly corresponds to the ability to receive a radio signal from it, the propagation characteristic of VHF and higher radio frequency (>30 MHz) paths is called \textbf{Line-Of-Sight}. The farthest possible point of propagation is referred to as the \textbf{radio horizon}.
-
-\paragraph{}The radio horizon is the locus of points at which direct rays from an antenna are tangential to the surface of the Earth. If the Earth were a perfect sphere and there were no atmosphere, the radio horizon would be a circle.
-This way the greatest distance at which a receiver can see the transmitter is explained in the following paragraph.
-
-\paragraph{}First, we are going to derive a general expression and, after that, apply it to a scenario with a UAV and a GS. In figure  \ref{fig:GeometricDist_general} the relationship between the height of the observer above sea level (O point) and the distance d which is between it and the horizon (H point) is shown. Finding this distance is done by the use of the pythagorean theorem. With some simple mathematical calculations the distance d is derived in the following:
-
-\begin{equation}\label{eq:los_distToHorizon}
-	(R+h)^2 = R^2+d^2\nonumber \\
-	\Rightarrow R^2+2hR+h^2 = R^2+d^2 \Rightarrow d^2 = 2hR + h^2 \\
-	\Rightarrow d = \sqrt{2hR + h^2}
-\end{equation} 
-
-\begin{figure}[H]
-    \hfill
-    \subfigure[Geometrical distance to the horizon]{
-    	\includegraphics[scale=4]{figures/GeometricDistanceToHorizonOneTriangle.png} 
-		\label{fig:GeometricDist_general}}
-	\hfill
-    \subfigure[Geometrical distance from UAV to GS]{
-    	\includegraphics[scale=0.3]{figures/GeometricDistanceToHorizonTwoTriangle.png} 
-    	\label{fig:GeometricDist_droneBasestation}}
-    \hfill
-    \caption{Geometrical distance to the horizon, Pythahorean theorem}
-\end{figure}
-
-On Figure \ref{fig:GeometricDist_droneBasestation} it is shown that the two objects are a GS and an UAV. Both of them will not be higher then approx 100 meters and since R is radius of the Earth, $2hR$ >> $h^2$ and $h^2$ is therefore neglected in equation \ref{eq:los_distToHorizon}. The two distances $D_D$ and $D_{GS}$ have the same expressions in both cases:
-\begin{align*}
-	D_D [km] &= \sqrt{2\cdot R \cdot h_D + h_{D}^2} \approx \sqrt{2\cdot 6.378\cdot h_D} = \sqrt{12.756\cdot h_D} = 3.57\cdot \sqrt{h_D[m]} \\
-	D_{GS} [km] &= \sqrt{2\cdot R \cdot h_{GS} + h_{GS}^2} \approx \sqrt{2\cdot 6.378\cdot h_{GS}} = \sqrt{12.756\cdot h_B} = 3.57\cdot \sqrt{h_{GS}[m]}
-\end{align*}
-
-Now, with these derivations, we can calculate the maximum distance at which both Ground Station and UAV are still able to see each other ($LOS_{d}$), and therefore keep the communication.
-\begin{align}
-	LOS_d[km]	 &= D_D + D_{GS} \approx 3.57\cdot \sqrt{h_D[m]} + 3.57\cdot \sqrt{h_{GS}[m]} = {3.57\cdot (\sqrt{h_D[m]} + \sqrt{h_{GS}[m]}} )
-\end{align}
-
-\subsection*{LOS Distance Example}
-A simple but realistic example scenario would be where the aircraft is at $h_D = 100$m and the ground station at $h_B = 20$m. This maximum distance between them is as follows:
-\begin{equation*}
-	LOS_d = 3.57\cdot (\sqrt{100} + \sqrt{20}) = 51.67 \text{ km}
+\section{Link Budget}\label{subsec:link_budget}
+\paragraph{}
+A link budget is accounting of all of the gains and losses from the transmitter, through the medium  to the receiver in a telecommunication system. It accounts for the attenuation of the transmitted signal due to propagation, as well as the antenna gains, feedline and miscellaneous losses. 
+\begin{equation*}\label{eq:link_budget} 
+ 		\text{Received Power (dBm)} = \text{Transmitted Power (dBm)} + \text{Gains (dB)} - \text{Losses(dB)}
 \end{equation*}
 
-During the course of this document this number might sometimes appear as an upper limit for the maximum distance since further than that there would be not Line-Of-Sight connection. Increasing this distance would be a result of either increasing the height of the drone (which involves some law considerations) or of the Ground Station (which involves setting the Ground Station in a quite height building or mountain).
+In more detailed a common radio link looks like this:
+
+\begin{equation*}\label{eq:link_budget} 
+ 		P_{RX} = P_{TX} + G_{TX} - L_{TX} - L_{FS} - L_{M} + G_{RX} - L_{RX}
+\end{equation*}
+
+Note that decibels are logarithmic measurements, so adding decibels is equivalent to multiplying the actual numeric ratios.
 
 \subsection{Free Space Path Loss}\label{subsec:path_loss}
 \paragraph{}
@@ -92,18 +58,3 @@ Computing path loss:
 	 &= 20\lg\left (\frac{4\pi \sqrt{x^2+y^2}\cdot 10f}{ 3} \right) dB
 \end{align*}
 \noindent \textbf{As an observation, higher distance value between GS and UAV will result in higher path loss.}
-
-\subsection{Link Budget}\label{subsec:link_budget}
-\paragraph{}
-A link budget is accounting of all of the gains and losses from the transmitter, through the medium  to the receiver in a telecommunication system. It accounts for the attenuation of the transmitted signal due to propagation, as well as the antenna gains, feedline and miscellaneous losses. 
-\begin{equation*}\label{eq:link_budget} 
- 		\text{Received Power (dBm)} = \text{Transmitted Power (dBm)} + \text{Gains (dB)} - \text{Losses(dB)}
-\end{equation*}
-
-In more detailed a common radio link looks like this:
-
-\begin{equation*}\label{eq:link_budget} 
- 		P_{RX} = P_{TX} + G_{TX} - L_{TX} - L_{FS} - L_{M} + G_{RX} - L_{RX}
-\end{equation*}
-
-Note that decibels are logarithmic measurements, so adding decibels is equivalent to multiplying the actual numeric ratios.

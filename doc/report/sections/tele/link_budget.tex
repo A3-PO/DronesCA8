@@ -1,16 +1,25 @@
 \section{Link Budget}\label{subsec:link_budget}
 \paragraph{}
-A link budget is accounting of all of the gains and losses from the transmitter, through the medium  to the receiver in a telecommunication system. It accounts for the attenuation of the transmitted signal due to propagation, as well as the antenna gains, feedline and miscellaneous losses. 
+As the next step, once it is assured that there is Line-Of-Sight connection, it is important to calculate what is termed as the \textbf{Link budget}. This calculation is an accounting of all the gains and losses from the transmitter, through the medium,  to the receiver in a telecommunication system. It includes terms on it for the attenuation of the transmitted signal due to propagation, as well as the antenna gains, feedline and miscellaneous losses. It is precesily by assesing the link budget that is possible to design the system so that it meets the requirements and performs as desired.
+
+Its general form is:
 \begin{equation*}\label{eq:link_budget} 
  		\text{Received Power (dBm)} = \text{Transmitted Power (dBm)} + \text{Gains (dB)} - \text{Losses(dB)}
 \end{equation*}
 
-In more detailed a common radio link looks like this:
+And, in a more detailed look, it can divided down into:
 
 \begin{equation*}\label{eq:link_budget} 
  		P_{RX} = P_{TX} + G_{TX} - L_{TX} - L_{FS} - L_{M} + G_{RX} - L_{RX}
 \end{equation*}
-
+where,
+\begin{itemize}
+\item{$P_{RX} =$ Recieved power [dBm]}
+\item{$P_{RX} =$ Recieved power [dBm]}
+\item{$P_{RX} =$ Recieved power [dBm]}
+\item{$P_{RX} =$ Recieved power [dBm]}
+\item{$P_{RX} =$ Recieved power [dBm]}
+\end{itemize}
 Note that decibels are logarithmic measurements, so adding decibels is equivalent to multiplying the actual numeric ratios.
 
 \subsection{Free Space Path Loss}\label{subsec:path_loss}

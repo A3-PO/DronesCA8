@@ -23,5 +23,7 @@ doc/report/*.toc
 doc/report/*.tdo
 doc/report/*.fmt
 doc/report/*.pdf
+doc/report/*.thm
+doc/report/*.run.xml
 doc/report/master.synctex.gz
 doc/report/master-blx.bib

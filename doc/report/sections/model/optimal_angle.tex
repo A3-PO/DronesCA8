@@ -1,1 +1,32 @@
 \section{Optimal Angle}\label{sec:opt_angle}
+\paragraph{} Once the modelling of the whole control system has been presented, the calculation regarding the reference (i.e., the optimal angles for both Ground Station and Drone) will be addressed.
+
+\paragraph{} This calculation will be performed individually by each of the devices. This is, the ground station will calculate its own optimal angles that result in pointing its antenna to the drone and, anagously, the drone will calculate its own optimal angles to point its antenna at the Ground Station.
+As it will be shown later on by some simulations, the procedure to calculate these references requires of some frame transformations and it can be sum up in the following steps:
+\begin{itemize}
+\item{Ground Station and Drone read WGS84 GPS positions from each other.}
+\item{Use their respective local NED Frame and transform the other's device position with respect to the new frame.}
+\item{Perform angles calculation as stated in equation \ref{eq:OptGS}.}
+\end{itemize}
+
+An example is presented in Figure \ref{fig:Scenario1}, being this case the Ground Station side calculations.
+\begin{figure}[H]
+   \centering
+    \includestandalone[width=.70\textwidth]{figures/Scenario1} 
+    \caption{Representation of the general scenario. \\Local Ground Station NED Frame.}
+    \label{fig:Scenario1}
+\end{figure}
+where ($x_d,y_d,z_d$) are the coordinates that describe the position of the drone and the blue ball represents the position of the ground station. It can be seen that Figure \ref{fig:Scenario1} is presented in the \textbf{Ground Station NED Frame} (Section \ref{sec:ned}), with its origen in the GS location.
+The blue and green arrow represent the \textbf{antenna pointing vectors} of the ground station and drone, respectively.
+
+\paragraph{} The \textbf{LOS distance} (Section \ref{subsec:los_propagation}) is then given by the variable $\rho$ and the optimal angles are given by \textbf{LOS angles} are given by the variables $\theta_{GSopt}$ and $\phi_{GSopt}$.
+
+\begin{align}
+  \theta_{GSopt} = \text{atan2}\left(x_{d}, y_{d}\right)\\
+  \phi_{GSopt}=  \text{atan2}\left(-z_{d}, \sqrt{|x_{d}|^{2}+|y_{d}|^{2}}\right)\\
+  LOS_{distance} = \sqrt{|x_{d}|^{2}+|y_{d}|^{2}+|z_{d}|^{2}}
+  \label{eq:OptGS}
+\end{align}
+
+being atan2 the four-cuadrant $\arctan$ 
+

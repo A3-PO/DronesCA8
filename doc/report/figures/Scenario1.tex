@@ -18,7 +18,7 @@
 %----------------------------------------------------------------
 %set the plot display orientation
 %syntax: \tdplotsetdisplay{\phi_d}{\theta_d}
-\tdplotsetmaincoords{60}{110}
+\tdplotsetmaincoords{60}{130}
 
 %----------------------------------------------------------------
 % POINT DEFINITIONS
@@ -47,10 +47,10 @@
 \pgfmathsetmacro{\Dx}{(sin(\Dphivec)*\Drvec)*cos(\Dthetavec)}
 \pgfmathsetmacro{\Dy}{(sin(\Dphivec)*\Drvec)*sin(\Dthetavec)}
 \pgfmathsetmacro{\Dz}{cos(\Dphivec)*\Drvec}
-%GS ANTENNA POINTING ROTATION 
+%DRONE ANTENNA POINTING ROTATION 
 \pgfmathsetmacro{\DArvec}{0.3}
 \pgfmathsetmacro{\DAphivec}{110}
-\pgfmathsetmacro{\DAthetavec}{-20}
+\pgfmathsetmacro{\DAthetavec}{30}
 \pgfmathsetmacro{\DAx}{(sin(\DAphivec)*\DArvec)*cos(\DAthetavec)}
 \pgfmathsetmacro{\DAy}{(sin(\DAphivec)*\DArvec)*sin(\DAthetavec)}
 \pgfmathsetmacro{\DAz}{cos(\DAphivec)*\DArvec}
@@ -81,9 +81,9 @@
 % DRAW FIGURE CONTENTS  
 %----------------------------------------------------------------
 %draw the main coordinate system axes    
-    \draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$x$};
-    \draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
-    \draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
+    \draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$y$};
+    \draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$x$};
+    \draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south]{$-z$};
 
 %draw the proyections of the LOS
     \draw[dashed, color=red] (GS) -- (DRONExy);
@@ -97,19 +97,19 @@
 
 %draw the angle \theta, and label it
     %syntax: \tdplotdrawarc[coordinate frame, draw options]{center point}{r}{starting angle}{ending angle}{label options}{label}
-    \tdplotdrawarc{(O)}{0.2}{0}{\Dthetavec}{anchor=north}{$\theta$}
+    \tdplotdrawarc{(O)}{0.2}{0}{\Dthetavec}{anchor=north}{$\theta_{GSopt}$}
 
 %set the rotated coordinate system so the x'-y' plane lies within the
     %"phi plane" of the main coordinate system
     %syntax: \tdplotsetphiplanecoords{\theta}
     \tdplotsetthetaplanecoords{\Dthetavec}
 %draw phi arc and label, using rotated coordinate system
-    \tdplotdrawarc[tdplot_rotated_coords]{(0}{0.3}{\Dphivec}{90}{anchor=south west}{$\phi$}
+    \tdplotdrawarc[tdplot_rotated_coords]{(0}{0.3}{\Dphivec}{90}{anchor=south west}{$\phi_{GSopt}$}
 
 %--------------------
 % Draw GROUND STATION
 %--------------------
-    \shade[shading=ball, ball color=blue] (GS) circle (.3mm) node[above left] {\small{$(x_{gs},y_{gs},z_{gs})$}};
+    \shade[shading=ball, ball color=blue] (GS) circle (.3mm) node[above left]{\small{GS}};
     %Rotate to pointing antenna frame
     \tdplotsetrotatedcoords{0}{0}{0};
     \tdplotsetrotatedcoordsorigin{(GS)};

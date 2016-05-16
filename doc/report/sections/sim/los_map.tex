@@ -1,5 +1,5 @@
 \section{LOS Coverage Map}\label{sec:los_map}
-A point of interest regarding the project at hand is that Line-Of-Sight between the GS and the UA is fulfilled. As discussed in Chapter \ref{ch:frames} this model should take into account the followings:
+A point of interest regarding the project at hand is that Line-Of-Sight between the GS and the UA should be fulfilled. As discussed in Chapter \ref{ch:frames} this model should take into account the followings:
 
 \begin{itemize}
 	\item Terrain elevation
@@ -8,7 +8,7 @@ A point of interest regarding the project at hand is that Line-Of-Sight between 
 \end{itemize}
 
 \subsection{Initial Step}
-In this sense, a MATLAB script has been addressed which at first imports a Web Map Service (WMS) to load various maps and their topographic data. As an example a map which captures the area of Central Europe has been taken along with its terrain elevation levels as seen in Figure \ref{fig:before_map}.
+In this sense, a MATLAB script has been addressed which at first imports a Web Map Service (WMS) in order to load various maps with their topographic data. As an example a map which captures the area of Central Europe has been taken along with its terrain elevation levels as seen in Figure \ref{fig:before_map}.
 
 \begin{figure}[H]
   \hfill
@@ -24,19 +24,19 @@ In this sense, a MATLAB script has been addressed which at first imports a Web M
 \end{figure}
 
 \subsection{LOS Distance}
-Given the map and its topographic data in Figure \ref{fig:before_map}, now it is possible to input the desired points for the GS (red) and the UA (blue) which gives as result in Figure \ref{fig:gs_uav_map}. As mentioned above, those parameters are taken into account in order to plot the LOS distance between the two points of interest. It can be observed in Figure \ref{fig:los_2p} that visibility is lost after 65 kilometers from the GS due to terrain elevation. On the other hand, in some parts of the distance it can be seen that the field of vision is regained, as a result of high terrain elevation around the 73th and 78th kilometer.
+Given the map and its topographic data in Figure \ref{fig:before_map}, now it is possible to input the desired points for the GS (red) and the UA (blue) which gives as result in Figure \ref{fig:gs_uav_map}. The example takes into account the altitude of the GS (20m) and UA (100m) along with the terrain elevation. Thus, it can be observed in Figure \ref{fig:los_2p} that visibility is lost after 65 kilometers from the GS due to terrain elevation. On the other hand, in some parts of the distance it can be seen that the field of vision is regained, as a result of high terrain elevation around the 73th and 78th kilometer. Moreover, it can be seen that the curvature of the Earth comes into play as the further away the UA is from the GS.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.40]{figures/los_2p.png}
-	\caption{LOS distance seen from local NED of GS \\ X axis - Distance [km] \\ Y axis - Altitude [m]}
+	\caption{LOS distance seen from the Local NED of GS \\ X axis - Distance [km] \\ Y axis - Altitude [m]}
    	\label{fig:los_2p}
 \end{figure}
 
 \subsection{Coverage Map}
 Moving further, for the same map (Figure \ref{fig:before_map}), a location of the GS can be chosen, such that it will result into a visibility area (inside the white zone) as seen in Figure \ref{fig:los_area}. This area is also referred as the LOS coverage map and it takes into account the previously mentioned parameters.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.5]{figures/cov_map1.png}
 	\caption{LOS Coverage Map from the GS}

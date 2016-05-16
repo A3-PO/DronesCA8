@@ -60,6 +60,7 @@ Where:
     \item $f$: frequency at which are transmitted in gigahertz
 \end{itemize}
 
+\subsection{Examples with Fresnel Zones}
 \noindent In equation \ref{eq:fresnel_radius} it is clear that by changing the distance between the antennas, the radius of the Fresnel zone will also change. To show how the radius changes by changing the distance, some examples are made. In these examples a frequency of 2.4Ghz are used. The first example shows an antenna in the height of 20 meter and a drone flying in the height of 100 meter with 10km between them.
 
 \begin{figure}[H]
@@ -115,16 +116,25 @@ Lets assume as on figure \ref{fig:fresnel_zones_10km_height} that both antennas 
 \end{figure}  
 
 \begin{align*}
-r1 = 8.657\cdot \sqrt{\frac{10}{2.4}} = 17.7m
+\text{radius} = 8.657\cdot \sqrt{\frac{10}{2.4}} = 17.7m
 \end{align*}
 
-Lets try to find out how tall a structure could be at that point if 60\% should be clear of this zone, i.e 40\% should be blocked.
+Lets try to find out how tall a structure could be at the center of the Fresnel Zone, if 60\% should be clear of this zone, i.e 40\% should be blocked.
 
 \begin{align*}
-r1 = 8.657\cdot \sqrt{0.4\cdot \frac{10}{2.4}} = 11.2m
+\text{radius} = 8.657\cdot \sqrt{0.4\cdot \frac{10}{2.4}} = 11.2m
 \end{align*}
   
-By subtracting this result from 20 meters it can be seen that a structure 8.8 meters tall at the center of the link would block up to 40\% of the 1st Fresnel Zone. To improve this problem, the antenna need to be positioned higher up, or the direction of the link should be changed to avoid obstacles.
+By subtracting this result from 20 meters it can be seen that a structure 8.8 meters tall at the center of the link would block up to 40\% of the 1st Fresnel Zone. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.50]{figures/fresnel_10km_60procent.png}
+	\caption{Fresnel zone between transmitter and receiver in 10km distance. With a obstacle where 40\% of the signal is blocked.}
+	\label{fig:fresnel_zones_10km_60procent}
+\end{figure}  
+
+To improve this problem, the antenna need to be positioned higher up, or the direction of the link should be changed to avoid obstacles.
 \newpage
 %The 1st zone is the ellipse with chords 1/2 wavelength longer than the direct path (ACB).
 %If a reflective object is very near the direct path, the signal will experience a 180o phase shift and cancel the direct wave at the receiver.

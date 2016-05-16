@@ -5,7 +5,7 @@
 
 \noindent Taking into account that the application at hand involves radio communication it is important to talk about the Fresnel zones. The Fresnel zone is the area around the visual line-of-sight that radio waves spread out into after they leave the antenna. The radio waves will spread out into ellipse shaped areas that stretches between the two antennas. Thus, it can be seen in Figure \ref{fig:fresnel_zones} the three Fresnel zones on the transmission path between A and B. 
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.65]{figures/fresnel_zones.png}
 	\caption{Fresnel zones between transmitter and receiver}
@@ -23,7 +23,7 @@ Therefore it is a good idea when planning wireless links to keep the 1st Fresnel
 %
 %The direct wave, Line of Sight, goes directly from A to B and in this example it is where nothing is blocking the signal. 
 %
-
+\subsection{Calculating the Fresnel Zones}
 To calculate the Fresnel zone radius at any point P in between the endpoints of the link is given by the following equation: 
 
 \begin{align*}
@@ -38,7 +38,8 @@ Where:
 \item $\lambda$ = The wavelength of the transmitted signal in metres
 \end{itemize}
 
-But since it is often useful to know the maximum radius of the first Fresnel Zone, the following equation will calculate this:
+\subsection{Calculating the 1st Fresnel Zone}
+Since the 1st Fresnel Zone is the most important, it is often useful to know the maximum radius of the zone. Therefore the following equation will calculate this:
 
 \begin{align}
 r= 8.657 \sqrt{\frac{D}{f}} \label{eq:fresnel_radius}
@@ -53,7 +54,7 @@ Where:
 
 In equation \ref{eq:fresnel_radius} it is clear that by changing the distance between the antennas, the radius of the Fresnel zone will also change. To show how the radius changes by changing the distance, some examples are made. The first example shows an antenna in the height of 20 meter and a drone flying in the height of 100 meter with 10km between them.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.50]{figures/fresnel_10km.png}
 	\caption{Fresnel zones between transmitter and receiver 10km}
@@ -67,7 +68,7 @@ r1 = 8.657\cdot \sqrt{\frac{10}{2.4}} = 17.7m
 
 The second example are with a distance between them of 20km:
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.50]{figures/fresnel_20km.png}
 	\caption{Fresnel zones between transmitter and receiver 20km}
@@ -81,7 +82,7 @@ r2 = 8.657\cdot \sqrt{\frac{20}{2.4}} = 25.0m
 
 The third example are with a distance between them of 20km:
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.50]{figures/fresnel_50km.png}
 	\caption{Fresnel zones between transmitter and receiver 50km}

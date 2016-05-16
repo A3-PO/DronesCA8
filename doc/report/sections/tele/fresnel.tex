@@ -26,9 +26,9 @@ Therefore it is a good idea when planning wireless links to keep the 1st Fresnel
 \subsection{Calculating the Fresnel Zones}
 To calculate the Fresnel zone radius at any point P in between the endpoints of the link is given by the following equation: 
 
-\begin{align*}
-F_n = \sqrt{\frac{n \lambda d_1 d_2}{d_1+d_2}}
-\end{align*}
+\begin{align}
+F_n = \sqrt{\frac{n \lambda d_1 d_2}{d_1+d_2}} \label{fresnel_zone}
+\end{align}
 
 Where:
 \begin{itemize}[label=]
@@ -38,6 +38,7 @@ Where:
 \item $\lambda$ = The wavelength of the transmitted signal in metres
 \end{itemize}
 
+On figure \ref{fig:fresnel_zones} the parameters from \ref{fresnel_zone} is shown. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.70]{figures/fresnel_zone.jpg}

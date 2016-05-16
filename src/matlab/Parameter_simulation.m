@@ -21,8 +21,8 @@ clc; clear all; close all;
 
 %% Horizon and Line-Of-Sight
 
-H_GS_MAX = 20;
-H_DR_MAX = 120;
+H_GS_MAX = 50;
+H_DR_MAX = 150;
 H_GS_MIN = 0;
 H_DR_MIN = 20;
 prec = 100;
@@ -39,16 +39,16 @@ h_dr = [H_DR_MIN:(H_DR_MAX-H_DR_MIN)/prec:H_DR_MAX];      % Heigth of the drone 
 [h_gs_m,h_dr_m] = meshgrid(h_gs,h_dr);
 D_horizon = 3.57 * (sqrt(h_gs_m) + sqrt(h_dr_m));
 
-figure();
+f1 = figure();
 % surf(X,Y,D_horizon);
 contourf(h_gs_m,h_dr_m,D_horizon,20,'ShowText','on');
-grid on;
-grid minor;
+
 str = sprintf('Horizon Distance Analysis: \n Distance to Horizon [km]');
 title(str);
-xlabel('Height of the ground station [m]');
-ylabel('Height of the drone [m]');
+xlabel('Altitude of the ground station [m]');
+ylabel('Altitude of the drone [m]');
 % zlabel('Distance to Horizon [km]');
+saveas(gcf,'altitude2distance','epsc');
 
 %% Radio Link propagation
 

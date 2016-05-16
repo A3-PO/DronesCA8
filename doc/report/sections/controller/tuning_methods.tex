@@ -54,14 +54,17 @@ Adding the integral parameter imply a relation with the previous defined time be
 \caption{Good Gain : Adding integral and derivative parts}
 \end{figure}
 
-At this point, the controller is a proportional-derivative. The high overshoot resulting from adding the integral term can be attenuated by setting the derivative part, shown in figure \ref{fig:subim14}. The gain $T_d$ will act as a damper on the system and therefore reduce the high variations of the step response. In the Good Gain method, this value is described to be $T_d = \frac{T_i}{4}$.
+At this point, the controller is a proportional-integral. The high overshoot resulting from adding the integral term can be attenuated by setting the derivative part, shown in figure \ref{fig:subim14}. The gain $T_d$ will act as a damper on the system and therefore reduce the high variations of the step response. In the Good Gain method, this value is described to be $T_d = \frac{T_i}{4}$.
 
+\vspace{5mm}
 
+Theoretically, the tuning of the controller using the Good Gain method is done. However, it is possible to improve the controller based on the application that is wanted. In the case of this project, stability and minor overshoot was more important than the reaching speed of the reference value. Therefore, based on the principles seen in sections \ref{sec:pid_theory}, the overshoot of the system was attenuated, the undershoot cancelled and the drop-off smoothed (figure \ref{finalGG}).
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.5]{figures/GG5.jpg}
   \caption[LABEL] {Good Gain : final settings}
+  \label{finalGG}
 \end{figure}
 
 

@@ -103,6 +103,28 @@ r3 = 8.657\cdot \sqrt{\frac{50}{2.4}} = 39.5m
 \end{align*}
 
 \noindent In these examples it is demonstrated that the radius of the Fresnel Zone increases when the distance between the antennas increases.
+
+\subsection{60\% of the 1st Fresnel Zone}
+Lets assume as on figure \ref{fig:fresnel_zones_10km_height} that both antennas are at a height of 20 meters. Here the first Fresnel zone would pass just 2.3 meters above ground level in the middle of the link. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.50]{figures/fresnel_10km_height.png}
+	\caption{Fresnel zones between transmitter and receiver 10km}
+	\label{fig:fresnel_zones_10km_height}
+\end{figure}  
+
+\begin{align*}
+r1 = 8.657\cdot \sqrt{\frac{10}{2.4}} = 17.7m
+\end{align*}
+
+Lets try to find out how tall a structure could be at that point if 60\% should be clear of this zone, i.e 40\% should be blocked.
+
+\begin{align*}
+r1 = 8.657\cdot \sqrt{0.4\cdot \frac{10}{2.4}} = 11.2m
+\end{align*}
+  
+By subtracting this result from 20 meters it can be seen that a structure 8.8 meters tall at the center of the link would block up to 40\% of the 1st Fresnel Zone. To improve this problem, the antenna need to be positioned higher up, or the direction of the link should be changed to avoid obstacles.
 \newpage
 %The 1st zone is the ellipse with chords 1/2 wavelength longer than the direct path (ACB).
 %If a reflective object is very near the direct path, the signal will experience a 180o phase shift and cancel the direct wave at the receiver.

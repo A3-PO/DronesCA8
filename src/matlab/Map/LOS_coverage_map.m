@@ -1,45 +1,56 @@
-%% 832 Group Project - LOS Coverage Map
+%% 832 Group Project - LOS Coverage Map (version 2)
 clear all; close all; clc;
 % Input parameters
-h_g = input('Input ground station altitude: ');   % [m] GS altitude 
-h_d = input('Input drone altitude: ');            % [m] DRONE altitude
-latDK = [53 58];    % map latitude limits
-lonDK = [8 13];     % map longitude limits
+H_gs = input('Input ground station altitude: ');   % [m] GS altitude 
+H_ua = input('Input aircraft altitude: ');         % [m] UA altitude
+latlim = [45 55];                                  % Map latitude limits
+lonlim = [3 18];                                   % Map longitude limits
+R_e = earthRadius('meters');                       % Earth radius
 
 %% 1. Import map as a Web Map Service (WMS)
-layers = wmsfind('esa.int', 'SearchField', 'serverurl');
-gtopo30Layer = refine(layers, 'gtopo30');
-gtopo30Layer = wmsupdate(gtopo30Layer);
-gtopo30Layer.Latlim = latDK;    
-gtopo30Layer.Lonlim = lonDK;   
-oceanColor = [0 170 255];
-[A, R] = wmsread(gtopo30Layer, 'BackgroundColor', oceanColor);
+layers = wmsfind('nasa.network*elev', 'SearchField', 'serverurl');
+layers = wmsupdate(layers);
+% disp(layers,'Properties',{'LayerTitle','LayerName'})   % map info
+aster = layers.refine('earthaster', 'SearchField', 'layername');
+cellSize = dms2degrees([0,1,0]);
+[ZA, RA] = wmsread(aster, 'Latlim', latlim, 'Lonlim', lonlim, ...
+   'CellSize', cellSize, 'ImageFormat', 'image/bil');
+Z = double(ZA);
+R = RA;
 
-%% 2. LOS Distance from GS to DRONE (2 points)
+%% 2. LOS distance from GS to UA (2 points)
 figure
-worldmap(latDK, lonDK) % this doesnt work anymore...
-geoshow(A, R, 'DisplayType', 'texturemap')
-title('Denmark Topographic Map')
-[lat lon] = inputm(2);  % Input 2 points on map to get lat and lon
+worldmap(latlim, lonlim)
+geoshow(ZA, RA, 'DisplayType', 'texturemap')
+demcmap(double(ZA))
+title({'Central Europe - Topographic Map'});
+[lat lon] = inputm(2);                         % Input GS and UA locations
 plotm(lat(1),lon(1),'ro','LineWidth',3);textm(lat(1),lon(1),'GS');
-plotm(lat(2),lon(2),'bo','LineWidth',3);textm(lat(2),lon(2),'UAV');
-Z = double(A(:,:,1));   
-e_g = ltln2val(Z, R, lat(1), lon(1)) + h_g; % [m] terrain + station height
-e_d = ltln2val(Z, R, lat(2), lon(2)) + h_d; % [m] terrain + drone height
-D = 3.57*(sqrt(e_g) + sqrt(e_d))            % [km] theoretical LOS distance 
-los2(Z, R, lat(1), lon(1), lat(2), lon(2), h_g, h_d)
+plotm(lat(2),lon(2),'bo','LineWidth',3);textm(lat(2),lon(2),'UA');
 
-%% 3. LOS coverage map
+% Personalized LOS function (LOCAL NED GS FRAME):
+uas_los(Z, R, lat(1), lon(1), lat(2), lon(2), H_gs, H_ua, 'AGL', ...
+                                                    'AGL', R_e, 4/3*R_e)
+                                                
+% Matlab LOS function:                                                
+% los2(Z, R, lat(1), lon(1), lat(2), lon(2), H_gs, H_ua, 'AGL', 'AGL', ...
+%                                                            R_e, 4/3*R_e)
+
+% Theoretical LOS distance 
+E_gs = ltln2val(Z, R, lat(1), lon(1)) + H_gs; % [m] terrain + GS altitude
+E_ua = ltln2val(Z, R, lat(2), lon(2)) + H_ua; % [m] terrain + UA altitude
+D_los = 3.57*(sqrt(E_gs) + sqrt(E_ua))     % [km] LOS distance
+
+%% 3. LOS Coverage Map
 figure
-worldmap(latDK, lonDK)
-geoshow(A, R, 'DisplayType', 'texturemap')
-demcmap(double(A))   
-title('Denmark Topographic Map')
-[latG lonG] = inputm(1);              % Input GS location
-Re = earthRadius('meters');
-[vmap, vmapl] = viewshed(Z, R, latG(1), lonG(1), h_g, h_d, ...
-    'AGL', 'AGL', Re, 4/3*Re);
-plotm(latG,lonG,'ro','LineWidth',4);  % GS point on map
-textm(latG,lonG,'GS');
-contourm(vmap,R,'LineColor','w');     % LOS area from the GS
-title('LOS COVERAGE MAP')
+worldmap(latlim, lonlim)
+geoshow(ZA, RA, 'DisplayType', 'texturemap')
+demcmap(double(ZA))   
+title('Central Europe - Topographic Map')
+[latGS lonGS] = inputm(1);                % Input GS location  
+[vmap, vmapl] = viewshed(Z, R, latGS(1), lonGS(1), H_gs, H_ua, ...
+    'AGL', 'AGL', R_e, 4/3*R_e);
+plotm(latGS,lonGS,'ro','LineWidth',3);    % GS point on map
+textm(latGS,lonGS,'GS');
+contourm(vmap,RA,'LineColor','w');        % LOS area from the GS
+title('LOS COVERAGE MAP');

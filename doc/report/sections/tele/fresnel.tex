@@ -27,7 +27,7 @@ Therefore it is a good idea when planning wireless links to keep the 1st Fresnel
 To calculate the Fresnel zone radius at any point P in between the endpoints of the link is given by the following equation: 
 
 \begin{align}
-F_n = \sqrt{\frac{n \lambda d_1 d_2}{d_1+d_2}} \label{fresnel_zone}
+F_n = \sqrt{\frac{n \lambda d_1 d_2}{d_1+d_2}} \label{fresnel_zone_cal}
 \end{align}
 
 Where:
@@ -38,7 +38,7 @@ Where:
 \item $\lambda$ = The wavelength of the transmitted signal in metres
 \end{itemize}
 
-\noindent On figure \ref{fig:fresnel_zones} the parameters from equation \ref{fresnel_zone} is shown. 
+\noindent On figure \ref{fig:fresnel_zones} the parameters from equation \ref{fresnel_zone_cal} is shown. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.70]{figures/fresnel_zone.jpg}
@@ -47,7 +47,7 @@ Where:
 \end{figure}  
 
 \subsection{Calculating the 1st Fresnel Zone}
-Since the 1st Fresnel Zone is the most important, it is often useful to know the maximum radius of the zone. Therefore the following equation will calculate this:
+Since the 1st Fresnel Zone is the most important, it is often useful to know the maximum radius of the zone. Therefore the following equation will calculate this: (\hl{Maybe show how we come from} \ref{fresnel_zone_cal} to \ref{eq:fresnel_radius} \hl{? - Kelvin})
 
 \begin{align}
 r= 8.657 \sqrt{\frac{D}{f}} \label{eq:fresnel_radius}

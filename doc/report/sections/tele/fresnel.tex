@@ -1,9 +1,5 @@
-\newpage
-
 \section{Fresnel Zones}\label{sec:fresnel}
-(\hl{Things still missing, if you feel like it just add stuff //Kelvin}). \\\\
-
-\noindent Taking into account that the application at hand involves radio communication it is important to talk about the Fresnel zones. The Fresnel zone is the area around the visual line-of-sight that radio waves spread out into after they leave the antenna. The radio waves will spread out into ellipse shaped areas that stretches between the two antennas. Thus, it can be seen in Figure \ref{fig:fresnel_zones} the three Fresnel zones on the transmission path between A and B. 
+Taking into account that the application at hand involves radio communication it is important to talk about the Fresnel zones. The Fresnel zone is the area around the visual line-of-sight that radio waves spread out into after they leave the antenna. The radio waves will spread out into ellipse shaped areas that stretches between the two antennas. Thus, it can be seen in Figure \ref{fig:fresnel_zones} the three Fresnel zones on the transmission path between A and B. 
 
 \begin{figure}[H]
 	\centering
@@ -47,7 +43,7 @@ Where:
 \end{figure}  
 
 \subsection{Calculating the 1st Fresnel Zone}
-Since the 1st Fresnel Zone is the most important, it is often useful to know the maximum radius of the zone. Therefore the following equation will calculate this: (\hl{Maybe show how we come from} \ref{fresnel_zone_cal} to \ref{eq:fresnel_radius} \hl{? - Kelvin})
+Since the 1st Fresnel Zone is the most important, it is often useful to know the maximum radius of the zone. Here is one formula for calculating the first Fresnel zone: (\hl{Maybe show how we come from} \ref{fresnel_zone_cal} to \ref{eq:fresnel_radius} \hl{? - Kelvin})
 
 \begin{align}
 r= 8.657 \sqrt{\frac{D}{f}} \label{eq:fresnel_radius}
@@ -61,7 +57,7 @@ Where:
 \end{itemize}
 
 \subsection{Examples with Fresnel Zones}
-\noindent In equation \ref{eq:fresnel_radius} it is clear that by changing the distance between the antennas, the radius of the Fresnel zone will also change. To show how the radius changes by changing the distance, some examples are made. In these examples a frequency of 2.4Ghz are used. The first example shows an antenna in the height of 20 meter and a drone flying in the height of 100 meter with 10km between them.
+In equation \ref{eq:fresnel_radius} it is clear that by changing the distance between the antennas, the radius of the Fresnel zone will also change. To show how the radius changes by changing the distance, some examples are made. In these examples a frequency of 2.4Ghz are used. The first example shows an antenna in the height of 20 meter and a drone flying in the height of 100 meter with 10km between them.
 
 \begin{figure}[H]
 	\centering
@@ -106,7 +102,7 @@ r3 = 8.657\cdot \sqrt{\frac{50}{2.4}} = 39.5m
 \noindent In these examples it is demonstrated that the radius of the Fresnel Zone increases when the distance between the antennas increases.
 
 \subsection{60\% of the 1st Fresnel Zone}
-Lets assume as on figure \ref{fig:fresnel_zones_10km_height} that both antennas are at a height of 20 meters. Here the first Fresnel zone would pass just 2.3 meters above ground level in the middle of the link. 
+Lets try to find out how tall a structure could be at the center of the Fresnel Zone, if 60\% should be clear of this zone, i.e 40\% should be blocked. Lets assume as on figure \ref{fig:fresnel_zones_10km_height} that both antennas are at a height of 20 meters. Here the first Fresnel zone would pass just 2.3 meters above ground level in the middle of the link. 
 
 \begin{figure}[H]
 	\centering
@@ -119,13 +115,13 @@ Lets assume as on figure \ref{fig:fresnel_zones_10km_height} that both antennas 
 \text{radius} = 8.657\cdot \sqrt{\frac{10}{2.4}} = 17.7m
 \end{align*}
 
-Lets try to find out how tall a structure could be at the center of the Fresnel Zone, if 60\% should be clear of this zone, i.e 40\% should be blocked.
+Now lets calculate how tall a structure should be if 40\% of the signal should be blocked:
 
 \begin{align*}
 \text{radius} = 8.657\cdot \sqrt{0.4\cdot \frac{10}{2.4}} = 11.2m
 \end{align*}
   
-By subtracting this result from 20 meters it can be seen that a structure 8.8 meters tall at the center of the link would block up to 40\% of the 1st Fresnel Zone. 
+By subtracting this result from 20 meters it can be seen that a structure 8.8 meters tall at the center of the link would block up to 40\% of the 1st Fresnel Zone. A illustration of this is shown in figure \ref{fig:fresnel_zones_10km_60procent}.
 
 \begin{figure}[H]
 	\centering
@@ -135,7 +131,7 @@ By subtracting this result from 20 meters it can be seen that a structure 8.8 me
 \end{figure}  
 
 To improve this problem, the antenna need to be positioned higher up, or the direction of the link should be changed to avoid obstacles.
-\newpage
+
 %The 1st zone is the ellipse with chords 1/2 wavelength longer than the direct path (ACB).
 %If a reflective object is very near the direct path, the signal will experience a 180o phase shift and cancel the direct wave at the receiver.
 %If a reflective object is tangent to the 1st zone, the electromagnetic wave will be shifted 180o because of the increased path length, undergo an additional 180o phase shift due to the reflection, and reinforce the direct wave at the receiver. Consequently, there should be no reflective objects in the 1st Fresnel zone.

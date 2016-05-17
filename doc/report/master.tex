@@ -29,6 +29,7 @@
 \pdfbookmark[0]{Contents}{label:contents}
 \pagestyle{fancy} %enable headers and footers again
 \tableofcontents
+\listoftodos
 \input{sections/preface.tex}
 \cleardoublepage
 %mainmatter
@@ -64,11 +65,13 @@
 \input{sections/controller/controller.tex}
 
 \input{sections/sim/simulation.tex}
-\input{sections/sim/parameter.tex}
 \input{sections/sim/los_map.tex}
 \input{sections/sim/2d_system_simulation.tex}
 \input{sections/sim/3d_system_simulation.tex}
 
+
+\input{sections/verification.tex}
+\input{sections/discussion.tex}
 \input{sections/conclusion.tex}
 
 \printbibliography[heading=bibintoc]

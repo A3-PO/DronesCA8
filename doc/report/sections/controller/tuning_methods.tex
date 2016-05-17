@@ -16,7 +16,7 @@ Can be seen on the figure below, the structure of the controller. Taking as inpu
 
   
     
-The steps of the experiment based method, the Good Gain, are the followings :\par 
+
 
  This method can be split in three different parts. In the first part it is supposed to set the proportional parameter. Thus, by choosing in the step from the figure \ref{fig:subim11} , $T_i$ = $\infty$ and $T_d$ = 0, it sets respectively the integral and the derivative term to zero.
 
@@ -70,12 +70,22 @@ Theoretically, the tuning of the controller using the Good Gain method is done. 
 
   
 \subsubsection{PID Simulink box}
+The PID simulink box is an interesting alternative to the good gain method to tune a controller. As a matter of fact, the previous described method has its own limits. The time needed to tune and the uncertainties of the different steps and results were the weaknesses of this method. For instance, as described in firgure \ref{fig:subim12} , a "slight overshoot" is a parameter that can be relative depending on the designer.\par  
+  
+Therefore, using the simulink box, that includes an automatic tuning tool and a real time response of the system, was a suitable option to tune the controller. Futhermore, this technique incorporates a fourth parameter in its PID equation, as shown in figure \ref{PID_box_N}. 
+ 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{figures/controller_box.png}
 \caption{Inside of the PID box}
-\label{dcmotor_circuit}
+\label{PID_box_N}
 \end{figure}
+
+The added parameter is the filter coefficient, \textit{N}, applied on the derivative term of the controller. Thus, its transfer function becomes \ref{eq:N_PID}
+
+\begin{equation}\label{eq:N_PID}
+H(s) = P + I\frac{1}{s} + D\frac{N}{1+N\frac{1}{s}}
+\end{equation}
 
 \begin{figure}[H]
 \centering

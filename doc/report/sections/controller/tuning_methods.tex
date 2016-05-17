@@ -87,6 +87,8 @@ The added parameter is the filter coefficient, \textit{N}, applied on the deriva
 H(s) = P + I\frac{1}{s} + D\frac{N}{1+N\frac{1}{s}}
 \end{equation}
 
+Including the N term avoids a 'pure derivative' that reacts easily to noises. Thus, the filter coefficient, being the pole location of the filter in the derivative action, transforms this part of the controller into a low pass filter. Hence, the bandwidth of the filter can be chosen by changing the N value.
+
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{figures/PID_window.png}

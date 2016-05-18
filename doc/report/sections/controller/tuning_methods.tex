@@ -13,12 +13,7 @@ Can be seen on the figure below, the structure of the controller. Taking as inpu
   \caption[LABEL] {Block diagram of the PID controller}
 \end{figure}
   
-
-  
-    
-
-
- This method can be split in three different parts. In the first part it is supposed to set the proportional parameter. Thus, by choosing in the step from the figure \ref{fig:subim11} , $T_i$ = $\infty$ and $T_d$ = 0, it sets respectively the integral and the derivative term to zero.
+This method can be split in three different parts. In the first part it is supposed to set the proportional parameter. Thus, by choosing in the step from the figure \ref{fig:subim11} , $T_i$ = $\infty$ and $T_d$ = 0, it sets respectively the integral and the derivative term to zero.
 
 \begin{figure}[H]
 \hfill
@@ -56,7 +51,7 @@ Adding the integral parameter imply a relation with the previous defined time be
 
 At this point, the controller is a proportional-integral. The high overshoot resulting from adding the integral term can be attenuated by setting the derivative part, shown in figure \ref{fig:subim14}. The gain $T_d$ will act as a damper on the system and therefore reduce the high variations of the step response. In the Good Gain method, this value is described to be $T_d = \frac{T_i}{4}$.
 
-\vspace{5mm}
+%\vspace{5mm}
 
 Theoretically, the tuning of the controller using the Good Gain method is done. However, it is possible to improve the controller based on the application that is wanted. In the case of this project, stability and minor overshoot was more important than the reaching speed of the reference value. Therefore, based on the principles seen in sections \ref{sec:pid_theory}, the overshoot of the system was attenuated, the undershoot cancelled and the drop-off smoothed (figure \ref{finalGG}).
 
@@ -67,12 +62,12 @@ Theoretically, the tuning of the controller using the Good Gain method is done. 
   \label{finalGG}
 \end{figure}
 
-
+However, the time needed to tune and the uncertainties of the different steps and results were the weaknesses of this method. For instance, as described in figure \ref{fig:subim12} , a "slight overshoot" is a parameter that can be relative depending on the designer.\par  
   
 \subsubsection{PID Simulink box}
-The PID simulink box is an interesting alternative to the good gain method to tune a controller. As a matter of fact, the previous described method has its own limits. The time needed to tune and the uncertainties of the different steps and results were the weaknesses of this method. For instance, as described in firgure \ref{fig:subim12} , a "slight overshoot" is a parameter that can be relative depending on the designer.\par  
+The PID simulink box is an interesting alternative to the good gain method to tune a controller. As a matter of fact, the previous described method has its own limits.\par 
   
-Therefore, using the simulink box, that includes an automatic tuning tool and a real time response of the system, was a suitable option to tune the controller. Futhermore, this technique incorporates a fourth parameter in its PID equation, as shown in figure \ref{PID_box_N}. 
+Therefore, the PID simulink box, that includes an automatic tuning tool and a real time response of the system, was a suitable option to tune the controller. Futhermore, this technique incorporates a fourth parameter in its PID equation, as shown in figure \ref{PID_box_N}. 
  
 \begin{figure}[H]
 \centering
@@ -91,7 +86,19 @@ Including the N term avoids a 'pure derivative' that reacts easily to noises. Th
 
 \vspace{5mm}
 
-The PID tunner automatically linearizes the plant at the operating point (the operating point is based on the initial conditions of the model). The linearization occures between the PID controller output and input. This linearized model is an aproximation to a nonlinear system. This aproximation is valid in a small region arround the operating point.
+
+The PID tunner considers as the plant all blocks in the loop, that can include linearities and nonlinearities, between the controller output and input. Then, the PID tunner automatically linearizes the plant at the operating point based on the initial conditions of the model. This process works as an approximation to the nonlinear system and is valid in a small region around its operating point.\par
+
+Taking into account a phase margin of 60 degrees (robustness), a balance between the performance parameteres and the stability of the system, the tuning algorithm target is to find the gains of the PID controller. The desired robustness, that is based on the gain and phase margin, becomes the system able to achieve the desired value with a shortest settling time. Thus, the oscillations will be avoided because the phase is less than 180 degrees at the unity gain frequency. Moreover, an equilibrium between the reference tracking and the disturbance rejection, which are the perfomance parameteres, make the controller respond fast to changes in the reference or disturbances. 
+
+Finally, the closed-loop stability refers to the direct relation between bounded output and bounded input.
+%
+
+% oscillations in the feedback amplifier
+%For a given robustness, which means, for a fixed phase margin avoids oscillations in the feedback amplifier because the phase is less than 180 degrees at the unity gain frequency. Thus, it is possible to achieve the desired value with the shortest settling time. \par %Wikipedia 
+%The reference tracking and the disturbance rejection are the perfomance parameteres and make the controller respond fast to changes in the reference or disturbances.
+%A phase margin of 60 degrees is the target chosen by the algorithm to find the gains of the PID controller. This phase margin avoids oscillations in the feedback amplifier because the phase is less than 180 degrees at the unity gain frequency. Thus, it is possible to achieve the desired value with the shortest settling time. \par %Wikipedia
+%Thus, PID tunning objectives combine the closed-loop stability and the adequate performance and robustness. The closed-loop system is related to the fact that a limited input generates a bounded output. Tracking the reference changes and the rejection of the disturbance are the of performance and the gain and phase margins are the parameters associated to robustness.
 
 \begin{figure}[H]
 \centering

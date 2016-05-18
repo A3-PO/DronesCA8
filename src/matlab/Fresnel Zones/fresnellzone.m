@@ -19,6 +19,12 @@ disp(['r1 = ',num2str(r1),' m',' @10km'])
 disp(['r2 = ',num2str(r2),'m',' @20km'])
 disp(['r3 = ',num2str(r3),'m',' @50km'])
 %%
+%Maximum obstruction height
+
+D = 10; f = 2.4;
+r = 8.657*sqrt(0.6*D/f)
+max_obstruction = 20 - r
+%%
 
 D = 1:1:50
 r = 8.657*sqrt(D/f)'

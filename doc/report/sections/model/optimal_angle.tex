@@ -21,14 +21,13 @@ The blue and green arrow represent the \textbf{antenna pointing vectors} of the 
 
 \paragraph{} The \textbf{LOS distance} (Section \ref{subsec:los_propagation}) is then given by the variable $\rho$ and the optimal angles are given by \textbf{LOS angles} are given by the variables $\theta_{GSopt}$ and $\phi_{GSopt}$.
 
-\begin{align}
-  \theta_{GSopt} = \text{atan2}\left(x_{d}, y_{d}\right)\\
-  \phi_{GSopt}=  \text{atan2}\left(-z_{d}, \sqrt{|x_{d}|^{2}+|y_{d}|^{2}}\right)\\
-  LOS_{distance} = \sqrt{|x_{d}|^{2}+|y_{d}|^{2}+|z_{d}|^{2}}
-  \label{eq:OptGS}
+\begin{align}\label{eq:OptGS}
+  \theta_{GSopt} = \text{atan2}\left(x_{d}, y_{d}\right) \nonumber \\
+  \phi_{GSopt}=  \text{atan2}\left(-z_{d}, \sqrt{|x_{d}|^{2}+|y_{d}|^{2}}\right) \\
+  LOS_{distance} = \sqrt{|x_{d}|^{2}+|y_{d}|^{2}+|z_{d}|^{2}} \nonumber
 \end{align}
 
-being \textit{atan2} the four-cuadrant arctangent, which defines the limit of the regions such that the angles are given in the range $[-\pi:\pi]$.
+being \textit{atan2} the four-cuadrant arctangent, which defines the limit of the arctangent function such that the angles are given in the range $[-\pi:\pi]$.
 
 This procedure will be refered later on, on Chapter \ref{ch:sim}, where this calculation will be implemented as part of the whole simulation of the system.
 

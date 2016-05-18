@@ -91,20 +91,5 @@ The PID tuner considers as the plant all blocks in the loop, that can include li
 
 Taking into account a phase margin of 60 degrees (robustness), a balance between the performance parameters and the stability of the system, the tuning algorithm calculates the gains of the PID controller. The desired robustness, that is based on the gain and phase margin, becomes the system that is able to achieve the desired value with the shortest settling time. Thus, the oscillations will be avoided because the phase is less than 180 degrees at the unity gain frequency. Moreover, an equilibrium between the reference tracking and the disturbance rejection, which are the perfomance parameters, makes the controller respond fast to changes in the reference (achieve the new value) or disturbances (restraint their effect). Finally, the closed-loop stability refers to the closed-loop system output that remains bounded for bounded input.
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.4]{figures/PID_window.png}
-\caption{Inside of the PID box}
-\label{dcmotor_circuit}
-\end{figure}
-
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.4]{figures/PID_param.png}
-\caption{Tuning tool of the PID box}
-\label{dcmotor_circuit}
-\end{figure}
-  
 
 

@@ -27,3 +27,8 @@ doc/report/*.thm
 doc/report/*.run.xml
 doc/report/master.synctex.gz
 doc/report/master-blx.bib
+doc/report/*.acn
+doc/report/*.glsdefs
+doc/report/*.ist
+doc/report/*.bbl
+doc/report/*.blg

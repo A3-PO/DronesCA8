@@ -43,16 +43,50 @@ freq = 2.4 * 10^9;          % Frequency [Hz]
 lambda = 3*10^8/freq;       % Wavelength [m]
 Ptx = 10*log10(1/(10^-3));  % 1mW power transmiter
 
+%% LOADING MAP
+% Input parameters
+H_gs = 20;
+H_ua = 100;
+% H_gs = input('Input ground station altitude: ');   % [m] GS altitude 
+% H_ua = input('Input aircraft altitude: ');         % [m] UA altitude
+latlim = [53 58];                                  % Map latitude limits
+lonlim = [8 13];                                   % Map longitude limits
+R_e = earthRadius('meters');                       % Earth radius
+
+%Import map as a Web Map Service (WMS)
+layers = wmsfind('nasa.network*elev', 'SearchField', 'serverurl');
+layers = wmsupdate(layers);
+% disp(layers,'Properties',{'LayerTitle','LayerName'})   % map info
+aster = layers.refine('earthaster', 'SearchField', 'layername');
+cellSize = dms2degrees([0,1,0]);
+[ZA, RA] = wmsread(aster, 'Latlim', latlim, 'Lonlim', lonlim, ...
+   'CellSize', cellSize, 'ImageFormat', 'image/bil');
+Z = double(ZA);
+R = RA;
+
+figure(1);
+worldmap(latlim, lonlim);
+geoshow(ZA, RA, 'DisplayType', 'texturemap')
+demcmap(double(ZA))
+title({'Central Europe - Topographic Map'});
+[lat1, long1] = inputm(1);                         % Input GS and UA locations
+plotm(lat1,long1,'ro','LineWidth',3);textm(lat1,long1,'  GS');
+[lat2, long2] = inputm(1);
+plotm(lat2,long2,'bo','LineWidth',3);textm(lat2,long2,'  UA Start');
+[lat3, long3] = inputm(1);
+plotm(lat3,long3,'bo','LineWidth',3);textm(lat3,long3,'  UA End');
+
+
 %% Initial values
 % Drone position
-lat_init_d = 56.08736247;
-lat_end_d = 56.15166933;
-long_init_d = 8.26781273;
-long_end_d = 10.20492554;
+lat_init_d = lat2;
+lat_end_d = lat3;
+long_init_d = long2;
+long_end_d = long3;
 
 lat_drone = lat_init_d:(lat_end_d-lat_init_d)/prec_geo:lat_end_d;       
 long_drone = long_init_d:(long_end_d - long_init_d)/prec_geo:long_end_d;   
-alt_drone = 100*ones(1,length(lat_drone));   
+alt_drone = H_ua*ones(1,length(lat_drone));   
 
 % Drone deviation
 
@@ -67,9 +101,9 @@ end
 
 
 % Ground station position
-lat_gs = 56.08736247 * ones(1,length(lat_drone));       % The position X of the GROUND STATION 
-long_gs = 8.26446533 * ones(1,length(lat_drone));        % The position Y of the GROUND STATION
-alt_gs = 19 * ones(1,length(lat_drone));                % The position Z of the GROUND STATION
+lat_gs = lat1 * ones(1,length(lat_drone));       % The position X of the GROUND STATION 
+long_gs = long1 * ones(1,length(lat_drone));        % The position Y of the GROUND STATION
+alt_gs = H_gs * ones(1,length(lat_drone));                % The position Z of the GROUND STATION
 
 % Small function to draw arrows
 drawArrow = @(x,y,z) quiver3(x(1),y(1),z(1),x(2)-x(1),y(2)-y(1),...
@@ -97,7 +131,7 @@ gamma_gs = gamma_gs.Data;
 los_d_vec = los_d_vec.Data;
 
 %% Plot current vs optimal angle of drone and ground station 
-f1 = figure(1);
+f2 = figure(2);
 subplot(2,1,1);
 plot(t,theta_d_vec,'LineWidth',2);
 hold on;
@@ -118,9 +152,9 @@ legend('Drone','Optimal');
 title('Phi Drone angle vs optimal');
 grid on;
 grid minor;
-movegui(f1,'northwest');
+movegui(f2,'northwest');
 
-f2 = figure(2);
+f3 = figure(3);
 subplot(2,1,1);
 plot(t,theta_gs_vec,'LineWidth',2);
 hold on;
@@ -141,44 +175,30 @@ legend('Ground station','Optimal');
 title('Phi Ground station angle vs optimal');
 grid on;
 grid minor;
-movegui(f2,'southwest');
+movegui(f3,'southwest');
 
-f3 = figure(3);
-plot(t,los_d_vec/1000,'LineWidth',2);
+% 3D
+f4 = figure(4);
 xlabel('Sample');
 ylabel('Distance[km]');
 title('LOS Distance');
 grid on;
 grid minor;
-movegui(f3,'northeast');
-
-% Define arrow
-f4 = figure(4);
-arrow = arrow3D([-1,0,0] ,[2,0,0]);
-view(45, 25); 
-axis ([-1.5 1.5 -1.5 1.5 -1.5 1.5]);
-grid on;
-grid minor;
-set(gca,'TickLength',[ 0 0 ]);
-set(gca,'XTickLabel',[],'YTickLabel',[],'ZTickLabel',[]);
-xlabel('East Axis'); ylabel('North Axis'); zlabel('Down Axis');
-title('Drone Body Rotation - Local NED Frame');
-set(gca,'xticklabel',[]);
-movegui(f4,'southeast');
-for i = 2:length(yawAngle)
-    yawDif = yawAngle(i)-yawAngle(i-1);
-    pitchDif = pitchAngle(i)-pitchAngle(i-1);
-    rollDif = rollAngle(i)-rollAngle(i-1);
-    
-    rotate(arrow,yaw,yawDif);
-    rotate(arrow,pitch,pitchDif);
-    rotate(arrow,roll,rollDif);
-    drawnow
-end
-
-%% 3D
+hold on;
+movegui(f4,'northeast');
 for i = 1:length(lat_drone)
-         
+    
+    % Line Of Sight check
+    [vis(i)] = los2(Z, R, lat_gs(i), long_gs(i), lat_drone(i), ...
+        long_drone(i), H_gs, H_ua, 'AGL', 'AGL', R_e, 4/3*R_e);
+    if vis(i) == 1
+        tmp = 'bo';
+    else
+        tmp = 'rx';
+    end
+    
+    plot(t(i),los_d_vec(i)/1000,tmp);
+    
     % GAINS
     alpha_gs_deg = rad2deg(alpha_gs(i));
     alpha_d_deg = rad2deg(alpha_d(i));
@@ -191,6 +211,31 @@ for i = 1:length(lat_drone)
     Lfs(i) = -20*log10(4*pi*los_d_vec(i)/lambda);
     Prx(i) = Ptx + GSgain(i) + Dgain(i) + Lfs(i);
 end
+
+% Define arrow
+f5 = figure(5);
+arrow = arrow3D([-1,0,0] ,[2,0,0]);
+view(45, 25); 
+axis ([-1.5 1.5 -1.5 1.5 -1.5 1.5]);
+grid on;
+grid minor;
+set(gca,'TickLength',[ 0 0 ]);
+set(gca,'XTickLabel',[],'YTickLabel',[],'ZTickLabel',[]);
+xlabel('East Axis'); ylabel('North Axis'); zlabel('Down Axis');
+title('Drone Body Rotation - Local NED Frame');
+set(gca,'xticklabel',[]);
+movegui(f5,'southeast');
+for i = 2:length(yawAngle)
+    yawDif = yawAngle(i)-yawAngle(i-1);
+    pitchDif = pitchAngle(i)-pitchAngle(i-1);
+    rollDif = rollAngle(i)-rollAngle(i-1);
+    
+    rotate(arrow,yaw,yawDif);
+    rotate(arrow,pitch,pitchDif);
+    rotate(arrow,roll,rollDif);
+    drawnow
+end
+
 % Plotting Power in the receiver
 f6 = figure(6);
 clf(f6);
@@ -203,3 +248,4 @@ title(str);
 xlabel('Time sample');
 ylabel('Relative Amplitude');
 axis([1 length(lat_drone) -140 -40]);
+movegui(f6,'south');

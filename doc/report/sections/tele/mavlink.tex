@@ -5,7 +5,7 @@ When speaking of digital communication it is required to have a certain communic
 In digital communication the information is sent through packets, in this case the data are the UAS parameters. Thus, for further understanding the packet structure of the MAVLink protocol can be as seen in Table \ref{tab:mavlink}.
 
 \begin{table}[h]
-	\centering
+	\centerline{
 	\begin{tabular}{|c||c|c|}
 		\hline
 		Field name       & Index (Bytes)  & Purpose											     \\ \hline\hline
@@ -17,7 +17,7 @@ In digital communication the information is sent through packets, in this case t
 		Message ID       & 		5 		  & Message identification (correctly decoded)      		   \\ \hline
 		Payload          &   6 to (n+6)   & Data into the message, depends on Message ID        	   \\ \hline
 		CRC              & (n+7) to (n+8) & Check-sum of packet (excluding packet start sign)          \\ \hline
-	\end{tabular}
+	\end{tabular}}
 	\caption{MAVLink packet structure}
 	\label{tab:mavlink}
 \end{table}
@@ -27,7 +27,7 @@ The CRC field ensures message integrity of each packet. Another function of the 
 \subsection{Messages}
 As stated above the payload from the packets are MAVLink messages. Also, every message can be identified by its ID field on the packet. Additionally, an XML document (in MAVLink source) has the definition of all the data stored on that payload. A sample of such an XML document can be seen in Figure \ref{fig:mav_msg} which describes a message with an ID 24 giving GPS relevant information.
 
-\begin{figure}[hb]
+\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.5]{figures/mavlink_msg.jpg}
 	\caption{Example of a MAVLink message XML document}

@@ -1,11 +1,11 @@
 \section{Link Budget}\label{subsec:link_budget}
 \paragraph{}
-As the next step, once it is assured that there is Line-Of-Sight connection, it is important to calculate what is termed as the \textbf{Link budget}. This calculation is an accounting of all the gains and losses from the transmitter, through the medium,  to the receiver in a telecommunication system. It includes terms on it for the attenuation of the transmitted signal due to propagation, as well as the antenna gains, feedline and miscellaneous losses. It is precesily by assesing the link budget that is possible to design the system so that it meets the requirements and performs as desired. Its general form is:
+As the next step, once it is assured that there is Line-Of-Sight connection, it is important to calculate what is termed as the \textbf{Link budget}. This calculation is an accounting of all the gains and losses from the transmitter, through the medium,  to the receiver in a telecommunication system. It includes terms on it for the attenuation of the transmitted signal due to propagation, as well as the antenna gains, feedline and miscellaneous losses. By assesing the link budget it is possible to design the system so that it meets the requirements and performs as desired. Its general form is:
 \begin{equation*}\label{eq:link_budget} 
  		\text{Received Power (dBm)} = \text{Transmitted Power (dBm)} + \text{Gains (dB)} - \text{Losses(dB)}
 \end{equation*}
 
-And, in a more detailed look, it can divided down into:
+And, in a more detail, it can be broken down into:
 
 \begin{equation*}\label{eq:link_budget} 
  		P_{RX} = P_{TX} + G_{TX} - L_{TX} - L_{FS} - L_{M} + G_{RX} - L_{RX}
@@ -39,6 +39,6 @@ where
 \paragraph{} Note then that a larger distance value between GS and UA will result in higher path loss.
 
 \subsection*{Effect of multipath propagation}
-\paragraph{}For true free space propagation such as that encountered for satellites there will be no noticeable reflections and there will only be one major path. However for terrestrial systems, the signal may reach the receiver via a number of different paths as a result of reflections, etc that will occur as a result of the objects around the path. Buildings, trees, objects around the office and home can all cause reflections that will result in the signal variations.
+\paragraph{}For true free space propagation such as that encountered for satellites there will be no noticeable reflections and there will only be one major path. However for terrestrial systems, the signal may reach the receiver via a number of different paths as a result of reflections that will occur as a result of the objects around the path. Buildings, trees, objects around the office and home can all cause reflections that will result in the signal variations.
 
 \paragraph{}The multipath propagation will cause variations of the signal strength when compared to that calculated from the free space path loss. If the signals arrive in phase with the direct signal, then the reflected signals will tend to reinforce the direct signal. If they are out of phase, then they will tend to cancel the signal. If either the transmitter or receiver moves, then the signal strength will be seen to vary as the relative strengths and phases of the different signals change.

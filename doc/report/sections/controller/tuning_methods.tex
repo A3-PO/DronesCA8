@@ -1,5 +1,5 @@
 \section{Tuning methods}
-Different methods can be used to tune a PID controller as the, Zieggler-Nichols, Skogestad and Good Gain method, having in common the same goal : Get a fast response and provide a good stability.\par
+Different methods can be used to tune a PID controller as the, Zieggler-Nichols, Skogestad and Good Gain method, having in common the same goal : get a fast response and provide a desired stability.\par
 As a first try, a PID controller was designed using the Good Gain method. Later, a comparison between P, PI, PD and PID controllers was performed with the \emph{PID Simulink} box, in order to choose the most effective one for our application.\par 	
 
 \subsubsection{The Good Gain}
@@ -31,7 +31,7 @@ This method can be split in three different parts. In the first part it is suppo
 
 Increasing $K_p$ in figure \ref{fig:subim12} will allow to reduce the rising time. Morover, changing this proportional gain is a needed step to find a slight overshoot and a well damped response. Hence, having an overshoot and the first undershoot, $T_{out}$ can be defined, being the time between the peak of the overshoot and the one of the undershoot.\par
 \vspace{5mm}
-Adding the integral parameter imply a relation with the previous defined time between the peak of the overshoot and undershoot. Thus, $T_i = 1.5 * T_{out}$. The objective of this step \ref{fig:subim13} is to eliminate the steady state error.
+Adding the integral parameter imply a relation with the previous defined time between the peak of the overshoot and undershoot. Thus, $T_i = 1.5T_{out}$. The objective of this step \ref{fig:subim13} is to eliminate the steady state error.
 
 
 
@@ -89,7 +89,7 @@ Including the N term avoids a 'pure derivative' that reacts easily to noises. Th
 
 The PID tuner considers as the plant all blocks in the loop, that can include linearities and nonlinearities, between the controller output and input. Then, the PID tuner automatically linearizes the plant at the operating point based on the initial conditions of the model. This process works as an approximation to the nonlinear system and is valid in a small region around its operating point.\par
 
-Taking into account a phase margin of 60 degrees (robustness), a balance between the performance parameters and the stability of the system, the tuning algorithm calculates the gains of the PID controller. The desired robustness, that is based on the gain and phase margin, becomes the system that is able to achieve the desired value with the shortest settling time. Thus, the oscillations will be avoided because the phase is less than 180 degrees at the unity gain frequency. Moreover, an equilibrium between the reference tracking and the disturbance rejection, which are the perfomance parameters, makes the controller respond fast to changes in the reference (achieve the new value) or disturbances (restraint their effect). Finally, the closed-loop stability refers to the closed-loop system output that remains bounded for bounded input.
+The gains of the PID controller are calculated based on three different concepts: closed-loop stability, adequate performance and adequate robustness. The closed-loop stability means that the system’s output remains bounded for a bounded input. The adequate performance of the PID controller will allow the system to track reference changes and suppress disturbances as rapidly as possible. Finally, the robustness is the property that takes into account the gain and phase margin in order to allow for modelling errors or variations in system dynamics. Thus, as is referred in the MathWorks webpage, the algorithm for tuning PID controllers meets these objectives by tuning the PID gains to achieve a good balance between performance and robustness.
 
 
 

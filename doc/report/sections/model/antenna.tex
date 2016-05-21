@@ -1,8 +1,8 @@
 \section{Antenna}\label{sec:antenna}
 
-Based on the overview of the system made in Chapter \ref{ch:uas} a modelling of the radiation pattern of the directional antenna is in due to be able to simulate the scenario.
+Based on the overview of the system made in Chapter \ref{ch:uas}, a modelling of the radiation pattern of the directional antenna is in due to be able to simulate the scenario.
 
-The radiation patterns is a graphical way of representing the radiation properties of the antenna as a function of space. These patterns are very useful when it comes to how an antenna perform. As an example, figure \ref{fig:radpattern} shows the radiation patterns of a real directional antenna.
+The radiation patterns are a graphical way of representing the radiation properties of the antenna as a function of space. These patterns are very useful when it comes to how an antenna perform. As an example, figure \ref{fig:radpattern} shows the radiation patterns of a real directional antenna.
 
 \begin{figure}[H]
 	\centerline{
@@ -11,12 +11,11 @@ The radiation patterns is a graphical way of representing the radiation properti
 	\label{fig:radpattern}
 \end{figure}
 
-\paragraph{}Note how, for a 3 dimensional radiation pattern, 2 planes are defined. These are the horizontal plane (H-plane) and the vertical plane (V-plane). For simplicity, during this work it is assumed that the radiation pattern is symmetric, and therefore, exactly the same for both planes.
+\paragraph{}Note how, for a 3 dimensional radiation pattern, 2 planes are defined. These are the horizontal plane (H-plane) and the vertical plane (V-plane). For simplicity, during this project it is assumed that the radiation pattern is symmetric, and therefore, exactly the same for both planes.
 
 \paragraph{}The concentric circles inside the plot represent the normalized power radiated in decibels (even though it is possible to find non-normalized plots as well). The closer to the center the circles are, the weaker the power gets in a logaritmic scale.
 
 \paragraph{}Choosing the parabolic and the patch antennas showed in table \ref{table:1} a radiation pattern was build by using the mathematical function \textit{sinc}, as shown in figure \ref{fig:sinc}.
-Plotting this \textit{sinc} in a form of a radiation pattern, similar features of a real antenna can be achieved (figure \ref{fig:radiationpattern}).
 
 \begin{table}[h]
 	\centering
@@ -36,17 +35,19 @@ Plotting this \textit{sinc} in a form of a radiation pattern, similar features o
 
 \begin{figure}[H]
 \hfill
-\subfigure[Sinc function natural units.]{\includegraphics[width=6.5cm]{figures/sinc1.eps}}
+\subfigure[Sinc function natural units.]{\includegraphics[scale=0.4]{figures/sinc1.eps}}
 \hfill
-\subfigure[Sinc function logaritmic units.]{\includegraphics[width=6.5cm]{figures/sinc2.eps}}
+\subfigure[Sinc function logaritmic units.]{\includegraphics[scale=0.4]{figures/sinc2.eps}}
 \hfill
 \caption{Sinc function.}
 \label{fig:sinc}
 \end{figure}
 
+Plotting this \textit{sinc} in a form of a radiation pattern, similar features of a real antenna can be achieved (figure \ref{fig:radiationpattern}).
+
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.4]{figures/radiationpattern.png}
+	\includegraphics[scale=0.6]{figures/radiationpattern.png}
 	\caption{Radiation Pattern based on sinc.}
 	\label{fig:radiationpattern}
 \end{figure}

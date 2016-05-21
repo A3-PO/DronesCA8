@@ -9,7 +9,7 @@ The structure of the controller can be seen on the figure below. Taking as input
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.5]{figures/controller_model.png}
+  \includegraphics[scale=0.6]{figures/controller_model.png}
   \caption[LABEL] {Block diagram of the PID controller}
 \end{figure}
   
@@ -17,11 +17,11 @@ This method can be split up in three different parts. In the first part it is su
 \begin{figure}[H]
 \hfill
 \subfigure[Set Ti = inf , Td = 0 and Kp = 1]{
-\includegraphics[scale=0.3]{figures/GG1.jpg}
+\includegraphics[scale=0.32]{figures/GG1.png}
 \label{fig:subim11}}
 \hfill
 \subfigure[Increase Kp until finding a slight overshoot but a well damped response]{
-\includegraphics[scale=0.3]{figures/GG2.jpg}
+\includegraphics[scale=0.32]{figures/GG2.png}
 \label{fig:subim12}}
 
 \caption{Good Gain : Setting the propotional parameter}
@@ -37,11 +37,11 @@ Adding the integral parameter implies a relation with the previous defined time 
 \begin{figure}[H]
 \hfill
 \subfigure[Set Ti = 1.5$\cdot T_{out}$]{
-\includegraphics[scale=0.29]{figures/GG3.jpg}
+\includegraphics[scale=0.32]{figures/GG3.png}
 \label{fig:subim13}}
 \hfill
 \subfigure[Set Td = $\frac{Ti}{4}$]{
-\includegraphics[scale=0.31]{figures/GG4.jpg}
+\includegraphics[scale=0.32]{figures/GG4.png}
 \label{fig:subim14}}
 \hfill
 
@@ -55,8 +55,8 @@ At this point, the controller is a proportional-integral. The high overshoot res
 Theoretically, the tuning of the controller using the Good Gain method is done. However, it is possible to improve the controller based on the application that is wanted. In the case of this project, stability and minor overshoot was more important than the reaching speed of the reference value. Therefore, based on the principles seen in sections \ref{sec:pid_theory}, the overshoot of the system was attenuated, the undershoot cancelled and the drop-off smoothed (figure \ref{finalGG}).
 
 \begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.5]{figures/GG5.jpg}
+  \centerline{
+  \includegraphics[scale=0.35]{figures/GG5.png}}
   \caption[LABEL] {Good Gain : final settings}
   \label{finalGG}
 \end{figure}
@@ -70,7 +70,7 @@ Therefore, the PID simulink box, that includes an automatic tuning tool and a re
  
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{figures/controller_box.png}
+\includegraphics[scale=0.6]{figures/controller_box.png}
 \caption{Inside of the PID box}
 \label{PID_box_N}
 \end{figure}

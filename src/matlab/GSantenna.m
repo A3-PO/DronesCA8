@@ -71,35 +71,37 @@ Udb = Udb + aprox;
 Udb(Udb<0) = 0;
 
 if plotting == 1  
-    figure();
-    subplot(211);
+    f1 = figure();
     plot(theta,U);
     axis([-pi pi 0 1]);
     grid on;
     grid minor;
-    str = sprintf('Radiation Intensity');
-    title(str);
-    subplot(212);
+%     str = sprintf('Radiation Intensity');
+%     title(str);
+    saveas(f1, '../../doc/report/figures/sinc1.eps');
+    f2 = figure();
     plot(theta,Udb);
     axis([-pi pi 0 aprox]);
     grid on;
     grid minor;
-    str = sprintf('Radiation Intensity [dB]');
-    title(str);
+%     str = sprintf('Radiation Intensity [dB]');
+%     title(str);
+    saveas(f2, '../../doc/report/figures/sinc2.eps');
     
-    figure();
+    f3 = figure();
     polar(theta,U);
     grid on;
     grid minor;
     str = sprintf('Radiation Intensity');
     title(str);
     
-    figure();
+    f3 = figure();
     mmpolar(theta,Udb,'TGridColor',[0 0 0],'RGridColor',[0 0 0],'RTickLabel',ticks);
     grid on;
     grid minor;
-    str = sprintf('Radiation Intensity [dB]');
-    title(str);
+%     str = sprintf('Radiation Intensity [dB]');
+%     title(str);
+    saveas(f3, '../../doc/report/figures/radiationpattern.png');
 end
 
 end

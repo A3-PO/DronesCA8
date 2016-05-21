@@ -1,5 +1,5 @@
 \section{MAVLink Protocol}\label{sec:mavlink}
-When speaking of digital communication it is required to have a certain communication protocol. Given the fact that, this project deals with UAS, a special protocol, namely Micro Air Vehicle Link (MAVLink) has been taken into consideration. Such that, this protocol is used in a GS and UA scenario, where inter-communication between systems is needed in order to transmit relevant parameters of the aircraft (e.g. location, heading angle and speed).  
+Taking the application at hand, inter-communication between systems is required such that transmission of aircraft parameters (e.g. location, heading angle and speed) to the ground station is fulfilled. In some cases, the whole system will operate in a low communication scenario in such a way that a low bandwidth allocation is essential. In this sense, given its characteristics a favorable candidate for the UAS would be the Micro Air Vehicle Link (MAVLink) protocol.
 
 \subsection{Packet Structure}
 In digital communication the information is sent through packets, in this case the data are the UAS parameters. Thus, for further understanding the packet structure of the MAVLink protocol can be as seen in Table \ref{tab:mavlink}.
@@ -23,6 +23,9 @@ In digital communication the information is sent through packets, in this case t
 \end{table}
 
 The CRC field ensures message integrity of each packet. Another function of the CRC is to establish that both sender and receiver agree on the message transfer.
+
+\subsection{Bandwidth Example}
+As an example of 
 
 \subsection{Messages}
 As stated above the payload from the packets are MAVLink messages. Also, every message can be identified by its ID field on the packet. Additionally, an XML document (in MAVLink source) has the definition of all the data stored on that payload. A sample of such an XML document can be seen in Figure \ref{fig:mav_msg} which describes a message with an ID 24 giving GPS relevant information.

@@ -1,9 +1,9 @@
 \section{Body Coordinate System}\label{sec:body}
-This frame has also the origin in the center of gravity of the UAV, however, unlike the vehicle-carried NED, the axis rotate with the craft:
+This frame has also the origin in the center of gravity of the UA, however, unlike the vehicle-carried NED, the axis rotate with the craft:
 \begin{itemize}
-\item{The origin (\textbf{$O_{b}$}) is located at the center of gravity of the UAV.}
+\item{The origin (\textbf{$O_{b}$}) is located at the center of gravity of the UA.}
 \item{The X-axis (\textbf{$X_{b}$}) points in the forward direction.}
-\item{The Y-axis (\textbf{$Y_{b}$}) points towards starboard, the right side of the UAV.}
+\item{The Y-axis (\textbf{$Y_{b}$}) points towards starboard, the right side of the UA.}
 \item{The Z-axis (\textbf{$Z_{b}$}) points downward, set by the right-hand rule.}
 \end{itemize}
 \begin{figure}[H]
@@ -26,13 +26,13 @@ where \textbf{R}$_{b/nv}$ is the \textbf{Rotation matrix}:
 \begin{align*}
 \textbf{R}_{b/nv} =
 \begin{bmatrix}
-\cos(\xi)\cos(\psi) & \cos(\xi)\sin(\psi) & -\sin(\xi)\\
-\sin(\gamma)\sin(\xi)\cos(\psi) - \cos(\gamma)\sin(\psi) & \sin(\gamma)\sin(\xi)\sin(\psi) + \cos(\gamma)\cos(\psi) & \sin(\gamma)\cos(\xi)\\
-\cos\gamma)\sin(\xi)\cos(\psi) + \sin(\gamma)\sin(\psi) & \cos(\gamma)\sin(\xi)\sin(\psi) - \sin(\gamma)\cos(\psi) & \cos(\gamma)\cos(\xi)
+c(\xi)c(\psi) & c(\xi)s(\psi) & -s(\xi)\\
+s(\gamma)s(\xi)c(\psi) - c(\gamma)s(\psi) & s(\gamma)s(\xi)s(\psi) + c(\gamma)c(\psi) & s(\gamma)c(\xi)\\
+c\gamma)s(\xi)c(\psi) + s(\gamma)s(\psi) & c(\gamma)s(\xi)s(\psi) - s(\gamma)c(\psi) & c(\gamma)c(\xi)
 \end{bmatrix}
 \end{align*}
 
-\paragraph{} However, even though the local NED cordinates is what is necesary to transform to the Body frame, the primary resource that we will have is the GPS position measurements of each of our devices (Ground station and UAV). Therefore a transformation from Geodetic Coordinate Frame to local NED frame is in due. The ECEF Coordinate Frame will be used as an intermediate step during this process.
+\paragraph{} However, even though the local NED cordinates is what is necesary to transform to the Body frame, the only available resource  is the GPS position measurements of each of our devices (Ground station and UA). Therefore a transformation from Geodetic Coordinate Frame to local NED frame is in due. The ECEF Coordinate Frame will be used as an intermediate step during this process.
 
 \subsection*{From Geodetic to ECEF}
 Being \textbf{P}$_{g}$ the position of a point in the geodetic system such that is defined by its latitude, longitude and height:
@@ -54,9 +54,9 @@ h
 \end{bmatrix}
 =
 \begin{bmatrix}
-(N_{E}+h)\cos(\varphi)\cos(\lambda) \\
-(N_{E}+h)\cos(\varphi)\sin(\lambda) \\
-(N_{E}(1-\textbf{e}^2)+h)\sin(\varphi)
+(N_{E}+h)c(\varphi)c(\lambda) \\
+(N_{E}+h)c(\varphi)s(\lambda) \\
+(N_{E}(1-\textbf{e}^2)+h)s(\varphi)
 \end{bmatrix}
 \end{align}
 
@@ -69,9 +69,9 @@ where \textbf{P}$_{e,ref}$ is the position of the origin of the local NED frame 
 \begin{align*}
 \textbf{R}_{n/e} =
 \begin{bmatrix}
--\sin(\varphi_{ref})\cos(\lambda_{ref}) & -\sin(\varphi_{ref})\sin(\lambda_{ref}) & \cos(\varphi_{ref})\\
--\sin(\lambda_{ref}) & \cos(\lambda_{ref}) & 0\\
--\cos(\varphi_{ref})\cos(\lambda_{ref}) & -\cos(\varphi_{ref})\sin(\lambda_{ref}) & -\sin(\varphi_{ref})\\
+-s(\varphi_{ref})c(\lambda_{ref}) & -s(\varphi_{ref})s(\lambda_{ref}) & c(\varphi_{ref})\\
+-s(\lambda_{ref}) & c(\lambda_{ref}) & 0\\
+-c(\varphi_{ref})c(\lambda_{ref}) & -c(\varphi_{ref})s(\lambda_{ref}) & -s(\varphi_{ref})\\
 \end{bmatrix}
 \end{align*}
 where $\varphi_{ref}$ and $\lambda_{ref}$ are the latitude and longitude of the reference point in Geodetic frame.

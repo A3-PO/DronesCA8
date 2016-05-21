@@ -8,9 +8,9 @@ Taking into account that the application at hand involves radio communication it
 	\label{fig:fresnel_zones}
 \end{figure}
 
-On the figure three Fresnel zones are shown, but there is an infinite number of Fresnel Zones and the 1st Fresnel Zone is the one that has most effect on the performance of the Wireless Network. If there are any obstructions, such as buildings, trees or hills, located in the 1st Fresnel Zone, the signal will be affected by these and would therefore be weakened at the receiver.
+On the figure above three Fresnel zones are shown, but there is an infinite number of them and the 1st zone is the one that has most effect on the performance of the Wireless Network. If there are any obstructions, such as buildings, trees or hills, located in the 1st Fresnel zone, the signal will be affected by these and would in consequence of this be weakened at the receiver.
 
-Therefore it is a good idea when planning wireless links to keep the 1st Fresnel Zone clear of obstruction. But this can be impractical so it is said that at least 60 $\%$ of the signal should be clear of obstructions. But to get optimum performance it is recommended to keep the signal 20$\%$ or less blocked. \\
+Therefore it is a good idea when planning wireless links to keep the 1st Fresnel Zone clear of obstruction. But this can be impractical so it is said that at least 60 $\%$ (\hl{ref}) of the signal should be clear of obstructions. Although to get optimum performance it is recommended to keep the signal 20$\%$ (\hl{ref}) or less blocked. \\
 %Note that obstacles in the 1st Fresnel Zone will create signals that will be 0 to 90 degrees out of phase, 90 to 270 degrees out of phase in the second zone, 270 to 450 degrees out of phase in third zone and so on.
 %
 %The first Fresnel zone is the ellipse with chords 1/2 wavelength longer than the direct path (ACB). 
@@ -19,8 +19,8 @@ Therefore it is a good idea when planning wireless links to keep the 1st Fresnel
 %
 %The direct wave, Line of Sight, goes directly from A to B and in this example it is where nothing is blocking the signal. 
 %
-\subsection{Calculating the Fresnel Zones}
-The following equation will calculate the radius of the Fresnel radius at any point P in between the endpoints of the link: 
+\subsection{Fresnel zone calculations}
+The following equation allows to calculate the radius of the Fresnel radius at any point P in between the endpoints of the link: 
 
 \begin{align}
 F_n = \sqrt{\frac{n \lambda d_1 d_2}{d_1+d_2}} \label{fresnel_zone_cal}
@@ -34,7 +34,7 @@ Where:
 \item $\lambda$ = The wavelength of the transmitted signal in metres
 \end{itemize}
 
-\noindent On figure \ref{fig:fresnel_zones} the parameters from equation \ref{fresnel_zone_cal} is shown. 
+\noindent On figure \ref{fig:fresnel_zones} the parameters from equation \ref{fresnel_zone_cal} are shown. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.70]{figures/fresnel_zone.jpg}
@@ -42,7 +42,7 @@ Where:
 	\label{fig:fresnel_zones}
 \end{figure}  
 
-Since the 1st Fresnel Zone is the most important, it is often useful to know the maximum radius of the zone. The radius of the Fresnel Zone is at the greatest distance at point P and therefore the distances between Point A and B to P will be identical, which implies that d1 = d2 and therefore d1 + d2 = D. Converting the wavelength value to signal frequency $\lambda = \frac{c}{f}$ the following formula for calculating the first Fresnel zone can be derived:
+Since the 1st Fresnel Zone is the most important, it is often useful to know the maximum radius of the zone. The radius of the Fresnel Zone is at the greatest distance at point P and therefore the distances between Point A and B to P will be identical, which implies that d1 = d2 and therefore d1 + d2 = D. Converting the wavelength value to signal frequency $\lambda = \frac{c}{f}$ the following formula for calculating the first Fresnel zone can be derived: \hl{Explain from 4.3 to 4.4}.
 \begin{align}
 r= 8.657 \sqrt{\frac{D}{f}} \label{eq:fresnel_radius}
 \end{align}
@@ -54,7 +54,7 @@ Where:
     \item $f$: frequency at which are transmitted in gigahertz
 \end{itemize}
 
-\subsection{Examples with Fresnel Zones}
+\subsection{Fresnel Zones examples without curvature of the earth}
 In equation \ref{eq:fresnel_radius} it is clear that by changing the distance D between the antennas, the radius r of the Fresnel zone will also change. To show how the radius changes by changing the distance, some examples are made. In these examples a frequency of 2.4Ghz are used and the curvature of the earth is not considered.
 
 The first example shows an antenna in the height of 20 meter and a drone flying in the height of 100 meter with 10km between them.
@@ -101,14 +101,14 @@ r3 = 8.657\cdot \sqrt{\frac{50}{2.4}} = 39.5m
 
 \noindent In these examples it is demonstrated that the radius of the Fresnel Zone increases when the distance between the antennas increases.
 
-\subsection{60\% of the 1st Fresnel Zone}
-Lets try to find out how tall a structure could be at the center of the Fresnel Zone, if 60\% should be clear of this zone, i.e 40\% should be blocked. For this the following equation must be used:
+\subsection{60\% Clearance Zone of the 1st Fresnel Zone}
+\hl{Lets} try to find out how tall a structure could be at the center of the Fresnel Zone, if 60\% should be clear of this zone, i.e 40\% should be blocked. For this the following equation must be used:
 
 \begin{align*}
 r = 8.657\cdot \sqrt{\frac{0.6D}{f}}
 \end{align*}
 
-Lets assume that both antennas are at a height of 20 meters and operating at 2.6GHz:
+\hl{Lets} assume that both antennas are at a height of 20 meters and operating at 2.6GHz:
 
 \begin{align*}
 \text{radius} = 8.657\cdot \sqrt{\frac{10}{2.4}} = 17.7m
@@ -123,7 +123,7 @@ Here the first Fresnel zone would pass just 2.3 meters above ground level in the
 	\label{fig:fresnel_zones_10km_height}
 \end{figure}  
 
-\noindent Now lets calculate how tall a structure should be if 60\% of the signal should be cleared:
+\noindent Now \hl{lets} calculate how tall a structure should be if 60\% of the signal should be cleared:
 
 \begin{align*}
 \text{radius} = 8.657\cdot \sqrt{0.6\cdot \frac{10}{2.4}} = 13.7m
@@ -144,11 +144,55 @@ Therefore the maximum permissible height of any obstruction located between the 
 	\label{fig:fresnel_zones_10km_60procent}
 \end{figure}  
 
-\noindent A obstruction higher then 6.3m will give less then 60\% clearance of the Fresnel Zone. To prevent this problem, the antenna need to be positioned higher up, or the direction of the link should be changed to avoid obstacles.
+\noindent An obstruction higher than 6.3m will give less than 60\% clearance of the Fresnel Zone. To prevent this problem, the antenna need to be positioned higher up, the frequency could be changed or the direction of the link should be changed to avoid obstacles.
 
-%The 1st zone is the ellipse with chords 1/2 wavelength longer than the direct path (ACB).
-%If a reflective object is very near the direct path, the signal will experience a 180o phase shift and cancel the direct wave at the receiver.
-%If a reflective object is tangent to the 1st zone, the electromagnetic wave will be shifted 180o because of the increased path length, undergo an additional 180o phase shift due to the reflection, and reinforce the direct wave at the receiver. Consequently, there should be no reflective objects in the 1st Fresnel zone.
-%If unobstructed, radio waves will travel in a straight line from the transmitter to the receiver. But if there are reflective surfaces along the path, such as bodies of water or smooth terrain, the radio waves reflecting off those surfaces may arrive either out of phase or in phase with the signals that travel directly to the receiver. Waves that reflect off of surfaces within an even Fresnel zone are out of phase with the direct-path wave and reduce the power of the received signal. Waves that reflect off of surfaces within an odd Fresnel zone are in phase with the direct-path wave and can enhance the power of the received signal. Sometimes this results in the counter-intuitive finding that reducing the height of an antenna increases the signal-to-noise ratio.
-%Fresnel provided a means to calculate where the zones are—where a given obstacle will cause mostly in phase or mostly out of phase reflections between the transmitter and the receiver. Obstacles in the first Fresnel zone will create signals with a path-length phase shift of 0 to 180 degrees, in the second zone they will be 180 to 360 degrees out of phase, and so on. Even numbered zones have the maximum phase cancelling effect and odd numbered zones may actually add to the signal power.[1]
-%To maximize receiver strength, one needs to minimize the effect of obstruction loss by removing obstacles from the radio frequency line of sight (RF LoS). The strongest signals are on the direct line between transmitter and receiver and always lie in the first Fresnel zone.
+\subsection{Fresnel zones examples with curvature of the earth}
+For longer distance links the curvature of the earth comes into play and may become an obstruction into the Fresnel zone and cause signal loss. This is because that the longer the distance between the antennas the greater the radius of the Fresnel zones. The formula for calculating the effect of the Earth's radius is as follows(\hl{ref}):
+
+\begin{align}
+H = \frac{1000\cdot D^2}{8\cdot E_r}
+\end{align}
+
+Where:
+\begin{itemize}[label=]
+    \item $H$: Height difference of Earth's Curvature at the mid-point between the two devices (m)
+    \item $D$: Total Link Distance between the two devices (km)
+    \item $E_r$:  Effective Radius of Earth (km) Note: Usually taken as 4/3 (1.333 rec.)actual radius to account for atmospheric refraction i.e. 8,504km
+\end{itemize}
+
+\noindent The best way to show how this comes into play is by showing an example. An illustration about the Fresnel zones, where the curvature of the earth is taking into account is shown on figure \ref{fig:fresnel_50km_curvature}. On this figure the building and the drone is at 77m height and is at a distance of 50km from each others. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.50]{figures/fresnel_50km_curvature.png}
+	\caption{Fresnel zone in 50km distance. With curvature of the earth taken into account.}
+	\label{fig:fresnel_50km_curvature}
+\end{figure}  
+
+\noindent The height difference of the earth's curvature at the mid-point between the drone and the building:
+\begin{align}
+\text{H} = \frac{1000 D^2}{8 \cdot E_r} = \frac{1000 \cdot 50^2}{8\cdot 8504} = 36.7m \approx 37m
+\end{align}
+
+\noindent The radius of the 1st Fresnel zone:
+\begin{align*}
+\text{r} = 8.657\cdot \frac{0.6\cdot D}{f} = 8.657\cdot \frac{50}{2.4} = 39.5m \approx 40m 
+\end{align*}
+
+\noindent Maximum height of the obstruction between the two devices within the 60\% clearance zone:
+
+\begin{align*}
+\text{radius}_{60} &= 8.657\cdot \frac{D}{f} = 8.657\cdot \frac{0.6\cdot 50}{2.4} = 30.6m \approx 31m \\
+\text{Obs}_{\text{max height}} &= 77m - \text{radius}_{60} = 77m - 31m = 46m \\
+\text{height}_{\text{max with curv}} &= \text{Obs}_{\text{max height}} - H = 46m - 37m = 9m
+\end{align*}
+
+\noindent On figure \ref{fig:fresnel_50km_curvature_obstacle} an obstruction is added with the above calculations added:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.50]{figures/fresnel_50km_curvature_obstacle.png}
+	\caption{Fresnel zone in 50km distance. To have 60\% clearance of the Fresnel zone. With curvature of the earth taken into account.}
+	\label{fig:fresnel_50km_curvature_obstacle}
+\end{figure}  
+

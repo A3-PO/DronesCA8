@@ -10,7 +10,7 @@ Taking into account that the application at hand involves radio communication, i
 
 The figure above shows three examples of Fresnel zones, but there is an infinite number of them. The first zone is the one that has most effect on the performance of the Wireless Network. If there are any obstructions, such as buildings, trees or hills, in the first Fresnel zone, the signal will be affected by them and, consequently, would be weaker at the receiver.
 
-Therefore, it is essential to keep the first Fresnel zone clear of obstruction when planning wireless links. However, it is impractical to avoid 100$\%$ of the obstructions in the real-life. Thus, based on (\hl{refhereimportant}, at least 60 $\%$ of the signal should be clear of obstructions. However, to get optimum performance it is recommended to keep the signal 20$\%$ or less blocked.
+Therefore, it is essential to keep the first Fresnel zone clear of obstruction when planning wireless links. However, it is impractical to avoid 100$\%$ of the obstructions in the real-life. Thus, based on (\hl{refhereimportant})27.maj 09:36, at least 60 $\%$ of the signal should be clear of obstructions. However, to get optimum performance it is recommended to keep the signal 20$\%$ or less blocked.
 
 \subsection{Fresnel zone calculations}
 The figure \ref{fig:fresnel_zones} represents the first Fresnel zone between the antennas on the buildings A and B. The radius \textit{r} corresponds to the radius of the Fresnel zone at the point P. 
@@ -116,7 +116,7 @@ In this case, the first Fresnel zone would pass just 2.3 meters above the ground
 In order to calculate how tall a structure should be, it is necessary to calculate the radius of the Fresnel zone when the signal is 60$\%$ cleared (equation \ref{eq:60_distance10}).
 
 \begin{align}
-r_1 = 8.657\sqrt{0.6 \frac{10}{2.4}} = 13.7m\label{eq:60_distance10}
+r_{1(60\%)} = 8.657\sqrt{0.6 \frac{10}{2.4}} = 13.7m\label{eq:60_distance10}
 \end{align}
   
 Therefore, knowing that the height of the longitudinal axis of the ellipsoid is the same as the one of both antennas, it is possible to calculate the maximum altitude of the obstruction. This altitude can be obtained by subtracting the antenna height with the radius calculated in equation \ref{eq:60_distance10}.
@@ -162,21 +162,21 @@ Furthermore, the radius of the first Fresnel zone:
 \text{r} = 8.657\cdot \frac{0.6\cdot D}{f} = 8.657\cdot \frac{50}{2.4} = 39.5m \approx 40m 
 \end{align*}
 
-On the other hand, the maximum height of the obstruction between the two devices within the 60$\%$ clearance zone can be calculated with the equations \ref{radius_60}, \ref{Obs_max_height} and \ref{height_max_with_curv}.
+On the other hand, the maximum height of the obstruction between the two devices within the 60$\%$ clearance zone can be calculated with the equations \ref{radius_60}, \ref{Obs_max_height} and \ref{height_max_with_curv}. These calculations are illustrated on figure \ref{fig:fresnel_50km_curvature_obstacle}.
 
 \begin{align}
-\text{radius}_{60} &= 8.657\cdot \frac{0.6\cdot D}{f} = 8.657\cdot \frac{0.6\cdot 50}{2.4} = 30.6m \approx 31m \label{radius_60}
+r_{1(60\%)} &= 8.657\cdot \frac{0.6\cdot D}{f} = 8.657\cdot \frac{0.6\cdot 50}{2.4} = 30.6m \approx 31m \label{radius_60}
 \end{align}
 
+The maximum height of the obstruction with the curvature of the earth included:
 \begin{align}
-\text{Obs}_{\text{max height}} &= 77m - \text{radius}_{60} = 77m - 31m = 46m \label{Obs_max_height}
+\text{Obs}_{\text{max height}} &= 77m - r_{1(60\%)} = 77m - 31m = 46m \label{Obs_max_height}
 \end{align}
 
+The actual maximum height of the obstruction:
 \begin{align}
 \text{height}_{\text{max with curv}} &= \text{Obs}_{\text{max height}} - H = 46m - 37m = 9m\label{height_max_with_curv}
 \end{align}
-
-In figure \ref{fig:fresnel_50km_curvature_obstacle} an obstruction was added and the above calculations were applied.  
 
 \begin{figure}[H]
 	\centering
@@ -185,3 +185,4 @@ In figure \ref{fig:fresnel_50km_curvature_obstacle} an obstruction was added and
 	\label{fig:fresnel_50km_curvature_obstacle}
 \end{figure}  
 
+Figure \ref{fig:fresnel_50km_curvature_obstacle} shows that it's important to consider the curvature of the earth. Here the obstruction can only be at the height of 9m, since the curvature is an obstruction itself and takes 37m. However, it is important to note that this example only implies when the longitudinal axis of the ellipsoid is the same as the one of both antennas. But nonetheless it gives a good understanding that the Fresnel zones are important factors when building a wireless link network.

@@ -4,7 +4,7 @@ Taking the application at hand, inter-communication between systems is required 
 \subsection{Packet Structure}
 In digital communication the information is sent through packets, in this case the data are the UAS parameters. Thus, for further understanding the packet structure of the MAVLink protocol can be as seen in Table \ref{tab:mavlink}.
 
-\begin{table}[h]
+\begin{table}[H]
 	\centerline{
 	\begin{tabular}{|c||c|c|}
 		\hline
@@ -24,11 +24,8 @@ In digital communication the information is sent through packets, in this case t
 
 The CRC field ensures message integrity of each packet. Another function of the CRC is to establish that both sender and receiver agree on the message transfer.
 
-\subsection{Bandwidth Example}
-As an example of 
-
 \subsection{Messages}
-As stated above the payload from the packets are MAVLink messages. Also, every message can be identified by its ID field on the packet. Additionally, an XML document (in MAVLink source) has the definition of all the data stored on that payload. A sample of such an XML document can be seen in Figure \ref{fig:mav_msg} which describes a message with an ID 24 giving GPS relevant information.
+As stated above the payload from the packets are MAVLink messages. Also, every message can be identified by its ID field on the packet. Additionally, an XML document (in MAVLink source) has the definition of all the data stored on that payload. A sample of such an XML document can be seen in Figure \ref{fig:mav_msg} which describes a message with a 24 number ID giving GPS relevant information. Thus, from this message it can be observed the latitude, longitude and altitude in the WGS84 coordinate system.
 
 \begin{figure}[H]
 	\centering
@@ -40,12 +37,10 @@ As stated above the payload from the packets are MAVLink messages. Also, every m
 To be noted that the XML document describes the logical ordering of the fields for the protocol, not the actual wire format.
 
 \subsection{Advantages}
-To sum up, the MAVLink presents the following advantages:
+To sum up, taking into account the advantages of the MAVLink protocol it can be said that it is a viable option in the case of the UAS at hand:
 \begin{itemize}
 	\item Small packet size
 	\item Message verification
 	\item Low bandwidth allocation
 	\item Useful at low communication scenario
 \end{itemize}
-
-In conclusion, taking the advantages presented above that the MAVLink protocol is a viable option in the case of the UAS at hand.

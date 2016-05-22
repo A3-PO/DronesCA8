@@ -1,5 +1,5 @@
 \section{LOS Coverage Map}\label{sec:los_map}
-A point of interest regarding the project at hand is that Line-of-Sight between the GS and the UA should be fulfilled. As discussed in Chapter \ref{ch:frames} this model should take into account the followings:
+A point of interest regarding the project at hand is that Line-of-Sight between the Ground Station and the Unmanned Aircraft should be fulfilled. As discussed in Chapter \ref{ch:frames} this model should take into account the followings:
 
 \begin{itemize}
 	\item Terrain elevation
@@ -8,42 +8,57 @@ A point of interest regarding the project at hand is that Line-of-Sight between 
 \end{itemize}
 
 \subsection{Initial Step}
-In this sense, a MATLAB script has been addressed which at first imports a Web Map Service (WMS) in order to load various maps with their topographic data. As an example a map which captures the area of Central Europe has been taken along with its terrain elevation levels as seen in Figure \ref{fig:before_map}.
+In this sense, a MATLAB script has been addressed which at first imports a Web Map Service (WMS) in order to load various maps with their topographic data. As example, a map which captures the areas of Denmark and Sweden has been taken along with its terrain elevation as it can be seen in Figure \ref{fig:before_map}.
 
 \begin{figure}[H]
   \hfill
   \subfigure[Map Before Interaction]{
-  \includegraphics[scale=0.32]{figures/europe_map.png}
+  \includegraphics[scale=0.3]{figures/dk_map.png}
   \label{fig:before_map}}
   \hfill
   \subfigure[GS and UA Placement]{
-  \includegraphics[scale=0.32]{figures/gs_ua_map.png}
+  \includegraphics[scale=0.3]{figures/gs_ua_map.png}
   \label{fig:gs_uav_map}}
   \hfill
-  \caption{Topographic Map of Central Europe}\label{fig:eu_map}
+  \caption{Topographic Map of Northen Europe}\label{fig:eu_map}
 \end{figure}
 
 \subsection{LOS Distance}
-Given the map and its topographic data in Figure \ref{fig:before_map}, now it is possible to input the desired points for the GS (red) and the UA (blue) which gives as result in Figure \ref{fig:gs_uav_map}. The example takes into account the altitude of the GS (20m) and UA (100m) along with the terrain elevation. Thus, it can be observed in Figure \ref{fig:los_2p} that visibility is lost after 65 kilometers from the GS due to terrain elevation. On the other hand, in some parts of the distance it can be seen that the field of vision is regained, as a result of high terrain elevation around the 73th and 78th kilometer. Moreover, it can be seen that the curvature of the Earth comes into play as the further away the UA is from the GS.
+Given the map and its topographic data in Figure \ref{fig:before_map}, now it is possible to input the desired points for the GS (orange) and the UA (blue) which gives as result in Figure \ref{fig:gs_uav_map}. The example takes into account the altitude of the GS (20m) and UA (100m) along with the terrain elevation. 
+
+Figure \ref{fig:los_2p} shows the Local NED of the GS (orange cross) perspective which is fixed in zero. Furthermore, the blue crosses and red circles indicate if the UA is visible or not at a particular distance from the GS. Thus, it can be observed that visibility is lost after 50 kilometers from the ground station due to terrain elevation. However, the field of vision is regained between the 55th and 65th kilometer, but the curvature of the Earth comes into play and visibility is lost once again.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.40]{figures/los_2p.png}
-	\caption{LOS distance seen from the Local NED of GS \\ X axis - Distance [km] \\ Y axis - Altitude [m]}
+	\includegraphics[scale=0.40]{figures/los_2points.png}
+	\caption{Line-of-Sight distance seen from the Local NED of the Ground Station}
    	\label{fig:los_2p}
 \end{figure}
 
-\subsection{Coverage Map}
-Moving further, for the same map (Figure \ref{fig:before_map}), a location of the GS can be chosen, such that it will result into a visibility area (inside the white zone) as seen in Figure \ref{fig:los_area}. This area is also referred as the LOS coverage map and it takes into account the previously mentioned parameters.
+\subsection{LOS Coverage Map}
+Moving further, for the same map (Figure \ref{fig:before_map}), a location of the GS can be chosen, such that it will result into a visibility area (inside the orange zone) as seen in Figure \ref{fig:los_area}. This area is also referred as the \emph{LOS Coverage Map} and it takes into account the previously mentioned parameters.
+
+\begin{figure}[H]
+  \hfill
+  \subfigure[LOS Coverage Map of UAS]{
+  \includegraphics[scale=0.31]{figures/los_area.png}
+  \label{fig:los_area}}
+  \hfill
+  \subfigure[Zoom of LOS Area]{
+  \includegraphics[scale=0.33]{figures/zoom_los_map.png}
+  \label{fig:zoom_map}}
+  \hfill
+  \caption{LOS Coverage Map}\label{fig:eu_map}
+\end{figure}
+
+It can be observed from Figure \ref{fig:los_area} that in some areas of the map there is no visibility, due to higher terrain elevation or the curvature of the Earth. Additionally, in Figure \ref{fig:los_odense} it can be seen that choosing a good position for the ground station can impact the coverage area, such that the working area of the UAS expands.  
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.5]{figures/cov_map1.png}
-	\caption{LOS Coverage Map from the GS}
-   	\label{fig:los_area}
+	\includegraphics[scale=0.70]{figures/los_odense.png}
+	\caption{Example of good GS positioning which impacts coverage area}
+   	\label{fig:los_odense}
 \end{figure}
-
-It can be observed from Figure \ref{fig:los_area} that in some areas of the map there is no visibility, due to higher terrain elevation. This can be overcome by increasing the GS and/or UA altitude, such that we achieve visibility.  
 
 \subsection{Working Principle}
 Taking into account that a MATLAB script has been achieved, a thourough working principle has to be addressed in the following steps:

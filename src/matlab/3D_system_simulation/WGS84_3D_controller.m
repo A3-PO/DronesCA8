@@ -75,7 +75,8 @@ plotm(lat1,long1,'o','Color',[1 0.5 0.2],'LineWidth',3);textm(lat1,long1,'  GS')
 plotm(lat2,long2,'bo','LineWidth',3);textm(lat2,long2,'  UA Start');
 [lat3, long3] = inputm(1);
 plotm(lat3,long3,'bo','LineWidth',3);textm(lat3,long3,'  UA End');
-print('../../../doc/report/figures/Map_sim.eps','-depsc');
+
+% print('../../../doc/report/figures/Map_sim.eps','-depsc');
 
 %% Initial values
 % Drone position
@@ -86,7 +87,11 @@ long_end_d = long3;
 
 lat_drone = lat_init_d:(lat_end_d-lat_init_d)/prec_geo:lat_end_d;       
 long_drone = long_init_d:(long_end_d - long_init_d)/prec_geo:long_end_d;   
-alt_drone = H_ua*ones(1,length(lat_drone));   
+for t=1:length(lat_drone)
+    alt_drone(t) = H_ua + ltln2val(Z, R, lat_drone(t), long_drone(t));
+end
+
+
 
 % Drone deviation
 
@@ -153,7 +158,7 @@ title('Phi Drone angle vs optimal');
 grid on;
 grid minor;
 movegui(f2,'northwest');
-print('../../../doc/report/figures/Drone_angles.eps','-depsc');
+% print('../../../doc/report/figures/Drone_angles.eps','-depsc');
 
 f3 = figure(3);
 subplot(2,1,1);
@@ -177,7 +182,7 @@ title('Phi Ground station angle vs optimal');
 grid on;
 grid minor;
 movegui(f3,'southwest');
-print('../../../doc/report/figures/GS_angles.eps','-depsc');
+% print('../../../doc/report/figures/GS_angles.eps','-depsc');
 
 % 3D
 f4 = figure(4);

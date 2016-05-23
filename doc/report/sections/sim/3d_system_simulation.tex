@@ -37,4 +37,23 @@ In this case, the frame will not be a simple cartesian plane, but instead we wil
 The Ground station version will transform the Drone GPS coordinates to ECEF and then to the local NED Frame with respect to the Ground Station position. The Drone version do the analgous calculation but the NED Frame will be with respect to the Drone position.
 \paragraph{}After this, the \textbf{optimal} or {reference} angles will be calculated according to the equations \ref{eq:OptGS} and the error signal obtained by substracting this calculated angle with the current angle position of the antenna, which comes from the outer loop feedback.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/Map_sim.eps}
+	\caption{Map}
+   	\label{fig:map}
+\end{figure}
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/Drone_angles.eps}
+	\caption{Drone angles}
+   	\label{fig:Drone_angles}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/GS_angles.eps}
+	\caption{Ground Station angles}
+   	\label{fig:GS_angles}
+\end{figure}

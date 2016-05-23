@@ -114,6 +114,7 @@ if plotting == 1
     grid minor;
     str = sprintf('Radiation Intensity(Phi)\nTheta = 0\n[dB]');
     title(str);
+
 end
 
 end

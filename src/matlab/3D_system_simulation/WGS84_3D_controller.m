@@ -49,8 +49,8 @@ H_gs = 20;
 H_ua = 100;
 % H_gs = input('Input ground station altitude: ');   % [m] GS altitude 
 % H_ua = input('Input aircraft altitude: ');         % [m] UA altitude
-latlim = [53 58];                                  % Map latitude limits
-lonlim = [8 13];                                   % Map longitude limits
+latlim = [54 58];                                  % Map latitude limits
+lonlim = [8 16];                                   % Map longitude limits
 R_e = earthRadius('meters');                       % Earth radius
 
 %Import map as a Web Map Service (WMS)
@@ -70,12 +70,12 @@ geoshow(ZA, RA, 'DisplayType', 'texturemap')
 demcmap(double(ZA))
 title({'Central Europe - Topographic Map'});
 [lat1, long1] = inputm(1);                         % Input GS and UA locations
-plotm(lat1,long1,'ro','LineWidth',3);textm(lat1,long1,'  GS');
+plotm(lat1,long1,'o','Color',[1 0.5 0.2],'LineWidth',3);textm(lat1,long1,'  GS');
 [lat2, long2] = inputm(1);
 plotm(lat2,long2,'bo','LineWidth',3);textm(lat2,long2,'  UA Start');
 [lat3, long3] = inputm(1);
 plotm(lat3,long3,'bo','LineWidth',3);textm(lat3,long3,'  UA End');
-
+print('../../../doc/report/figures/Map_sim.eps','-depsc');
 
 %% Initial values
 % Drone position
@@ -153,6 +153,7 @@ title('Phi Drone angle vs optimal');
 grid on;
 grid minor;
 movegui(f2,'northwest');
+print('../../../doc/report/figures/Drone_angles.eps','-depsc');
 
 f3 = figure(3);
 subplot(2,1,1);
@@ -176,6 +177,7 @@ title('Phi Ground station angle vs optimal');
 grid on;
 grid minor;
 movegui(f3,'southwest');
+print('../../../doc/report/figures/GS_angles.eps','-depsc');
 
 % 3D
 f4 = figure(4);

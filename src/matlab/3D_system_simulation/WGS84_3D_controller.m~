@@ -65,43 +65,39 @@ Z = double(ZA);
 R = RA;
 
 %   LOADING SCRIPT
-scenario = 4;
-if scenario == 1
+fprintf('##############################################################################\n');
+fprintf('#                           DRONE SIMULATION SCRIPT                          #\n');
+fprintf('#                                                                            #\n');
+fprintf('#        GROUP 832 - CONTROL AND AUTOMATION MSC. - AALBORG UNIVERSITY        #\n');
+fprintf('##############################################################################\n\n');
+fprintf('Choose one of the 4 scenarios.\n');
+fprintf('Input the character of the respective scenario:\n');
+prompt = 'A) 1.Curvature \nB) 2.Angle range \nC) 3.Above \nD) 4.Mountain \n\nYour answer: ';
+usrIn = input(prompt,'s');
+if (strcmp(usrIn,'A') || strcmp(usrIn,'a'))
     fprintf('\nYou chose: 1.Curvature\n');
-    load('Scenario1.mat');
+    load('Scenario1');
     lat1 = GSPOS(1);
     long1 = GSPOS(2);
     lat2 = UASTART(1);
     long2 = UASTART(2);
     lat3 = UAEND(1);
     long3 = UAEND(2);
-elseif scenario == 2
-    fprintf('\nYou chose: 2.Angle range\n');
-    load('Scenario2.mat');
-    lat1 = GSPOS(1);
-    long1 = GSPOS(2);
-    lat2 = UASTART(1);
-    long2 = UASTART(2);
-    lat3 = UAEND(1);
-    long3 = UAEND(2);
-elseif scenario == 3
-    fprintf('\nYou chose: 3.Above\n');
-    load('Scenario3.mat');
-    lat1 = GSPOS(1);
-    long1 = GSPOS(2);
-    lat2 = UASTART(1);
-    long2 = UASTART(2);
-    lat3 = UAEND(1);
-    long3 = UAEND(2);
-elseif scenario == 4
-    fprintf('\nYou chose: 4.Mountain\n');
-    load('Scenario4.mat');
-    lat1 = GSPOS(1);
-    long1 = GSPOS(2);
-    lat2 = UASTART(1);
-    long2 = UASTART(2);
-    lat3 = UAEND(1);
-    long3 = UAEND(2);
+elseif (strcmp(usrIn,'marge') || strcmp(usrIn,'B') || strcmp(usrIn,'b'))
+    fprintf('\nYou chose: B) Marge\n');
+    build = STR_MARGE;
+elseif (strcmp(usrIn,'bart') || strcmp(usrIn,'C') || strcmp(usrIn,'c'))
+    fprintf('\nYou chose: C) Bart\n');
+    build = STR_BART;
+elseif (strcmp(usrIn,'lisa') || strcmp(usrIn,'D') || strcmp(usrIn,'d'))
+    fprintf('\nYou chose: D) Lisa\n');
+    build = STR_LISA;
+elseif (strcmp(usrIn,'maggie') || strcmp(usrIn,'E') || strcmp(usrIn,'e'))
+    fprintf('\nYou chose: E) Maggie\n');
+    build = STR_MAGGIE;
+else
+    fprintf('\nWARNING: Empty or unrecognized request.\nAssuming default color...\n');
+    build = DEF_COLOR;
 end
 
 figure(1);
@@ -109,16 +105,17 @@ worldmap(latlim, lonlim);
 geoshow(ZA, RA, 'DisplayType', 'texturemap')
 demcmap(double(ZA))
 title({'Central Europe - Topographic Map'});
-% [lat1, long1] = inputm(1);                         % Input GS and UA locations
+[lat1, long1] = inputm(1);                         % Input GS and UA locations
 plotm(lat1,long1,'o','Color',[1 0.5 0.2],'LineWidth',3);textm(lat1,long1,'  GS');
-% [lat2, long2] = inputm(1);
+[lat2, long2] = inputm(1);
 plotm(lat2,long2,'bo','LineWidth',3);textm(lat2,long2,'  UA Start');
-% [lat3, long3] = inputm(1);
+[lat3, long3] = inputm(1);
 plotm(lat3,long3,'bo','LineWidth',3);textm(lat3,long3,'  UA End');
 % GSPOS = [lat1, long1];
 % UASTART = [lat2,long2];
 % UAEND = [lat3,long3];
 % save('Scenario4','GSPOS','UASTART','UAEND');
+
 % print('../../../doc/report/figures/Map_sim.eps','-depsc');
 
 %% Initial values
@@ -233,7 +230,18 @@ grid minor;
 hold on;
 movegui(f4,'northeast');
 for i = 1:length(lat_drone)
-       
+    
+    % Line Of Sight check
+    [vis(i)] = los2(Z, R, lat_gs(i), long_gs(i), lat_drone(i), ...
+        long_drone(i), H_gs, H_ua, 'AGL', 'AGL', R_e, 4/3*R_e);
+    if vis(i) == 1
+        tmp = 'bo';
+    else
+        tmp = 'rx';
+    end
+    
+    plot(t(i),los_d_vec(i)/1000,tmp);
+    
     % GAINS
     alpha_gs_deg = rad2deg(alpha_gs(i));
     alpha_d_deg = rad2deg(alpha_d(i));
@@ -245,18 +253,6 @@ for i = 1:length(lat_drone)
     % POWER IN RECEIVER
     Lfs(i) = -20*log10(4*pi*los_d_vec(i)/lambda);
     Prx(i) = Ptx + GSgain(i) + Dgain(i) + Lfs(i);
-    
-    % Line Of Sight check
-    [vis(i)] = los2(Z, R, lat_gs(i), long_gs(i), lat_drone(i), ...
-        long_drone(i), H_gs, H_ua, 'AGL', 'AGL', R_e, 4/3*R_e);
-    if vis(i) == 1
-        tmp = 'bo';
-    else
-        tmp = 'rx';
-        Prx(i) = -200;
-    end
-    
-    plot(t(i),los_d_vec(i)/1000,tmp);
 end
 
 % Define arrow

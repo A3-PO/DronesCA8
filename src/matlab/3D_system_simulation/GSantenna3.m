@@ -59,7 +59,7 @@ tvalue_phi = phi(ind_phi);
 
 % Radiation Intensity
 R = sqrt(THETA.^2 + PHI.^2) + eps;
-U = sin(f*R)./(f*R);
+U = 24*sin(f*R)./(f*R);
 U = abs(U);
 
 % Transform to dB:

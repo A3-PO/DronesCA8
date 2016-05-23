@@ -65,7 +65,7 @@ Z = double(ZA);
 R = RA;
 
 %   LOADING SCRIPT
-scenario = 4;
+scenario = 1;
 if scenario == 1
     fprintf('\nYou chose: 1.Curvature\n');
     load('Scenario1.mat');
@@ -119,7 +119,7 @@ plotm(lat3,long3,'bo','LineWidth',3);textm(lat3,long3,'  UA End');
 % UASTART = [lat2,long2];
 % UAEND = [lat3,long3];
 % save('Scenario4','GSPOS','UASTART','UAEND');
-% print('../../../doc/report/figures/Map_sim.eps','-depsc');
+print('../../../doc/report/figures/Map_sim_1.eps','-depsc');
 
 %% Initial values
 % Drone position
@@ -197,7 +197,7 @@ title('Phi Drone angle vs optimal');
 grid on;
 grid minor;
 movegui(f2,'northwest');
-% print('../../../doc/report/figures/Drone_angles.eps','-depsc');
+print('../../../doc/report/figures/Drone_angles_1.eps','-depsc');
 
 f3 = figure(3);
 subplot(2,1,1);
@@ -221,7 +221,7 @@ title('Phi Ground station angle vs optimal');
 grid on;
 grid minor;
 movegui(f3,'southwest');
-% print('../../../doc/report/figures/GS_angles.eps','-depsc');
+print('../../../doc/report/figures/GS_angles_1.eps','-depsc');
 
 % 3D
 f4 = figure(4);
@@ -258,6 +258,7 @@ for i = 1:length(lat_drone)
     
     plot(t(i),los_d_vec(i)/1000,tmp);
 end
+print('../../../doc/report/figures/LOS_1.eps','-depsc');
 
 % Define arrow
 f5 = figure(5);
@@ -296,3 +297,4 @@ xlabel('Time sample');
 ylabel('Relative Amplitude');
 axis([1 length(lat_drone) -140 -40]);
 movegui(f6,'south');
+print('../../../doc/report/figures/Prx_1.eps','-depsc');

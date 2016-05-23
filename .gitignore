@@ -32,3 +32,5 @@ doc/report/*.glsdefs
 doc/report/*.ist
 doc/report/*.bbl
 doc/report/*.blg
+
+src/matlab/3D_system_simulation/slprj/*

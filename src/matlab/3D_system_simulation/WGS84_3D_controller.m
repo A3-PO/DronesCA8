@@ -156,7 +156,7 @@ drawArrow = @(x,y,z) quiver3(x(1),y(1),z(1),x(2)-x(1),y(2)-y(1),...
 %% RUNNING Simulation of the model with the controller (dronesmodel.mdl)
 time = 0:1/fsampling:(length(lat_drone)-1)/fsampling;    % Time
 
-[T,X,Y] = sim('controller_v4',time);
+[T,X,Y] = sim('controller_v4_2015a',time);
 
 %% Simulation data of angles
 t = theta_d_vec.Time;                       % sample time

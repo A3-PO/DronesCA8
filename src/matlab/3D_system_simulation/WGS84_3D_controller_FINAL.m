@@ -65,7 +65,7 @@ Z = double(ZA);
 R = RA;
 
 %   LOADING SCRIPT
-scenario = 4;
+scenario = 2;
 if scenario == 1
     fprintf('\nYou chose: 1.Angle range\n');
     load('Scenario2.mat');
@@ -128,18 +128,24 @@ lat_end_d = lat3;
 long_init_d = long2;
 long_end_d = long3;
 
+geoEnd = [lat_end_d; long_end_d; H_ua + ltln2val(Z, R, lat_end_d, long_end_d)];
+ecefEnd = geo2ecef(geoEnd);
+
 lat_drone = lat_init_d:(lat_end_d-lat_init_d)/prec_geo:lat_end_d;       
 long_drone = long_init_d:(long_end_d - long_init_d)/prec_geo:long_end_d;   
 for t=1:length(lat_drone)
     alt_drone(t) = H_ua + ltln2val(Z, R, lat_drone(t), long_drone(t));
+    geoDrone = [lat_drone(t), long_drone(t),alt_drone(t)];
+    nedEnd = ecef2ned(ecefEnd,geoDrone);
+    yawAngle(t) = -rad2deg(atan2(nedEnd(1),nedEnd(2)));
 end
 
 % Drone deviation
-yawAngle = zeros(1,length(lat_drone));
+% yawAngle = zeros(1,length(lat_drone));
 pitchAngle = zeros(1,length(lat_drone));
 rollAngle = zeros(1,length(lat_drone));
 % yawAngle = 0;
-% pitchAngle = 0;
+% pitchAngle = 0;   
 % rollAngle = 0;
 % for i = 2:length(lat_drone)
 %     yawAngle = [yawAngle yawAngle(end)+round(-1 + 2*rand(1))];
@@ -180,60 +186,60 @@ los_d_vec = los_d_vec.Data;
 %% Plot current vs optimal angle of drone and ground station 
 f2 = figure(2);
 subplot(2,1,1);
-plot(t,rad2deg(theta_d_vec),'LineWidth',2);
-hold on;
-plot(t,rad2deg(opt_theta_d),'r');
-xlabel('Sample');
-ylabel('Angle [deg]');
-legend('Drone','Optimal');
-title('Theta Drone angle vs optimal');
-grid on;
-grid minor;
+    plot(t,rad2deg(theta_d_vec),'LineWidth',2);
+    hold on;
+    plot(t,rad2deg(opt_theta_d),'r');
+    xlabel('Sample');
+    ylabel('Angle [deg]');
+    legend('\theta_{UA}','\theta_{OPTIMAL}');
+    title('Azimuth Angle: UA vs OPTIMAL');
+    grid on;
+    grid minor;
 subplot(2,1,2);
-plot(t,rad2deg(phi_d_vec),'LineWidth',2);
-hold on;
-plot(t,rad2deg(opt_phi_d),'r');
-xlabel('Sample');
-ylabel('Angle [deg]');
-legend('Drone','Optimal');
-title('Phi Drone angle vs optimal');
-grid on;
-grid minor;
+    plot(t,rad2deg(phi_d_vec),'LineWidth',2);
+    hold on;
+    plot(t,rad2deg(opt_phi_d),'r');
+    xlabel('Sample');
+    ylabel('Angle [deg]');
+    legend('\phi_{UA}','\phi_{OPTIMAL}');
+    title('Elevation Angle: UA vs OPTIMAL');
+    grid on;
+    grid minor;
 movegui(f2,'northwest');
 % print('../../../doc/report/figures/Drone_angles.eps','-depsc');
 
 f3 = figure(3);
 subplot(2,1,1);
-plot(t,rad2deg(theta_gs_vec),'LineWidth',2);
-hold on;
-plot(t,rad2deg(opt_theta_gs),'r');
-xlabel('Sample');
-ylabel('Angle [deg]');
-legend('Ground station','Optimal');
-title('Theta Ground station angle vs optimal');
-grid on;
-grid minor;
+    plot(t,rad2deg(theta_gs_vec),'LineWidth',2);
+    hold on;
+    plot(t,rad2deg(opt_theta_gs),'r');
+    xlabel('Sample');
+    ylabel('Angle [deg]');
+    legend('\theta_{GS}','\theta_{OPTIMAL}');
+    title('Azimuth Angle: GS vs OPTIMAL');
+    grid on;
+    grid minor;
 subplot(2,1,2);
-plot(t,rad2deg(phi_gs_vec),'LineWidth',2);
-hold on;
-plot(t,rad2deg(opt_phi_gs),'r');
-xlabel('Sample');
-ylabel('Angle [deg]');
-legend('Ground station','Optimal');
-title('Phi Ground station angle vs optimal');
-grid on;
-grid minor;
+    plot(t,rad2deg(phi_gs_vec),'LineWidth',2);
+    hold on;
+    plot(t,rad2deg(opt_phi_gs),'r');
+    xlabel('Sample');
+    ylabel('Angle [deg]');
+    legend('\phi_{GS}','\phi_{OPTIMAL}');
+    title('Elevation Angle: GS vs OPTIMAL');
+    grid on;
+    grid minor;
 movegui(f3,'southwest');
 % print('../../../doc/report/figures/GS_angles.eps','-depsc');
 
 % 3D
 f4 = figure(4);
-xlabel('Sample');
-ylabel('Distance[km]');
-title('LOS Distance');
-grid on;
-grid minor;
-hold on;
+    xlabel('Sample');
+    ylabel('Distance [km]');
+    title('LOS and Distance between GS and UA ');
+    grid on;
+    grid minor;
+    hold on;
 movegui(f4,'northeast');
 for i = 1:length(lat_drone)
        
@@ -288,14 +294,14 @@ end
 
 % Plotting Power in the receiver
 f6 = figure(6);
-clf(f6);
-hold on;
-plot(Prx);
-grid on;
-grid minor;
-str = sprintf('Prx');
-title(str);
-xlabel('Time sample');
-ylabel('Relative Amplitude');
-axis([1 length(lat_drone) -140 -40]);
+    clf(f6);
+    hold on;
+    plot(Prx);
+    grid on;
+    grid minor;
+    str = sprintf('Power at the receiver - P_{RX}');
+    title(str);
+    xlabel('Time sample');
+    ylabel('Relative Amplitude [dBm]');
+    axis([1 length(lat_drone) -120 0]);
 movegui(f6,'south');

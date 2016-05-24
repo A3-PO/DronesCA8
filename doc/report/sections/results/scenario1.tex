@@ -1,4 +1,4 @@
-\section{Scenario 1}\label{sec:scenario1}
+\section{Scenario 1 - Angle Range}\label{sec:scenario1}
 The first scenario describes the movement of a UA when it flies far away from the GS between two predefined positions (Figure \ref{fig:s1_map_a}). The distance between the aircraft and the GS can be represented by a parabola, as is described in Figure \ref{fig:s1_map_b}. In the beginning, the distance between both devices is around 48km and, while the UA is flying, the distance becomes smaller, achieving a minimum value. After this minimum, the distance between the devices increases until the UA reach the final position.
 
 Based on Figures \ref{fig:s1_pd_gs_alone} and \ref{fig:s1_pd_ua_alone}, it is possible to observe that the azimuth and elevation angles of the UA and the GS often have different behaviours during the whole movement. 
@@ -14,7 +14,7 @@ Based on Figures \ref{fig:s1_pd_gs_alone} and \ref{fig:s1_pd_ua_alone}, it is po
 	\label{fig:s1_map}
 \end{figure}
 
-\subsection{GS}
+\subsection{Ground Station}
 As expected, the absolute value of the $\theta_{OPTIMAL}$ increases until it reaches 180$^{\circ}$  and, then, it starts increasing from -180$^{\circ}$ until the end. The initial $\theta_{OPTIMAL}$ is around 140$^{\circ}$ due to the system of coordinates applied where the Local NED frame coincides with the body frame. This assumption was taken into account because the position of the GS is static.
 
 In the beginning, the amplitude of the azimuth angle is positive and is growing because the UA is flying on the left side of the GS (lower longitude) to south (decreasing latitude). However, there is a jump when $\theta$ reaches 180$^{\circ}$ in the first graph of Figure \ref{fig:s1_pd_gs_alone}. This happens due to the used convention which limits the range from -180 to 180$^{\circ}$. Nonetheless, there is a continuous rotation, which means that when the antenna achieves 180$^{\circ}$, it will continue rotate in the same direction starting from -180$^{\circ}$. Thus, after the jump, the amplitude of the azimuth angle will continue increase from -180 until -136$^{\circ}$.
@@ -53,7 +53,7 @@ Based on the elevation plots of Figure \ref{fig:s1_gs}, it is possible to verify
 	\label{fig:s1_gs}
 \end{figure}
 
-\subsection{UA}
+\subsection{Unmanned Aircraft}
 Figure \ref{fig:s1_pd_ua_alone} shows the elevation and azimuth angles of the UA during the whole movement. Based on the fact that the Local NED frame does not coincide with the body frame, it is possible to understand the behaviour of the angle of the antenna. Since the GS is in the right side of the UA (bigger longitude) and the UA is flying towards south (decreasing latitude), the antenna angle will be positive during the whole flight.
 The initial $\theta_{OPTIMAL}$ starts around 50 degrees and, as was mentioned before, it increases until around 130 degrees.
 

@@ -36,13 +36,41 @@ De  = 7.7*10^(-6);         % Damping behavior [N*m/(r/s)]
 phi_gs_PI = phi_gs_PI.Data;
 phi_gs_PD = phi_gs_PD.Data;
 phi_gs_PID = phi_gs_PID.Data;
+phi_gs_P = phi_gs_P.Data;
 figure();
-plot(T,phi_gs_PI,T,phi_gs_PD,T,phi_gs_PID);
-xlabel('Time [s]');
-ylabel('Angle [rad]');
-legend('PI','PD','PID');
-title('Φgs for PID, PD, & PI controllers');
+plot(T,phi_gs_PI,'LineWidth',2);
+hold on
+plot(T,phi_gs_PD,'LineWidth',2);
+plot(T,phi_gs_PID,'k','LineWidth',2);
+plot(T,phi_gs_P,'g','LineWidth',2);
+set(gca,'FontSize',20)
+xl = xlabel('Time [s]');
+
+yl = ylabel('Angle [rad]');
+h = legend('PI','PD','PID','P');
+set(h,'FontSize',20)
+%title('Φgs for PID, PD, & PI controllers');
 grid on;
 grid minor;
 
 
+
+
+% PD and P
+[T,X,Y] = sim('Servo_Control');
+phi_gs_P = phi_gs_P.Data;
+phi_gs_PD = phi_gs_PD.Data;
+
+figure();
+plot(T,phi_gs_P,'g','LineWidth',2)
+hold on
+plot(T,phi_gs_PD,'r','LineWidth',2);
+
+xl2 = xlabel('Time [s]');
+set(gca,'FontSize',20)
+yl2 = ylabel('Angle [rad]');
+h2 =legend('P','PD');
+set(h2,'FontSize',20)
+%title('Φgs for PD & P controllers');
+grid on;
+grid minor;

@@ -128,21 +128,31 @@ lat_end_d = lat3;
 long_init_d = long2;
 long_end_d = long3;
 
+geoEnd = [lat_end_d; long_end_d; H_ua + ltln2val(Z, R, lat_end_d, long_end_d)];
+ecefEnd = geo2ecef(geoEnd);
+
 lat_drone = lat_init_d:(lat_end_d-lat_init_d)/prec_geo:lat_end_d;       
 long_drone = long_init_d:(long_end_d - long_init_d)/prec_geo:long_end_d;   
 for t=1:length(lat_drone)
     alt_drone(t) = H_ua + ltln2val(Z, R, lat_drone(t), long_drone(t));
+    geoDrone = [lat_drone(t), long_drone(t),alt_drone(t)];
+    nedEnd = ecef2ned(ecefEnd,geoDrone);
+    yawAngle(t) = -rad2deg(atan2(nedEnd(1),nedEnd(2)));
 end
 
+
 % Drone deviation
-yawAngle = 0;
-pitchAngle = 0;
-rollAngle = 0;
-for i = 2:length(lat_drone)
-    yawAngle = [yawAngle yawAngle(end)+round(-1 + 2*rand(1))];
-    pitchAngle = [pitchAngle pitchAngle(end)+round(-1 + 2*rand(1))];
-    rollAngle = [rollAngle rollAngle(end)+round(-1 + 2*rand(1))];
-end
+% yawAngle = zeros(1,length(lat_drone));
+pitchAngle = zeros(1,length(lat_drone));
+rollAngle = zeros(1,length(lat_drone));
+% yawAngle = 0;
+% pitchAngle = 0;   
+% rollAngle = 0;
+% for i = 2:length(lat_drone)
+%     yawAngle = [yawAngle yawAngle(end)+round(-1 + 2*rand(1))];
+%     pitchAngle = [pitchAngle pitchAngle(end)+round(-1 + 2*rand(1))];
+%     rollAngle = [rollAngle rollAngle(end)+round(-1 + 2*rand(1))];
+% end
 
 % Ground station position
 lat_gs = lat1 * ones(1,length(lat_drone));   % The position X of the GS 
@@ -282,7 +292,7 @@ end
 f5 = figure(5);
     clf(f5);
     hold on;
-    plot(Prx);
+    plot(Prx,'LineWidth',1.5);
     grid on;
     grid minor;
     str = sprintf('Power at the receiver - P_{RX}');
@@ -293,11 +303,11 @@ f5 = figure(5);
 movegui(f5,'south');
 
 %% Save graphs to file
-% print(f1,'../../../doc/report/figures/scenario_2_map.png','-dpng');
-% print(f2,'../../../doc/report/figures/scenario_2_ua.png','-dpng');
-% print(f3,'../../../doc/report/figures/scenario_2_gs.png','-dpng');
-% print(f4,'../../../doc/report/figures/scenario_2_los.png','-dpng');
-% print(f5,'../../../doc/report/figures/scenario_2_power.png','-dpng');
+print(f1,'../../../doc/report/figures/s4_map.png','-dpng');
+print(f2,'../../../doc/report/figures/s4_ua.png','-dpng');
+print(f3,'../../../doc/report/figures/s4_gs.png','-dpng');
+print(f4,'../../../doc/report/figures/s4_los.png','-dpng');
+print(f5,'../../../doc/report/figures/s4_power.png','-dpng');
 
 
 % Define arrow

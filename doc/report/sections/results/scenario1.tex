@@ -30,7 +30,12 @@ Despite of the small amplitude, $\phi_{OPTIMAL}$ has a maximum value (approximat
 	\label{fig:s1_pd_gs_alone}
 \end{figure}
 
-Here about the controllers....
+The previous explanation describes generally how the angles of the antennas change during the flight of the UA, taking into account the azimuth and elevation angles. However, there are some details related to the response that depend on the type of P-I-D controllers that is applied in the system. Figure \ref{fig:s1_gs} represents the behaviour of P, PI, PD and PID controllers for the given scenario.
+
+Based on the previous simulations of the controllers described on section \ref{sec:controller} and on the azimuthal plots of Figure \ref{fig:s1_gs}, it is possible to verify that the PI and PID controllers have an overshoot, while the P and PD follow directly the desired response. The integral term in the PI and PID controllers is the one responsible for the overshoots due to the accumulation of the error during the whole process. On the other hand, the PID controller is faster than the PI controller because the damping effect of the derivative term attenuates the changes, making the response faster.
+
+In this project, P and PD controllers are not affected by the overshoot and, furthermore, the PD controller is the fastest one (lowest rise time) due to its derivate component.
+Based on the elevation plots of Figure \ref{fig:s1_gs}, it is possible to verify that the optimal responses of the P and PI have the bigger variation of the angle than the PD and PID. The derivative component is responsible for the elimination of the small changes which makes the PD and PID controller less sensitive to them. In other words, the PD and PID controllers will not react to small changes while the P and PI will react.
 
 \begin{figure}[H]
 	\hfill

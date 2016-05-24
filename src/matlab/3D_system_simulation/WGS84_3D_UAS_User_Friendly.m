@@ -105,7 +105,7 @@ switch scenario
         long3 = UAEND(2);
 end
 
-figure(1);
+f1 = figure(1);
 worldmap(latlim, lonlim);
 geoshow(ZA, RA, 'DisplayType', 'texturemap')
 demcmap(double(ZA))
@@ -120,7 +120,6 @@ plotm(lat3,long3,'bo','LineWidth',3);textm(lat3,long3,'  UA End');
 % UASTART = [lat2,long2];
 % UAEND = [lat3,long3];
 % save('Scenario4','GSPOS','UASTART','UAEND');
-% print('../../../doc/report/figures/Map_sim_1.eps','-depsc');
 
 %% Initial values
 % Drone position
@@ -281,18 +280,26 @@ end
 
 % Plotting Power in the receiver
 f5 = figure(5);
-clf(f5);
-hold on;
-plot(Prx);
-grid on;
-grid minor;
-str = sprintf('Power at the receiver - P_{RX}');
-title(str);
-xlabel('Time sample');
-ylabel('Relative Amplitude [dBm]');
-axis([1 length(lat_drone) -120 0]);
+    clf(f5);
+    hold on;
+    plot(Prx);
+    grid on;
+    grid minor;
+    str = sprintf('Power at the receiver - P_{RX}');
+    title(str);
+    xlabel('Time sample');
+    ylabel('Relative Amplitude [dBm]');
+    axis([1 length(lat_drone) -120 0]);
 movegui(f5,'south');
-% print('../../../doc/report/figures/Prx_1.eps','-depsc');
+
+%% Save graphs to file
+% print(f1,'../../../doc/report/figures/scenario_4_map.png','-dpng');
+% print(f2,'../../../doc/report/figures/scenario_4_ua.png','-dpng');
+% print(f3,'../../../doc/report/figures/scenario_4_gs.png','-dpng');
+% print(f4,'../../../doc/report/figures/scenario_4_los.png','-dpng');
+% print(f5,'../../../doc/report/figures/scenario_4_power.png','-dpng');
+
+
 
 % Define arrow
 % f6 = figure(6);
@@ -317,3 +324,4 @@ movegui(f5,'south');
 %     rotate(arrow,roll,rollDif);
 %     drawnow
 % end
+

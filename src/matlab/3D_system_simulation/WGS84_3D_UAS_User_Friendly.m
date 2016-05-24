@@ -293,11 +293,11 @@ f5 = figure(5);
 movegui(f5,'south');
 
 %% Save graphs to file
-% print(f1,'../../../doc/report/figures/scenario_4_map.png','-dpng');
-% print(f2,'../../../doc/report/figures/scenario_4_ua.png','-dpng');
-% print(f3,'../../../doc/report/figures/scenario_4_gs.png','-dpng');
-% print(f4,'../../../doc/report/figures/scenario_4_los.png','-dpng');
-% print(f5,'../../../doc/report/figures/scenario_4_power.png','-dpng');
+% print(f1,'../../../doc/report/figures/scenario_2_map.png','-dpng');
+% print(f2,'../../../doc/report/figures/scenario_2_ua.png','-dpng');
+% print(f3,'../../../doc/report/figures/scenario_2_gs.png','-dpng');
+% print(f4,'../../../doc/report/figures/scenario_2_los.png','-dpng');
+% print(f5,'../../../doc/report/figures/scenario_2_power.png','-dpng');
 
 
 

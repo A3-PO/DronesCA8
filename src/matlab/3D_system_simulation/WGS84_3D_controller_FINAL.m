@@ -65,9 +65,9 @@ Z = double(ZA);
 R = RA;
 
 %   LOADING SCRIPT
-scenario = 1;
+scenario = 4;
 if scenario == 1
-    fprintf('\nYou chose: 1.Angle range\n');   
+    fprintf('\nYou chose: 1.Angle range\n');
     load('Scenario2.mat');
     lat1 = GSPOS(1);
     long1 = GSPOS(2);
@@ -119,7 +119,7 @@ plotm(lat3,long3,'bo','LineWidth',3);textm(lat3,long3,'  UA End');
 % UASTART = [lat2,long2];
 % UAEND = [lat3,long3];
 % save('Scenario4','GSPOS','UASTART','UAEND');
-print('../../../doc/report/figures/Map_sim_1.eps','-depsc');
+% print('../../../doc/report/figures/Map_sim.eps','-depsc');
 
 %% Initial values
 % Drone position
@@ -135,14 +135,17 @@ for t=1:length(lat_drone)
 end
 
 % Drone deviation
-yawAngle = 0;
-pitchAngle = 0;
-rollAngle = 0;
-for i = 2:length(lat_drone)
-    yawAngle = [yawAngle yawAngle(end)+round(-1 + 2*rand(1))];
-    pitchAngle = [pitchAngle pitchAngle(end)+round(-1 + 2*rand(1))];
-    rollAngle = [rollAngle rollAngle(end)+round(-1 + 2*rand(1))];
-end
+yawAngle = zeros(1,length(lat_drone));
+pitchAngle = zeros(1,length(lat_drone));
+rollAngle = zeros(1,length(lat_drone));
+% yawAngle = 0;
+% pitchAngle = 0;
+% rollAngle = 0;
+% for i = 2:length(lat_drone)
+%     yawAngle = [yawAngle yawAngle(end)+round(-1 + 2*rand(1))];
+%     pitchAngle = [pitchAngle pitchAngle(end)+round(-1 + 2*rand(1))];
+%     rollAngle = [rollAngle rollAngle(end)+round(-1 + 2*rand(1))];
+% end
 
 % Ground station position
 lat_gs = lat1 * ones(1,length(lat_drone));       % The position X of the GROUND STATION 
@@ -156,7 +159,7 @@ drawArrow = @(x,y,z) quiver3(x(1),y(1),z(1),x(2)-x(1),y(2)-y(1),...
 %% RUNNING Simulation of the model with the controller (dronesmodel.mdl)
 time = 0:1/fsampling:(length(lat_drone)-1)/fsampling;    % Time
 
-[T,X,Y] = sim('controller_v4_2015a',time);
+[T,X,Y] = sim('controller_FINAL',time);
 
 %% Simulation data of angles
 t = theta_d_vec.Time;                       % sample time
@@ -197,7 +200,7 @@ title('Phi Drone angle vs optimal');
 grid on;
 grid minor;
 movegui(f2,'northwest');
-print('../../../doc/report/figures/Drone_angles_1.eps','-depsc');
+% print('../../../doc/report/figures/Drone_angles.eps','-depsc');
 
 f3 = figure(3);
 subplot(2,1,1);
@@ -221,7 +224,7 @@ title('Phi Ground station angle vs optimal');
 grid on;
 grid minor;
 movegui(f3,'southwest');
-print('../../../doc/report/figures/GS_angles_1.eps','-depsc');
+% print('../../../doc/report/figures/GS_angles.eps','-depsc');
 
 % 3D
 f4 = figure(4);
@@ -258,7 +261,6 @@ for i = 1:length(lat_drone)
     
     plot(t(i),los_d_vec(i)/1000,tmp);
 end
-print('../../../doc/report/figures/LOS_1.eps','-depsc');
 
 % Define arrow
 f5 = figure(5);
@@ -297,4 +299,3 @@ xlabel('Time sample');
 ylabel('Relative Amplitude');
 axis([1 length(lat_drone) -140 -40]);
 movegui(f6,'south');
-print('../../../doc/report/figures/Prx_1.eps','-depsc');

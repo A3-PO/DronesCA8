@@ -300,7 +300,6 @@ movegui(f5,'south');
 % print(f5,'../../../doc/report/figures/scenario_2_power.png','-dpng');
 
 
-
 % Define arrow
 % f6 = figure(6);
 % arrow = arrow3D([-1,0,0] ,[2,0,0]);

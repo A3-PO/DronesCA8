@@ -1,6 +1,6 @@
 \section{Link Budget}\label{subsec:link_budget}
 \paragraph{}
-As the next step, once it is assured that there is Line-Of-Sight connection, it is important to calculate what is termed as the \textbf{Link budget}. This calculation is an accounting of all the gains and losses from the transmitter, through the medium,  to the receiver in a telecommunication system. It includes terms on it for the attenuation of the transmitted signal due to propagation, as well as the antenna gains, feedline and miscellaneous losses. By assesing the link budget it is possible to design the system so that it meets the requirements and performs as desired. Its general form is:
+As the next step, once it is assured that there is Line-Of-Sight connection, it is important to calculate what is termed as the \textbf{Link budget}. This calculation is an accounting of all the gains and losses from the transmitter, through the medium,  to the receiver in a telecommunication system. It includes terms on it for the attenuation of the transmitted signal due to propagation, as well as the antenna gains, feed-line and miscellaneous losses. By assessing the link budget it is possible to design the system so that it meets the requirements and performs as desired. Its general form is:
 \begin{equation*}\label{eq:link_budget} 
  		\text{Received Power (dBm)} = \text{Transmitted Power (dBm)} + \text{Gains (dB)} - \text{Losses(dB)}
 \end{equation*}
@@ -12,16 +12,16 @@ And, in a more detail, it can be broken down into:
 \end{equation*}
 where,
 \begin{itemize}
-	\item{$P_{RX} -$ Recieved power [dBm]}
+	\item{$P_{RX} -$ Received power [dBm]}
 	\item{$P_{TX} -$ Transmitter output power [dBm]}
 	\item{$G_{TX} -$ Transmitter antenna gain [dBi]}
 	\item{$L_{TX} -$ Transmitter feeder and associated losses (transmission line, connectors, etc.) [dB]}
 	\item{$L_{FS} -$ \textbf{Free Space Loss} or \textbf{Path Loss} [dB]}
-	\item{$L_{M} -$ Miscellaneus signal propagation losses (fading margin, polarization mismatch, other losses...) [dB]} 
+	\item{$L_{M} -$ Miscellaneous signal propagation losses (fading margin, polarization mismatch, other losses...) [dB]} 
 	\item{$G_{RX} -$ Receiver Antenna Gain [dBi]}
 	\item{$L_{RX} -$ Receiver feeder and associated losses (transmission line, connectors, etc.) [dB]} 
 \end{itemize}
-Note that losses are treated as possitive numbers and therefore they appear as a substraction in the link budget. Also highlight that decibels are logarithmic measurements, so adding decibels is equivalent to multiplying the actual numeric ratios.
+Note that losses are treated as positive numbers and therefore they appear as a subtraction in the link budget. Also highlight that decibels are logarithmic measurements, so adding decibels is equivalent to multiplying the actual numeric ratios.
  
 \subsection*{Free Space Loss}\label{subsec:path_loss}
 \paragraph{}

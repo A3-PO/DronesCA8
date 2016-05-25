@@ -32,7 +32,7 @@ c\gamma)s(\xi)c(\psi) + s(\gamma)s(\psi) & c(\gamma)s(\xi)s(\psi) - s(\gamma)c(\
 \end{bmatrix}
 \end{align*}
 
-\paragraph{} However, even though the local NED cordinates is what is necesary to transform to the Body frame, the only available resource  is the GPS position measurements of each of our devices (Ground station and UA). Therefore a transformation from Geodetic Coordinate Frame to local NED frame is in due. The ECEF Coordinate Frame will be used as an intermediate step during this process.
+\paragraph{} However, even though the local NED coordinates is what is necessary to transform to the Body frame, the only available resource  is the GPS position measurements of each of our devices (Ground station and UA). Therefore a transformation from Geodetic Coordinate Frame to local NED frame is in due. The ECEF Coordinate Frame will be used as an intermediate step during this process.
 
 \subsection*{From Geodetic to ECEF}
 Being \textbf{P}$_{g}$ the position of a point in the geodetic system such that is defined by its latitude, longitude and height:
@@ -44,7 +44,7 @@ Being \textbf{P}$_{g}$ the position of a point in the geodetic system such that 
 h
 \end{bmatrix}
 \end{align}
-By using the parameters set by the \textbf{WGS84} standard in Section \ref{sec:geodetic} the tranformed point, \textbf{P}$_{e}$ will be given by
+By using the parameters set by the \textbf{WGS84} standard in Section \ref{sec:geodetic} the transformed point, \textbf{P}$_{e}$ will be given by
 \begin{align}
 \textbf{P}_{e} = 
 \begin{bmatrix}
@@ -61,7 +61,7 @@ h
 \end{align}
 
 \subsection*{From ECEF to NED}
-Analogusly to the former transformation, we have
+Analogously to the former transformation, we have
 \begin{align}
 \textbf{P}_{n} = \textbf{R}_{n/e}\left(\textbf{P}_{e} - \textbf{P}_{e,ref}\right)
 \end{align}

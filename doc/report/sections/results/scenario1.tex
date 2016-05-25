@@ -1,5 +1,5 @@
 \section{Scenario 1 - Angle Range}\label{sec:scenario1}
-The first scenario describes the movement of a UA when it flies far away from the GS between two predefined positions (Figure \ref{fig:s1_map_a}). The distance between the aircraft and the GS can be represented by a parabola, as is described in Figure \ref{fig:s1_map_b}. In the beginning, the distance between both devices is around 48km and, while the UA is flying, the distance becomes smaller, achieving a minimum value. After this minimum, the distance between the devices increases until the UA reach the final position.
+The first scenario describes the movement of the antennas when the UA flies far away from the GS between two predefined positions (Figure \ref{fig:s1_map_a}). The distance between the aircraft and the GS can be represented by a parabola, as is described in Figure \ref{fig:s1_map_b}. In the beginning, the distance between both devices is around 48km and, while the UA is flying, the distance becomes smaller, achieving a minimum value. After this minimum, the distance between the devices increases until the UA reach the final position.
 
 Based on Figures \ref{fig:s1_pd_gs_alone} and \ref{fig:s1_pd_ua_alone}, it is possible to observe that the azimuth and elevation angles of the UA and the GS often have different behaviours during the whole movement. 
   
@@ -17,7 +17,7 @@ Based on Figures \ref{fig:s1_pd_gs_alone} and \ref{fig:s1_pd_ua_alone}, it is po
 \subsection{Ground Station}\label{GroundStation_scenario1}
 As expected, the absolute value of the $\theta_{OPTIMAL}$ increases until it reaches 180$^{\circ}$  and, then, it starts increasing from -180$^{\circ}$ until the end. The initial $\theta_{OPTIMAL}$ is around 140$^{\circ}$ due to the system of coordinates applied where the Local NED frame coincides with the body frame. This assumption was taken into account because the position of the GS is static.
 
-In the beginning, the amplitude of the azimuth angle is positive and is growing because the UA is flying on the left side of the GS (lower longitude) to south (decreasing latitude). However, there is a jump when $\theta$ reaches 180$^{\circ}$ in the first graph of Figure \ref{fig:s1_pd_gs_alone}. This happens due to the used convention which limits the range from -180 to 180$^{\circ}$. Nonetheless, there is a continuous rotation, which means that when the antenna achieves 180$^{\circ}$, it will continue rotate in the same direction starting from -180$^{\circ}$. Thus, after the jump, the amplitude of the azimuth angle will continue increase from -180 until -136$^{\circ}$.
+In the beginning, the amplitude of the azimuth angle is positive and is growing because the UA is flying on the left side of the GS (lower longitude) to south (decreasing latitude). However, there is a jump when $\theta$ reaches 180$^{\circ}$ in the first graph of Figure \ref{fig:s1_pd_gs_alone}. This happens due to the used convention which limits the range from -180$^{\circ}$ to 180$^{\circ}$. Nonetheless, there is a continuous rotation, which means that when the antenna achieves 180$^{\circ}$, it will continue rotate in the same direction starting from -180$^{\circ}$. Thus, after the jump, the amplitude of the azimuth angle will continue increase from -180$^{\circ}$ until -136$^{\circ}$.
 
 On the other hand, the optimal elevation angle, $\phi_{OPTIMAL}$, has always a small amplitude because of the big distance between the UA and the GS of the second graph of Figure \ref{fig:s1_pd_gs_alone}. Since the previous distance is always bigger than 36km, a considerable optimal phi is not required to point at the UA. 
 
@@ -32,10 +32,9 @@ Despite of the small amplitude, $\phi_{OPTIMAL}$ has a maximum value (approximat
 
 The previous explanation describes generally how the angles of the antennas change during the flight of the UA, taking into account the azimuth and elevation angles. However, there are some details related to the response that depend on the type of P-I-D controllers that is applied in the system. Figure \ref{fig:s1_gs} represents the behaviour of P, PI, PD and PID controllers for the given scenario.
 
-Based on the previous simulations of the controllers described on section \ref{sec:controller} and on the azimuthal plots of Figure \ref{fig:s1_gs}, it is possible to verify that the PI and PID controllers have an overshoot, while the P and PD follow directly the desired response. The integral term in the PI and PID controllers is the one responsible for the overshoots due to the accumulation of the error during the whole process. On the other hand, the PID controller is faster than the PI controller because the damping effect of the derivative term attenuates the changes, making the response faster.
+Based on the simulations of the controllers described on section \ref{sec:controller} and on the azimuthal plots of Figure \ref{fig:s1_gs}, it is possible to verify that the PI and PID controllers have an overshoot, while the P and PD follow directly the desired response. The integral term in the PI and PID controllers is the one responsible for the overshoots due to the accumulation of the error during the whole process. In practise, the antenna starts rotating in order to achieve the desired angle. However, it achieves the requested angle with a high velocity that do not allow the antenna to stop on time. Thus, the antenna continues rotating until it stops and inverses the way of the movement. Then, rotating in the opposite direction, the antenna achieves the desired angle and follows the optimal response. On the other hand, PID controller is faster than the PI controller because the damping effect of the derivative term attenuates the changes, making the response faster.
 
-In this project, P and PD controllers are not affected by the overshoot and, furthermore, the PD controller is the fastest one (lowest rise time) due to its derivate component.
-Based on the elevation plots of Figure \ref{fig:s1_gs}, it is possible to verify that the optimal responses of the P and PI have the bigger variation of the angle than the PD and PID. The derivative component is responsible for the elimination of the small changes which makes the PD and PID controller less sensitive to them. In other words, the PD and PID controllers will not react to small changes while the P and PI will react.
+In this project, P and PD controllers are not affected by the overshoot and, furthermore, the PD controller is the fastest controller (lowest rise time) due to its derivate component.
 
 \begin{figure}[H]
 	\hfill
@@ -69,7 +68,7 @@ The optimal elevation angle, $\phi$, of the UA has almost the same behaviour as 
 
 The controllers used in this section are the same ones that were used to test the behaviour of the antenna in the GS. This means that the performance will be similar to the ones illustrated in Figure \ref{fig:s1_gs}.
 
-Thus, based on the graphs of the azimuth angle of Figure \ref{fig:s1_ua}, it is observable that the PI and PID controllers have an overshoot when the system is trying to achieve the desired position. Moreover, the response of the sytem with the P and PD controllers achieve directly the desired angle, without any overshoot. On the other hand, the variations of the $\phi$ angle when the system is equipped with a PD or PID controller are less evident than in the P and PI controllers. This is a result of the presence derivative component. In both cases the final results are similar to the ones described in section \ref{GroundStation_scenario1}.
+Thus, based on the graphs of the azimuth angle of Figure \ref{fig:s1_ua}, it is observable that the PI and PID controllers have an overshoot when the system is trying to achieve the desired position. Moreover, the response of the system with the P and PD controllers achieve directly the desired angle, without any overshoot.
 
 \begin{figure}[H]
 	\hfill
@@ -88,12 +87,13 @@ Thus, based on the graphs of the azimuth angle of Figure \ref{fig:s1_ua}, it is 
 \end{figure}
 
 \subsection{Power}
-IDEAS
-In Figure \ref{fig:s2_power} the power at the receiver antenna of the GS antenna can be seen.
-Power related to the controllers used
-Biggest change in the beginning and depends on the controller that is used.
-Big overshoot - the power decreases a lot because the antenna goes and comes back.
-Without integral component there is no overshoot so the difference between them is only the time that they need ti achieve the perfect angle.
+In general, the power in the receiver described in Figure \ref{fig:s1_power} has almost the same behaviour in all of the different controllers. In every case, the power in the beginning is small (-100dBm) because the antennas are not pointing at each other. After 10 samples, the antenna of the GS and the antenna of the UA are pointing at each other and the power received in all cases is the same (antennas in the GS and in the UA are the same in all cases). Since they are pointing at each, in an ideal situation, the maximum power only depends on the kind of antennas used.
+
+When the UA is at the closest point to the GS, the power in the receiver has a peak at the time sample of 54. This happens because the distance between the antennas is small which reduces the path losses.
+
+On the other hand, all plots have a different reaction between the moment when the antennas start moving until the one when they achieve the desired position. This happens because there are details that depend on the type of that is used to manage the movement of the antennas. 
+
+As was described in the previous sections, the P and PD controllers do not have any overshoot. This fact allows both controllers to achieve the maximum power faster than the PI and PID. These ones are affected by the overshoot, which means that they achieve the maximum power but, since they continue the rotation, the connection is weakened. Thus, the power received decreases sharply until the antenna change the direction of rotation.
 
 
 \begin{figure}[H]

@@ -1,6 +1,6 @@
 \section{PID Theory}\label{sec:pid_theory}
 
-In closed loop systems, there is always a \hl{\textbf{process variable} which works as a system parameter that needs to be controlled.} The output of these systems is measured using a sensor and its value is compared with a reference (setpoint). A feedback allows a constant monitorization of the process because the error between the reference and the \textbf{process variable} is used as a controller input. Then, the controller executes some calculations that will act in the plant. The type of control chosen for this project was the PID control, where the controller can be proportional, derivative, integral or a combination between them. %Introduce these controllers because there are more than these ones. What is a goal of a controller. what do you use it for
+In closed loop systems, there is always a \textbf{process variable} (feedback variable) which works as a system parameter that needs to be controlled. The output of these systems is measured using a sensor and its value is compared with a reference (setpoint). A feedback allows a constant monitorization of the process because the error between the reference and the \textbf{process variable} is used as a controller input. Then, the controller executes some calculations that will act in the plant. The type of control chosen for this project was the PID control, where the controller can be proportional, derivative, integral or a combination between them. 
 
 \subsection*{Proportional Term}
 
@@ -94,7 +94,7 @@ Hence, the Equation \ref{PI_equation} describes the behaviour of the PI controll
 
 \subsection*{Proportional-Derivative}
 
-The derivative control is almost never used by itself because it does not supply information about the desired end state. Hence, a proporcional term is needed in order to achive the desired end state, resulting in a PD controller (Figure \ref{PD_controller}). In addition, if $e(t)$ remains constant, the output of a derivative part controller would be zero and a proportional component would be needed to provide a control signal at this time. \hl{The PD controllers are, thus, more stable than the proportional ones but they are also slower than the same ones because the derivative part prevents the sudden changes occuring.}
+The derivative control is almost never used by itself because it does not supply information about the desired end state. Hence, a proporcional term is needed in order to achive the desired end state, resulting in a PD controller (Figure \ref{PD_controller}). In addition, if $e(t)$ remains constant, the output of a derivative part controller would be zero and a proportional component would be needed to provide a control signal at this time. 
 
 \begin{figure}[H]
 	\centering

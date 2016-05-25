@@ -22,7 +22,7 @@ Figure \ref{fig:fresnel_zones} illustrates the first Fresnel zone between the an
 	\label{fig:fresnel_zones}
 \end{figure} 
 
-Using Equation \ref{fresnel_zone_cal}, it is possible to calculate the radius, $r_n$, which represents the nth Fresnel zone at any point P and it depends on the wavelength of the transmitted signal, $\lambda$. Thus, $d_1$ and $d_2$ represent the distances between the point P and the antennas A and B, respectively, in Figure \ref{fig:fresnel_zones}.
+Using Equation \ref{fresnel_zone_cal}, it is possible to calculate the radius, $r_n$, which represents the nth Fresnel zone at any point P and it depends on the wavelength of the transmitted signal, $\lambda$ \cite{fresnelWiki}. Thus, $d_1$ and $d_2$ represent the distances between the point P and the antennas A and B, respectively, in Figure \ref{fig:fresnel_zones}.
 
 \begin{align}
 r_n = \sqrt{\frac{n \lambda d_1 d_2}{d_1+d_2}} \label{fresnel_zone_cal}
@@ -35,7 +35,7 @@ r_1 = \sqrt{\frac{c}{f}\frac{d_1 d_2}{d_1+d_2}} \stackrel{d_1=d_2=d}{=} \sqrt{\f
 \end{align}
 
 \begin{align}
-r_1 = \sqrt{\frac{c}{2}}\sqrt{\frac{d}{f}} = \sqrt{\frac{c}{4}}\sqrt{\frac{D}{f}}, d=\frac{D}{2} \label{eq:fresnel_radius2}
+r_1 = \sqrt{\frac{c}{2}}\sqrt{\frac{d}{f}} \stackrel{d=\frac{D}{2}}{=} \sqrt{\frac{c}{4}}\sqrt{\frac{D}{f}} \label{eq:fresnel_radius2}
 \end{align}
 
 \begin{align}
@@ -92,9 +92,7 @@ After these examples it can be seen that the radius of the Fresnel zone increase
 \subsection*{60$\%$ Clearance Zone of the first Fresnel zone}
 As it was described in the beginning of this section, it is difficult to have a first Fresnel zone without any obstructions. However, a percentage of obstruction equal or smaller than 40$\%$ makes the connection possible between the transmitter and the receiver.
 
-In this subsection, some examples will demonstrate how tall an obstruction can be at the center of the first Fresnel zone, taking into account the 60$\%$ clearance. These calculations were made with the help of Equation \ref{eq:60_percent_radius}, which resulted from Equation \ref{eq:fresnel_radius3} by multiplying it with the clearance factor of 60$\%$.
-
-\hl{Where should the 0.6 be ?}
+In this subsection, some examples will demonstrate how tall an obstruction can be at the center of the first Fresnel zone, taking into account the 60$\%$ clearance. These calculations were made with the help of Equation \ref{eq:60_percent_radius}, which resulted from Equation \ref{eq:fresnel_radius3} by multiplying it with the clearance factor of 60$\%$ \cite{viasFresnel}.
 
 \begin{align}
 r_1 = 8.657\sqrt{0.6\frac{D}{f}}\label{eq:60_percent_radius}

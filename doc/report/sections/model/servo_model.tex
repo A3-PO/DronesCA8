@@ -4,7 +4,7 @@
 
 The use of a tracking antenna system requires a device to change the orientation of the antennas. The moving angle system is performing this task and is composed of a DC servomotor for the rotational movement of the antennas, a gear to have a precise change of the angles, and a sensor to keep track of the actual angle and compare it to the reference.
 
-The DC servomotor, presented in the section \ref{sec:servo_motor}, can be divided in two different groups: the DC motor and the servomechanism.
+The DC servomotor, presented in the Section \ref{sec:servo_motor}, can be divided in two different groups: the DC motor and the servomechanism.
 
 DC motor is an actuator which converts electrical energy to mechanical rotation. In the Figure \ref{dcmotor_circuit} it is possible to see the model of this motor. DC motors are a type of motors which were built to receive a voltage as an input and, after converting this voltage, to apply a specific velocity on its shaft. In other words, DC motors are able to control the velocity of the shaft.
 
@@ -29,22 +29,22 @@ V_{a}(s)= V_{b}(s)+I_{a}(s) R_{a}+sL_{a}I_{a}(s)
 I_{a}(s)= \frac{V_{a}(s)-V_{b}(s)}{R_{a}+sL_{a}} , I_{a}(s)= G_{I}(V_{a}(s)-V_{b}(s))
 \end{equation}
 
-The model of the Figure \ref{model1} is the representation of the equation \ref{DC_motor_equation3}.
+The model of the Figure \ref{model1} is the representation of the Equation \ref{DC_motor_equation3}.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{figures/model1.png}
-\caption{Block representation of equation \ref{DC_motor_equation3}.}
+\caption{Block representation of Equation \ref{DC_motor_equation3}.}
 \label{model1}
 \end{figure}
 
-Furthermore, the sum of torques applied on the motor depends on the load attached to the motor shaft. The inertial and damping behaviours of the load can be represented as a inertia coefficient, $J_{e}$, and a viscous damping coefficient, $D_{e}$. This total tendency of a force to rotate an object about an axis is represented by $T_{m}$ which is described through the equation \ref{torque_time}. 
+Furthermore, the sum of torques applied on the motor depends on the load attached to the motor shaft. The inertial and damping behaviours of the load can be represented as a inertia coefficient, $J_{e}$, and a viscous damping coefficient, $D_{e}$. This total tendency of a force to rotate an object about an axis is represented by $T_{m}$ which is described through the Equation \ref{torque_time}. 
 
 \begin{equation}\label{torque_time}
 T_{m}(t)= J_{e}\frac{\mathrm{d} \dot{\theta}_{m}(t)}{\mathrm{d} t}+D_{e}\dot{\theta}_{m}(t)
 \end{equation}
 
-However, the servomotor is a type of motor which is able to control the position of the shaft. Using a potentiometer it is possible to send an electrical signal with the information about the angle. Thus, using the relation between the velocity and the position described in the equation \ref{theta_relation}, it is possible to write the equation \ref{torque_frequency_theta}.
+However, the servomotor is a type of motor which is able to control the position of the shaft. Using a potentiometer it is possible to send an electrical signal with the information about the angle. Thus, using the relation between the velocity and the position described in the Equation \ref{theta_relation}, it is possible to write the Equation \ref{torque_frequency_theta}.
 
 \begin{equation}\label{theta_relation}
 \dot{\theta}_{m}(s)= s\theta_{m}(s)
@@ -54,7 +54,7 @@ However, the servomotor is a type of motor which is able to control the position
 T_{m}(s)= (s^{2}J_{e} + sD_{e})\theta_{m}(s)
 \end{equation}
 
-The torque is also proportional to the current that passes through the circuit. The constant of proportionality is called torque constant and the relation between the torque and the current is presented in the equations \ref{torque_curr1} and \ref{torque_curr2}.
+The torque is also proportional to the current that passes through the circuit. The constant of proportionality is called torque constant and the relation between the torque and the current is presented in the Equations \ref{torque_curr1} and \ref{torque_curr2}.
 
 \begin{equation}\label{torque_curr1}
 T_{m}(t)= K_{t} i_{a}(t)
@@ -73,7 +73,7 @@ Based on the previous equations and on the model in the Figure \ref{model1} it i
 \label{model2}
 \end{figure}
 
-The applied torque $T_{m}(s)$ described in the previous equations can be also related to the angle position $\theta_{m}(s)$ through the equations \ref{torque_frequency} and \ref{torque_frequency_G}.
+The applied torque $T_{m}(s)$ described in the previous equations can be also related to the angle position $\theta_{m}(s)$ through the Equations \ref{torque_frequency} and \ref{torque_frequency_G}.
 
 \begin{equation}\label{torque_frequency}
 T_{m}(s) I_{a}(s)= (s^{2}J_{e} + sD_{e})\theta_{m}(s)
@@ -136,4 +136,4 @@ High voltage value can be the consequence of the controller trying to reach the 
 \label{model4}
 \end{figure}
 
-Figure \ref{model4} shows the integral plant of the Moving Angle System. This model was used in \emph{Simulink} to test the behavior of the system and was later included in the 3D system simulation, described in section \ref{sec:3d_sim}. The reference angles and the adopted controller are explained in the followings sections.
+Figure \ref{model4} shows the integral plant of the Moving Angle System. This model was used in \emph{Simulink} to test the behavior of the system and was later included in the 3D system simulation, described in Section \ref{sec:3d_sim}. The reference angles and the adopted controller are explained in the followings sections.

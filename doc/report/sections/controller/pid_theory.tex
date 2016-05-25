@@ -13,7 +13,7 @@ The proportional controller has its output always proportional to the error (inp
 	\label{propor_controller}
 \end{figure}
 
-Based on the system of the Figure \ref{propor_controller} and considering the linear plant $G(s)$ described in the equation \ref{system_equation} it is possible to calculate the characteristic equation (\ref{charac_equation1} and \ref{charac_prop_system}). The reason why the plan was model as a second order polynomial is because it is often a good representation of the real-life scenario, while keeping simple the required calculations.
+Based on the system of the Figure \ref{propor_controller} and considering the linear plant $G(s)$ described in the Equation \ref{system_equation} it is possible to calculate the characteristic Equation (\ref{charac_equation1} and \ref{charac_prop_system}). The reason why the plan was model as a second order polynomial is because it is often a good representation of the real-life scenario, while keeping simple the required calculations.
 
 \begin{equation}\label{system_equation}
 G(s)= \frac{A}{s^2 + a_{1}s + a_{2}}
@@ -27,7 +27,7 @@ G(s)= \frac{A}{s^2 + a_{1}s + a_{2}}
 s^2 + a_{1}s + a_{2} + K_PA=0
 \end{equation}
 
-The equation \ref{charac_prop_system} shows the possibility of controlling the constant term $(a_{2} + K_PA)$ which determines the natural frequency, but cannot control the damping term $a_{1}$ since it is independent of $K_{P}$. Therefore, the overshoot of the system response is a consequence of the lack of control of the damping term.
+The Equation \ref{charac_prop_system} shows the possibility of controlling the constant term $(a_{2} + K_PA)$ which determines the natural frequency, but cannot control the damping term $a_{1}$ since it is independent of $K_{P}$. Therefore, the overshoot of the system response is a consequence of the lack of control of the damping term.
 
 In addition, these controllers provide a smaller amplitude and phase margin (the overshoot described before happens when the phase margin is too small) and larger sensitivity to the noise (because of the proportionality between the error and the output of the controller).
 
@@ -42,7 +42,7 @@ The integral component, described in Figure \ref{integ_controller}, sums the err
 	\label{integ_controller}
 \end{figure}
 
-Considering the same plant (equation \ref{system_equation}) it is possible to verify that the closed-loop transfer function is given by the equation \ref{int_TF} and the relation between the input and the error is defined in the equation \ref{int_error_input}.
+Considering the same plant (Equation \ref{system_equation}) it is possible to verify that the closed-loop transfer function is given by the Equation \ref{int_TF} and the relation between the input and the error is defined in the Equation \ref{int_error_input}.
 
 \begin{equation}\label{int_TF}
 \frac{Y(s)}{X(s)}= \frac{K_IG(s)}{s + K_IG(s)}
@@ -52,7 +52,7 @@ Considering the same plant (equation \ref{system_equation}) it is possible to ve
 \frac{E(s)}{X(s)}= \frac{s}{s + K_IG(s)}
 \end{equation}
 
-Using the Final Value Theorem, it is possible to calculate the error in the infinite that should be zero (the steady state error will be zero). In the equation \ref{limit_sse}, the steady state error of the system for a step input ($X(s)=\frac{1}{s}$) is calculated . The result is independent of the input, which mean that, in the infinite, the error will be always zero.
+Using the Final Value Theorem, it is possible to calculate the error in the infinite that should be zero (the steady state error will be zero). In the Equation \ref{limit_sse}, the steady state error of the system for a step input ($X(s)=\frac{1}{s}$) is calculated . The result is independent of the input, which mean that, in the infinite, the error will be always zero.
 
 \begin{equation}\label{limit_sse}
 \lim_{t\to\infty} e(t) = \lim_{s \to 0} sE(s) = \lim_{s \to 0} s\frac{s}{s + K_IG(s)}\frac{1}{s} = 0
@@ -69,7 +69,7 @@ The derivative feedback, also called rate feedback, is proportional to the rate 
 	\label{deriv_controller}
 \end{figure}
 
-Based on the system of the Figure \ref{deriv_controller} it is possible to build the relation between the input of the plant and the error between the desired and the output values. This relation is described in the equation \ref{deri_relation}.
+Based on the system of the Figure \ref{deriv_controller} it is possible to build the relation between the input of the plant and the error between the desired and the output values. This relation is described in the Equation \ref{deri_relation}.
 
 \begin{equation}\label{deri_relation}
 \frac{U(s)}{E(s)}= sK_D
@@ -86,7 +86,7 @@ The PI controller (Figure \ref{PI_controller}) is constituted by a proportional 
 	\label{PI_controller}
 \end{figure}
 
-Hence, the equation \ref{PI_equation} describes the behaviour of the PI controller.
+Hence, the Equation \ref{PI_equation} describes the behaviour of the PI controller.
 
 \begin{equation}\label{PI_equation}
 \frac{U(s)}{E(s)}= K_P + \frac{K_I}{s}

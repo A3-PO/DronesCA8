@@ -11,7 +11,7 @@ Using the PID simulink box, four different controllers were developed to compare
 The PI and the PID controllers are the ones with the highest overshoot due to their integral term. In point of fact, an important difference between the current and the desired value in the start of the simulation occurs, resulting in the growth of the integral part of the controller. 
 Such overshoots (respectively, 0.19 and 0.16 radian for the PID and PI) are not viable for this application. Going over the desired angle, could result in loosing the connection between the UA and the GS.
 
-Thus, the PD and P controllers were designed in order to avoid any overshoot. These controllers have a shorter settling time than the ones having an integral part. By having no overshoot and a fast response, the PD and the P controller are suitable for this project. The steady state error resulting from not including an integral component can not be avoid. However, its effect was tested in the chapter \ref{ch:sim} and showed that it is not as significant.
+Thus, the PD and P controllers were designed in order to avoid any overshoot. These controllers have a shorter settling time than the ones having an integral part. By having no overshoot and a fast response, the PD and the P controller are suitable for this project. The steady state error resulting from not including an integral component can not be avoid. However, its effect was tested in the Chapter \ref{ch:sim} and showed that it is not as significant.
 
 \vspace{5mm}
 
@@ -24,4 +24,4 @@ Later, noise was added to the model of the moving angle system and the behavior 
 \label{fig:noise_PID}
 \end{figure}
 
-Both controllers present pros and cons. The PD controller is faster than the P one, but, on the other hand reacts more to noise. In the chapter \ref{ch:sim} , these two controllers were tested to analyse the connection between the UA and the GS.
+Both controllers present pros and cons. The PD controller is faster than the P one, but, on the other hand reacts more to noise. In the Chapter \ref{ch:sim} , these two controllers were tested to analyse the connection between the UA and the GS.

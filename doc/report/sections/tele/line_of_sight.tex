@@ -25,7 +25,7 @@ This way the greatest distance at which a receiver can see the transmitter is ex
     \caption{Line-Of-Sight calculations.}
 \end{figure}
 
-On Figure \ref{fig:GeometricDist_droneBasestation} it is shown that the two objects are a Ground Station and an drone. Both of them will not have an altitude bigger than approximately 100 meters and since \textit{R} is the radius of the Earth, $2hR$ >> $h^2$, and $h^2$ is therefore neglected in equation \ref{eq:los_distToHorizon}. The two distances $D_D$ and $D_{GS}$ have the same expressions in both cases:
+On Figure \ref{fig:GeometricDist_droneBasestation} it is shown that the two objects are a Ground Station and an drone. Both of them will not have an altitude bigger than approximately 100 meters and since \textit{R} is the radius of the Earth, $2hR$ >> $h^2$, and $h^2$ is therefore neglected in Equation \ref{eq:los_distToHorizon}. The two distances $D_D$ and $D_{GS}$ have the same expressions in both cases:
 \begin{align*}
 	D_D [km] &= \sqrt{2\cdot R \cdot h_D + h_{D}^2} \approx \sqrt{2\cdot 6.378\cdot h_D} = \sqrt{12.756\cdot h_D} = 3.57\cdot \sqrt{h_D[m]} \\
 	D_{GS} [km] &= \sqrt{2\cdot R \cdot h_{GS} + h_{GS}^2} \approx \sqrt{2\cdot 6.378\cdot h_{GS}} = \sqrt{12.756\cdot h_B} = 3.57\cdot \sqrt{h_{GS}[m]}

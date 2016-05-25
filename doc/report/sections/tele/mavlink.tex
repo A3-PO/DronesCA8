@@ -1,7 +1,7 @@
 \section{MAVLink Protocol}\label{sec:mavlink}
-Taking the application at hand, inter-communication between systems is required such that transmission of aircraft parameters (e.g. location, heading angle and speed) to the ground station is fulfilled. In some cases, the whole system will operate in a low communication scenario in such a way that a low bandwidth allocation is essential. In this sense, given its characteristics a favorable candidate for the UAS would be the Micro Air Vehicle Link (MAVLink) protocol.
+Taking the application at hand, inter-communication between systems is required such that transmission of aircraft parameters (e.g. location, heading angle and speed) to the ground station is fulfilled. In some cases, the whole system will operate in a low communication scenario in such a way that a low bandwidth allocation is essential. In this sense, given its characteristics a favorable candidate for the UAS would be the Micro Air Vehicle Link, also called the MAVLink protocol.\cite{MAVLink}
 
-\subsection{Packet Structure}
+\subsection*{Packet Structure}
 In digital communication the information is sent through packets, in this case the data are the UAS parameters. Thus, for further understanding the packet structure of the MAVLink protocol can be as seen in Table \ref{tab:mavlink}.
 
 \begin{table}[H]
@@ -24,7 +24,7 @@ In digital communication the information is sent through packets, in this case t
 
 The CRC field ensures message integrity of each packet. Another function of the CRC is to establish that both sender and receiver agree on the message transfer.
 
-\subsection{Messages}
+\subsection*{Messages}
 As stated above the payload from the packets are MAVLink messages. Also, every message can be identified by its ID field on the packet. Additionally, an XML document (in MAVLink source) has the definition of all the data stored on that payload. A sample of such an XML document can be seen in Figure \ref{fig:mav_msg} which describes a message with a 24 number ID giving GPS relevant information. Thus, from this message it can be observed the latitude, longitude and altitude in the WGS84 coordinate system.
 
 \begin{figure}[H]
@@ -36,7 +36,7 @@ As stated above the payload from the packets are MAVLink messages. Also, every m
 
 To be noted that the XML document describes the logical ordering of the fields for the protocol, not the actual wire format.
 
-\subsection{Advantages}
+\subsection*{Advantages}
 To sum up, taking into account the advantages of the MAVLink protocol it can be said that it is a viable option in the case of the UAS at hand:
 \begin{itemize}
 	\item Small packet size

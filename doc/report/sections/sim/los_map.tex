@@ -16,7 +16,7 @@ However this is not taking into consideration the relief of the Earth's surface,
     \label{fig:altitude2distance}
 \end{figure}
 
-\subsection{Initial Step}
+\subsection*{Initial Step}
 In this sense, a MATLAB script has been addressed which at first imports a Web Map Service (WMS) in order to load various maps with their topographic data. As example, a map which captures the areas of Denmark and Sweden has been taken along with its terrain elevation as it can be seen in Figure \ref{fig:before_map}.
 
 \begin{figure}[H]
@@ -32,7 +32,7 @@ In this sense, a MATLAB script has been addressed which at first imports a Web M
   \caption{Topographic Map of Northen Europe.}\label{fig:eu_map}
 \end{figure}
 
-\subsection{LOS Distance}
+\subsection*{LOS Distance}
 Given the map and its topographic data in Figure \ref{fig:before_map}, now it is possible to input the desired points for the GS (orange) and the UA (blue) which gives as result in Figure \ref{fig:gs_uav_map}. The example takes into account the altitude of the GS (20m) and UA (100m) along with the terrain elevation. 
 
 Figure \ref{fig:los_2p} shows the Local NED of the GS (orange cross) perspective which is fixed in zero. Furthermore, the blue crosses and red circles indicate if the UA is visible or not at a particular distance from the GS. Thus, it can be observed that visibility is lost after 50 kilometers from the ground station due to terrain elevation. However, the field of vision is regained between the 55th and 65th kilometer, but the curvature of the Earth comes into play and visibility is lost once again.
@@ -44,7 +44,7 @@ Figure \ref{fig:los_2p} shows the Local NED of the GS (orange cross) perspective
    	\label{fig:los_2p}
 \end{figure}
 
-\subsection{LOS Coverage Map}
+\subsection*{LOS Coverage Map}
 Moving further, for the same map (Figure \ref{fig:before_map}), a location of the GS can be chosen, such that it will result into a visibility area (inside the orange zone) as seen in Figure \ref{fig:los_area}. This area is also referred as the \emph{LOS Coverage Map} and it takes into account the previously mentioned parameters.
 It can be observed from Figure \ref{fig:los_area} that in some areas of the map there is no visibility, due to higher terrain elevation or the curvature of the Earth. Additionally, in Figure \ref{fig:los_odense} it can be seen that choosing a good position for the ground station can impact the coverage area, such that the working area of the UAS expands. 
 
@@ -68,7 +68,7 @@ It can be observed from Figure \ref{fig:los_area} that in some areas of the map 
    	\label{fig:los_odense}
 \end{figure}
 
-\subsection{Working Principle}
+\subsection*{Working Principle}
 Taking into account that a MATLAB script has been achieved, a thourough working principle has to be addressed in the following steps:
 \begin{itemize}
 	\item Import topography map 

@@ -1,5 +1,14 @@
 \section{LOS Coverage Map}\label{sec:los_map}
-A point of interest regarding the project at hand is that Line-of-Sight between the Ground Station and the Unmanned Aircraft should be fulfilled. As discussed in Chapter \ref{ch:frames} this model should take into account the followings:
+As a first example the LOS maximum distance will be considered. This, as seen in section \ref{subsec:los_propagation}, depends on the altitude of the Ground Station and the altitude of the drone. Figure \ref{fig:altitude2distance} shows how the maximum distance in which there is still line-of-sight changes with the altitudes.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.70]{figures/altitude2distance.eps}
+  \caption{LOS distance parameter simulation}
+    \label{fig:altitude2distance}
+\end{figure}
+
+However this is not taking into consideration the relief of the Earth's surface, and therefore ignoring the obstacles that one could encounter in the real application. Thus, a more accurate model should be addressed takenb into account the followings:
 
 \begin{itemize}
 	\item Terrain elevation

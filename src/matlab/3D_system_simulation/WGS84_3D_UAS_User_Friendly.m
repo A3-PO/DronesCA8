@@ -111,11 +111,11 @@ geoshow(ZA, RA, 'DisplayType', 'texturemap')
 demcmap(double(ZA))
 title({'Northen Europe - Topographic Map'});
 % [lat1, long1] = inputm(1);                   % Input GS and UA locations
-plotm(lat1,long1,'o','Color',[1 0.5 0.2],'LineWidth',3);textm(lat1,long1,'  GS');
+plotm(lat1,long1,'o','Color',[1 0.5 0.2],'LineWidth',5);textm(lat1,long1,' GS','FontSize',12,'FontWeight','bold','VerticalAlignment','middle');
 % [lat2, long2] = inputm(1);
-plotm(lat2,long2,'bo','LineWidth',3);textm(lat2,long2,'  UA Start');
+plotm(lat2,long2,'bo','LineWidth',5);textm(lat2,long2,' UA Start','FontSize',12,'FontWeight','bold','VerticalAlignment','bottom');
 % [lat3, long3] = inputm(1);
-plotm(lat3,long3,'bo','LineWidth',3);textm(lat3,long3,'  UA End');
+plotm(lat3,long3,'bo','LineWidth',5);textm(lat3,long3,' UA End','FontSize',12,'FontWeight','bold','VerticalAlignment','top');
 % GSPOS = [lat1, long1];
 % UASTART = [lat2,long2];
 % UAEND = [lat3,long3];

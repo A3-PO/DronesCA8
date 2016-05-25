@@ -13,32 +13,21 @@
 \item{Feedback the output angle into the MATLAB function block and repeat again from step 2.}
 \end{enumerate}
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/servomotor_3D.png}
+	\caption{Servo-motor Block Diagram.}
+   	\label{fig:servomotor3D}
+\end{figure}
+
+
 \subsection*{MATLAB Function}
 \paragraph{}Firstly note that, as explain in section \ref{sec:opt_angle}, this function is duplicated since almost the same calculations for Ground Station and Drone have to be done, being the only diference the reference (origin) for the local NED transformation.
 The Ground station version will transform the Drone GPS coordinates to ECEF and then to the local NED Frame with respect to the Ground Station position. The Drone version do the analgous calculation but the NED Frame will be with respect to the Drone position.
 
-\paragraph{}After this, the \textbf{optimal} or {reference} angles will be calculated according to the equations \ref{eq:OptGS} and the error signal obtained by substracting this calculated angle with the current angle position of the antenna, which comes from the outer loop feedback.
+After this, the \textbf{optimal} or {reference} angles will be calculated according to the equations \ref{eq:OptGS} and the error signal obtained by substracting this calculated angle with the current angle position of the antenna, which comes from the outer loop feedback.
 
-\paragraph{} Some scopes and blocks come out of the output signals of these funcions with mainly debugging and plotting purposes, having no impact in the actual performance of the system. 
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1\textwidth]{figures/servomotor_3D.png}
-	\caption{Servo-motor Block Diagram}
-   	\label{fig:servomotor3D}
-\end{figure}
-
-\clearpage
-
-\begin{sidewaysfigure}[h]
-	\centering
-	\includegraphics[width=1.1\textwidth,height=1.1\textheight,keepaspectratio]{figures/diagram_3D.png}
-	\caption{Block Diagram for 3D Simulation}
-   	\label{fig:diagram3D}
-\end{sidewaysfigure}
-
-\clearpage
-
+Some scopes and blocks come out of the output signals of these funcions with mainly debugging and plotting purposes, having no impact in the actual performance of the system. 
 
 \subsection*{Simulations}
 
@@ -60,7 +49,7 @@ However, in order to perform this simulations some parameters need to be set and
 		HPBW/$H(^{\circ})$ & $14$\\ \hline
 		HPBW/$V(^{\circ})$ & $14$\\ \hline
 	\end{tabular}
-	\caption{Antenna Specifications}
+	\caption{Antenna Specifications.}
 	\label{table:2}
 \end{table}
 \item{It is assumed that the Moving Angle System of both the UA and GS use the same servo-motor, defined in Chapter \ref{sec:servo_model}.}
@@ -70,5 +59,19 @@ However, in order to perform this simulations some parameters need to be set and
 \item{No power threshold fixed in the receiver.}
 \item{The UA will be facing always the end point of the path during the flight.}
 \end{itemize}
+
+\clearpage
+
+\begin{sidewaysfigure}[h]
+	\centering
+	\includegraphics[width=1.1\textwidth,height=1.1\textheight,keepaspectratio]{figures/diagram_3D.png}
+	\caption{Block Diagram for 3D Simulation}
+   	\label{fig:diagram3D}
+\end{sidewaysfigure}
+
+\clearpage
+
+
+
 
 

@@ -3,15 +3,15 @@
 \paragraph{}As it is mentioned earlier, the first approach to the problem was addressed in a cartesian 2-dimensional system. This implies only 1 degree of freedom in our system, being that the azimuth angle ($\theta$). The system is composed of two controllers, one for the UA and one for Ground Station, which have the goal to take the angle of their respective devices to the reference signal (optimal angle). In this section an algorithm to calculate the optimal angle for the 2D system will be introduced. Furthermore the implementation of the controllers will be explained.
 
 \subsection*{Scenario}
-\paragraph{}In Figure \ref{fig:ua_gs} it is shown a scenario where the antennas of both GS and UA change after some periods of time. In the top part of the figure it is shown the angle of the drone ($\theta_{D}$) and the optimal angle ($\theta_{Dopt}$) that the antenna need to be driven to. In the lower part of the figure it is shown the angle of the GS ($\theta_{GS}$) and the optimal angle ($\theta_{GSopt}$) for it. 
 
 \begin{figure}[h]
 	\centering
-	
 	\includegraphics[scale=0.45]{figures/drone_gs_ex_1.jpg}
-	\caption{Example of a GS-UA scenario}
+	\caption{GS-UA scenario example.}
 	\label{fig:ua_gs}
 \end{figure}
+
+\paragraph{}In Figure \ref{fig:ua_gs} it is shown a scenario where the antennas of both GS and UA change after some periods of time. In the top part of the figure it is shown the angle of the drone ($\theta_{D}$) and the optimal angle ($\theta_{Dopt}$) that the antenna need to be driven to. In the lower part of the figure it is shown the angle of the GS ($\theta_{GS}$) and the optimal angle ($\theta_{GSopt}$) for it. 
 
 As it is seen on the figure, at the starting time k the antenna on the UA ($\theta_{D} (k)$) is not pointing to the ground station, and therefore not equal to the optimal angle ($\theta_{Dopt}(k)$). The same goes with the $\theta_{GS}(k)$ and its reference $\theta_{GSopt}(k)$. As time passes, the controllers will drive the antenna angles to their reference, and therefore making them point at each other. 
 
@@ -19,8 +19,8 @@ As it is seen on the figure, at the starting time k the antenna on the UA ($\the
 The following block diagram represents the system that simulates the scenario presented above:
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.55]{figures/2d_system.png}
-	\caption{2D sytem overview}
+	\includegraphics[scale=0.50]{figures/2d_system.png}
+	\caption{2D Block diagram system.}
 	\label{fig:2d_system}
 \end{figure}
 

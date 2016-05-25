@@ -1,12 +1,11 @@
-\section{3D System Simulation}\label{sec:3d_sim}
+\newpage
+\section{3D System Unmanned Aircraft System}\label{sec:3d_sim}
 
-\paragraph{}The 2D simulation in the former section serves its purpose as a simple case scenario of the problem. Whereas most of the calculations will be approached in a different way, it follows the same principle.
-In this case, the frame will not be a simple cartesian plane, but instead we will consider the WGS84 Geodetic Standard (Section \ref{sec:geodetic}).
+\paragraph{}The 2D simulation in the former section serves its purpose as a simple case scenario that gives an insight of how to approach the problem, but it differs greatly from reality. Besides from the obvious lack of the 3rd dimension, another flaws need to be addressed, such as using real earth model (WGS84) instead of a simple cartesian coordinate plane  and taking into account the curvature and relief of the Earth's surface. However, the same geometrical principles are used, as long as the proper frame transformations are derived (Chapter \ref{ch:frames}).
 
-
-\paragraph{} Figure \ref{fig:diagram3D} shows the block diagram used in MATLAB Simulink in order to run this simulation. It is mainly based in the following steps:
+\paragraph{} Figure \ref{fig:diagram3D} shows the actual augmented block diagram used in MATLAB Simulink in order to run this simulation. It is mainly based in the following steps:
 \begin{enumerate}
-\item{Read Ground Station and Drone GPS position}
+\item{Read Ground Station and Drone GPS position.}
 \item{Calculate optimal angles (reference), error signal and other parameters. This requires from frames transformation and other functions, and it is performed inside the MATLAB function block, which will be explained later on.}
 \item{Input the error signal into the controller.}
 \item{Limit the output signal from the controller by the use of the saturation box.}
@@ -35,25 +34,9 @@ In this case, the frame will not be a simple cartesian plane, but instead we wil
 \subsection*{MATLAB Function}
 \paragraph{}Firstly note that, as explain in section \ref{sec:opt_angle}, this function is duplicated since almost the same calculations for Ground Station and Drone have to be done, being the only diference the reference (origin) for the local NED transformation.
 The Ground station version will transform the Drone GPS coordinates to ECEF and then to the local NED Frame with respect to the Ground Station position. The Drone version do the analgous calculation but the NED Frame will be with respect to the Drone position.
+
 \paragraph{}After this, the \textbf{optimal} or {reference} angles will be calculated according to the equations \ref{eq:OptGS} and the error signal obtained by substracting this calculated angle with the current angle position of the antenna, which comes from the outer loop feedback.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1\textwidth]{figures/Map_sim.eps}
-	\caption{Map}
-   	\label{fig:map}
-\end{figure}
+\paragraph{} Some scopes and blocks come out of the output signals of these funcions with mainly debugging and plotting purposes, having no impact in the actual performance of the system. 
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1\textwidth]{figures/Drone_angles.eps}
-	\caption{Drone angles}
-   	\label{fig:Drone_angles}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1\textwidth]{figures/GS_angles.eps}
-	\caption{Ground Station angles}
-   	\label{fig:GS_angles}
-\end{figure}
+\subsection*{Simulations}

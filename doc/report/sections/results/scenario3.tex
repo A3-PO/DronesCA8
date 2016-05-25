@@ -1,44 +1,43 @@
+\newpage
 \section{Scenario 3 - Above the GS}\label{sec:scenario3}
 The scenario 3 run in a short distance from north to south, where the Unmanned Aircraft flies over the Ground Station. The UA starts and ends 6km from the GS from North to South as can be seen in the figure \ref{fig:s3_map}(a). The distance between the 2 devices at every sample is shown in the figure \ref{fig:s3_map}(b). As followings in former graphs, the blue circles mean that there is line of sight between them. 
 
 
 \begin{figure}[H]
-	\hfill
-	\subfigure[UAS Map Positioning]{\includegraphics[scale=0.33]{figures/s3_map.png}}
-	\hfill
-	\subfigure[LOS and Distance]{\includegraphics[scale=0.33]{figures/s3_los.png}}
-	\hfill
-	\caption{Mountain Scenario}
+	\centering
+	\subfigure[UAS Map Positioning]{\includegraphics[scale=0.38]{figures/s3_map.png}}
+	\subfigure[UAS Map Zoom]{\includegraphics[scale=0.32]{figures/s3_zoom.png}}
+	\\
+	\subfigure[LOS and Distance]{\includegraphics[scale=0.53]{figures/s3_los.png}}
+	\caption{Above the GS Scenario}
 	\label{fig:s3_map}
 \end{figure}
 
-\subsection{UAGS}
-In the start of the simulation, both Ground Station and Unmanned Aircraft calculte their azimuth and elevation angles necessary to point at each other (optimal angles). A small delay can be seen in figure \ref{fig:s3_gs} for the azimuth angle of the Ground Station to reach its reference angle. This delay is the result of the starting point of the antennas, being 0 degree, and the motions of the moving angles system. Hence, no delay can be observed for the azimuth angle of the UA and the elevation angles of both devices, by cause of having 0 degree for their optimal angle and their starting angle (figures \ref{fig:s3_ua} and \ref{fig:s3_gs}).
+\subsection*{UA and GS Tracking Angles}
+In the start of the simulation, both Ground Station and Unmanned Aircraft calculte their azimuth and elevation angles necessary to point at each other (optimal angles). A small delay can be seen in figure \ref{fig:s3_gs} for the azimuth angle of the Ground Station to reach its reference angle. This delay is the result of the starting point of the antennas, being 0$^{\circ}$, and the motions of the moving angles system. Hence, no delay can be observed for the azimuth angle of the UA and the elevation angles of both devices, by cause of having 0 degree for their optimal angle and their starting angle (figures \ref{fig:s3_ua} and \ref{fig:s3_gs}).
 
 The crossing point can be clearly observed on their elevation angles, where the speed of the aircraft is directly related to their sudden changes, resulting in a quick peak of almost -90 and 90 degrees for respectvively, the UA and the GS. 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.75]{figures/s3_ua.png}
-	\caption{Azimuth and elevation angles of UA following the optimal angle}
-	\label{fig:s3_ua}
-\end{figure}
-
-
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.75]{figures/s3_gs.png}
+	\includegraphics[scale=0.8]{figures/s3_gs.png}
 	\caption{Azimuth and elevation angles of GS following the optimal angle}
 	\label{fig:s3_gs}
 \end{figure}
 
-\subsection{Power}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{figures/s3_ua.png}
+	\caption{Azimuth and elevation angles of UA following the optimal angle}
+	\label{fig:s3_ua}
+\end{figure}
+
+\subsection*{Signal Power}
 In figure \ref{fig:s3_power}, the power in the receiver is growing in time. While the UA is moving in the direction of the GS, the distance between them decreases and thus the power in the receiver increases. However, a drop-off can be seen at their crossing point. The reference angle is changing too fast for the Moving angle system to reach it in time. Thus, at their crossing point, the antennas of the two devices will not point directly at each other, having for effect to decrease the power in the receiver.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.75]{figures/s3_power.png}
+	\includegraphics[scale=0.8]{figures/s3_power.png}
 	\caption{Power at the receiver's antenna (GS)}
 	\label{fig:s3_power}
 \end{figure}

@@ -58,7 +58,7 @@ yVector = [min([y_gs y_drone]):step_y:max([y_gs y_drone])];    % World Vector Y 
 
 % Azimuthal angle: of the GROUND STATION FRAME [-pi:pi]. 0 = pointing along
 % X axis
-theta_gs = -pi/3;
+theta_gs = 0;
 % angle_gs = atan(abs(x_gs-x_drone)/abs(y_drone-y_gs)) + pi/2;
 
 % X axis of the GROUND STATION FRAME
@@ -71,7 +71,7 @@ y_end_gs = y_gs + r*sin(theta_gs);
 
 % Azimuthal angle: of the GROUND STATION FRAME [-pi:pi]. 0 = pointing along
 % X axis
-theta_d = pi/2;
+theta_d = 0;
 % angle_d = atan(abs(x_gs-x_drone)/abs(y_drone-y_gs)) + 3/2*pi;
 
 % X axis of the DRONE FRAME

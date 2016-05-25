@@ -44,47 +44,47 @@ title('Ground station angle vs optimal');grid on;
 print(fig1,'gs_angle_vs_optimal','-dpng')
 
 %% 2D Simulation of drone-groundstation scenario    
-% for i=1:length(x_drone)
-%     
-%     % POINTING ANTENNA GS FRAME
-%     x_start_gs = x_gs;
-%     y_start_gs = y_gs;
-%     x_end_gs = x_gs + x_gs/5*cos(theta_gs_vec.Data(i));
-%     y_end_gs = y_gs + x_gs/5*sin(theta_gs_vec.Data(i));
-% 
-%     % POINTING ANTENNA DRONE FRAME
-%     x_start_d(i) = x_drone(i);
-%     y_start_d(i) = y_drone(i); 
-%     x_end_d(i) = x_drone(i) + y_drone(i)/5*cos(theta_d_vec.Data(i));
-%     y_end_d(i) = y_drone(i) + y_drone(i)/5*sin(theta_d_vec.Data(i));
-% 
-%     % LOS distance vector construction
-%     [dxVector(i,:),dyVector(i,:),los_d] = LOS_distance(x_drone(i),...
-%                                         y_drone(i),x_gs,y_gs,prec_d);
-%     
-%     % Small function to draw arrows
-%     drawArrow = @(x,y) quiver(x(1),y(1),x(2)-x(1),y(2)-y(1)...
-%                 ,'LineWidth',2.5,'MaxHeadSize',0.5);
-% 
-%     % PLOT
-%     f1 = figure(2);
-%     clf(f1);
-%     hold on
-%     plot(x_drone(i),y_drone(i),'o','LineWidth',2);
-%     plot(x_gs,y_gs,'X','LineWidth',2);
-%     drawArrow([x_start_gs,x_end_gs],[y_start_gs,y_end_gs]);
-%     drawArrow([x_start_d(i),x_end_d(i)],[y_start_d(i),y_end_d(i)]);
-%     plot(dxVector(i,:),dyVector(i,:),'LineWidth',1.5);
-%     axis([0 100 0 50]);
-%     grid on;
-%     grid minor;
-%     str = sprintf('Scenario Simulation 2D');
-%     %     str = sprintf(strcat(str,'\n GS Antenna Gain: %.3f dB \n Drone Antenna Gain: %.3f dB',GSgain,Dgain);
-%     title(str);
-%     xlabel('X world axis');
-%     ylabel('Y world axis');
-%     legend('Drone','Ground Station','GS Frame','Drone Frame','LOS distance','Location','Best');
-%     pause(0.1);
-%     movegui(f1,'north');
-% end
+for i=1:length(x_drone)
+    
+    % POINTING ANTENNA GS FRAME
+    x_start_gs = x_gs;
+    y_start_gs = y_gs;
+    x_end_gs = x_gs + x_gs/5*cos(theta_gs_vec.Data(i));
+    y_end_gs = y_gs + x_gs/5*sin(theta_gs_vec.Data(i));
+
+    % POINTING ANTENNA DRONE FRAME
+    x_start_d(i) = x_drone(i);
+    y_start_d(i) = y_drone(i); 
+    x_end_d(i) = x_drone(i) + y_drone(i)/5*cos(theta_d_vec.Data(i));
+    y_end_d(i) = y_drone(i) + y_drone(i)/5*sin(theta_d_vec.Data(i));
+
+    % LOS distance vector construction
+    [dxVector(i,:),dyVector(i,:),los_d] = LOS_distance(x_drone(i),...
+                                        y_drone(i),x_gs,y_gs,prec_d);
+    
+    % Small function to draw arrows
+    drawArrow = @(x,y) quiver(x(1),y(1),x(2)-x(1),y(2)-y(1)...
+                ,'LineWidth',2.5,'MaxHeadSize',0.5);
+
+    % PLOT
+    f1 = figure(2);
+    clf(f1);
+    hold on
+    plot(x_drone(i),y_drone(i),'o','LineWidth',2);
+    plot(x_gs,y_gs,'X','LineWidth',2);
+    drawArrow([x_start_gs,x_end_gs],[y_start_gs,y_end_gs]);
+    drawArrow([x_start_d(i),x_end_d(i)],[y_start_d(i),y_end_d(i)]);
+    plot(dxVector(i,:),dyVector(i,:),'LineWidth',1.5);
+    axis([0 100 0 50]);
+    grid on;
+    grid minor;
+    str = sprintf('Scenario Simulation 2D');
+    %     str = sprintf(strcat(str,'\n GS Antenna Gain: %.3f dB \n Drone Antenna Gain: %.3f dB',GSgain,Dgain);
+    title(str);
+    xlabel('X world axis');
+    ylabel('Y world axis');
+    legend('Drone','Ground Station','GS Frame','Drone Frame','LOS distance','Location','Best');
+    pause(0.1);
+    movegui(f1,'north');
+end
 

@@ -1,0 +1,17 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdftex 2016.5.25)  25 MAY 2016 18:14
+entering extended mode
+**"D:/Google Drive/Aalborg University/2 Semester - Private/Drones/DronesCA8/doc
+/report/bib/mybib.bib"
+
+("D:/Google Drive/Aalborg University/2 Semester - Private/Drones/DronesCA8/doc/
+report/bib/mybib.bib"
+! Undefined control sequence.
+l.5   howpublished = {\url
+                          {http://www.imf.au.dk/system/latex/bog/}}
+? 
+! Emergency stop.
+l.5   howpublished = {\url
+                          {http://www.imf.au.dk/system/latex/bog/}}
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!

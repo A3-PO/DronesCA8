@@ -1,9 +1,17 @@
 \chapter{Conclusion}\label{ch:conclusion}
 
-Conclusion:
+WHAT HAS BEEN DONE ? (add modelling? WGS84?)  
 
-What have we achieved ?
+In this project, a double tracking antennas system for UAS communication has been performed. Keep a communication link between a Drone being in motions and its Ground Station, was the goal of this work. Hence, model of the earth, caracteristics of the antennas, speed of the Aircraft and noises occuring from sensors and/or weather conditions, were taken into account to complete a realistic simulation.
 
-What we think about it ?
+Both UA and GS were equiped with two Moving Angle System, that, by receiving the position of the second device, have the role of making its antenna point towards it. The MAS is composed of a controller, converting the desired angle into a voltage, and a servomotor, powered with the previous output, to position the antenna. These systems are SISO systems and a independant from each other. Thus, one MAS has the role of pointing to the desired azimuth, while the second one has the role of pointing to desired elevation.
 
-Further work ?
+In order to control the MAS, PID control was performed during this project. As a result of the simulations, controllers including an integral component have shown to not be viable for this application, because of their inevitable overshoot. On the other hand, the proportional and proportional-derivative controller performed, present a fast response, no overshoot and a slow react to noises, and are therefore adequate for the MAS.
+
+
+
+
+COULD IT BE DONE IN AN OTHER WAY? ONE CONTROLLER FOR BOTH ANGLES? ROBUST CONTROL?
+
+COULD THIS SYSTEM BE USE IN OTHER APPLICATIONS THAN DRONES?
+

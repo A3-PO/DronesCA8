@@ -1,6 +1,6 @@
 \newpage
 \section{Scenario 2 - Curvature of the Earth}\label{sec:scenario2}
-The purpose of this scenario is to show how the curvature of the Earth comes into play, as seen on the map in Figure \ref{fig:s2_map}. In this case, the UA starts near the GS and moves away from it in a somewhat straight line. To be mentioned that a PD controller is used in simulation of the UAS.
+The purpose of this scenario is to show how the curvature of the Earth comes into play, as seen on the map in Figure \ref{fig:s2_map}. In this case, the UA starts near the GS and moves away from it in a somewhat straight line. To be mentioned that a PD controller is used in simulation of the UAS in this scenario.
 
 \begin{figure}[H]
 	\centering
@@ -15,7 +15,7 @@ The purpose of this scenario is to show how the curvature of the Earth comes int
 
 
 \subsection*{UA and GS Tracking Angles}
-In this scenario, the UA is on the left side of the GS as is illustrated on Figure \ref{fig:s2_map}. As was explained in scenario 1, due to the chosen body frame coordinate of the GS, the optimal azimuth angle is always negative. On the other hand, the UA is flying away from the GS in a straight line which results in an almost constant azimuth angle. 
+In this scenario, the UA is on the left side of the GS as is illustrated on Figure \ref{fig:s2_map}. As was explained in Scenario 1 (Section \ref{sec:scenario1}), due to the chosen body frame coordinate of the GS, the optimal azimuth angle is always negative. On the other hand, the UA is flying away from the GS in a straight line which results in an almost constant azimuth angle as it can be seen in Figure \ref{fig:s2_gs}. 
 
 The optimal elevation angle has a slightly decrease (bigger than in the previous scenario) during the whole movement. It starts with a higher value because the UA is close to the GS. While the UA is progressing towards the end point, the distance between both devices grows which causes a decrease in the antenna's $\phi_{OPTIMAL}$ angle. However, in this situation, the $\phi_{OPTIMAL}$ becomes negative on the 70th sample, which means that, in the point of view of the GS, it has a bigger altitude compared to the UA one. The $\phi_{OPTIMAL}$ can achieve negative values because the curvature of the Earth was taken into account.
 

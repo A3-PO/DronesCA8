@@ -10,11 +10,11 @@ Based on Figures \ref{fig:s1_pd_gs_alone} and \ref{fig:s1_pd_ua_alone}, it is po
 	\hfill
 	\subfigure[LOS and Distance]{\label{fig:s1_map_b} \includegraphics[scale=0.34]{figures/s1_los.png}}
 	\hfill
-	\caption{Mountain Scenario}
+	\caption{Angle Range Scenario}
 	\label{fig:s1_map}
 \end{figure}
 
-\subsection{Ground Station}
+\subsection{Ground Station}\label{GroundStation_scenario1}
 As expected, the absolute value of the $\theta_{OPTIMAL}$ increases until it reaches 180$^{\circ}$  and, then, it starts increasing from -180$^{\circ}$ until the end. The initial $\theta_{OPTIMAL}$ is around 140$^{\circ}$ due to the system of coordinates applied where the Local NED frame coincides with the body frame. This assumption was taken into account because the position of the GS is static.
 
 In the beginning, the amplitude of the azimuth angle is positive and is growing because the UA is flying on the left side of the GS (lower longitude) to south (decreasing latitude). However, there is a jump when $\theta$ reaches 180$^{\circ}$ in the first graph of Figure \ref{fig:s1_pd_gs_alone}. This happens due to the used convention which limits the range from -180 to 180$^{\circ}$. Nonetheless, there is a continuous rotation, which means that when the antenna achieves 180$^{\circ}$, it will continue rotate in the same direction starting from -180$^{\circ}$. Thus, after the jump, the amplitude of the azimuth angle will continue increase from -180 until -136$^{\circ}$.
@@ -26,7 +26,7 @@ Despite of the small amplitude, $\phi_{OPTIMAL}$ has a maximum value (approximat
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.75]{figures/s1_pd_gs.png}
-	\caption{caption}
+	\caption{Behaviour of the azimuth and elevation angles of the antenna in the GS during the movement of the UA}
 	\label{fig:s1_pd_gs_alone}
 \end{figure}
 
@@ -39,17 +39,17 @@ Based on the elevation plots of Figure \ref{fig:s1_gs}, it is possible to verify
 
 \begin{figure}[H]
 	\hfill
-	\subfigure[P]{\includegraphics[scale=0.34]{figures/s1_p_gs.png}}
+	\subfigure[P Controller]{\includegraphics[scale=0.34]{figures/s1_p_gs.png}}
 	\hfill
-	\subfigure[PI]{\includegraphics[scale=0.34]{figures/s1_pi_gs.png}}
+	\subfigure[PI Controller]{\includegraphics[scale=0.34]{figures/s1_pi_gs.png}}
 	\hfill
 	\\
 	\hfill
-	\subfigure[PD]{\includegraphics[scale=0.34]{figures/s1_pd_gs.png}}
+	\subfigure[PD Controller]{\includegraphics[scale=0.34]{figures/s1_pd_gs.png}}
 	\hfill
-	\subfigure[PID]{\includegraphics[scale=0.34]{figures/s1_pid_gs.png}}
+	\subfigure[PID Controller]{\includegraphics[scale=0.34]{figures/s1_pid_gs.png}}
 	\hfill
-	\caption{GS Controllers}
+	\caption{Ground Station controllers}
 	\label{fig:s1_gs}
 \end{figure}
 
@@ -63,29 +63,38 @@ The optimal elevation angle, $\phi$, of the UA has almost the same behaviour as 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.75]{figures/s1_pd_ua.png}
-	\caption{caption}
+	\caption{Behaviour of the azimuth and elevation angles of the antenna in the UA during its own flight}
 	\label{fig:s1_pd_ua_alone}
 \end{figure}
 
-Here about the controllers....
+The controllers used in this section are the same ones that were used to test the behaviour of the antenna in the GS. This means that the performance will be similar to the ones illustrated in Figure \ref{fig:s1_gs}.
+
+Thus, based on the graphs of the azimuth angle of Figure \ref{fig:s1_ua}, it is observable that the PI and PID controllers have an overshoot when the system is trying to achieve the desired position. Moreover, the response of the sytem with the P and PD controllers achieve directly the desired angle, without any overshoot. On the other hand, the variations of the $\phi$ angle when the system is equipped with a PD or PID controller are less evident than in the P and PI controllers. This is a result of the presence derivative component. In both cases the final results are similar to the ones described in section \ref{GroundStation_scenario1}.
+
 \begin{figure}[H]
 	\hfill
-	\subfigure[P]{\includegraphics[scale=0.34]{figures/s1_p_ua.png}}
+	\subfigure[P Controller]{\includegraphics[scale=0.34]{figures/s1_p_ua.png}}
 	\hfill
-	\subfigure[PI]{\includegraphics[scale=0.34]{figures/s1_pi_ua.png}}
+	\subfigure[PI Controller]{\includegraphics[scale=0.34]{figures/s1_pi_ua.png}}
 	\hfill
 	\\
 	\hfill
-	\subfigure[PD]{\includegraphics[scale=0.34]{figures/s1_pd_ua.png}}
+	\subfigure[PD Controller]{\includegraphics[scale=0.34]{figures/s1_pd_ua.png}}
 	\hfill
-	\subfigure[PID]{\includegraphics[scale=0.34]{figures/s1_pid_ua.png}}
+	\subfigure[PID Controller]{\includegraphics[scale=0.34]{figures/s1_pid_ua.png}}
 	\hfill
-	\caption{UA Controllers}
+	\caption{Unmanned Aircraft Controllers}
 	\label{fig:s1_ua}
 \end{figure}
 
 \subsection{Power}
+IDEAS
 In Figure \ref{fig:s2_power} the power at the receiver antenna of the GS antenna can be seen.
+Power related to the controllers used
+Biggest change in the beginning and depends on the controller that is used.
+Big overshoot - the power decreases a lot because the antenna goes and comes back.
+Without integral component there is no overshoot so the difference between them is only the time that they need ti achieve the perfect angle.
+
 
 \begin{figure}[H]
 	\hfill

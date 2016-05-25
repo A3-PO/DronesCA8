@@ -303,11 +303,11 @@ f5 = figure(5);
 movegui(f5,'south');
 
 %% Save graphs to file
-print(f1,'../../../doc/report/figures/s4_map.png','-dpng');
-print(f2,'../../../doc/report/figures/s4_ua.png','-dpng');
-print(f3,'../../../doc/report/figures/s4_gs.png','-dpng');
-print(f4,'../../../doc/report/figures/s4_los.png','-dpng');
-print(f5,'../../../doc/report/figures/s4_power.png','-dpng');
+% print(f1,'../../../doc/report/figures/s4_map.png','-dpng');
+% print(f2,'../../../doc/report/figures/s4_ua.png','-dpng');
+% print(f3,'../../../doc/report/figures/s4_gs.png','-dpng');
+% print(f4,'../../../doc/report/figures/s4_los.png','-dpng');
+% print(f5,'../../../doc/report/figures/s4_power.png','-dpng');
 
 
 % Define arrow

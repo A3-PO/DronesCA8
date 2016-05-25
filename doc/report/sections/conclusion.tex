@@ -1,14 +1,14 @@
 \chapter{Conclusion}\label{ch:conclusion}
 
 
-In this project, a design of a double tracking antenna system for UAS communication has been developped. Keeping the communication between the Ground Station and the drone flying over a predefined path, specifically over large distances, was the goal of this work. Hence, model of the earth, characteristics of the antennas, modelling of servomotors and measurement noises, were taken into account to complete a realistic simulation.
+In this project, a design of a double tracking antenna system for UAS communication has been developed. Keeping the communication between the Ground Station and the drone flying over a predefined path, specifically over large distances, was the goal of this work. Hence, model of the earth, characteristics of the antennas, modelling of servomotors and measurement noises, were taken into account to complete a realistic simulation.
 
-Both UA and GS were equiped with two Moving Angle System, that, by receiving a reference angle calculated based on the GPS position of the second device, have the role of making its antenna point towards it. The MAS is composed of a controller, converting the desired angle into a voltage, and a servomotor, powered with the previous output to position the antenna. These systems are SISO systems and are independent from each other. Thus, on each device, one MAS has the task of pointing to the desired azimuth angle, while the second one will drive the antenna to desired elevation angle.
+The UA and GS were equipped with two Moving Angle System, that, by receiving a reference angle calculated based on the GPS position of both devices, have the role of making its antenna point towards it. The MAS is composed of a controller, converting the desired angle into a voltage, and a servomotor, powered with the previous output to position the antenna. These systems are SISO systems and are independent from each other. Thus, on each device, one MAS has the task of pointing to the desired azimuth angle, while the second one will drive the antenna to desired elevation angle.
 
 In order to control the MAS, PID control was performed during this project. Based on the results, proportional and proportional-derivative approches have proven to be more sastisfactory than the controllers including a integral term due to the application requirements.
 
 
 
-However, actual implementation has not been carried out. Thus, the system could not be tested in real flights, which could introduce larger noises due to weather conditions or effects of multipath propagation. In these cases, an implementation of robust control might prove to be more effective.
+However, actual physical implementation has not been carried out. Thus, the system could not be tested in real flights, which could introduce larger noises due to weather conditions or effects of multipath propagation. In these cases, an implementation of robust control might prove to be more effective.
 
 

@@ -9,14 +9,14 @@ This frame has also the origin in the center of gravity of the UA, however, unli
 \begin{figure}[H]
    \centering
     \includegraphics[width=.70\textwidth]{figures/NEDtemp1.png} 
-    \caption{Body, vehicle-carried and local NED Frames.}  
+    \caption{Body, vehicle-carried and local NED Frames.\cite{Cai011}}  
     \label{fig:NED1}
 \end{figure}
 
 \section{Transformations}\label{sec:body}
 
 \subsection*{From NED to Body}
-\paragraph{} The orientation of a Cartesian coordinate system with respect to another can be described in three successive Euler rotations, usually performed about each of the three cartesian axes consequently. During this work we will mainly focus on the transformation between the vehicle-carried NED and the body frame. In order to do this we will follow a specific rotation sequence, moving the reference frame to the referred frame by a Z-Y-X (also called 3-2-1) sequence. These three Euler angles are also known respectively as \textbf{yaw}($\psi$), \textbf{pitch}($\xi$) and \textbf{roll}($\gamma$).
+\paragraph{} The orientation of a Cartesian coordinate system with respect to another can be described in three successive Euler rotations, usually performed about each of the three cartesian axes consequently. During this work we will mainly focus on the transformation between the vehicle-carried NED and the body frame. In order to do this we will follow a specific rotation sequence, moving the reference frame to the referred frame by a Z-Y-X (also called 3-2-1) sequence. These three Euler angles are also known respectively as \textbf{yaw}($\psi$), \textbf{pitch}($\xi$) and \textbf{roll}($\gamma$)\cite{EulerW}.
 
 \paragraph{} This way, the transformation from the vehicle-carried NED frame to the Body frame is given by:
 \begin{align}

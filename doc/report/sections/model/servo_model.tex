@@ -6,7 +6,7 @@ The use of a tracking antenna system requires a device to change the orientation
 
 The DC servomotor, presented in the section \ref{sec:servo_motor}, can be divided in two different groups: the DC motor and the servomechanism.
 
-DC motor is an actuator which converts electrical energy to mechanical rotation. In the figure \ref{dcmotor_circuit} it is possible to see the model of this motor. DC motors are a type of motors which were built to receive a voltage as an input and, after converting this voltage, to apply a specific velocity on its shaft. In other words, DC motors are able to control the velocity of the shaft.
+DC motor is an actuator which converts electrical energy to mechanical rotation. In the Figure \ref{dcmotor_circuit} it is possible to see the model of this motor. DC motors are a type of motors which were built to receive a voltage as an input and, after converting this voltage, to apply a specific velocity on its shaft. In other words, DC motors are able to control the velocity of the shaft.
 
 \begin{figure}[H]
 \centering
@@ -15,7 +15,7 @@ DC motor is an actuator which converts electrical energy to mechanical rotation.
 \label{dcmotor_circuit}
 \end{figure}
 
-The circuit of the previous figure is described by the equations \ref{DC_motor_equation1}, \ref{DC_motor_equation2} and \ref{DC_motor_equation3}. It is possible to observe that between the source unit and the motor there are two elements (resistance and inductance). These elements are important due to the fact that they are the responsible for the stability of the system, avoiding a motor overload. Hence, the relation between the current and the difference between the voltage of the source and the one of the motor is made through an admitance.
+The circuit of the previous Figure is described by the Equations \ref{DC_motor_equation1}, \ref{DC_motor_equation2} and \ref{DC_motor_equation3}. It is possible to observe that between the source unit and the motor there are two elements (resistance and inductance). These elements are important due to the fact that they are the responsible for the stability of the system, avoiding a motor overload. Hence, the relation between the current and the difference between the voltage of the source and the one of the motor is made through an admitance.
 
 \begin{equation}\label{DC_motor_equation1}
 v_{a}= v_{b}+i_{a} R_{a}+L_{a}\frac{\mathrm{d} i_{a}}{\mathrm{d} t}
@@ -29,7 +29,7 @@ V_{a}(s)= V_{b}(s)+I_{a}(s) R_{a}+sL_{a}I_{a}(s)
 I_{a}(s)= \frac{V_{a}(s)-V_{b}(s)}{R_{a}+sL_{a}} , I_{a}(s)= G_{I}(V_{a}(s)-V_{b}(s))
 \end{equation}
 
-The model of the figure \ref{model1} is the representation of the equation \ref{DC_motor_equation3}.
+The model of the Figure \ref{model1} is the representation of the equation \ref{DC_motor_equation3}.
 
 \begin{figure}[H]
 \centering
@@ -64,7 +64,7 @@ T_{m}(t)= K_{t} i_{a}(t)
 T_{m}(s)= K_{t} I_{a}(s)
 \end{equation}
 
-Based on the previous equations and on the model in the figure \ref{model1} it is possible to build the model in the figure \ref{model2}.
+Based on the previous equations and on the model in the Figure \ref{model1} it is possible to build the model in the Figure \ref{model2}.
 
 \begin{figure}[H]
 \centering
@@ -90,7 +90,7 @@ T_{m}(s) I_{a}(s)= (s^{2}J_{e} + sD_{e})\theta_{m}(s)
 \label{model3}
 \end{figure}
 
-Finally, it is also possible to calculate the relation between the output theta and voltage. Thus, the comparison between the output and the input voltage allows the formation of a closed loop using a feedback (figure \ref{model4}).
+Finally, it is also possible to calculate the relation between the output theta and voltage. Thus, the comparison between the output and the input voltage allows the formation of a closed loop using a feedback (Figure \ref{model4}).
 
 \begin{equation}\label{feedback1}
 v_{b}(t)= K_{b}\frac{\mathrm{d} \theta_{m}(t)}{\mathrm{d} t}

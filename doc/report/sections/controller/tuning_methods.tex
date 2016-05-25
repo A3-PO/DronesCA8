@@ -5,7 +5,7 @@ As a first try, a PID controller was designed using the Good Gain method. Later,
 \subsubsection{The Good Gain}
 
 
-The structure of the controller can be seen on the figure below. Taking as input the error angle \textbf{$\theta_{e}$} and outputting the required voltage \textit{V}, which is after limited by a saturation box to supply the motor, this controller has the final task of converting a value in radian into voltage.\par
+The structure of the controller can be seen on the Figure below. Taking as input the error angle \textbf{$\theta_{e}$} and outputting the required voltage \textit{V}, which is after limited by a saturation box to supply the motor, this controller has the final task of converting a value in radian into voltage.\par
 
 \begin{figure}[H]
   \centering
@@ -13,7 +13,7 @@ The structure of the controller can be seen on the figure below. Taking as input
   \caption[LABEL] {Block diagram of the PID controller.}
 \end{figure}
   
-This method can be split up in three different parts. In the first part it is supposed to set the proportional parameter. Thus, choosing $T_i$ = $\infty$ and $T_d$ = 0 (respectively the integral and the derivative term to zero), results in the step from the figure \ref{fig:subim11}.
+This method can be split up in three different parts. In the first part it is supposed to set the proportional parameter. Thus, choosing $T_i$ = $\infty$ and $T_d$ = 0 (respectively the integral and the derivative term to zero), results in the step from the Figure \ref{fig:subim11}.
 \begin{figure}[H]
 \hfill
 \subfigure[Set Ti = inf , Td = 0 and Kp = 1.]{
@@ -28,7 +28,7 @@ This method can be split up in three different parts. In the first part it is su
 \end{figure}
 
 
-Increasing $K_p$ in figure \ref{fig:subim12} will allow to reduce the rising time. Morover, changing this proportional gain is a needed step to find a slight overshoot and a well damped response. Hence, having an overshoot and the first undershoot, $T_{out}$ can be defined, being the time between the peak of the overshoot and the one of the undershoot.\par
+Increasing $K_p$ in Figure \ref{fig:subim12} will allow to reduce the rising time. Morover, changing this proportional gain is a needed step to find a slight overshoot and a well damped response. Hence, having an overshoot and the first undershoot, $T_{out}$ can be defined, being the time between the peak of the overshoot and the one of the undershoot.\par
 \vspace{5mm}
 Adding the integral parameter implies a relation with the previous defined time between the peak of the overshoot and undershoot. Thus, $T_i = 1.5T_{out}$. The objective of this step \ref{fig:subim13} is to eliminate the steady state error.
 
@@ -48,11 +48,11 @@ Adding the integral parameter implies a relation with the previous defined time 
 \caption{Good Gain: Adding integral and derivative parts.}
 \end{figure}
 
-At this point, the controller is a proportional-integral. The high overshoot resulting from adding the integral term can be attenuated by setting the derivative part, shown in figure \ref{fig:subim14}. The gain $T_d$ will act as a damper on the system and therefore reduce the high variations of the step response. In the Good Gain method, this value is described to be $T_d = \frac{T_i}{4}$.
+At this point, the controller is a proportional-integral. The high overshoot resulting from adding the integral term can be attenuated by setting the derivative part, shown in Figure \ref{fig:subim14}. The gain $T_d$ will act as a damper on the system and therefore reduce the high variations of the step response. In the Good Gain method, this value is described to be $T_d = \frac{T_i}{4}$.
 
 \vspace{5mm}
 
-Theoretically, the tuning of the controller using the Good Gain method is done. However, it is possible to improve the controller based on the application that is wanted. In the case of this project, stability and minor overshoot was more important than the reaching speed of the reference value. Therefore, based on the principles seen in sections \ref{sec:pid_theory}, the overshoot of the system was attenuated, the undershoot cancelled and the drop-off smoothed (figure \ref{finalGG}).
+Theoretically, the tuning of the controller using the Good Gain method is done. However, it is possible to improve the controller based on the application that is wanted. In the case of this project, stability and minor overshoot was more important than the reaching speed of the reference value. Therefore, based on the principles seen in sections \ref{sec:pid_theory}, the overshoot of the system was attenuated, the undershoot cancelled and the drop-off smoothed (Figure \ref{finalGG}).
 
 \begin{figure}[H]
   \centerline{
@@ -61,12 +61,12 @@ Theoretically, the tuning of the controller using the Good Gain method is done. 
   \label{finalGG}
 \end{figure}
 
-However, the time needed to tune and the uncertainties of the different steps and results were the weaknesses of this method. For instance, as described in figure \ref{fig:subim12} , a "slight overshoot" is a parameter that can be relative depending on the designer.\par  
+However, the time needed to tune and the uncertainties of the different steps and results were the weaknesses of this method. For instance, as described in Figure \ref{fig:subim12} , a "slight overshoot" is a parameter that can be relative depending on the designer.\par  
   
 \subsubsection{PID Simulink box}
 The PID simulink box is an interesting alternative to the good gain method to tune a controller. As a matter of fact, the previous described method has its own limits.\par 
   
-Therefore, the PID simulink box, that includes an automatic tuning tool and a real time response of the system, was a suitable option to tune the controller. Futhermore, this technique incorporates a fourth parameter in its PID model, as shown in figure \ref{PID_box_N}. 
+Therefore, the PID simulink box, that includes an automatic tuning tool and a real time response of the system, was a suitable option to tune the controller. Futhermore, this technique incorporates a fourth parameter in its PID model, as shown in Figure \ref{PID_box_N}. 
  
 \begin{figure}[H]
 \centering

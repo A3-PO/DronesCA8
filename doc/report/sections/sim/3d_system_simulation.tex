@@ -22,16 +22,16 @@
 
 
 \subsection*{MATLAB Function}
-\paragraph{}Firstly note that, as explain in Section \ref{sec:opt_angle}, this function is duplicated since almost the same calculations for Ground Station and Drone have to be done, being the only diference the reference (origin) for the local NED transformation.
-The Ground station version will transform the Drone GPS coordinates to ECEF and then to the local NED Frame with respect to the Ground Station position. The Drone version do the analgous calculation but the NED Frame will be with respect to the Drone position.
+\paragraph{}Firstly note that, as explain in Section \ref{sec:opt_angle}, this function is duplicated since almost the same calculations for Ground Station and Drone have to be done, being the only difference the reference (origin) for the local NED transformation.
+The Ground station version will transform the Drone GPS coordinates to ECEF and then to the local NED Frame with respect to the Ground Station position. The Drone version do the analogous calculation but the NED Frame will be with respect to the Drone position.
 
-After this, the \textbf{optimal} or {reference} angles will be calculated according to the Equations \ref{eq:OptGS} and the error signal obtained by substracting this calculated angle with the current angle position of the antenna, which comes from the outer loop feedback.
+After this, the \textbf{optimal} or {reference} angles will be calculated according to the Equations \ref{eq:OptGS} and the error signal obtained by subtracting this calculated angle with the current angle position of the antenna, which comes from the outer loop feedback.
 
-Some scopes and blocks come out of the output signals of these funcions with mainly debugging and plotting purposes, having no impact in the actual performance of the system. 
+Some scopes and blocks come out of the output signals of these functions with mainly debugging and plotting purposes, having no impact in the actual performance of the system. 
 
 \subsection*{Simulations}
 
-In the following chapter, the results of 4 different simulations will be presented, each of them exampling some specific characteristics. These will consist in short straight paths between two points and they will use the 3D Unmmaned Aircraft System showed in Figure \ref{fig:diagram3D}.
+In the following chapter, the results of 4 different simulations will be presented, each of them exampling some specific characteristics. These will consist in short straight paths between two points and they will use the 3D Unmanned Aircraft System showed in Figure \ref{fig:diagram3D}.
 
 However, in order to perform this simulations some parameters need to be set and some considerations noted:
 

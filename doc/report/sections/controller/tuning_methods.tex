@@ -15,7 +15,7 @@ The structure of the controller can be seen on the Figure below. Taking as input
   
 This method can be split up in three different parts. In the first part it is supposed to set the proportional parameter. Thus, choosing $T_i$ = $\infty$ and $T_d$ = 0 (respectively the integral and the derivative term to zero), results in the step from the Figure \ref{fig:subim1}.
 
-\paragraph{}Increasing $K_p$ in Figure \ref{fig:subim2} will allow to reduce the rising time. Morover, changing this proportional gain is a needed step to find a slight overshoot and a well damped response. Hence, having an overshoot and the first undershoot, $T_{out}$ can be defined, being the time between the peak of the overshoot and the one of the undershoot.
+\paragraph{}Increasing $K_p$ in Figure \ref{fig:subim2} will allow to reduce the rising time. Moreover, changing this proportional gain is a needed step to find a slight overshoot and a well damped response. Hence, having an overshoot and the first undershoot, $T_{out}$ can be defined, being the time between the peak of the overshoot and the one of the undershoot.
 \paragraph{}Adding the integral parameter implies a relation with the previous defined time between the peak of the overshoot and undershoot. Thus, $T_i = 1.5T_{out}$. The objective of this step \ref{fig:subim3} is to eliminate the steady state error.
 \begin{figure}[H]
   \centering
@@ -90,7 +90,7 @@ However, the time needed to tune and the uncertainties of the different steps an
 \subsubsection{PID Simulink box}
 The PID simulink box is an interesting alternative to the good gain method to tune a controller. As a matter of fact, the previous described method has its own limits.\par 
   
-Therefore, the PID simulink box, that includes an automatic tuning tool and a real time response of the system, was a suitable option to tune the controller. Futhermore, this technique incorporates a fourth parameter in its PID model, as shown in Figure \ref{PID_box_N}. 
+Therefore, the PID simulink box, that includes an automatic tuning tool and a real time response of the system, was a suitable option to tune the controller. Furthermore, this technique incorporates a fourth parameter in its PID model, as shown in Figure \ref{PID_box_N}. 
  
 \begin{figure}[H]
 \centering
@@ -110,7 +110,7 @@ Including the N term avoids a 'pure derivative' that reacts easily to noises. Th
 \vspace{5mm}
 
 
-The PID tuner considers as the plant all blocks in the loop, that can include linearities and nonlinearities, between the controller output and input. Then, the PID tuner automatically linearizes the plant at the operating point based on the initial conditions of the model. This process works as an approximation to the nonlinear system and is valid in a small region around its operating point.\par
+The PID tuner considers as the plant all blocks in the loop, that can include linearities and non-linearities, between the controller output and input. Then, the PID tuner automatically linearizes the plant at the operating point based on the initial conditions of the model. This process works as an approximation to the nonlinear system and is valid in a small region around its operating point.\par
 
 The gains of the PID controller are calculated based on three different concepts: closed-loop stability, adequate performance and adequate robustness. The closed-loop stability means that the system’s output remains bounded for a bounded input. The adequate performance of the PID controller will allow the system to track reference changes and suppress disturbances as rapidly as possible. Finally, the robustness is the property that takes into account the gain and phase margin in order to allow for modelling errors or variations in system dynamics. Thus, as is referred in the MathWorks webpage, the algorithm for tuning PID controllers meets these objectives by tuning the PID gains to achieve a good balance between performance and robustness.
 

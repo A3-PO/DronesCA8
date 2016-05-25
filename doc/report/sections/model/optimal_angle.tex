@@ -1,7 +1,7 @@
 \section{Optimal Angle}\label{sec:opt_angle}
 \paragraph{} Once the modelling of the whole control system has been presented, the calculation regarding the reference (i.e., the optimal angles for both Ground Station and Drone) will be addressed.
 
-\paragraph{} This calculation will be performed individually by each of the devices. This is, the ground station will calculate its own optimal angles that result in pointing its antenna to the drone and, anagously, the drone will calculate its own optimal angles to point its antenna at the Ground Station.
+\paragraph{} This calculation will be performed individually by each of the devices. This is, the ground station will calculate its own optimal angles that result in pointing its antenna to the drone and, analogously, the drone will calculate its own optimal angles to point its antenna at the Ground Station.
 As it will be shown later on by some simulations, the procedure to calculate these references requires of some frame transformations and it can be sum up in the following steps:
 \begin{itemize}
 \item{Ground Station and Drone read WGS84 GPS positions from each other.}
@@ -27,7 +27,7 @@ The blue and green arrow represent the \textbf{antenna pointing vectors} of the 
   LOS_{distance} = \sqrt{|x_{d}|^{2}+|y_{d}|^{2}+|z_{d}|^{2}} \nonumber
 \end{align}
 
-being \textit{atan2} the four-cuadrant arctangent, which defines the limit of the arctangent function such that the angles are given in the range $[-\pi:\pi]$.
+being \textit{atan2} the four-quadrant arctangent, which defines the limit of the arctangent function such that the angles are given in the range $[-\pi:\pi]$.
 
-This procedure will be refered later on, on Chapter \ref{ch:sim}, where this calculation will be implemented as part of the whole simulation of the system.
+This procedure will be referred later on, on Chapter \ref{ch:sim}, where this calculation will be implemented as part of the whole simulation of the system.
 

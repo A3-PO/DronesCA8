@@ -43,17 +43,14 @@ Based on the simulations of the controllers described on Section \ref{sec:contro
 In this project, P and PD controllers are not affected by the overshoot and, furthermore, the \emph{PD controller is the fastest controller (lowest rise time)} due to its derivative component.
 
 \begin{figure}[H]
+	\centering
+	\subfigure[P Controller]{\includegraphics[scale=0.45,angle=-90]{figures/s1_p_gs.png}}
 	\hfill
-	\subfigure[P Controller]{\includegraphics[scale=0.34]{figures/s1_p_gs.png}}
-	\hfill
-	\subfigure[PI Controller]{\includegraphics[scale=0.34]{figures/s1_pi_gs.png}}
-	\hfill
+	\subfigure[PI Controller]{\includegraphics[scale=0.45,angle=-90]{figures/s1_pi_gs.png}}
 	\\
+	\subfigure[PD Controller]{\includegraphics[scale=0.45,angle=-90]{figures/s1_pd_gs.png}}
 	\hfill
-	\subfigure[PD Controller]{\includegraphics[scale=0.34]{figures/s1_pd_gs.png}}
-	\hfill
-	\subfigure[PID Controller]{\includegraphics[scale=0.34]{figures/s1_pid_gs.png}}
-	\hfill
+	\subfigure[PID Controller]{\includegraphics[scale=0.45,angle=-90]{figures/s1_pid_gs.png}}
 	\caption{Ground Station Controllers}
 	\label{fig:s1_gs}
 \end{figure}
@@ -77,17 +74,13 @@ The controllers used in this section are the same ones that were used to test th
 Thus, based on the graphs of the azimuth angle of Figure \ref{fig:s1_ua}, it is observable that the PI and PID controllers have an overshoot when the system is trying to achieve the desired position. Moreover, the response of the system with the P and PD controllers immediately achieve the desired angle, without any overshoot.
 
 \begin{figure}[H]
-	\hfill
-	\subfigure[P Controller]{\includegraphics[scale=0.34]{figures/s1_p_ua.png}}
-	\hfill
-	\subfigure[PI Controller]{\includegraphics[scale=0.34]{figures/s1_pi_ua.png}}
-	\hfill
+	\centering
+	\subfigure[P Controller]{\includegraphics[scale=0.45,angle=-90]{figures/s1_p_ua.png}}
+	\subfigure[PI Controller]{\includegraphics[scale=0.45,angle=-90]{figures/s1_pi_ua.png}}
 	\\
+	\subfigure[PD Controller]{\includegraphics[scale=0.45,angle=-90]{figures/s1_pd_ua.png}}
 	\hfill
-	\subfigure[PD Controller]{\includegraphics[scale=0.34]{figures/s1_pd_ua.png}}
-	\hfill
-	\subfigure[PID Controller]{\includegraphics[scale=0.34]{figures/s1_pid_ua.png}}
-	\hfill
+	\subfigure[PID Controller]{\includegraphics[scale=0.45,angle=-90]{figures/s1_pid_ua.png}}
 	\caption{Unmanned Aircraft Controllers}
 	\label{fig:s1_ua}
 \end{figure}
@@ -104,15 +97,15 @@ As was described in the previous sections, the P and PD controllers do not have 
 
 \begin{figure}[H]
 	\hfill
-	\subfigure[P]{\includegraphics[scale=0.34]{figures/s1_p_power.png}}
+	\subfigure[P]{\includegraphics[scale=0.45,angle=-90]{figures/s1_p_power.png}}
 	\hfill
-	\subfigure[PI]{\includegraphics[scale=0.34]{figures/s1_pi_power.png}}
+	\subfigure[PI]{\includegraphics[scale=0.45,angle=-90]{figures/s1_pi_power.png}}
 	\hfill
 	\\
 	\hfill
-	\subfigure[PD]{\includegraphics[scale=0.34]{figures/s1_pd_power.png}}
+	\subfigure[PD]{\includegraphics[scale=0.45,angle=-90]{figures/s1_pd_power.png}}
 	\hfill
-	\subfigure[PID]{\includegraphics[scale=0.34]{figures/s1_pid_power.png}}
+	\subfigure[PID]{\includegraphics[scale=0.45,angle=-90]{figures/s1_pid_power.png}}
 	\hfill
 	\caption{Power for each controller}
 	\label{fig:s1_power}

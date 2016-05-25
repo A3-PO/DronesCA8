@@ -15,7 +15,7 @@ DC motor is an actuator which converts electrical energy to mechanical rotation.
 \label{dcmotor_circuit}
 \end{figure}
 
-The circuit of the previous Figure is described by the Equations \ref{DC_motor_equation1}, \ref{DC_motor_equation2} and \ref{DC_motor_equation3}. It is possible to observe that between the source unit and the motor there are two elements (resistance and inductance). These elements are important due to the fact that they are the responsible for the stability of the system, avoiding a motor overload. Hence, the relation between the current and the difference between the voltage of the source and the one of the motor is made through an admittance.
+The circuit of the previous figure is described by the Equations \ref{DC_motor_equation1}, \ref{DC_motor_equation2} and \ref{DC_motor_equation3}. It is possible to observe that between the source unit and the motor there are two elements (resistance and inductance). These elements are important due to the fact that they are responsible for the stability of the system, avoiding a motor overload. Hence, the relation between the current and the difference between the voltage of the source and the one of the motor is made through an admittance.
 
 \begin{equation}\label{DC_motor_equation1}
 v_{a}= v_{b}+i_{a} R_{a}+L_{a}\frac{\mathrm{d} i_{a}}{\mathrm{d} t}
@@ -73,14 +73,14 @@ Based on the previous equations and on the model in the Figure \ref{model1} it i
 \label{model2}
 \end{figure}
 
-The applied torque $T_{m}(s)$ described in the previous equations can be also related to the angle position $\theta_{m}(s)$ through the Equations \ref{torque_frequency} and \ref{torque_frequency_G}.
+The applied torque $T_{m}(s)$ described in the previous equations can be also related to the angle position $\theta_{m}(s)$ through Equation \ref{torque_frequency_G}.
 
-\begin{equation}\label{torque_frequency}
-T_{m}(s) I_{a}(s)= (s^{2}J_{e} + sD_{e})\theta_{m}(s)
-\end{equation}
+\begin{equation*}
+	T_{m}(s) I_{a}(s)= (s^{2}J_{e} + sD_{e})\theta_{m}(s)
+\end{equation*}
 
 \begin{equation}\label{torque_frequency_G}
-\theta_{m}(s)= G_{\theta}(s)\times T_{m}(s) , G_{\theta}(s)=\frac{1}{s^{2}J_{e} + sD_{e}}
+	\theta_{m}(s)= G_{\theta}(s)\cdot T_{m}(s) , G_{\theta}(s)=\frac{1}{s^{2}J_{e} + sD_{e}}
 \end{equation}
 
 \begin{figure}[H]
@@ -136,4 +136,4 @@ High voltage value can be the consequence of the controller trying to reach the 
 \label{model4}
 \end{figure}
 
-Figure \ref{model4} shows the integral plant of the Moving Angle System. This model was used in \emph{Simulink} to test the behavior of the system and was later included in the 3D system simulation, described in Section \ref{sec:3d_sim}. The reference angles and the adopted controller are explained in the followings sections.
+Figure \ref{model4} shows the integral plant of the Moving Angle System. This model (Appendix \ref{app:app_moving_angle_system}) was used in \emph{Simulink} to test the behavior of the system and was later included in the 3D system simulation, described in Section \ref{sec:3d_sim}. The reference angles and the adopted controller are explained in the followings sections.

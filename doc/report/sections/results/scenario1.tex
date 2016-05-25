@@ -15,13 +15,13 @@ Based on Figures \ref{fig:s1_pd_gs_alone} and \ref{fig:s1_pd_ua_alone}, it is po
 \end{figure}
 
 \subsection*{GS Tracking Angles}\label{GroundStation_scenario1}
-As expected, the absolute value of the $\theta_{OPTIMAL}$ increases until it reaches 180$^{\circ}$  and, then, it starts increasing from -180$^{\circ}$ until the end. The initial $\theta_{OPTIMAL}$ is around 140$^{\circ}$ due to the system of coordinates applied where the Local NED frame coincides with the body frame. This assumption was taken into account because the position of the GS is static.
+As expected, the absolute value of the $\theta_{OPTIMAL}$ increases (Figure \ref{fig:s1_pd_gs_alone}) until it reaches 180$^{\circ}$  and, then, it starts increasing from -180$^{\circ}$ until the end. The initial $\theta_{OPTIMAL}$ is around 140$^{\circ}$ due to the system of coordinates applied where the Local NED frame coincides with the body frame. This assumption was taken into account because the position of the GS is static.
 
 In the beginning, the amplitude of the azimuth angle is positive and is growing because the UA is flying on the left side of the GS (lower longitude) to south (decreasing latitude). However, there is a jump when $\theta$ reaches 180$^{\circ}$ in the first graph of Figure \ref{fig:s1_pd_gs_alone}. This happens due to the used convention which limits the range from -180$^{\circ}$ to 180$^{\circ}$. Nonetheless, there is a continuous rotation, which means that when the antenna achieves 180$^{\circ}$, it will continue rotate in the same direction starting from -180$^{\circ}$. Thus, after the jump, the amplitude of the azimuth angle will continue increase from -180$^{\circ}$ until -136$^{\circ}$.
 
-On the other hand, the optimal elevation angle, $\phi_{OPTIMAL}$, has always a small amplitude because of the big distance between the UA and the GS of the second graph of Figure \ref{fig:s1_pd_gs_alone}. Since the previous distance is always bigger than 36km, a considerable optimal phi is not required to point at the UA. 
+On the other hand, the optimal elevation angle, $\phi_{OPTIMAL}$, has always a small amplitude because of the important distance between the UA and the GS of the second graph of Figure \ref{fig:s1_pd_gs_alone}. Since the previous distance is always bigger than 36km, a considerable optimal $\phi$ is not required to point at the UA. 
 
-Despite of the small amplitude, $\phi_{OPTIMAL}$ has a maximum value (approximately 0.06$^{\circ}$) which corresponds to the minimum distance between the UA and the GS (closest point). Therefore, when the UA is closer, GS’s antenna needs to increase the angle in order to be able to continue pointing at the antenna in the aircraft.
+Despite of the small amplitude, $\phi_{OPTIMAL}$ has a maximum value (approximately 0.06$^{\circ}$) which corresponds to the minimum distance between the UA and the GS (closest point). Therefore, when the UA is closer, the GS’s antenna needs to increase the angle in order to be able to continue pointing at the antenna of the aircraft.
 
 \begin{figure}[H]
 	\centering
@@ -87,11 +87,11 @@ Thus, based on the graphs of the azimuth angle of Figure \ref{fig:s1_ua}, it is 
 \end{figure}
 
 \subsection*{Signal Power}
-In general, the power in the receiver described in Figure \ref{fig:s1_power} has almost the same behaviour in all of the different controllers. In every case, the power in the beginning is small (-100dBm) because the antennas are not pointing at each other. After 10 samples, the antenna of the GS and the antenna of the UA are pointing at each other and the power received in all cases is the same (antennas in the GS and in the UA are the same in all cases). Since they are pointing at each, in an ideal situation, the maximum power only depends on the kind of antennas used.
+In general, the power in the receiver described in Figure \ref{fig:s1_power} has almost the same behaviour in all of the different controllers. In every case, the power in the beginning is small (-100dBm) because the antennas are not pointing at each other. After 10 samples, the antenna of the GS and the antenna of the UA are pointing at each other and the power received in all cases is the same (antennas in the GS and in the UA are the same in all cases). Since they are pointing at each other, in an ideal situation, the maximum power only depends on the kind of antennas used.
 
 When the UA is at the closest point to the GS, the power in the receiver has a peak at the time sample of 54. This happens because the distance between the antennas is small which reduces the path losses.
 
-On the other hand, all plots have a different reaction between the moment when the antennas start moving until the one when they achieve the desired position. This happens because there are details that depend on the type of that is used to manage the movement of the antennas. 
+On the other hand, all plots have a different reaction between the moment when the antennas start moving until the one when they achieve the desired position. This happens because there are details that depend on the type of controller that is used to manage the movement of the antennas. 
 
 As was described in the previous sections, the P and PD controllers do not have any overshoot. This fact allows both controllers to achieve the maximum power faster than the PI and PID. These ones are affected by the overshoot, which means that they achieve the maximum power but, since they continue the rotation, the connection is weakened. Thus, the power received decreases sharply until the antenna change the direction of rotation.
 

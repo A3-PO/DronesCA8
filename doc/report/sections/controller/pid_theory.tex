@@ -60,7 +60,7 @@ Using the Final Value Theorem, it is possible to calculate the error in the infi
 
 \subsection*{Derivative Term}
 
-The derivative feedback, also called rate feedback, is proportional to the rate of change of the system's error. This means that the slope of the error function over time is calculated. Knowing the trend of the error signal, these calculations allow to have an anticipatory behaviour. Thus, the stability of the closed-loop system is improved as well as the speed of the transient response and the overshoot. Derivative acts as a brake on the control effort because the more the controller tries to change the value, the more it counteracts the effort, unabling violent changes. The derivative response is also highly sensitive to noise which means that the control system can turn unstable if the sensor feedback is noisy. 
+The derivative feedback, also called rate feedback, is proportional to the rate of change of the system's error. This means that the slope of the error function over time is calculated. Knowing the trend of the error signal, these calculations allow to have an anticipatory behaviour. Thus, the stability of the closed-loop system is improved as well as the speed of the transient response and the overshoot. Derivative acts as a brake on the control effort because the more the controller tries to change the value, the more it counteracts the effort, disabling violent changes. The derivative response is also highly sensitive to noise which means that the control system can turn unstable if the sensor feedback is noisy. 
 
 \begin{figure}[H]
 	\centering
@@ -94,7 +94,7 @@ Hence, the Equation \ref{PI_equation} describes the behaviour of the PI controll
 
 \subsection*{Proportional-Derivative}
 
-The derivative control is almost never used by itself because it does not supply information about the desired end state. Hence, a proporcional term is needed in order to achive the desired end state, resulting in a PD controller (Figure \ref{PD_controller}). In addition, if $e(t)$ remains constant, the output of a derivative part controller would be zero and a proportional component would be needed to provide a control signal at this time. 
+The derivative control is almost never used by itself because it does not supply information about the desired end state. Hence, a proportional term is needed in order to achieve the desired end state, resulting in a PD controller (Figure \ref{PD_controller}). In addition, if $e(t)$ remains constant, the output of a derivative part controller would be zero and a proportional component would be needed to provide a control signal at this time. 
 
 \begin{figure}[H]
 	\centering
@@ -114,4 +114,4 @@ The PID controller collects the proportional, integral and derivative parts whic
 	\label{PID_controller}
 \end{figure}
 
-In this project P, PI, PD and PID controllers were tested and for every case the behaviour was analysed. These analyses are presented in the next section.
+In this project P, PI, PD and PID controllers were tested and for every case the behaviour was analyzed. These analyses are presented in the next section.

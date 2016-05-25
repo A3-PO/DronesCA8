@@ -9,46 +9,70 @@ The structure of the controller can be seen on the Figure below. Taking as input
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.6]{figures/controller_model.png}
+  \includegraphics[scale=0.5]{figures/controller_model.png}
   \caption[LABEL] {Block diagram of the PID controller.}
 \end{figure}
   
-This method can be split up in three different parts. In the first part it is supposed to set the proportional parameter. Thus, choosing $T_i$ = $\infty$ and $T_d$ = 0 (respectively the integral and the derivative term to zero), results in the step from the Figure \ref{fig:subim11}.
-\begin{figure}[H]
-\hfill
-\subfigure[Set Ti = inf , Td = 0 and Kp = 1.]{
-\includegraphics[scale=0.32]{figures/GG1.png}
-\label{fig:subim11}}
-\hfill
-\subfigure[Increase Kp until finding a slight overshoot but a well damped response.]{
-\includegraphics[scale=0.32]{figures/GG2.png}
-\label{fig:subim12}}
+This method can be split up in three different parts. In the first part it is supposed to set the proportional parameter. Thus, choosing $T_i$ = $\infty$ and $T_d$ = 0 (respectively the integral and the derivative term to zero), results in the step from the Figure \ref{fig:subim1}.
 
-\caption{Good Gain: Setting the propotional parameter.}
+\paragraph{}Increasing $K_p$ in Figure \ref{fig:subim2} will allow to reduce the rising time. Morover, changing this proportional gain is a needed step to find a slight overshoot and a well damped response. Hence, having an overshoot and the first undershoot, $T_{out}$ can be defined, being the time between the peak of the overshoot and the one of the undershoot.
+\paragraph{}Adding the integral parameter implies a relation with the previous defined time between the peak of the overshoot and undershoot. Thus, $T_i = 1.5T_{out}$. The objective of this step \ref{fig:subim3} is to eliminate the steady state error.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.32]{figures/GG1.png}
+  \caption{Set Ti = inf , Td = 0 and Kp = 1.}
+  \label{fig:subim1}
 \end{figure}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.32]{figures/GG2.png}
+  \caption{Increase Kp until finding a slight overshoot but a well damped response.}
+  \label{fig:subim2}
+\end{figure}
 
-Increasing $K_p$ in Figure \ref{fig:subim12} will allow to reduce the rising time. Morover, changing this proportional gain is a needed step to find a slight overshoot and a well damped response. Hence, having an overshoot and the first undershoot, $T_{out}$ can be defined, being the time between the peak of the overshoot and the one of the undershoot.\par
-\vspace{5mm}
-Adding the integral parameter implies a relation with the previous defined time between the peak of the overshoot and undershoot. Thus, $T_i = 1.5T_{out}$. The objective of this step \ref{fig:subim13} is to eliminate the steady state error.
+% \begin{figure}[H]
+% \hfill
+% \subfigure[Set Ti = inf , Td = 0 and Kp = 1.]{
+% \includegraphics[scale=0.32]{figures/GG1.png}
+% \label{fig:subim11}}
+% \hfill
+% \subfigure[Increase Kp until finding a slight overshoot but a well damped response.]{
+% \includegraphics[scale=0.32]{figures/GG2.png}
+% \label{fig:subim12}}
+% \caption{Good Gain: Setting the propotional parameter.}
+% \end{figure}
 
 
 
 \begin{figure}[H]
-\hfill
-\subfigure[Set Ti = 1.5$\cdot T_{out}$.]{
-\includegraphics[scale=0.32]{figures/GG3.png}
-\label{fig:subim13}}
-\hfill
-\subfigure[Set Td = $\frac{Ti}{4}$.]{
-\includegraphics[scale=0.32]{figures/GG4.png}
-\label{fig:subim14}}
-\hfill
-
-\caption{Good Gain: Adding integral and derivative parts.}
+  \centering
+  \includegraphics[scale=0.32]{figures/GG3.png}
+  \caption{Set Ti = 1.5$\cdot T_{out}$.}
+  \label{fig:subim3}
 \end{figure}
 
-At this point, the controller is a proportional-integral. The high overshoot resulting from adding the integral term can be attenuated by setting the derivative part, shown in Figure \ref{fig:subim14}. The gain $T_d$ will act as a damper on the system and therefore reduce the high variations of the step response. In the Good Gain method, this value is described to be $T_d = \frac{T_i}{4}$.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.32]{figures/GG4.png}
+  \caption{Set Td = $\frac{Ti}{4}$.}
+  \label{fig:subim4}
+\end{figure}
+
+% \begin{figure}[H]
+% \hfill
+% \subfigure[Set Ti = 1.5$\cdot T_{out}$.]{
+% \includegraphics[scale=0.32]{figures/GG3.png}
+% \label{fig:subim13}}
+% \hfill
+% \subfigure[Set Td = $\frac{Ti}{4}$.]{
+% \includegraphics[scale=0.32]{figures/GG4.png}
+% \label{fig:subim14}}
+% \hfill
+% \caption{Good Gain: Adding integral and derivative parts.}
+% \end{figure}
+
+At this point, the controller is a proportional-integral. The high overshoot resulting from adding the integral term can be attenuated by setting the derivative part, shown in Figure \ref{fig:subim4}. The gain $T_d$ will act as a damper on the system and therefore reduce the high variations of the step response. In the Good Gain method, this value is described to be $T_d = \frac{T_i}{4}$.
 
 \vspace{5mm}
 
@@ -61,7 +85,7 @@ Theoretically, the tuning of the controller using the Good Gain method is done. 
   \label{finalGG}
 \end{figure}
 
-However, the time needed to tune and the uncertainties of the different steps and results were the weaknesses of this method. For instance, as described in Figure \ref{fig:subim12} , a "slight overshoot" is a parameter that can be relative depending on the designer.\par  
+However, the time needed to tune and the uncertainties of the different steps and results were the weaknesses of this method. For instance, as described in Figure \ref{fig:subim2} , a "slight overshoot" is a parameter that can be relative depending on the designer.\par  
   
 \subsubsection{PID Simulink box}
 The PID simulink box is an interesting alternative to the good gain method to tune a controller. As a matter of fact, the previous described method has its own limits.\par 

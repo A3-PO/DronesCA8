@@ -1,4 +1,4 @@
-\newpage
+
 \section{3D System Unmanned Aircraft System}\label{sec:3d_sim}
 
 \paragraph{}The 2D simulation in the former section serves its purpose as a simple case scenario that gives an insight of how to approach the problem, but it differs greatly from reality. Besides from the obvious lack of the 3rd dimension, another flaws need to be addressed, such as using real earth model (WGS84) instead of a simple cartesian coordinate plane  and taking into account the curvature and relief of the Earth's surface. However, the same geometrical principles are used, as long as the proper frame transformations are derived (Chapter \ref{ch:frames}).
@@ -13,9 +13,17 @@
 \item{Feedback the output angle into the MATLAB function block and repeat again from step 2.}
 \end{enumerate}
 
+\subsection*{MATLAB Function}
+\paragraph{}Firstly note that, as explain in section \ref{sec:opt_angle}, this function is duplicated since almost the same calculations for Ground Station and Drone have to be done, being the only diference the reference (origin) for the local NED transformation.
+The Ground station version will transform the Drone GPS coordinates to ECEF and then to the local NED Frame with respect to the Ground Station position. The Drone version do the analgous calculation but the NED Frame will be with respect to the Drone position.
+
+\paragraph{}After this, the \textbf{optimal} or {reference} angles will be calculated according to the equations \ref{eq:OptGS} and the error signal obtained by substracting this calculated angle with the current angle position of the antenna, which comes from the outer loop feedback.
+
+\paragraph{} Some scopes and blocks come out of the output signals of these funcions with mainly debugging and plotting purposes, having no impact in the actual performance of the system. 
+
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1.1\textwidth]{figures/servomotor_3D.png}
+	\includegraphics[width=1\textwidth]{figures/servomotor_3D.png}
 	\caption{Servo-motor Block Diagram}
    	\label{fig:servomotor3D}
 \end{figure}
@@ -31,14 +39,36 @@
 
 \clearpage
 
-\subsection*{MATLAB Function}
-\paragraph{}Firstly note that, as explain in section \ref{sec:opt_angle}, this function is duplicated since almost the same calculations for Ground Station and Drone have to be done, being the only diference the reference (origin) for the local NED transformation.
-The Ground station version will transform the Drone GPS coordinates to ECEF and then to the local NED Frame with respect to the Ground Station position. The Drone version do the analgous calculation but the NED Frame will be with respect to the Drone position.
-
-\paragraph{}After this, the \textbf{optimal} or {reference} angles will be calculated according to the equations \ref{eq:OptGS} and the error signal obtained by substracting this calculated angle with the current angle position of the antenna, which comes from the outer loop feedback.
-
-\paragraph{} Some scopes and blocks come out of the output signals of these funcions with mainly debugging and plotting purposes, having no impact in the actual performance of the system. 
 
 \subsection*{Simulations}
 
-In the following chapter, the results
+In the following chapter, the results of 4 different simulations will be presented, each of them exampling some specific characteristics. These will consist in short straight paths between two points and they will use the 3D Unmmaned Aircraft System showed in Figure \ref{fig:diagram3D}.
+
+However, in order to perform this simulations some parameters need to be set and some considerations noted:
+
+\begin{itemize}
+\item{The antenna used for the simulation is the same for both GS and UA, and it has the specifications defined in table \ref{table:2}.}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c||c|}
+		\hline
+		Parameter & GS\\ \hline\hline
+		Type & Parabolic\\ \hline
+		Polarization & Linear\\ \hline
+		Frequency [GHz] & $2.4$\\ \hline
+		Gain [dB] & $27.6$\\ \hline
+		HPBW/$H(^{\circ})$ & $14$\\ \hline
+		HPBW/$V(^{\circ})$ & $14$\\ \hline
+	\end{tabular}
+	\caption{Antenna Specifications}
+	\label{table:2}
+\end{table}
+\item{It is assumed that the Moving Angle System of both the UA and GS use the same servo-motor, defined in Chapter \ref{sec:servo_model}.}
+\item{The controller used will be defined in each of the simulations.}
+\item{The saturation voltage threshold going into the servomotor is set to +5v and -5v.}
+\item{The measurement noise at the output will be modelled as a Gaussian White Noise with a noise power of 0.0001.}
+\item{No power threshold fixed in the receiver.}
+\item{The UA will be facing always the end point of the path during the flight.}
+\end{itemize}
+
+

@@ -1,5 +1,5 @@
 \newpage
-\section{Scenario 4}\label{sec:scenario4}
+\section{Scenario 4 - Mountain}\label{sec:scenario4}
 The purpose of this scenario is to show what can happen when the UAS loses line-of-sight because of a mountain, as seen on the map in Figure \ref{fig:s4_map}(a). Such that, the UA starts from a visible point (blue circle) and goes behind a mountain, losing LOS (red crosses), but recovers it as seen in \ref{fig:s4_map}(b). Moreover, the controller used in this simulation is a PD controller, such that it reacts fast when field of vision is recovered.
 
 \begin{figure}[H]
@@ -11,7 +11,7 @@ The purpose of this scenario is to show what can happen when the UAS loses line-
 	\label{fig:s4_map}
 \end{figure}
 
-\subsection{UA}
+\subsection*{UA and GS Tracking Angles}
 In Figure \ref{fig:s4_ua} the angle tracking of the UA antenna can be seen. Thus, in the azimuth angle the optimal angle ($\theta_{OPTIMAL}$) starts at -80$^{\circ}$ and goes to -140$^{\circ}$. Such that, the UA azimuth angle ($\theta_{UA}$) reacts fast with an overshoot of -10$^{\circ}$ and precisely follows the optimal angle. In the case of the elevation angle in the second graph the optimal angle ($\phi_{OPTIMAL}$) is constant for the whole scenario, by reason of the substantial distance between the GS and UA. It can be noticed that in this case the noise can affect the performance of the elevation tracking angle of the aicraft ($\phi_{UA}$) having an error of $\pm3^{\circ}$. 
 
 \begin{figure}[H]
@@ -21,7 +21,6 @@ In Figure \ref{fig:s4_ua} the angle tracking of the UA antenna can be seen. Thus
 	\label{fig:s4_ua}
 \end{figure}
 
-\subsection{GS}
 Looking from the ground station's perspective the angle tracking can be seen in Figure \ref{fig:s4_gs}. Such that, for the azimuth angle of the optimal angle ($\theta_{OPTIMAL}$) starts at 25$^{\circ}$ and goes to -20$^{\circ}$. Such that, the GS azimuth angle ($\theta_{GS}$) reacts rapid with a small overshoot of 2$^{\circ}$ and rigorously follows the optimal angle to the end. In the case of the elevation angle it can be seen that it is similiar as in the case of the UA. Also, the noise affects the performance of the tracking angle of the GS ($\phi_{GS}$), but as a result of using a PD controller the changes are quickly corrected.
 
 \begin{figure}[H]
@@ -31,7 +30,7 @@ Looking from the ground station's perspective the angle tracking can be seen in 
 	\label{fig:s4_gs}
 \end{figure}
 
-\subsection{Power}
+\subsection*{Signal Power}
 From the viewpoint of wireless communication, the power at the receiver ($P_{RX}$) antenna at both ends is shown in Figure \ref{fig:s4_power}. Thus, in the beginning there is strong signal, but after losing field of vision (as seen in Figure \ref{fig:s4_map}(b)) the power drops considerably, losing connection. Moreover, there are two spikes of connection loss where LOS is lost at the end due to terrain elevation.
 
 \begin{figure}[H]

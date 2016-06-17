@@ -1,7 +1,6 @@
-\section{User Interface}
-\subsection{Loading the Theme and Theme Options}
-% list of the themes and options
-\begin{frame}{User Interface}{Loading the Theme and Theme Options}
+\subsection{Frames}
+
+\begin{frame}{Frames}{}
   \begin{block}{The Presentation Theme}
     It is very simple to load the presentation theme. Just type\\
     {\tt \textbackslash usetheme[<options>]\{AAUsidebar\}}\\
@@ -13,89 +12,4 @@
     and it has no options.
   \end{block}
 \end{frame}
-%%%%%%%%%%%%%%%%
 
-% list of the themes and options
-\begin{frame}{User Interface}{Loading the Theme and Theme Options}
-  \begin{block}{The Outer Theme}
-    You can load the outer theme directly by\\
-    {\tt \textbackslash useoutertheme[<options>]\{AAUsidebar\}}\\
-    Currently, the theme options are
-  \begin{itemize}
-    \item {\tt hidetitle}: Hide the (short) title in the sidebar
-    \item {\tt hideauthor}: hide the (short) author in the sidebar
-    \item {\tt hideinstitute}: hide the (short) institute in the bottom of the sidebar
-    \item {\tt shownavsym}: show the navigation symbols
-    \item {\tt left} or {\tt right}: position of the sidebar (default is right)
-    \item {\tt width=<length>}: width of the sidebar (default is 2 cm).
-    %The width is measured from the right side of the vertical bar to the right edge of the slide.
-    \item {\tt hideothersubsections}: hide all subsections but the subsections in the current section
-    \item {\tt hideallsubsections}: hide all subsections
-  \end{itemize}
-  The last four options are inherited from the outer sidebar theme.
-  \end{block}
-\end{frame}
-%%%%%%%%%%%%%%%%
-
-\subsection{Compilation}
-% compilation
-\begin{frame}{User Interface}{Compilation}
-\begin{block}{Compiling Your Presentation With the AAU Sidebar Theme}
-  Unlike most other beamer themes, this theme must be compiled at least \alert{three} times to make everything look right. For most other themes, you do not have to compile your presentation more than two times. For the AAU sidebar theme, the third compilation is necessary to determine the position of the circle with the current frame number.
-\end{block}
-\end{frame}
-%%%%%%%%%%%%%%%%
-
-\subsection{Modifying the Theme}
-% how to modify the theme
-{\setbeamercolor{AAUsidebar}{fg=gray!50,bg=gray}
- \setbeamercolor{sidebar}{bg=red!20}
- \setbeamercolor{structure}{fg=red}
- \setbeamercolor{frametitle}{use=structure,fg=structure.fg,bg=red!5}
- \setbeamercolor{normal text}{bg=gray!20}
-\begin{frame}{User Interface}{Modifying the Theme}
-  \begin{itemize}
-    \item<1-> The default configuration of fonts, colors, and layout complies with the \chref{http://aau.designguides.dk}{AAU design guidelines} and is the \alert{official} version of the theme.
-    \item<2-> However, you can easily modify specific elements of the theme through the template system provided by the beamer class. Please refer to the beamer user manual for instructions.
-    \item<3-> For example, on this slide we have used
-      \begin{itemize}
-        \item Change the sidebar colors:\\
-        {\tt \textbackslash setbeamercolor\{AAUsidebar\}\{fg=gray!50,bg=gray\}}
-        {\tt \textbackslash setbeamercolor\{sidebar\}\{bg=red!20\}}
-        \item Change the color of the structural elements:\\
-        {\tt \textbackslash setbeamercolor\{structure\}\{fg=red\}}\\
-        \item Change the frame title text color and background:
-        {\tt \textbackslash setbeamercolor\{frametitle\}\{use=structure, fg=structure.fg,bg=red!5\}}
-        \item Change the background color of the text
-        {\tt \textbackslash setbeamercolor\{normal text\}\{bg=gray!20\}}
-      \end{itemize}
-  \end{itemize}
-\end{frame}}
-%%%%%%%%%%%%%%%%
-
-\subsection{AAU Waves}
-% the AAU Waves background
-\begin{frame}{User Interface}{The AAU Waves Background Image}
-\begin{block}{The AAU Waves Background Image}
-\begin{itemize}
-  \item<1-> In this documentation, the title page frame and the last frame have the AAU waves as the background image. The AAU waves background image can be added to any single frame by wrapping a frame in the following way\\
-  {\tt \{\textbackslash aauwavesbg\\
-    \textbackslash begin\{frame\}[<options>]\{Frame Title\}\{Frame Subtitle\}\\
-    \ldots\\
-    \textbackslash end\{frame\}\}}
-  \item<2-> Ideally, I would like to create a new frame option called {\tt aauwavesbg} which can enable the AAU waves background. However, I have not been able to figure out how such an option can be added. If you know how this can be done, please contact me.
-\end{itemize}
-\end{block}
-\end{frame}
-%%%%%%%%%%%%%%%%
-
-\subsection{Widescreen Support}
-% Widescreen Support
-\begin{frame}{User Interface}{Widescreen Support}
-\begin{block}{Widescreen Support}
-  Newer projectors and almost any modern TV support a widescreen format such as 16:10 or 16:9. Beamer (>= v. 3.10) supports various aspect ratios of the slides. According to section 8.3 on page 77 of the Beamer user guide v. 3.10, you can write\\
-{\tt\textbackslash documentclass[aspectratio=1610]\{beamer\}}\\
-to get slides with an aspect ratio of 16:10. You can also use 169, 149, 54, 43 (default), and 32 to get other aspect ratios.
-\end{block}
-\end{frame}
-%%%%%%%%%%%%%%%%

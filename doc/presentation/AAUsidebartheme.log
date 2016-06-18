@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.23)  17 JUN 2016 13:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.23)  18 JUN 2016 11:13
 entering extended mode
 **D:/github/DronesCA8/doc/presentation/AAUsidebartheme.tex
 (D:/github/DronesCA8/doc/presentation/AAUsidebartheme.tex
@@ -1280,103 +1280,7 @@ Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
 (pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
  [2
 
- <./AAUgraphics/aau_logo_new_circle.pdf>]
-Overfull \hbox (1.05998pt too wide) has occurred while \output is active
-[][][] [][]
- []
-
-
-Overfull \hbox (1.05998pt too wide) has occurred while \output is active
-[][][] [][]
- []
-
-
-Overfull \hbox (1.05998pt too wide) has occurred while \output is active
-[][][] [][]
- []
-
-
-Overfull \hbox (1.05998pt too wide) has occurred while \output is active
-[][][] [][]
- []
-
-
-Overfull \hbox (1.05998pt too wide) has occurred while \output is active
-[][][] [][]
- []
-
-File: AAUgraphics/aau_logo_new_circle.pdf Graphic file (type pdf)
-<use AAUgraphics/aau_logo_new_circle.pdf>
-Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
- 11.
-(pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
- [3
-
-]
-Overfull \hbox (1.05998pt too wide) has occurred while \output is active
-[][][] [][]
- []
-
-
-Overfull \hbox (1.05998pt too wide) has occurred while \output is active
-[][][] [][]
- []
-
-
-Overfull \hbox (1.05998pt too wide) has occurred while \output is active
-[][][] [][]
- []
-
-
-Overfull \hbox (1.05998pt too wide) has occurred while \output is active
-[][][] [][]
- []
-
-
-Overfull \hbox (1.05998pt too wide) has occurred while \output is active
-[][][] [][]
- []
-
-File: AAUgraphics/aau_logo_new_circle.pdf Graphic file (type pdf)
-<use AAUgraphics/aau_logo_new_circle.pdf>
-Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
- 11.
-(pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
- [4
-
-]
-Overfull \hbox (1.05998pt too wide) has occurred while \output is active
-[][][] [][]
- []
-
-
-Overfull \hbox (1.05998pt too wide) has occurred while \output is active
-[][][] [][]
- []
-
-
-Overfull \hbox (1.05998pt too wide) has occurred while \output is active
-[][][] [][]
- []
-
-
-Overfull \hbox (1.05998pt too wide) has occurred while \output is active
-[][][] [][]
- []
-
-
-Overfull \hbox (1.05998pt too wide) has occurred while \output is active
-[][][] [][]
- []
-
-File: AAUgraphics/aau_logo_new_circle.pdf Graphic file (type pdf)
-<use AAUgraphics/aau_logo_new_circle.pdf>
-Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
- 11.
-(pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
- [5
-
-]) (AAUsidebartheme.toc)
+ <./AAUgraphics/aau_logo_new_circle.pdf>]) (AAUsidebartheme.toc)
 Overfull \hbox (1.05998pt too wide) has occurred while \output is active
 [][][] [][]
  []
@@ -1406,7 +1310,7 @@ File: AAUgraphics/aau_logo_new_circle.pdf Graphic file (type pdf)
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
  96.
 (pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
- [6
+ [3
 
 ] (slides/overview.tex
 Overfull \hbox (1.05998pt too wide) has occurred while \output is active
@@ -1438,7 +1342,7 @@ File: AAUgraphics/aau_logo_new_circle.pdf Graphic file (type pdf)
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
  12.
 (pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
- [7
+ [4
 
 ]) (slides/frames.tex
 Overfull \hbox (1.05998pt too wide) has occurred while \output is active
@@ -1470,7 +1374,7 @@ File: AAUgraphics/aau_logo_new_circle.pdf Graphic file (type pdf)
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
  20.
 (pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
- [8
+ [5
 
 ]) (slides/telecom.tex
 Overfull \hbox (1.05998pt too wide) has occurred while \output is active
@@ -1502,7 +1406,7 @@ File: AAUgraphics/aau_logo_new_circle.pdf Graphic file (type pdf)
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
  21.
 (pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
- [9
+ [6
 
 ]) (slides/model.tex
 Overfull \hbox (1.05998pt too wide) has occurred while \output is active
@@ -1534,7 +1438,7 @@ File: AAUgraphics/aau_logo_new_circle.pdf Graphic file (type pdf)
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
  17.
 (pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
- [10
+ [7
 
 ]) (slides/controller.tex
 Overfull \hbox (1.05998pt too wide) has occurred while \output is active
@@ -1566,7 +1470,7 @@ File: AAUgraphics/aau_logo_new_circle.pdf Graphic file (type pdf)
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
  17.
 (pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
- [11
+ [8
 
 ]) (slides/simulation.tex
 Overfull \hbox (1.05998pt too wide) has occurred while \output is active
@@ -1598,7 +1502,7 @@ File: AAUgraphics/aau_logo_new_circle.pdf Graphic file (type pdf)
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
  17.
 (pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
- [12
+ [9
 
 ]) (slides/results.tex
 Overfull \hbox (1.05998pt too wide) has occurred while \output is active
@@ -1630,7 +1534,7 @@ File: AAUgraphics/aau_logo_new_circle.pdf Graphic file (type pdf)
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
  18.
 (pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
- [13
+ [10
 
 ]) (slides/conclusion.tex
 Overfull \hbox (1.05998pt too wide) has occurred while \output is active
@@ -1662,7 +1566,7 @@ File: AAUgraphics/aau_logo_new_circle.pdf Graphic file (type pdf)
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
  7.
 (pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
- [14
+ [11
 
 ])
 File: AAUgraphics/aau_waves.pdf Graphic file (type pdf)
@@ -1670,7 +1574,7 @@ File: AAUgraphics/aau_waves.pdf Graphic file (type pdf)
 <use AAUgraphics/aau_waves.pdf>
 Package pdftex.def Info: AAUgraphics/aau_waves.pdf used on input line 146.
 (pdftex.def)             Requested size: 364.1973pt x 273.1467pt.
- [15
+ [12
 
 ]
 \tf@nav=\write6
@@ -1688,24 +1592,24 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 149.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 149.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 149.
 Package rerunfilecheck Info: File `AAUsidebartheme.out' has not changed.
-(rerunfilecheck)             Checksum: 0EB3893EBA6AD7E8FC8E7DDDEF2EC958;589.
+(rerunfilecheck)             Checksum: 0124F6999ED3F79BBC20DC569ED51A50;586.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 149.
  ) 
 Here is how much of TeX's memory you used:
- 20734 strings out of 493634
- 401219 string characters out of 3147409
- 477311 words of memory out of 3000000
- 23553 multiletter control sequences out of 15000+200000
+ 20715 strings out of 493634
+ 400883 string characters out of 3147409
+ 477071 words of memory out of 3000000
+ 23540 multiletter control sequences out of 15000+200000
  36306 words of font info for 51 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 60i,21n,71p,443b,1118s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,21n,71p,443b,1116s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\maxwell\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
 0\ectt1000.pk>{D:/software/MiKTex/fonts/enc/dvips/fontname/8r.enc}<D:/software/
 MiKTex/fonts/type1/public/amsfonts/symbols/msam7.pfb><D:/software/MiKTex/fonts/
 type1/urw/helvetic/uhvr8a.pfb>
-Output written on AAUsidebartheme.pdf (15 pages, 160239 bytes).
+Output written on AAUsidebartheme.pdf (12 pages, 146557 bytes).
 PDF statistics:
- 355 PDF objects out of 1000 (max. 8388607)
- 42 named destinations out of 1000 (max. 500000)
+ 300 PDF objects out of 1000 (max. 8388607)
+ 36 named destinations out of 1000 (max. 500000)
  146 words of extra memory for PDF output out of 10000 (max. 10000000)
 

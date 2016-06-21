@@ -1,4 +1,6 @@
-\begin{frame}{Results}{Angle Range}
+\subsection{Scenario 1}
+
+\begin{frame}{Results}{Scenario 1 - Angle Range}
 
   \begin{block}{Goal}
 	Describing the movement of the antennas when the UA is flying far away from the GS. 
@@ -7,7 +9,8 @@
   \begin{figure}[H]
     \centerline{
     \subfigure[UAS Map]{
-    \includegraphics[scale=0.3]{figures/s1_zoom.png}}
+    \includegraphics[scale=0.25]{figures/s1_zoom.png}}
+    \hfill
     \subfigure[Distance between UA and GS]{
     \includegraphics[scale=0.31]{figures/s1_los.png}}}
   \end{figure}
@@ -16,7 +19,7 @@
 
 
 
-\begin{frame}{Results}{Angle Range}
+\begin{frame}{Results}{Scenario 1 - Angle Range}
 
   \begin{block}{GS Tracking Angles}  
   
@@ -24,8 +27,116 @@
     \centerline{
     \subfigure[UAS Map]{
     \includegraphics[scale=0.25]{figures/s1_zoom.png}}
-    \subfigure[Distance between UA and GS]{
-    \includegraphics[scale=0.35]{figures/s1_pd_gs.png}}}
+    \hfill
+    \subfigure[Azimuth and elevation angles of the antenna on the GS]{
+    \includegraphics[scale=0.35]{figures/s1_pd_groundstation.png}}}
+  \end{figure}
+  
+  \end{block}
+
+\end{frame}
+
+
+
+\begin{frame}{Results}{Scenario 1 - Angle Range}
+
+  \begin{block}{GS Tracking Angles - Comparing PID Controllers}  
+  
+  \begin{figure}[H]
+    \centerline{
+    \subfigure[P Controller]{
+    \includegraphics[scale=0.29]{figures/s1_p_gs.png}}
+    \subfigure[PD Controller]{
+    \includegraphics[scale=0.29]{figures/s1_pd_gs.png}}}
+    \centerline{
+    \subfigure[PI Controller]{
+    \includegraphics[scale=0.29]{figures/s1_pi_gs.png}}
+    \subfigure[PID Controller]{
+    \includegraphics[scale=0.29]{figures/s1_pid_gs.png}}}
+  \end{figure}
+  
+  \end{block}
+
+\end{frame}
+
+
+
+\begin{frame}{Results}{Scenario 1 - Angle Range}
+
+  \begin{block}{UA Tracking Angles}  
+  
+  \begin{figure}[H]
+    \centerline{
+    \subfigure[UAS Map]{
+    \includegraphics[scale=0.25]{figures/s1_zoom.png}}
+    \hfill
+    \subfigure[Azimuth and elevation angles of the antenna on the UA]{
+    \includegraphics[scale=0.35]{figures/s1_pd_unmannedaircraft.png}}}
+  \end{figure}
+  
+  \end{block}
+
+\end{frame}
+
+
+
+\begin{frame}{Results}{Scenario 1 - Angle Range}
+
+  \begin{block}{UA Tracking Angles - Comparing PID Controllers}  
+  
+  \begin{figure}[H]
+    \centerline{
+    \subfigure[P Controller]{
+    \includegraphics[scale=0.29]{figures/s1_p_ua.png}}
+    \subfigure[PD Controller]{
+    \includegraphics[scale=0.29]{figures/s1_pd_ua.png}}}
+    \centerline{
+    \subfigure[PI Controller]{
+    \includegraphics[scale=0.29]{figures/s1_pi_ua.png}}
+    \subfigure[PID Controller]{
+    \includegraphics[scale=0.29]{figures/s1_pid_ua.png}}}
+  \end{figure}
+  
+  \end{block}
+
+\end{frame}
+
+
+
+\begin{frame}{Results}{Scenario 1 - Angle Range}
+
+  \begin{block}{Signal Power}  
+  
+  \begin{figure}[H]
+    \centerline{
+    \subfigure[UAS Map]{
+    \includegraphics[scale=0.25]{figures/s1_zoom.png}}
+    \hfill
+    \subfigure[Power at the receiver]{
+    \includegraphics[scale=0.35]{figures/s1_pd_power.png}}}
+  \end{figure}
+  
+  \end{block}
+
+\end{frame}
+
+
+
+\begin{frame}{Results}{Scenario 1 - Angle Range}
+
+  \begin{block}{Signal Power - Comparing PID Controllers}  
+  
+  \begin{figure}[H]
+    \centerline{
+    \subfigure[P Controller]{
+    \includegraphics[scale=0.25]{figures/s1_p_power1.png}}
+    \subfigure[PD Controller]{
+    \includegraphics[scale=0.25]{figures/s1_pd_power1.png}}}
+    \centerline{
+    \subfigure[PI Controller]{
+    \includegraphics[scale=0.25]{figures/s1_pi_power1.png}}
+    \subfigure[PID Controller]{
+    \includegraphics[scale=0.25]{figures/s1_pid_power1.png}}}
   \end{figure}
   
   \end{block}

@@ -1,22 +1,32 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.23)  21 JUN 2016 11:47
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  21 JUN 2016 11:51
+>>>>>>> 295efb0404519f8106eac51ce8d7613129ed245a
 entering extended mode
-**D:/github/DronesCA8/doc/presentation/AAUsidebartheme.tex
-(D:/github/DronesCA8/doc/presentation/AAUsidebartheme.tex
+**./AAUsidebartheme.tex
+(AAUsidebartheme.tex
 LaTeX2e <2015/10/01> patch level 2
 Babel <3.9n> and hyphenation patterns for 69 languages loaded.
-(D:\software\MiKTex\tex\latex\beamer\base\beamer.cls
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbasercs.sty
+
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+er.cls"
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbasercs.sty"
 Package: beamerbasercs 2015/03/08 (rcs-revision 368aa9ba9d38)
 )
 Document Class: beamer 2015/01/05 3.36 A class for typesetting presentations (r
 cs-revision 8a39122e1f63)
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbasemodes.sty
+
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbasemodes.sty"
 Package: beamerbasemodes 2013/09/03 (rcs-revision 768f2d98ca64)
 \beamer@tempbox=\box26
 \beamer@tempcount=\count79
 \c@beamerpauses=\count80
 
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbasedecode.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbasedecode.sty"
 Package: beamerbasedecode 2010/05/01 (rcs-revision efa082c6111d)
 \beamer@slideinframe=\count81
 \beamer@minimum=\count82
@@ -24,7 +34,8 @@ Package: beamerbasedecode 2010/05/01 (rcs-revision efa082c6111d)
 \beamer@commentbox=\box27
 \beamer@modecount=\count83
 )
-(D:\software\MiKTex\tex\generic\oberdiek\ifpdf.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpdf
+.sty"
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
@@ -71,24 +82,29 @@ Package ifpdf Info: pdfTeX in PDF mode is detected.
 \beamer@sectionadjust=\count100
 \beamer@tocsectionnumber=\count101
 
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbaseoptions.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbaseoptions.sty"
 Package: beamerbaseoptions 2013/03/10 (rcs-revision 47431932db0d)
 
-(D:\software\MiKTex\tex\latex\graphics\keyval.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.
+sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 ))
 \beamer@paperwidth=\skip42
 \beamer@paperheight=\skip43
 
-(D:\software\MiKTex\tex\latex\geometry\geometry.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometr
+y.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-(D:\software\MiKTex\tex\generic\oberdiek\ifvtex.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifvte
+x.sty"
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-(D:\software\MiKTex\tex\generic\ifxetex\ifxetex.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxete
+x.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count102
@@ -104,32 +120,41 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen126
 \Gm@dimlist=\toks15
 
-(D:\software\MiKTex\tex\latex\geometry\geometry.cfg))
-(D:\software\MiKTex\tex\latex\base\size10.clo
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometr
+y.cfg"))
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size10.clo"
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
-(D:\software\MiKTex\tex\latex\pgf\basiclayer\pgfcore.sty
-(D:\software\MiKTex\tex\latex\graphics\graphicx.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\basiclayer\p
+gfcore.sty"
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphic
+x.sty"
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(D:\software\MiKTex\tex\latex\graphics\graphics.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphic
+s.sty"
 Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
-(D:\software\MiKTex\tex\latex\graphics\trig.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.st
+y"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(D:\software\MiKTex\tex\latex\00miktex\graphics.cfg
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\graphic
+s.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 94.
 
-(D:\software\MiKTex\tex\latex\pdftex-def\pdftex.def
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdftex-def\pdfte
+x.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(D:\software\MiKTex\tex\generic\oberdiek\infwarerr.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infwa
+rerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(D:\software\MiKTex\tex\generic\oberdiek\ltxcmds.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcm
+ds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count105
@@ -137,31 +162,40 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen127
 \Gin@req@width=\dimen128
 )
-(D:\software\MiKTex\tex\latex\pgf\systemlayer\pgfsys.sty
-(D:\software\MiKTex\tex\latex\pgf\utilities\pgfrcs.sty
-(D:\software\MiKTex\tex\generic\pgf\utilities\pgfutil-common.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\systemlayer\
+pgfsys.sty"
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pg
+frcs.sty"
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfutil-common.tex"
 \pgfutil@everybye=\toks16
 \pgfutil@tempdima=\dimen129
 \pgfutil@tempdimb=\dimen130
 
-(D:\software\MiKTex\tex\generic\pgf\utilities\pgfutil-common-lists.tex))
-(D:\software\MiKTex\tex\generic\pgf\utilities\pgfutil-latex.def
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfutil-common-lists.tex"))
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfutil-latex.def"
 \pgfutil@abb=\box34
 
-(D:\software\MiKTex\tex\latex\ms\everyshi.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ms\everyshi.sty"
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
-(D:\software\MiKTex\tex\generic\pgf\utilities\pgfrcs.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfrcs.code.tex"
 Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
 ))
-(D:\software\MiKTex\tex\generic\pgf\systemlayer\pgfsys.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsys.code.tex"
 Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 
-(D:\software\MiKTex\tex\generic\pgf\utilities\pgfkeys.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfkeys.code.tex"
 \pgfkeys@pathtoks=\toks17
 \pgfkeys@temptoks=\toks18
 
-(D:\software\MiKTex\tex\generic\pgf\utilities\pgfkeysfiltered.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfkeysfiltered.code.tex"
 \pgfkeys@tmptoks=\toks19
 ))
 \pgf@x=\dimen131
@@ -182,29 +216,36 @@ Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 \t@pgf@tokb=\toks21
 \t@pgf@tokc=\toks22
 
-(D:\software\MiKTex\tex\generic\pgf\systemlayer\pgf.cfg
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgf.cfg"
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
 Driver file for pgf: pgfsys-pdftex.def
 
-(D:\software\MiKTex\tex\generic\pgf\systemlayer\pgfsys-pdftex.def
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsys-pdftex.def"
 File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
 
-(D:\software\MiKTex\tex\generic\pgf\systemlayer\pgfsys-common-pdf.def
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsys-common-pdf.def"
 File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 )))
-(D:\software\MiKTex\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsyssoftpath.code.tex"
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
 \pgfsyssoftpath@smallbuffer@items=\count110
 \pgfsyssoftpath@bigbuffer@items=\count111
 )
-(D:\software\MiKTex\tex\generic\pgf\systemlayer\pgfsysprotocol.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsysprotocol.code.tex"
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
 ))
-(D:\software\MiKTex\tex\latex\xcolor\xcolor.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\xcolor.st
+y"
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-(D:\software\MiKTex\tex\latex\00miktex\color.cfg
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\color.c
+fg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -218,13 +259,18 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-(D:\software\MiKTex\tex\generic\pgf\basiclayer\pgfcore.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcore.code.tex"
 Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 
-(D:\software\MiKTex\tex\generic\pgf\math\pgfmath.code.tex
-(D:\software\MiKTex\tex\generic\pgf\math\pgfmathcalc.code.tex
-(D:\software\MiKTex\tex\generic\pgf\math\pgfmathutil.code.tex)
-(D:\software\MiKTex\tex\generic\pgf\math\pgfmathparser.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+th.code.tex"
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thcalc.code.tex"
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thutil.code.tex")
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thparser.code.tex"
 \pgfmath@dimen=\dimen139
 \pgfmath@count=\count112
 \pgfmath@box=\box35
@@ -232,19 +278,30 @@ Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 \pgfmath@stack@operand=\toks24
 \pgfmath@stack@operation=\toks25
 )
-(D:\software\MiKTex\tex\generic\pgf\math\pgfmathfunctions.code.tex
-(D:\software\MiKTex\tex\generic\pgf\math\pgfmathfunctions.basic.code.tex)
-(D:\software\MiKTex\tex\generic\pgf\math\pgfmathfunctions.trigonometric.code.te
-x) (D:\software\MiKTex\tex\generic\pgf\math\pgfmathfunctions.random.code.tex)
-(D:\software\MiKTex\tex\generic\pgf\math\pgfmathfunctions.comparison.code.tex)
-(D:\software\MiKTex\tex\generic\pgf\math\pgfmathfunctions.base.code.tex)
-(D:\software\MiKTex\tex\generic\pgf\math\pgfmathfunctions.round.code.tex)
-(D:\software\MiKTex\tex\generic\pgf\math\pgfmathfunctions.misc.code.tex)
-(D:\software\MiKTex\tex\generic\pgf\math\pgfmathfunctions.integerarithmetics.co
-de.tex))) (D:\software\MiKTex\tex\generic\pgf\math\pgfmathfloat.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.code.tex"
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.basic.code.tex")
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.trigonometric.code.tex")
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.random.code.tex")
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.comparison.code.tex")
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.base.code.tex")
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.round.code.tex")
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.misc.code.tex")
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.integerarithmetics.code.tex")))
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfloat.code.tex"
 \c@pgfmathroundto@lastzeros=\count113
 ))
-(D:\software\MiKTex\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepoints.code.tex"
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
 \pgf@picminx=\dimen140
 \pgf@picmaxx=\dimen141
@@ -261,82 +318,103 @@ File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
 \pgf@zx=\dimen152
 \pgf@zy=\dimen153
 )
-(D:\software\MiKTex\tex\generic\pgf\basiclayer\pgfcorepathconstruct.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepathconstruct.code.tex"
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
 \pgf@path@lastx=\dimen154
 \pgf@path@lasty=\dimen155
 )
-(D:\software\MiKTex\tex\generic\pgf\basiclayer\pgfcorepathusage.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepathusage.code.tex"
 File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
 \pgf@shorten@end@additional=\dimen156
 \pgf@shorten@start@additional=\dimen157
 )
-(D:\software\MiKTex\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorescopes.code.tex"
 File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box36
 \pgf@hbox=\box37
 \pgf@layerbox@main=\box38
 \pgf@picture@serial@count=\count114
 )
-(D:\software\MiKTex\tex\generic\pgf\basiclayer\pgfcoregraphicstate.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoregraphicstate.code.tex"
 File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
 \pgflinewidth=\dimen158
 )
-(D:\software\MiKTex\tex\generic\pgf\basiclayer\pgfcoretransformations.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoretransformations.code.tex"
 File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
 \pgf@pt@x=\dimen159
 \pgf@pt@y=\dimen160
 \pgf@pt@temp=\dimen161
-) (D:\software\MiKTex\tex\generic\pgf\basiclayer\pgfcorequick.code.tex
+)
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorequick.code.tex"
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
 )
-(D:\software\MiKTex\tex\generic\pgf\basiclayer\pgfcoreobjects.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoreobjects.code.tex"
 File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
 )
-(D:\software\MiKTex\tex\generic\pgf\basiclayer\pgfcorepathprocessing.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepathprocessing.code.tex"
 File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 )
-(D:\software\MiKTex\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorearrows.code.tex"
 File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
 \pgfarrowsep=\dimen162
 )
-(D:\software\MiKTex\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoreshade.code.tex"
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen163
 \pgf@sys@shading@range@num=\count115
 )
-(D:\software\MiKTex\tex\generic\pgf\basiclayer\pgfcoreimage.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoreimage.code.tex"
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
 
-(D:\software\MiKTex\tex\generic\pgf\basiclayer\pgfcoreexternal.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoreexternal.code.tex"
 File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
 \pgfexternal@startupbox=\box39
 ))
-(D:\software\MiKTex\tex\generic\pgf\basiclayer\pgfcorelayers.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorelayers.code.tex"
 File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
 )
-(D:\software\MiKTex\tex\generic\pgf\basiclayer\pgfcoretransparency.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoretransparency.code.tex"
 File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
 )
-(D:\software\MiKTex\tex\generic\pgf\basiclayer\pgfcorepatterns.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepatterns.code.tex"
 File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 )))
-(D:\software\MiKTex\tex\latex\pgf\utilities\xxcolor.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\xx
+color.sty"
 Package: xxcolor 2003/10/24 ver 0.1
 \XC@nummixins=\count116
 \XC@countmixins=\count117
 )
-(D:\software\MiKTex\tex\generic\oberdiek\atbegshi.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\atbeg
+shi.sty"
 Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 )
-(D:\software\MiKTex\tex\latex\hyperref\hyperref.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hyperre
+f.sty"
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(D:\software\MiKTex\tex\generic\oberdiek\hobsub-hyperref.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobsu
+b-hyperref.sty"
 Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
 
 
-(D:\software\MiKTex\tex\generic\oberdiek\hobsub-generic.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobsu
+b-generic.sty"
 Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -375,22 +453,26 @@ Package hobsub Info: Skipping package `atbegshi' (already loaded).
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-(D:\software\MiKTex\tex\latex\oberdiek\auxhook.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\auxhook
+.sty"
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-(D:\software\MiKTex\tex\latex\oberdiek\kvoptions.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptio
+ns.sty"
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen164
 \Hy@linkcounter=\count118
 \Hy@pagecounter=\count119
 
-(D:\software\MiKTex\tex\latex\hyperref\pd1enc.def
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\pd1enc.
+def"
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count120
 
-(D:\software\MiKTex\tex\latex\00miktex\hyperref.cfg
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\hyperre
+f.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Option `bookmarks' set `true' on input line 4319.
@@ -405,7 +487,7 @@ Package hyperref Info: Implicit mode OFF; no redefinition of LaTeX internals.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count121
 
-(D:\software\MiKTex\tex\latex\url\url.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -432,29 +514,37 @@ Package hyperref Message: Stopped early.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-(D:\software\MiKTex\tex\latex\hyperref\hpdftex.def
+
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hpdftex
+.def"
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count124
 \c@bookmark@seq@number=\count125
 
-(D:\software\MiKTex\tex\latex\oberdiek\rerunfilecheck.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\rerunfi
+lecheck.sty"
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 ))
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbaserequires.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbaserequires.sty"
 Package: beamerbaserequires 2010/05/01  (rcs-revision efa082c6111d)
 
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbasecompatibility.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbasecompatibility.sty"
 Package: beamerbasecompatibility 2012/05/01  (rcs-revision 67c48b3b652d)
 )
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbasefont.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbasefont.sty"
 Package: beamerbasefont 2015/01/05  (rcs-revision b4b4bee242e2)
 
-(D:\software\MiKTex\tex\latex\amsfonts\amssymb.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amssymb
+.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(D:\software\MiKTex\tex\latex\amsfonts\amsfonts.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amsfont
+s.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks26
 \symAMSa=\mathgroup4
@@ -462,35 +552,45 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(D:\software\MiKTex\tex\latex\sansmathaccent\sansmathaccent.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\sansmathaccent\s
+ansmathaccent.sty"
 Package: sansmathaccent 2013/03/28
 
-(D:\software\MiKTex\tex\latex\filehook\filehook.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\filehook\filehoo
+k.sty"
 Package: filehook 2011/10/12 v0.5d Hooks for input files
 )))
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbasetranslator.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbasetranslator.sty"
 Package: beamerbasetranslator 2010/06/11  (rcs-revision 85fd1cc7fc42)
 
-(D:\software\MiKTex\tex\latex\beamer\base\translator\translator.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\tran
+slator\translator.sty"
 Package: translator 2010/06/12 ver 1.10
 
-(D:\software\MiKTex\tex\latex\beamer\base\translator\translator-language-mappin
-gs.tex))) (D:\software\MiKTex\tex\latex\beamer\base\beamerbasemisc.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\tran
+slator\translator-language-mappings.tex")))
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbasemisc.sty"
 Package: beamerbasemisc 2013/09/03  (rcs-revision a55719c41d85)
 )
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbasetwoscreens.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbasetwoscreens.sty"
 Package: beamerbasetwoscreens 2010/05/01  (rcs-revision efa082c6111d)
 )
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbaseoverlay.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbaseoverlay.sty"
 Package: beamerbaseoverlay 2013/12/25  (rcs-revision f6bd5e3805da)
 \beamer@argscount=\count126
 \beamer@lastskipcover=\skip44
 \beamer@trivlistdepth=\count127
 )
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbasetitle.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbasetitle.sty"
 Package: beamerbasetitle 2010/09/21  (rcs-revision f0446ed0b6ae)
 )
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbasesection.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbasesection.sty"
 Package: beamerbasesection 2013/06/07  (rcs-revision 60b9fe0f342f)
 \c@lecture=\count128
 \c@part=\count129
@@ -498,7 +598,8 @@ Package: beamerbasesection 2013/06/07  (rcs-revision 60b9fe0f342f)
 \c@subsection=\count131
 \c@subsubsection=\count132
 )
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbaseframe.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbaseframe.sty"
 Package: beamerbaseframe 2014/02/20  (rcs-revision 4b8ceeeff434)
 \beamer@framebox=\box40
 \beamer@frametitlebox=\box41
@@ -515,11 +616,13 @@ Package: beamerbaseframe 2014/02/20  (rcs-revision 4b8ceeeff434)
 \framewidth=\dimen169
 \c@framenumber=\count136
 )
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbaseverbatim.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbaseverbatim.sty"
 Package: beamerbaseverbatim 2015/01/05  (rcs-revision 431510bb5890)
 \beamer@verbatimfileout=\write4
 )
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbaseframesize.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbaseframesize.sty"
 Package: beamerbaseframesize 2011/09/12  (rcs-revision 70f9d8411e54)
 \beamer@splitbox=\box43
 \beamer@autobreakcount=\count137
@@ -527,28 +630,35 @@ Package: beamerbaseframesize 2011/09/12  (rcs-revision 70f9d8411e54)
 \beamer@frametitletoks=\toks28
 \beamer@framesubtitletoks=\toks29
 )
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbaseframecomponents.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbaseframecomponents.sty"
 Package: beamerbaseframecomponents 2013/10/18  (rcs-revision 5cf6c5555a45)
 \beamer@footins=\box44
 )
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbasecolor.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbasecolor.sty"
 Package: beamerbasecolor 2015/02/21  (rcs-revision d944b04ee2d5)
 )
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbasenotes.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbasenotes.sty"
 Package: beamerbasenotes 2012/12/19  (rcs-revision 1686da3db3c9)
 \beamer@frameboxcopy=\box45
 )
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbasetoc.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbasetoc.sty"
 Package: beamerbasetoc 2015/03/08  (rcs-revision 7270298bbaae)
 )
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbasetemplates.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbasetemplates.sty"
 Package: beamerbasetemplates 2010/05/01  (rcs-revision efa082c6111d)
 \beamer@sbttoks=\toks30
 
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbaseauxtemplates.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbaseauxtemplates.sty"
 Package: beamerbaseauxtemplates 2014/06/30  (rcs-revision 580088513a67)
 
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbaseboxes.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbaseboxes.sty"
 Package: beamerbaseboxes 2012/05/13  (rcs-revision 56972908a390)
 \bmb@box=\box46
 \bmb@colorbox=\box47
@@ -562,10 +672,12 @@ Package: beamerbaseboxes 2012/05/13  (rcs-revision 56972908a390)
 )
 \beamer@blockheadheight=\dimen175
 ))
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbaselocalstructure.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbaselocalstructure.sty"
 Package: beamerbaselocalstructure 2014/09/10  (rcs-revision 393f6dcff371)
 
-(D:\software\MiKTex\tex\latex\tools\enumerate.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\enumerate.
+sty"
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \@enLab=\toks31
 )
@@ -574,31 +686,39 @@ Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 )
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbasenavigation.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbasenavigation.sty"
 Package: beamerbasenavigation 2015/02/27  (rcs-revision 923f4bf87efa)
 \beamer@section@min@dim=\dimen176
 )
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbasetheorems.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbasetheorems.sty"
 Package: beamerbasetheorems 2010/06/06  (rcs-revision 7e7cc5e53e9d)
 
-(D:\software\MiKTex\tex\latex\amsmath\amsmath.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsmath.
+sty"
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip51
 
 For additional information on amsmath, use the `?' option.
-(D:\software\MiKTex\tex\latex\amsmath\amstext.sty
+
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amstext.
+sty"
 Package: amstext 2000/06/29 v2.01
 
-(D:\software\MiKTex\tex\latex\amsmath\amsgen.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsgen.s
+ty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks32
 \ex@=\dimen177
 ))
-(D:\software\MiKTex\tex\latex\amsmath\amsbsy.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsbsy.s
+ty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen178
 )
-(D:\software\MiKTex\tex\latex\amsmath\amsopn.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsopn.s
+ty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count140
@@ -639,7 +759,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-(D:\software\MiKTex\tex\latex\amscls\amsthm.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amscls\amsthm.st
+y"
 Package: amsthm 2015/03/04 v2.20.2
 \thm@style=\toks37
 \thm@bodyfont=\toks38
@@ -653,69 +774,86 @@ Package: amsthm 2015/03/04 v2.20.2
 )
 \c@theorem=\count152
 )
-(D:\software\MiKTex\tex\latex\beamer\base\beamerbasethemes.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\beam
+erbasethemes.sty"
 Package: beamerbasethemes 2010/05/01  (rcs-revision efa082c6111d)
 ))
-(D:\software\MiKTex\tex\latex\beamer\base\themes\theme\beamerthemedefault.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\them
+es\theme\beamerthemedefault.sty"
 Package: beamerthemedefault 2010/06/17  (rcs-revision d02a7cf4d8ae)
 
-(D:\software\MiKTex\tex\latex\beamer\base\themes\font\beamerfontthemedefault.st
-y
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\them
+es\font\beamerfontthemedefault.sty"
 Package: beamerfontthemedefault 2012/12/19  (rcs-revision 1686da3db3c9)
 )
-(D:\software\MiKTex\tex\latex\beamer\base\themes\color\beamercolorthemedefault.
-sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\them
+es\color\beamercolorthemedefault.sty"
 Package: beamercolorthemedefault 2012/12/19  (rcs-revision 1686da3db3c9)
 )
-(D:\software\MiKTex\tex\latex\beamer\base\themes\inner\beamerinnerthemedefault.
-sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\them
+es\inner\beamerinnerthemedefault.sty"
 Package: beamerinnerthemedefault 2014/06/30  (rcs-revision 580088513a67)
 \beamer@dima=\dimen186
 \beamer@dimb=\dimen187
 )
-(D:\software\MiKTex\tex\latex\beamer\base\themes\outer\beamerouterthemedefault.
-sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\them
+es\outer\beamerouterthemedefault.sty"
 Package: beamerouterthemedefault 2012/12/19  (rcs-revision 1686da3db3c9)
 ))) (beamerthemeAAUsidebar.sty
 Package: beamerthemeAAUsidebar 2013/05/26 v1.3.0 The AAU Sidebar Beamer Theme
 
-(D:\software\MiKTex\tex\latex\pgf\frontendlayer\tikz.sty
-(D:\software\MiKTex\tex\latex\pgf\basiclayer\pgf.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\frontendlaye
+r\tikz.sty"
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\basiclayer\p
+gf.sty"
 Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
 
-(D:\software\MiKTex\tex\generic\pgf\modules\pgfmoduleshapes.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pg
+fmoduleshapes.code.tex"
 File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
 \pgfnodeparttextbox=\box53
 )
-(D:\software\MiKTex\tex\generic\pgf\modules\pgfmoduleplot.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pg
+fmoduleplot.code.tex"
 File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 )
-(D:\software\MiKTex\tex\latex\pgf\compatibility\pgfcomp-version-0-65.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\compatibilit
+y\pgfcomp-version-0-65.sty"
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
 \pgf@nodesepstart=\dimen188
 \pgf@nodesepend=\dimen189
 )
-(D:\software\MiKTex\tex\latex\pgf\compatibility\pgfcomp-version-1-18.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\compatibilit
+y\pgfcomp-version-1-18.sty"
 Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
 ))
-(D:\software\MiKTex\tex\latex\pgf\utilities\pgffor.sty
-(D:\software\MiKTex\tex\latex\pgf\utilities\pgfkeys.sty
-(D:\software\MiKTex\tex\generic\pgf\utilities\pgfkeys.code.tex))
-(D:\software\MiKTex\tex\latex\pgf\math\pgfmath.sty
-(D:\software\MiKTex\tex\generic\pgf\math\pgfmath.code.tex))
-(D:\software\MiKTex\tex\generic\pgf\utilities\pgffor.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pg
+ffor.sty"
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pg
+fkeys.sty"
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfkeys.code.tex"))
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\math\pgfmath
+.sty"
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+th.code.tex"))
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgffor.code.tex"
 Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 
-(D:\software\MiKTex\tex\generic\pgf\math\pgfmath.code.tex)
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+th.code.tex")
 \pgffor@iter=\dimen190
 \pgffor@skip=\dimen191
 \pgffor@stack=\toks43
 \pgffor@toks=\toks44
 ))
-(D:\software\MiKTex\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
+yer\tikz\tikz.code.tex"
 Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 
-(D:\software\MiKTex\tex\generic\pgf\libraries\pgflibraryplothandlers.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\
+pgflibraryplothandlers.code.tex"
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \pgf@plot@mark@count=\count153
 \pgfplotmarksize=\dimen192
@@ -735,7 +873,8 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikznumberofcurrentchild=\count156
 \tikz@fig@count=\count157
 
-(D:\software\MiKTex\tex\generic\pgf\modules\pgfmodulematrix.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pg
+fmodulematrix.code.tex"
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 \pgfmatrixcurrentrow=\count158
 \pgfmatrixcurrentcolumn=\count159
@@ -743,10 +882,11 @@ File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 )
 \tikz@expandcount=\count161
 
-(D:\software\MiKTex\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytop
-aths.code.tex
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
+yer\tikz\libraries\tikzlibrarytopaths.code.tex"
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
-))) (D:\software\MiKTex\tex\latex\tools\calc.sty
+)))
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count162
 \calc@Bcount=\count163
@@ -758,8 +898,7 @@ LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count164
 \calc@Cskip=\skip59
-)
-(beamerinnerthemeAAUsidebar.sty
+) (beamerinnerthemeAAUsidebar.sty
 Package: beamerinnerthemeAAUsidebar 2013/05/26 v1.3.0 The AAU Sidebar Beamer Th
 eme
 \beamer@plainpagewidth=\skip60
@@ -774,19 +913,46 @@ eme
 Package: beamercolorthemeAAUsidebar 2013/05/26 v1.3.0 The AAU Sidebar Beamer Th
 eme
 ))
-(D:\software\MiKTex\tex\latex\base\inputenc.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\caption.
+sty"
+Package: caption 2016/02/02 v3.3-136 Customizing captions (AR)
+
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\caption3
+.sty"
+Package: caption3 2016/02/02 v1.7-136 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen257
+\captionmargin@=\dimen258
+\captionwidth=\dimen259
+\caption@tempdima=\dimen260
+\caption@indent=\dimen261
+\caption@parindent=\dimen262
+\caption@hangindent=\dimen263
+)
+\c@ContinuedFloat=\count165
+Package caption Info: beamer document class.
+Package caption Info: hyperref package is loaded.
+Package caption Info: Hyperref support is turned off
+(caption)             because hyperref has stopped early.
+)
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\subcapti
+on.sty"
+Package: subcaption 2016/02/02 v1.1-136 Sub-captions (AR)
+\c@subfigure=\count166
+\c@subtable=\count167
+)
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.st
+y"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks45
 \inpenc@posthook=\toks46
-
-(D:\software\MiKTex\tex\latex\base\utf8.def
+ ("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2015/09/07 v1.1p UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
-
-(D:\software\MiKTex\tex\latex\base\t1enc.dfu
+ ("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
 File: t1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -946,7 +1112,7 @@ File: t1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(D:\software\MiKTex\tex\latex\base\ot1enc.dfu
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
 File: ot1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -986,8 +1152,8 @@ File: ot1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
 )
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
-
-(D:\software\MiKTex\tex\latex\base\omsenc.dfu
+ ("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omsenc.dfu
+"
 File: omsenc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -1013,61 +1179,68 @@ Now handling font encoding PD1 ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(D:\software\MiKTex\tex\generic\babel\babel.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.st
+y"
 Package: babel 2016/01/08 3.9n The Babel package
 
 *************************************
 * Local config file bblopts.cfg used
 *
-(D:\software\MiKTex\tex\latex\00miktex\bblopts.cfg
+
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\bblopts
+.cfg"
 File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
 )
-(D:\software\MiKTex\tex\latex\babel-english\english.ldf
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\babel-english\en
+glish.ldf"
 Language: english 2012/08/20 v3.3p English support from the babel system
 
-(D:\software\MiKTex\tex\generic\babel\babel.def
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.de
+f"
 File: babel.def 2016/01/08 3.9n Babel common definitions
-\babel@savecnt=\count165
-\U@D=\dimen257
+\babel@savecnt=\count168
+\U@D=\dimen264
 LaTeX Info: Redefining \textlatin on input line 1438.
 )
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 ))
-(D:\software\MiKTex\tex\latex\base\fontenc.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fontenc.sty
+"
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
-
-(D:\software\MiKTex\tex\latex\base\t1enc.def
+ ("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.def"
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
-(D:\software\MiKTex\tex\latex\psnfss\helvet.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\helvet.st
+y"
 Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 52.
+(hyperref)                removing `\\' on input line 56.
 
 (AAUsidebartheme.aux)
 \openout1 = `AAUsidebartheme.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 82.
- (D:\software\MiKTex\tex\latex\psnfss\t1phv.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 86.
+
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 *geometry* driver: auto-detecting
@@ -1104,146 +1277,157 @@ File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(D:\software\MiKTex\tex\context\base\supp-pdf.mkii
+
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
+mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count166
-\scratchdimen=\dimen258
+\scratchcounter=\count169
+\scratchdimen=\dimen265
 \scratchbox=\box58
-\nofMPsegments=\count167
-\nofMParguments=\count168
+\nofMPsegments=\count170
+\nofMParguments=\count171
 \everyMPshowfont=\toks47
-\MPscratchCnt=\count169
-\MPscratchDim=\dimen259
-\MPnumerator=\count170
-\makeMPintoPDFobject=\count171
+\MPscratchCnt=\count172
+\MPscratchDim=\dimen266
+\MPnumerator=\count173
+\makeMPintoPDFobject=\count174
 \everyMPtoPDFconversion=\toks48
 ) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box59
-Package hyperref Info: Link coloring OFF on input line 82.
+Package hyperref Info: Link coloring OFF on input line 86.
 
-(D:\software\MiKTex\tex\latex\hyperref\nameref.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref
+.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(D:\software\MiKTex\tex\generic\oberdiek\gettitlestring.sty
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\getti
+tlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count172
+\c@section@level=\count175
 )
-LaTeX Info: Redefining \ref on input line 82.
-LaTeX Info: Redefining \pageref on input line 82.
-LaTeX Info: Redefining \nameref on input line 82.
-
-(AAUsidebartheme.out) (AAUsidebartheme.out)
+LaTeX Info: Redefining \ref on input line 86.
+LaTeX Info: Redefining \pageref on input line 86.
+LaTeX Info: Redefining \nameref on input line 86.
+ (AAUsidebartheme.out) (AAUsidebartheme.out)
 \@outlinefile=\write5
 \openout5 = `AAUsidebartheme.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 82.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 86.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 82.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 86.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 82.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 82.
+(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 86.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 86.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/phv/bx/n on input line 82.
+(Font)                  OT1/cmr/bx/n --> T1/phv/bx/n on input line 86.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/phv/bx/n on input line 82.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 82.
+(Font)                  OT1/cmr/bx/n --> T1/phv/bx/n on input line 86.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 86.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/phv/m/n on input line 82.
+(Font)                  OT1/cmss/m/n --> T1/phv/m/n on input line 86.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/phv/m/n on input line 82.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 82.
+(Font)                  OT1/cmss/bx/n --> T1/phv/m/n on input line 86.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 86.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/phv/m/it on input line 82.
+(Font)                  OT1/cmr/m/it --> T1/phv/m/it on input line 86.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/phv/m/it on input line 82.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 82.
+(Font)                  OT1/cmr/bx/it --> T1/phv/m/it on input line 86.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 86.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 82.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 86.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 82.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 86.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 82.
+(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 86.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/phv/m/it --> T1/phv/bx/it on input line 82.
+(Font)                  T1/phv/m/it --> T1/phv/bx/it on input line 86.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/cmr/bx/n on input line 82.
+(Font)                  OT1/cmss/bx/n --> T1/cmr/bx/n on input line 86.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/phv/bx/n --> T1/phv/bx/n on input line 82.
+(Font)                  T1/phv/bx/n --> T1/phv/bx/n on input line 86.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 82.
+(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 86.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/phv/m/it --> T1/phv/bx/it on input line 82.
+(Font)                  T1/phv/m/it --> T1/phv/bx/it on input line 86.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/cmtt/m/n --> T1/cmtt/bx/n on input line 82.
+(Font)                  T1/cmtt/m/n --> T1/cmtt/bx/n on input line 86.
 
-(D:\software\MiKTex\tex\latex\beamer\base\translator\dicts\translator-basic-dic
-tionary\translator-basic-dictionary-English.dict
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\tran
+slator\dicts\translator-basic-dictionary\translator-basic-dictionary-English.di
+ct"
 Dictionary: translator-basic-dictionary, Language: English 
 )
-(D:\software\MiKTex\tex\latex\beamer\base\translator\dicts\translator-bibliogra
-phy-dictionary\translator-bibliography-dictionary-English.dict
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\tran
+slator\dicts\translator-bibliography-dictionary\translator-bibliography-diction
+ary-English.dict"
 Dictionary: translator-bibliography-dictionary, Language: English 
 )
-(D:\software\MiKTex\tex\latex\beamer\base\translator\dicts\translator-environme
-nt-dictionary\translator-environment-dictionary-English.dict
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\tran
+slator\dicts\translator-environment-dictionary\translator-environment-dictionar
+y-English.dict"
 Dictionary: translator-environment-dictionary, Language: English 
 )
-(D:\software\MiKTex\tex\latex\beamer\base\translator\dicts\translator-months-di
-ctionary\translator-months-dictionary-English.dict
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\tran
+slator\dicts\translator-months-dictionary\translator-months-dictionary-English.
+dict"
 Dictionary: translator-months-dictionary, Language: English 
 )
-(D:\software\MiKTex\tex\latex\beamer\base\translator\dicts\translator-numbers-d
-ictionary\translator-numbers-dictionary-English.dict
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\tran
+slator\dicts\translator-numbers-dictionary\translator-numbers-dictionary-Englis
+h.dict"
 Dictionary: translator-numbers-dictionary, Language: English 
 )
-(D:\software\MiKTex\tex\latex\beamer\base\translator\dicts\translator-theorem-d
-ictionary\translator-theorem-dictionary-English.dict
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\base\tran
+slator\dicts\translator-theorem-dictionary\translator-theorem-dictionary-Englis
+h.dict"
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 82.
+LaTeX Info: Redefining \includegraphics on input line 86.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
  (AAUsidebartheme.nav)
 <AAUgraphics/aau_logo_new_circle.pdf, id=57, 79.29625pt x 80.3pt>
 File: AAUgraphics/aau_logo_new_circle.pdf Graphic file (type pdf)
 
 <use AAUgraphics/aau_logo_new_circle.pdf>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
- 82.
+ 86.
 (pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 87.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 91.
 
-(D:\software\MiKTex\tex\latex\base\t1cmtt.fd
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 87.
-
-(D:\software\MiKTex\tex\latex\amsfonts\umsa.fd
+LaTeX Font Info:    Try loading font information for U+msa on input line 91.
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd
+"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 87.
+LaTeX Font Info:    Try loading font information for U+msb on input line 91.
 
-(D:\software\MiKTex\tex\latex\amsfonts\umsb.fd
+("C:\Users\Orlando\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd
+"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 87.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 91.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 87.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 91.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <5> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 87.
-
-<AAUgraphics/aau_waves.pdf, id=59, 845.1575pt x 598.235pt>
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 91.
+ <AAUgraphics/aau_waves.pdf, id=59, 845.1575pt x 598.235pt>
 File: AAUgraphics/aau_waves.pdf Graphic file (type pdf)
 
 <use AAUgraphics/aau_waves.pdf>
-Package pdftex.def Info: AAUgraphics/aau_waves.pdf used on input line 87.
+Package pdftex.def Info: AAUgraphics/aau_waves.pdf used on input line 91.
 (pdftex.def)             Requested size: 364.1973pt x 273.1467pt.
  [1
 
-{C:/Users/maxwell/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./AAUgrap
+{C:/Users/Orlando/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./AAUgrap
 hics/aau_waves.pdf, page is rotated 270 degrees> <./AAUgraphics/aau_logo_new.pd
 f>] (slides/intro.tex
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <14.4> not available
@@ -1308,7 +1492,7 @@ Overfull \hbox (1.05998pt too wide) has occurred while \output is active
 File: AAUgraphics/aau_logo_new_circle.pdf Graphic file (type pdf)
 <use AAUgraphics/aau_logo_new_circle.pdf>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
- 96.
+ 100.
 (pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
  [3
 
@@ -1504,6 +1688,7 @@ Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
 (pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
  [9
 
+<<<<<<< HEAD
 ]
 Overfull \hbox (1.05998pt too wide) has occurred while \output is active
 [][][] [][]
@@ -1569,6 +1754,9 @@ Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
  [11
 
 ]) (slides/results.tex
+=======
+]) (slides/results/results.tex
+>>>>>>> 295efb0404519f8106eac51ce8d7613129ed245a
 Overfull \hbox (1.05998pt too wide) has occurred while \output is active
 [][][] [][]
  []
@@ -1596,9 +1784,164 @@ Overfull \hbox (1.05998pt too wide) has occurred while \output is active
 File: AAUgraphics/aau_logo_new_circle.pdf Graphic file (type pdf)
 <use AAUgraphics/aau_logo_new_circle.pdf>
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
- 18.
+ 20.
 (pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
  [12
+
+]) (slides/results/AngleRange.tex
+<figures/s1_zoom.png, id=241, 556.32843pt x 480.29437pt>
+File: figures/s1_zoom.png Graphic file (type png)
+
+<use figures/s1_zoom.png>
+Package pdftex.def Info: figures/s1_zoom.png used on input line 24.
+(pdftex.def)             Requested size: 167.30396pt x 144.4412pt.
+
+Overfull \hbox (83.65198pt too wide) in paragraph at lines 24--24
+[][] 
+ []
+
+<figures/s1_los.png, id=242, 578.16pt x 433.62pt>
+File: figures/s1_los.png Graphic file (type png)
+ <use figures/s1_los.png>
+Package pdftex.def Info: figures/s1_los.png used on input line 24.
+(pdftex.def)             Requested size: 167.30396pt x 125.4753pt.
+
+Overfull \hbox (83.65198pt too wide) in paragraph at lines 24--24
+[][] 
+ []
+
+
+Overfull \vbox (2.95801pt too high) detected at line 24
+ []
+
+
+Overfull \hbox (1.05998pt too wide) has occurred while \output is active
+[][][] [][]
+ []
+
+
+Overfull \hbox (1.05998pt too wide) has occurred while \output is active
+[][][] [][]
+ []
+
+
+Overfull \hbox (1.05998pt too wide) has occurred while \output is active
+[][][] [][]
+ []
+
+
+Overfull \hbox (1.05998pt too wide) has occurred while \output is active
+[][][] [][]
+ []
+
+
+Overfull \hbox (1.05998pt too wide) has occurred while \output is active
+[][][] [][]
+ []
+
+File: AAUgraphics/aau_logo_new_circle.pdf Graphic file (type pdf)
+<use AAUgraphics/aau_logo_new_circle.pdf>
+Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
+ 24.
+(pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
+ [11
+
+ <./figures/s1_zoom.png> <./figures/s1_los.png (PNG copy)>]) (slides/results/Cu
+rvature.tex
+Overfull \hbox (1.05998pt too wide) has occurred while \output is active
+[][][] [][]
+ []
+
+
+Overfull \hbox (1.05998pt too wide) has occurred while \output is active
+[][][] [][]
+ []
+
+
+Overfull \hbox (1.05998pt too wide) has occurred while \output is active
+[][][] [][]
+ []
+
+
+Overfull \hbox (1.05998pt too wide) has occurred while \output is active
+[][][] [][]
+ []
+
+
+Overfull \hbox (1.05998pt too wide) has occurred while \output is active
+[][][] [][]
+ []
+
+File: AAUgraphics/aau_logo_new_circle.pdf Graphic file (type pdf)
+<use AAUgraphics/aau_logo_new_circle.pdf>
+Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
+ 20.
+(pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
+ [12
+
+]) (slides/results/AboveGS.tex
+Overfull \hbox (1.05998pt too wide) has occurred while \output is active
+[][][] [][]
+ []
+
+
+Overfull \hbox (1.05998pt too wide) has occurred while \output is active
+[][][] [][]
+ []
+
+
+Overfull \hbox (1.05998pt too wide) has occurred while \output is active
+[][][] [][]
+ []
+
+
+Overfull \hbox (1.05998pt too wide) has occurred while \output is active
+[][][] [][]
+ []
+
+
+Overfull \hbox (1.05998pt too wide) has occurred while \output is active
+[][][] [][]
+ []
+
+File: AAUgraphics/aau_logo_new_circle.pdf Graphic file (type pdf)
+<use AAUgraphics/aau_logo_new_circle.pdf>
+Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
+ 20.
+(pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
+ [13
+
+]) (slides/results/Mountain.tex
+Overfull \hbox (1.05998pt too wide) has occurred while \output is active
+[][][] [][]
+ []
+
+
+Overfull \hbox (1.05998pt too wide) has occurred while \output is active
+[][][] [][]
+ []
+
+
+Overfull \hbox (1.05998pt too wide) has occurred while \output is active
+[][][] [][]
+ []
+
+
+Overfull \hbox (1.05998pt too wide) has occurred while \output is active
+[][][] [][]
+ []
+
+
+Overfull \hbox (1.05998pt too wide) has occurred while \output is active
+[][][] [][]
+ []
+
+File: AAUgraphics/aau_logo_new_circle.pdf Graphic file (type pdf)
+<use AAUgraphics/aau_logo_new_circle.pdf>
+Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
+ 20.
+(pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
+ [14
 
 ]) (slides/conclusion.tex
 Overfull \hbox (1.05998pt too wide) has occurred while \output is active
@@ -1630,15 +1973,23 @@ File: AAUgraphics/aau_logo_new_circle.pdf Graphic file (type pdf)
 Package pdftex.def Info: AAUgraphics/aau_logo_new_circle.pdf used on input line
  7.
 (pdftex.def)             Requested size: 40.49973pt x 41.0137pt.
+<<<<<<< HEAD
  [13
+=======
+ [15
+>>>>>>> 295efb0404519f8106eac51ce8d7613129ed245a
 
 ])
 File: AAUgraphics/aau_waves.pdf Graphic file (type pdf)
 
 <use AAUgraphics/aau_waves.pdf>
-Package pdftex.def Info: AAUgraphics/aau_waves.pdf used on input line 146.
+Package pdftex.def Info: AAUgraphics/aau_waves.pdf used on input line 154.
 (pdftex.def)             Requested size: 364.1973pt x 273.1467pt.
+<<<<<<< HEAD
  [14
+=======
+ [16
+>>>>>>> 295efb0404519f8106eac51ce8d7613129ed245a
 
 ]
 \tf@nav=\write6
@@ -1650,16 +2001,17 @@ Package pdftex.def Info: AAUgraphics/aau_waves.pdf used on input line 146.
 \tf@snm=\write8
 \openout8 = `AAUsidebartheme.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 149.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 149.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 157.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 157.
  (AAUsidebartheme.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 149.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 149.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 157.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 157.
 Package rerunfilecheck Info: File `AAUsidebartheme.out' has not changed.
 (rerunfilecheck)             Checksum: 0124F6999ED3F79BBC20DC569ED51A50;586.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 149.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 157.
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  20731 strings out of 493634
  401125 string characters out of 3147409
  477227 words of memory out of 3000000
@@ -1676,4 +2028,23 @@ PDF statistics:
  338 PDF objects out of 1000 (max. 8388607)
  40 named destinations out of 1000 (max. 500000)
  146 words of extra memory for PDF output out of 10000 (max. 10000000)
+=======
+ 21882 strings out of 493634
+ 434198 string characters out of 3134424
+ 494316 words of memory out of 3000000
+ 24671 multiletter control sequences out of 15000+200000
+ 39196 words of font info for 53 fonts, out of 3000000 for 9000
+ 1025 hyphenation exceptions out of 8191
+ 60i,21n,71p,408b,1116s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Orlando\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
+0\ectt1000.pk>{C:/Users/Orlando/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvi
+ps/fontname/8r.enc}<C:/Users/Orlando/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/symbols/msam7.pfb><C:/Users/Orlando/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on AAUsidebartheme.pdf (16 pages, 250081 bytes).
+PDF statistics:
+ 379 PDF objects out of 1000 (max. 8388607)
+ 48 named destinations out of 1000 (max. 500000)
+ 156 words of extra memory for PDF output out of 10000 (max. 10000000)
+>>>>>>> 295efb0404519f8106eac51ce8d7613129ed245a
 

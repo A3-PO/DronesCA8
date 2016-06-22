@@ -25,6 +25,9 @@
 %\setbeamercolor{normal text}{bg=gray!10}
 % ... and you can of course change a lot more - see the beamer user manual.
 
+%\usepackage{graphicx}
+%\usepackage{caption}
+%\usepackage{subcaption}
 
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
@@ -32,6 +35,12 @@
 % Or whatever. Note that the encoding and the font should match. If T1
 % does not look nice, try deleting the line with the fontenc.
 \usepackage{helvet}
+\usepackage[scriptsize]{subfigure}
+\usepackage{epstopdf}
+\renewcommand*{\thesubfigure}{}
+
+%\usepackage[textwidth=6in]{geometry}
+%\usepackage[demo]{graphicx}
 
 % colored hyperlinks
 \newcommand{\chref}[2]{%
@@ -108,7 +117,11 @@
 
 
 \section{Results}
-\input{slides/results.tex}
+\input{slides/results/results.tex}
+\input{slides/results/AngleRange.tex}
+\input{slides/results/Curvature.tex}
+\input{slides/results/AboveGS.tex}
+\input{slides/results/Mountain.tex}
 
 \section{Conclusion}
 \input{slides/conclusion.tex}

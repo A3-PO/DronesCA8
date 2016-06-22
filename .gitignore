@@ -38,3 +38,15 @@ doc/report/*.acr
 doc/report/*.alg
 
 src/matlab/3D_system_simulation/slprj/*
+
+doc/presentation/*.aux
+doc/presentation/*.lof
+doc/presentation/*.log
+doc/presentation/*.lot
+doc/presentation/*.fls
+doc/presentation/*.out
+doc/presentation/*.toc
+doc/presentation/*.tdo
+doc/presentation/*.fmt
+doc/presentation/*.pdf
+doc/presentation/master.synctex.gz

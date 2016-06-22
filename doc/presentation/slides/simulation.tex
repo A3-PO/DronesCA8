@@ -67,3 +67,29 @@
 	\end{figure}
   \end{block}
 \end{frame}
+
+\begin{frame}{Simulation}{3D UAS}
+  \begin{block}{Simulation steps}
+	  \begin{enumerate}
+	  	\item Aquire GPS position of GS and UA 
+	  	\item Compute optimal angles and error signal 
+	  	\item Input error signal in the controller
+	  	\item Limit output signal from controller using the saturation box
+	  	\item Input controller signal to the MAS
+	  	\item Feedback the output angle in the optimal angle block
+	  \end{enumerate}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Simulation}{3D UAS}
+  \begin{block}{Simulation assumptions}
+	  \begin{itemize}
+	  	\item Antenna parameters for GS and UA
+	  	\item Using same MAS model for GS and UA
+	  	\item Controller will be defined in each simulation
+	  	\item Saturation box threshold set from $-5V$ to $+5V$
+	  	\item Noise modelled as Gaussian White Noise of power $10^{-4}$
+	  	\item No power threshold in the receiver
+	  \end{itemize}
+  \end{block}
+\end{frame}

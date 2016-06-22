@@ -41,6 +41,11 @@
 
 \begin{frame}{Simulation}{2D UAS}
 	\begin{block}{2D UAS Block Diagram}
+		\begin{itemize}
+		  	\item Cartesian system (Simplistic)
+		  	\item 1 DoF - azimuth angle ($\theta$)
+		  	\item Compute optimal azimuth angle for UA and GS 
+		\end{itemize}
 
 		\begin{figure}
 	        \includegraphics[scale=0.32]{figures/2D_system.png}
@@ -50,9 +55,15 @@
 
 \begin{frame}{Simulation}{3D UAS}
   \begin{block}{3D UAS Block Diagram}
+	\begin{itemize}
+	  	\item Realistic Earth Model - WGS84
+	  	\item Curvature of the Earth
+	  	\item Relief of Earth's surface 
+	  	\item Real GPS position: latitude, longitude and altitude
+	\end{itemize}
 
-		\begin{figure}
-	        \includegraphics[scale=0.35]{figures/3D_system.png}
-	    \end{figure}
+	\begin{figure}
+		\includegraphics[scale=0.33]{figures/3D_system.png}
+	\end{figure}
   \end{block}
 \end{frame}

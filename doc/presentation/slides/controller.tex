@@ -102,20 +102,28 @@
   \begin{block}{Different controllers:}
 
 	  \begin{itemize}
-	  	\item PID Theory
+	  	\item PID control
+	 	\begin{itemize}
+	  	\item Proportional
+	  	\item Derivative
+	  	\item Integral
+	  	\item Combination of them
+	  \end{itemize}
 	  \end{itemize}
 
 
-  
+ 	  \begin{figure}
+        \includegraphics[scale=0.40]{../report/figures/control-theory-chart.jpg}
+      \end{figure} 
   \end{block}
 \end{frame}
 
 %Controller P
 \begin{frame}{Controller}{Different controllers}
-  \begin{block}{P Controller}
+  \begin{block}{Proportional Term}
 
 	  \begin{itemize}
-	  	\item Output always proportional to the error
+	  	\item Output proportional to the error
 	  \end{itemize}
 
 	  \begin{figure}
@@ -125,47 +133,47 @@
   \end{block}
 \end{frame}
 
-%Controller I
-\begin{frame}{Controller}{Different controllers}
-  \begin{block}{I Controller}
+%%Controller I
+%\begin{frame}{Controller}{Different controllers}
+%  \begin{block}{Integral Term}
+%
+%	  \begin{itemize}
+%	  	\item Sums the error term over time
+%	  	\item No steady state error
+%	  	\item Cause the present value to overshoot the reference value
+%	  \end{itemize}
+%
+%	  \begin{figure}
+%        \includegraphics[scale=0.26]{../report/figures/integ_controller.png}
+%      \end{figure}
+%  
+%  \end{block}
+%\end{frame}
 
-	  \begin{itemize}
-	  	\item Sums the error term over time
-	  	\item Tends the steady state error to zero
-	  	\item Cause the present value to overshoot the reference value
-	  \end{itemize}
-
-	  \begin{figure}
-        \includegraphics[scale=0.26]{../report/figures/integ_controller.png}
-      \end{figure}
-  
-  \end{block}
-\end{frame}
-
-%Controller D
-\begin{frame}{Controller}{Different controllers}
-  \begin{block}{D Controller}
-
-	  \begin{itemize}
-	  	\item Acts as a brake on the control effort
-	  	\item Highly sensitive to noise
-	  \end{itemize}
-
-	  \begin{figure}
-        \includegraphics[scale=0.26]{../report/figures/deriv_controller.png}
-      \end{figure}
-  
-  \end{block}
-\end{frame}
+%%Controller D
+%\begin{frame}{Controller}{Different controllers}
+%  \begin{block}{Derivative Term}
+%
+%	  \begin{itemize}
+%	  	\item Acts as a brake on the control effort
+%	  	\item Highly sensitive to noise
+%	  \end{itemize}
+%
+%	  \begin{figure}
+%        \includegraphics[scale=0.26]{../report/figures/deriv_controller.png}
+%      \end{figure}
+%  
+%  \end{block}
+%\end{frame}
 
 %Controller PI
 \begin{frame}{Controller}{Different controllers}
   \begin{block}{PI Controller}
 
 	  \begin{itemize}
-	  	\item Mainly to eliminate the steady state error
-	  	\item Negative impact in the speed of the response
-	  	\item This controller should be applied when speed is not an important parameter
+	  	\item Eliminate the steady state error
+	  	\item Negative impact on the speed of the response
+	  	\item Should be applied when speed is not an important parameter
 	  \end{itemize}
 
 	  \begin{figure}
@@ -196,9 +204,10 @@
   \begin{block}{PID Controller}
 
 	  \begin{itemize}
-	  	\item Zero steady state error
+	  	\item Eliminate steady state error
 	  	\item Fast response
 	  	\item Higher stability
+	  	\item (Derivative Term) Reduction of the overshoot and oscillations
 	  \end{itemize}
 
 	  \begin{figure}
@@ -211,10 +220,55 @@
 %Tuning Method
 \begin{frame}{Controller}{Tuning Methods}
   \begin{block}{Good Gain Method}
+  
+	  \begin{itemize}
+	  	\item 1) Ti = $\infty$, Td = 0, Kp = 1
+	  \end{itemize}
+	  \begin{figure}
+       \includegraphics[scale=0.20]{../report/figures/GG1.png}
+      \end{figure}
+  
+  \end{block}
+\end{frame}
 
-%	  \begin{figure}
-%        \includegraphics[scale=0.20]{../report/figures/full_comp.png}
-%      \end{figure}
+%Tuning Method
+\begin{frame}{Controller}{Tuning Methods}
+  \begin{block}{Good Gain Method}
+  
+	  \begin{itemize}
+	  	\item 2) Increase Kp until finding a slight overshoot
+	  \end{itemize}
+	  \begin{figure}
+       \includegraphics[scale=0.26]{../report/figures/GGM1.png}
+      \end{figure}
+  
+  \end{block}
+\end{frame}
+
+%Tuning Method
+\begin{frame}{Controller}{Tuning Methods}
+  \begin{block}{Good Gain Method}
+  
+	  \begin{itemize}
+	  	\item 3) Ti = 1.5$\cdot T_{out}$
+	  \end{itemize}
+	  \begin{figure}
+       \includegraphics[scale=0.20]{../report/figures/GG3.png}
+      \end{figure}
+  
+  \end{block}
+\end{frame}
+
+%Tuning Method
+\begin{frame}{Controller}{Tuning Methods}
+  \begin{block}{Good Gain Method}
+  
+	  \begin{itemize}
+	  	\item 4) Td = $\frac{Ti}{4}$
+	  \end{itemize}
+	  \begin{figure}
+       \includegraphics[scale=0.20]{../report/figures/GG4.png}
+      \end{figure}
   
   \end{block}
 \end{frame}
@@ -223,19 +277,34 @@
 \begin{frame}{Controller}{Tuning Methods}
   \begin{block}{PID Simulink Box}
 
-%	  \begin{figure}
-%        \includegraphics[scale=0.20]{../report/figures/full_comp.png}
-%      \end{figure}
+
+	  \begin{itemize}
+	  	\item Weakness of Good Gain Method:
+	  		  \begin{itemize}
+	  	\item Time consuming
+	  	\item Uncertainties of the different steps
+	  \end{itemize}
+	  \item Advantages of PID Simulink Box
+	  \begin{itemize}
+	  	\item Automatic tuning tool
+	  	\item Include N term which avoids a "pure derivative" that reacts easily to noises
+	  \end{itemize}
+	  \end{itemize}
   
   \end{block}
 \end{frame}
 
 %Comparison
 \begin{frame}{Controller}{Comparison of step responses}
-  \begin{block}{Different controllers without noise:}
+  \begin{block}{Different controllers:}
+  
+	  \begin{itemize}
+	  	\item PI and PID - highest overshoot
+	  	\item P and P - no overshoot, shorter settling time, but still steady state error
+	  \end{itemize}
 
 	  \begin{figure}
-        \includegraphics[scale=0.20]{../report/figures/full_comp.png}
+        \includegraphics[scale=0.18]{../report/figures/full_comp.png}
       \end{figure}
   
   \end{block}
@@ -245,8 +314,13 @@
 \begin{frame}{Controller}{Comparison of step responses}
   \begin{block}{Different controllers with noise:}
 
+	  \begin{itemize}
+	  	\item P faster than PD
+	  	\item P reacts more to noise then PD
+	  \end{itemize}
+
 	  \begin{figure}
-        \includegraphics[scale=0.20]{../report/figures/PD_noise.png}
+        \includegraphics[scale=0.18]{../report/figures/PD_noise.png}
       \end{figure}
   
   \end{block}

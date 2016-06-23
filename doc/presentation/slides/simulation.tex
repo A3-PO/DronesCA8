@@ -11,7 +11,10 @@
   \end{block}
 \end{frame}
 
-\begin{frame}{Simulation}{Map Parameters}
+\begin{frame}{Simulation}{LOS Distance}
+  \begin{figure}
+    \includegraphics[scale=0.25]{../report/figures/gs_ua_map.png}
+  \end{figure}
   \begin{block}{Parameters taken into account}
 	\begin{itemize}
 	 	\item Terrain elevation
@@ -19,20 +22,20 @@
 	  	\item Altitude of UA and GS
 	\end{itemize}
   \end{block}
-  \begin{block}{Working principle}
-	  \begin{itemize}
-	  	\item Import topography map
-	  	\item Input GS and UA altitude
-	  	\item Choose GS and UA locations on map to plot LOS distance
-	  	\item Choose GS location on map to plot LOS coverage map
-	  \end{itemize}
-  \end{block}
 \end{frame}
 
 \begin{frame}{Simulation}{LOS Distance between UA and GS} 
   	\begin{figure}
         \includegraphics[scale=0.29]{../report/figures/los_2points.png}
     \end{figure}
+\end{frame}
+
+\begin{frame}{Simulation}{LOS Coverage Map}
+  \begin{block}{Plot LOS area around GS}
+	\begin{figure}
+    	\includegraphics[scale=0.33]{../report/figures/dk_map.png}
+    \end{figure}
+  \end{block}
 \end{frame}
 
 \begin{frame}{Simulation}{LOS Coverage Map} 
@@ -76,7 +79,7 @@
 % 	  	\item Compute optimal angles and error signal 
 % 	  	\item Input error signal in the controller
 % 	  	\item Limit output signal from controller using the saturation box
-% 	  	\item Input controller signal to the MAS
+% 	  	\item Input controller signal to the servomotor
 % 	  	\item Feedback the output angle in the optimal angle block
 % 	  \end{enumerate}
 %   \end{block}
@@ -85,11 +88,11 @@
 \begin{frame}{Simulation}{3D UAS}
   \begin{block}{Simulation assumptions}
 	  \begin{itemize}
-	  	\item Specific antenna parameters for GS and UA
-	  	\item Uses same MAS model for GS and UA
+	  	\item Same antenna parameters for GS and UA
+	  	\item Same MAS model for GS and UA
 	  	\item Saturation box threshold set from $-5V$ to $+5V$
 	  	\item Noise modelled as Gaussian White Noise of power $10^{-4}$
-	  	\item No power threshold in the receiver
+	  	\item Azimuth and elevation angles start at 0 degrees
 	  \end{itemize}
   \end{block}
 \end{frame}

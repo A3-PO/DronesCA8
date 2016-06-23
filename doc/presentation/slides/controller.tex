@@ -1,4 +1,5 @@
-
+\subsection{Controller}
+%
 %\begin{frame}{Controller}{}
 %
 %  \begin{block}{PID}
@@ -24,10 +25,11 @@
 	  	\item Gear
 	  	\item Sensor
 	  	\item Controller
+	  	\item Saturation
 	  \end{itemize}
 
 	  \begin{figure}
-        \includegraphics[scale=0.26]{../report/figures/complete_model.png}
+        \includegraphics[scale=0.24]{../report/figures/complete_model.png}
       \end{figure}
   
   \end{block}
@@ -39,11 +41,11 @@
   \begin{block}{Moving Angle System:}
 
 	  \begin{itemize}
-	  	\item Servomotor
+	  	\item Servomotor - model with parameters from a paper
 	  \end{itemize}
 
 	  \begin{figure}
-        \includegraphics[scale=0.26]{../report/figures/servo+gear+noise+servomotor.png}
+        \includegraphics[scale=0.24]{../report/figures/servo+gear+noise+servomotor.png}
       \end{figure}
   
   \end{block}
@@ -56,7 +58,7 @@
 	  	\item Gear
 	  \end{itemize}
 	  \begin{figure}
-        \includegraphics[scale=0.26]{../report/figures/servo+gear+noise+gear.png}
+        \includegraphics[scale=0.24]{../report/figures/servo+gear+noise+gear.png}
       \end{figure}  
   \end{block}
 \end{frame}
@@ -70,7 +72,7 @@
 	  \end{itemize}
 
 	  \begin{figure}
-        \includegraphics[scale=0.26]{../report/figures/servo+gear+noise+sensor.png}
+        \includegraphics[scale=0.24]{../report/figures/servo+gear+noise+sensor.png}
       \end{figure}
   
   \end{block}
@@ -84,8 +86,23 @@
 	  	\item Controller
 	  \end{itemize}
 	  \begin{figure}
-        \includegraphics[scale=0.26]{../report/figures/servo+gear+noise+controller.png}
+        \includegraphics[scale=0.24]{../report/figures/servo+gear+noise+controller.png}
       \end{figure}
+  \end{block}
+\end{frame}
+
+%Saturation
+\begin{frame}{Modelling}{Moving Angle System}
+  \begin{block}{Moving Angle System:}
+
+	  \begin{itemize}
+	  	\item Saturation - threshold set from -5V to 5V
+	  \end{itemize}
+
+	  \begin{figure}
+        \includegraphics[scale=0.24]{../report/figures/servo+gear+noise+saturation.png}
+      \end{figure}
+  
   \end{block}
 \end{frame}
 
@@ -212,7 +229,7 @@
 	  \item Advantages:
 	  \begin{itemize}
 	  	\item Automatic Tuning Tool
-	  	\item Easier to design multiple controllers
+	  	\item Design multiple controllers
 	  	\item Adjust different parameters  	
 	  \end{itemize}
 	  \end{itemize}

@@ -1,22 +1,25 @@
 
-\begin{frame}{Simulation}{LOS Coverage Map}
-  \begin{block}{Parameters taken into account for map simulation:}
-
-	  \begin{itemize}
-	  	\item Terrain elevation
-	  	\item Curvature of the Earth
-	  	\item Altitude of UA and GS
-	  \end{itemize}
-
-	  \begin{figure}
-        \includegraphics[scale=0.26]{../report/figures/dk_map.png}
-      \end{figure}
-  
+\begin{frame}{Simulation}{Map}
+  \begin{block}{Topographic map used in the simulation}
+  	\begin{itemize}
+	 	\item LOS Distance
+	  	\item Coverage Map
+	\end{itemize}
+	\begin{figure}
+    	\includegraphics[scale=0.28]{../report/figures/dk_map.png}
+    \end{figure}
   \end{block}
 \end{frame}
 
-\begin{frame}{Simulation}{LOS Coverage Map}
-  \begin{block}{Working Principle}
+\begin{frame}{Simulation}{Map Parameters}
+  \begin{block}{Parameters taken into account}
+	\begin{itemize}
+	 	\item Terrain elevation
+	  	\item Curvature of the Earth
+	  	\item Altitude of UA and GS
+	\end{itemize}
+  \end{block}
+  \begin{block}{Working principle}
 	  \begin{itemize}
 	  	\item Import topography map
 	  	\item Input GS and UA altitude
@@ -26,7 +29,7 @@
   \end{block}
 \end{frame}
 
-\begin{frame}{Simulation}{LOS between UA and GS} 
+\begin{frame}{Simulation}{LOS Distance between UA and GS} 
   	\begin{figure}
         \includegraphics[scale=0.29]{../report/figures/los_2points.png}
     \end{figure}
@@ -41,7 +44,7 @@
 \begin{frame}{Simulation}{2D UAS}
 	\begin{block}{2D UAS Block Diagram}
 		\begin{itemize}
-		  	\item Cartesian system (Simplistic)
+		  	\item Cartesian system
 		  	\item 1 DoF - azimuth angle ($\theta$)
 		  	\item Compute optimal azimuth angle for UA and GS 
 		\end{itemize}
@@ -55,8 +58,7 @@
 \begin{frame}{Simulation}{3D UAS}
   \begin{block}{3D UAS Block Diagram}
 	\begin{itemize}
-	  	\item Realistic Earth Model - WGS84
-	  	\item Curvature of the Earth
+	  	\item Realistic Earth model - WGS84
 	  	\item Relief of Earth's surface 
 	  	\item Real GPS position: latitude, longitude and altitude
 	\end{itemize}
@@ -67,25 +69,24 @@
   \end{block}
 \end{frame}
 
-\begin{frame}{Simulation}{3D UAS}
-  \begin{block}{Simulation steps}
-	  \begin{enumerate}
-	  	\item Aquire GPS position of GS and UA 
-	  	\item Compute optimal angles and error signal 
-	  	\item Input error signal in the controller
-	  	\item Limit output signal from controller using the saturation box
-	  	\item Input controller signal to the MAS
-	  	\item Feedback the output angle in the optimal angle block
-	  \end{enumerate}
-  \end{block}
-\end{frame}
+% \begin{frame}{Simulation}{3D UAS}
+%   \begin{block}{Simulation steps}
+% 	  \begin{enumerate}
+% 	  	\item Aquire GPS position of GS and UA 
+% 	  	\item Compute optimal angles and error signal 
+% 	  	\item Input error signal in the controller
+% 	  	\item Limit output signal from controller using the saturation box
+% 	  	\item Input controller signal to the MAS
+% 	  	\item Feedback the output angle in the optimal angle block
+% 	  \end{enumerate}
+%   \end{block}
+% \end{frame}
 
 \begin{frame}{Simulation}{3D UAS}
   \begin{block}{Simulation assumptions}
 	  \begin{itemize}
-	  	\item Antenna parameters for GS and UA
-	  	\item Using same MAS model for GS and UA
-	  	\item Controller will be defined in each simulation
+	  	\item Specific antenna parameters for GS and UA
+	  	\item Uses same MAS model for GS and UA
 	  	\item Saturation box threshold set from $-5V$ to $+5V$
 	  	\item Noise modelled as Gaussian White Noise of power $10^{-4}$
 	  	\item No power threshold in the receiver

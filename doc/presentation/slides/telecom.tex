@@ -5,7 +5,7 @@
     \begin{column}{.5\textwidth}
       \begin{block}{}
         \begin{itemize}
-          \item {At high frequencies (above 30MHz) the ability to see the antenna roughly corresponds to the ability of receive the radio signal.}
+          \item {At high frequencies the ability to see the antenna roughly corresponds to the ability to receive the radio signal.}
           \item {Radio Horizon: Furthest possible point of propagation.}
           \item {OBS: Altitude with respect to the WGS84 datum.}
         \end{itemize}
@@ -28,15 +28,15 @@
 \begin{frame}{Telecommunication}{Link Budget}
       \begin{block}{}
         \begin{itemize}
-          \item {Accounting of all the gains and losses from the transmitter, through the medium, to the receiver in a telecommunication system.}
-          \item {Decisive tool to desing a system and meet the requirements.}
+          \item {Accounting of all the gains and losses from the transmitter, through the medium, to the receiver.}
+          \item {Decisive tool to meet the requirements of a design.}
         \end{itemize}
       \end{block}
     \begin{align*}      
         P_{RX} = P_{TX} + G_{TX} - L_{TX} - L_{FS} - L_{M} + G_{RX} - L_{RX}
     \end{align*}
      \begin{itemize}
-     \item{\textbf{Free Space Loss}: Loss in signal strength due to traveling in free space, under circustances without obstacles that might cause the signal to be reflected, refracted or additionally attenuated.}
+     \item{\textbf{Free Space Loss}: Under circumstances without obstacles that might cause the signal to be reflected, refracted or additionally attenuated.}
       \end{itemize}
 
 \end{frame}
@@ -45,9 +45,9 @@
    \begin{block}{}
         \begin{itemize}
           \item {\textbf{Effect of multipath propagation:} Calculate reflections and diffraction in the radio link.}
-          \item {Importance of the Fresnel Zone 1: Calculated so that the phase shift of the reflected signal arrives the receiver with 360 degrees phase shift, not affecting the performance.}
-          \item {Hard to get 100\% clearance. Rule of thumb: 60\% clearance in Zone 1.}
-          \item {The size of the ellipse is determined by the frequency of operation and the distance between the two sites.}
+          \item {Zone 1: Calculated so that the phase shift of the reflected signal arrives the receiver with 360 degrees phase shift, not affecting the performance.}
+          \item {Rule of thumb: 60\% clearance.}
+          \item {Size of the ellipse determined by the frequency and the distance between the two ends.}
         \end{itemize}
       \end{block}
       \begin{figure}

@@ -30,12 +30,12 @@
     \begin{column}{.5\textwidth}
       \begin{block}{}
         \begin{itemize}
-          \item {This calculation will be performed individually on each of the devices.}
+          \item {Performed individually on each device.}
           \item {Steps:}
           \begin{itemize}
           \item{Read GS and Drone GPS positions.}
           \item{Transform the other's device position with respect to their own NED frame.}
-          \item{Perform the following calculations:}
+          \item{Calculate the angles:}
           \end{itemize}
         \end{itemize}
       \end{block}
@@ -48,7 +48,7 @@
     \end{column}
   \end{columns}
       \begin{align*}      
-        \theta_{GSopt} = \text{atan2}\left(x_{d}, y_{d}\right) \nonumber \\
-        \phi_{GSopt}=  \text{atan2}\left(-z_{d}, \sqrt{|x_{d}|^{2}+|y_{d}|^{2}}\right)
+        \theta_{GSopt} = \arctan\left(\frac{x_{d}}{y_{d}}\right) \nonumber \\
+        \phi_{GSopt}=  \arctan\left(\frac{-z_{d}}{\sqrt{|x_{d}|^{2}+|y_{d}|^{2}}}\right)
       \end{align*}
 \end{frame}

@@ -137,7 +137,7 @@ for t=1:length(lat_drone)
     alt_drone(t) = H_ua + ltln2val(Z, R, lat_drone(t), long_drone(t));
     geoDrone = [lat_drone(t), long_drone(t),alt_drone(t)];
     nedEnd = ecef2ned(ecefEnd,geoDrone);
-    yawAngle(t) = -rad2deg(atan2(nedEnd(1),nedEnd(2)));
+    yawAngle(t) = -(rad2deg(atan2(nedEnd(1),nedEnd(2)))-90);
 end
 
 % Drone deviation

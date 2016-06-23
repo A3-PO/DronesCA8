@@ -1,18 +1,18 @@
 Model {
-  Name			  "controller_FINAL"
+  Name			  "controller_FINAL_2015"
   Version		  8.5
   MdlSubVersion		  0
-  SavedCharacterEncoding  "UTF-8"
+  SavedCharacterEncoding  "windows-1252"
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.6"
+    ComputedModelVersion    "1.14"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
   ScopeRefreshTime	  0.035000
-  OverrideScopeRefreshTime on
+  OverrideScopeRefreshTime off
   DisableAllScopes	  off
   DataTypeOverride	  "UseLocalSettings"
   DataTypeOverrideAppliesTo "AllNumericTypes"
@@ -29,7 +29,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 0.0, 1280.0, 1024.0]
+      Location		      [-8.0, 0.0, 1377.0, 744.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -53,9 +53,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1246.0, 850.0]
-	ZoomFactor		[0.803960396039604]
-	Offset			[257.58620689655174, 93.988088823891758]
+	Extents			[1327.0, 569.0]
+	ZoomFactor		[0.8]
+	Offset			[369.95000000000016, 142.25434498152708]
       }
     }
   }
@@ -63,11 +63,11 @@ Model {
   Creator		  "alvaro"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "alvaro"
+  LastModifiedBy	  "Orlando"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jun 23 14:32:28 2016"
-  RTWModifiedTimeStamp	  388593148
-  ModelVersionFormat	  "1.%<AutoIncrement:6>"
+  LastModifiedDate	  "Thu Jun 23 16:06:41 2016"
+  RTWModifiedTimeStamp	  388598581
+  ModelVersionFormat	  "1.%<AutoIncrement:14>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -332,6 +332,7 @@ Model {
 	  IgnoredZcDiagnostic	  "warning"
 	  SolverPrmCheckMsg	  "none"
 	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
 	  MultiTaskDSMMsg	  "error"
 	  MultiTaskCondExecSysMsg "error"
 	  MultiTaskRateTransMsg	  "error"
@@ -449,6 +450,7 @@ Model {
 	Simulink.SFSimCC {
 	  $ObjectID		  14
 	  Version		  "1.15.0"
+	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
 	  SimCtrlC		  on
 	  SimIntegrity		  on
@@ -485,6 +487,7 @@ Model {
 	  MakeCommand		  "make_rtw"
 	  GenerateMakefile	  on
 	  PackageGeneratedCodeAndArtifacts off
+	  PackageName		  ""
 	  TemplateMakefile	  "grt_default_tmf"
 	  PostCodeGenCommand	  ""
 	  Description		  ""
@@ -498,6 +501,13 @@ Model {
 	  TLCAssert		  off
 	  RTWUseLocalCustomCode	  off
 	  RTWUseSimCustomCode	  off
+	  CustomSourceCode	  ""
+	  CustomHeaderCode	  ""
+	  CustomInclude		  ""
+	  CustomSource		  ""
+	  CustomLibrary		  ""
+	  CustomInitializer	  ""
+	  CustomTerminator	  ""
 	  Toolchain		  "Automatically locate an installed toolchain"
 	  BuildConfiguration	  "Faster Builds"
 	  IncludeHyperlinkInReport off
@@ -684,7 +694,7 @@ Model {
 	  }
 	}
 	hdlcoderui.hdlcc {
-	  $ObjectID		  19
+	  $ObjectID		  18
 	  Version		  "1.15.0"
 	  Description		  "HDL Coder custom configuration component"
 	  Name			  "HDL Coder"
@@ -700,7 +710,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition    [ 420, 220, 1500, 860 ]  
+      ConfigPrmDlgPosition     [ 420, 220, 1500, 860 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -710,7 +720,7 @@ Model {
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    20
+    $ObjectID		    19
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -844,6 +854,8 @@ Model {
       FunctionName	      "system"
       SFunctionModules	      "''"
       PortCounts	      "[]"
+      SFunctionDeploymentMode off
+      EnableBusSupport	      off
     }
     Block {
       BlockType		      Saturate
@@ -862,7 +874,23 @@ Model {
     }
     Block {
       BlockType		      Scope
-      Floating		      off
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      ShowLegends	      off
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      DataFormat	      "Array"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+      ScrollMode	      off
     }
     Block {
       BlockType		      SubSystem
@@ -891,6 +919,7 @@ Model {
       Opaque		      off
       MaskHideContents	      off
       SFBlockType	      "NONE"
+      Variant		      off
       GeneratePreprocessorConditionals off
       ContentPreviewEnabled   off
       IsWebBlock	      off
@@ -935,9 +964,9 @@ Model {
     }
   }
   System {
-    Name		    "controller_FINAL"
-    Location		    [0, 0, 1280, 1024]
-    Open		    off
+    Name		    "controller_FINAL_2015"
+    Location		    [-8, 0, 1369, 744]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -950,7 +979,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "80"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "101"
+    SIDHighWatermark	    "129"
     Block {
       BlockType		      Reference
       Name		      "Band-Limited\nWhite Noise"
@@ -960,7 +989,7 @@ Model {
       ZOrder		      275
       BlockMirror	      on
       NamePlacement	      "alternate"
-      LibraryVersion	      "1.358"
+      LibraryVersion	      "1.356"
       SourceBlock	      "simulink/Sources/Band-Limited\nWhite Noise"
       SourceType	      "Band-Limited White Noise."
       ContentPreviewEnabled   off
@@ -1070,7 +1099,7 @@ Model {
       Ports		      [1, 1]
       Position		      [785, 1057, 825, 1093]
       ZOrder		      300
-      LibraryVersion	      "1.358"
+      LibraryVersion	      "1.356"
       SourceBlock	      "simulink/Continuous/PID Controller"
       SourceType	      "PID 1dof"
       ContentPreviewEnabled   off
@@ -1194,7 +1223,7 @@ Model {
       Ports		      [1, 1]
       Position		      [970, 1057, 1010, 1093]
       ZOrder		      298
-      LibraryVersion	      "1.358"
+      LibraryVersion	      "1.356"
       SourceBlock	      "simulink/Continuous/PID Controller"
       SourceType	      "PID 1dof"
       ContentPreviewEnabled   off
@@ -1314,11 +1343,11 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "P-D1"
-      SID		      "98"
+      SID		      "126"
       Ports		      [1, 1]
-      Position		      [1315, 287, 1355, 323]
-      ZOrder		      301
-      LibraryVersion	      "1.358"
+      Position		      [1255, 542, 1295, 578]
+      ZOrder		      329
+      LibraryVersion	      "1.356"
       SourceBlock	      "simulink/Continuous/PID Controller"
       SourceType	      "PID 1dof"
       ContentPreviewEnabled   off
@@ -1438,11 +1467,11 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "P-D2"
-      SID		      "99"
+      SID		      "127"
       Ports		      [1, 1]
-      Position		      [1315, 342, 1355, 378]
-      ZOrder		      302
-      LibraryVersion	      "1.358"
+      Position		      [1330, 342, 1370, 378]
+      ZOrder		      330
+      LibraryVersion	      "1.356"
       SourceBlock	      "simulink/Continuous/PID Controller"
       SourceType	      "PID 1dof"
       ContentPreviewEnabled   off
@@ -1562,11 +1591,11 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "P-D3"
-      SID		      "100"
+      SID		      "128"
       Ports		      [1, 1]
-      Position		      [1255, 542, 1295, 578]
-      ZOrder		      303
-      LibraryVersion	      "1.358"
+      Position		      [1330, 287, 1370, 323]
+      ZOrder		      331
+      LibraryVersion	      "1.356"
       SourceBlock	      "simulink/Continuous/PID Controller"
       SourceType	      "PID 1dof"
       ContentPreviewEnabled   off
@@ -1686,11 +1715,11 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "P-D4"
-      SID		      "101"
+      SID		      "129"
       Ports		      [1, 1]
       Position		      [1255, 597, 1295, 633]
-      ZOrder		      304
-      LibraryVersion	      "1.358"
+      ZOrder		      332
+      LibraryVersion	      "1.356"
       SourceBlock	      "simulink/Continuous/PID Controller"
       SourceType	      "PID 1dof"
       ContentPreviewEnabled   off
@@ -1814,7 +1843,7 @@ Model {
       Ports		      [1, 1]
       Position		      [880, 1057, 920, 1093]
       ZOrder		      297
-      LibraryVersion	      "1.358"
+      LibraryVersion	      "1.356"
       SourceBlock	      "simulink/Continuous/PID Controller"
       SourceType	      "PID 1dof"
       ContentPreviewEnabled   off
@@ -1938,7 +1967,7 @@ Model {
       Ports		      [1, 1]
       Position		      [1065, 1057, 1105, 1093]
       ZOrder		      299
-      LibraryVersion	      "1.358"
+      LibraryVersion	      "1.356"
       SourceBlock	      "simulink/Continuous/PID Controller"
       SourceType	      "PID 1dof"
       ContentPreviewEnabled   off
@@ -2354,22 +2383,10 @@ Model {
       Ports		      [1]
       Position		      [1215, 744, 1245, 776]
       ZOrder		      248
+      Floating		      off
+      Location		      [680, 330, 1240, 750]
       Open		      off
-      TimeRange		      auto
-      TickLabels	      OneTimeTick
-      ShowLegends	      off
-      LimitDataPoints	      on
-      MaxDataPoints	      5000
-      SaveToWorkspace	      off
-      SaveName		      ScopeData1
-      YMin		      -10
-      YMax		      10
-      SampleInput	      off
-      SampleTime	      -1
-      ZoomMode		      on
-      Grid		      on
-      DataFormat	      Array
-      Decimation	      1
+      NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -2384,7 +2401,9 @@ Model {
 	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
 	MarkerStyles		"none|none|none|none|none|none"
       }
-      Location		      [680 330 1240 750]
+      YMin		      "-10"
+      YMax		      "10"
+      SaveName		      "ScopeData1"
     }
     Block {
       BlockType		      Scope
@@ -2393,22 +2412,10 @@ Model {
       Ports		      [1]
       Position		      [965, 159, 995, 191]
       ZOrder		      249
+      Floating		      off
+      Location		      [680, 330, 1240, 750]
       Open		      off
-      TimeRange		      auto
-      TickLabels	      OneTimeTick
-      ShowLegends	      off
-      LimitDataPoints	      on
-      MaxDataPoints	      5000
-      SaveToWorkspace	      off
-      SaveName		      ScopeData2
-      YMin		      -10
-      YMax		      10
-      SampleInput	      off
-      SampleTime	      -1
-      ZoomMode		      on
-      Grid		      on
-      DataFormat	      Array
-      Decimation	      1
+      NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -2423,7 +2430,9 @@ Model {
 	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
 	MarkerStyles		"none|none|none|none|none|none"
       }
-      Location		      [680 330 1240 750]
+      YMin		      "-10"
+      YMax		      "10"
+      SaveName		      "ScopeData2"
     }
     Block {
       BlockType		      Scope
@@ -2432,22 +2441,10 @@ Model {
       Ports		      [1]
       Position		      [1115, 744, 1145, 776]
       ZOrder		      266
+      Floating		      off
+      Location		      [680, 330, 1240, 750]
       Open		      off
-      TimeRange		      auto
-      TickLabels	      OneTimeTick
-      ShowLegends	      off
-      LimitDataPoints	      on
-      MaxDataPoints	      5000
-      SaveToWorkspace	      off
-      SaveName		      ScopeData3
-      YMin		      -10
-      YMax		      10
-      SampleInput	      off
-      SampleTime	      -1
-      ZoomMode		      on
-      Grid		      on
-      DataFormat	      Array
-      Decimation	      1
+      NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -2462,7 +2459,9 @@ Model {
 	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
 	MarkerStyles		"none|none|none|none|none|none"
       }
-      Location		      [680 330 1240 750]
+      YMin		      "-10"
+      YMax		      "10"
+      SaveName		      "ScopeData3"
     }
     Block {
       BlockType		      Scope
@@ -2471,22 +2470,10 @@ Model {
       Ports		      [1]
       Position		      [1070, 159, 1100, 191]
       ZOrder		      268
+      Floating		      off
+      Location		      [680, 330, 1240, 750]
       Open		      off
-      TimeRange		      auto
-      TickLabels	      OneTimeTick
-      ShowLegends	      off
-      LimitDataPoints	      on
-      MaxDataPoints	      5000
-      SaveToWorkspace	      off
-      SaveName		      ScopeData4
-      YMin		      -10
-      YMax		      10
-      SampleInput	      off
-      SampleTime	      -1
-      ZoomMode		      on
-      Grid		      on
-      DataFormat	      Array
-      Decimation	      1
+      NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -2501,7 +2488,9 @@ Model {
 	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
 	MarkerStyles		"none|none|none|none|none|none"
       }
-      Location		      [680 330 1240 750]
+      YMin		      "-10"
+      YMax		      "10"
+      SaveName		      "ScopeData4"
     }
     Block {
       BlockType		      SubSystem
@@ -2512,11 +2501,10 @@ Model {
       ZOrder		      287
       LibraryVersion	      "1.32"
       ErrorFcn		      "Stateflow.Translate.translate"
-      PermitHierarchicalResolution "ParametersOnly"
+      PermitHierarchicalResolution "ExplicitOnly"
       TreatAsAtomicUnit	      on
       RequestExecContextInheritance off
       SFBlockType	      "MATLAB Function"
-      Variant		      off
       System {
 	Name			"optAnglesD"
 	Location		[223, 338, 826, 833]
@@ -2644,13 +2632,12 @@ Model {
 	  BlockType		  S-Function
 	  Name			  " SFunction "
 	  SID			  "43::16"
-	  Tag			  "Stateflow S-Function controller_FINAL 2"
+	  Tag			  "Stateflow S-Function controller_FINAL_2015 2"
 	  Ports			  [11, 5]
 	  Position		  [180, 110, 230, 350]
 	  ZOrder		  7
 	  FunctionName		  "sf_sfun"
 	  PortCounts		  "[11 5]"
-	  SFunctionDeploymentMode off
 	  EnableBusSupport	  on
 	  Port {
 	    PortNumber		    2
@@ -2857,11 +2844,10 @@ Model {
       ZOrder		      274
       LibraryVersion	      "1.32"
       ErrorFcn		      "Stateflow.Translate.translate"
-      PermitHierarchicalResolution "ParametersOnly"
+      PermitHierarchicalResolution "ExplicitOnly"
       TreatAsAtomicUnit	      on
       RequestExecContextInheritance off
       SFBlockType	      "MATLAB Function"
-      Variant		      off
       System {
 	Name			"optAnglesGS\n"
 	Location		[223, 338, 826, 833]
@@ -2962,13 +2948,12 @@ Model {
 	  BlockType		  S-Function
 	  Name			  " SFunction "
 	  SID			  "44::16"
-	  Tag			  "Stateflow S-Function controller_FINAL 1"
+	  Tag			  "Stateflow S-Function controller_FINAL_2015 1"
 	  Ports			  [8, 6]
 	  Position		  [180, 110, 230, 290]
 	  ZOrder		  7
 	  FunctionName		  "sf_sfun"
 	  PortCounts		  "[8 6]"
-	  SFunctionDeploymentMode off
 	  EnableBusSupport	  on
 	  Port {
 	    PortNumber		    2
@@ -3176,22 +3161,10 @@ Model {
       Ports		      [1]
       Position		      [910, 744, 940, 776]
       ZOrder		      263
+      Floating		      off
+      Location		      [680, 330, 1240, 750]
       Open		      off
-      TimeRange		      auto
-      TickLabels	      OneTimeTick
-      ShowLegends	      off
-      LimitDataPoints	      on
-      MaxDataPoints	      5000
-      SaveToWorkspace	      off
-      SaveName		      ScopeData5
-      YMin		      -10
-      YMax		      10
-      SampleInput	      off
-      SampleTime	      -1
-      ZoomMode		      on
-      Grid		      on
-      DataFormat	      Array
-      Decimation	      1
+      NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -3206,7 +3179,9 @@ Model {
 	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
 	MarkerStyles		"none|none|none|none|none|none"
       }
-      Location		      [680 330 1240 750]
+      YMin		      "-10"
+      YMax		      "10"
+      SaveName		      "ScopeData5"
     }
     Block {
       BlockType		      Scope
@@ -3215,22 +3190,10 @@ Model {
       Ports		      [1]
       Position		      [1270, 159, 1300, 191]
       ZOrder		      261
+      Floating		      off
+      Location		      [680, 330, 1240, 750]
       Open		      off
-      TimeRange		      auto
-      TickLabels	      OneTimeTick
-      ShowLegends	      off
-      LimitDataPoints	      on
-      MaxDataPoints	      5000
-      SaveToWorkspace	      off
-      SaveName		      ScopeData6
-      YMin		      -10
-      YMax		      10
-      SampleInput	      off
-      SampleTime	      -1
-      ZoomMode		      on
-      Grid		      on
-      DataFormat	      Array
-      Decimation	      1
+      NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -3245,7 +3208,9 @@ Model {
 	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
 	MarkerStyles		"none|none|none|none|none|none"
       }
-      Location		      [680 330 1240 750]
+      YMin		      "-10"
+      YMax		      "10"
+      SaveName		      "ScopeData6"
     }
     Block {
       BlockType		      Scope
@@ -3254,22 +3219,10 @@ Model {
       Ports		      [1]
       Position		      [1015, 744, 1045, 776]
       ZOrder		      253
+      Floating		      off
+      Location		      [680, 330, 1240, 750]
       Open		      off
-      TimeRange		      auto
-      TickLabels	      OneTimeTick
-      ShowLegends	      off
-      LimitDataPoints	      on
-      MaxDataPoints	      5000
-      SaveToWorkspace	      off
-      SaveName		      ScopeData7
-      YMin		      -10
-      YMax		      10
-      SampleInput	      off
-      SampleTime	      -1
-      ZoomMode		      on
-      Grid		      on
-      DataFormat	      Array
-      Decimation	      1
+      NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -3284,7 +3237,9 @@ Model {
 	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
 	MarkerStyles		"none|none|none|none|none|none"
       }
-      Location		      [680 330 1240 750]
+      YMin		      "-10"
+      YMax		      "10"
+      SaveName		      "ScopeData7"
     }
     Block {
       BlockType		      Scope
@@ -3293,22 +3248,10 @@ Model {
       Ports		      [1]
       Position		      [1170, 159, 1200, 191]
       ZOrder		      245
+      Floating		      off
+      Location		      [680, 330, 1240, 750]
       Open		      off
-      TimeRange		      auto
-      TickLabels	      OneTimeTick
-      ShowLegends	      off
-      LimitDataPoints	      on
-      MaxDataPoints	      5000
-      SaveToWorkspace	      off
-      SaveName		      ScopeData
-      YMin		      -10
-      YMax		      10
-      SampleInput	      off
-      SampleTime	      -1
-      ZoomMode		      on
-      Grid		      on
-      DataFormat	      Array
-      Decimation	      1
+      NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -3323,7 +3266,8 @@ Model {
 	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
 	MarkerStyles		"none|none|none|none|none|none"
       }
-      Location		      [680 330 1240 750]
+      YMin		      "-10"
+      YMax		      "10"
     }
     Block {
       BlockType		      SubSystem
@@ -3334,7 +3278,6 @@ Model {
       ZOrder		      255
       NamePlacement	      "alternate"
       RequestExecContextInheritance off
-      Variant		      off
       System {
 	Name			"servo_drone_phi"
 	Location		[0, 0, 1280, 1024]
@@ -3518,7 +3461,6 @@ Model {
       ZOrder		      241
       NamePlacement	      "alternate"
       RequestExecContextInheritance off
-      Variant		      off
       System {
 	Name			"servo_drone_theta"
 	Location		[0, 0, 1280, 1024]
@@ -3701,7 +3643,6 @@ Model {
       Position		      [1480, 592, 1550, 638]
       ZOrder		      257
       RequestExecContextInheritance off
-      Variant		      off
       System {
 	Name			"servo_groundstation_phi"
 	Location		[0, 0, 1280, 1024]
@@ -3884,7 +3825,6 @@ Model {
       Position		      [1485, 339, 1555, 381]
       ZOrder		      240
       RequestExecContextInheritance off
-      Variant		      off
       System {
 	Name			"servo_groundstation_theta"
 	Location		[0, 0, 1280, 1024]
@@ -4060,14 +4000,14 @@ Model {
       }
     }
     Line {
-      ZOrder		      183
-      SrcBlock		      "P-D1"
+      ZOrder		      395
+      SrcBlock		      "P-D3"
       SrcPort		      1
       DstBlock		      "Saturation1"
       DstPort		      1
     }
     Line {
-      ZOrder		      185
+      ZOrder		      398
       SrcBlock		      "P-D2"
       SrcPort		      1
       DstBlock		      "Saturation2"
@@ -4105,8 +4045,8 @@ Model {
       }
     }
     Line {
-      ZOrder		      186
-      SrcBlock		      "P-D3"
+      ZOrder		      392
+      SrcBlock		      "P-D1"
       SrcPort		      1
       DstBlock		      "Saturation3"
       DstPort		      1
@@ -4119,7 +4059,7 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      188
+      ZOrder		      394
       SrcBlock		      "P-D4"
       SrcPort		      1
       DstBlock		      "Saturation4"
@@ -4358,8 +4298,8 @@ Model {
       SrcPort		      1
       Points		      [135, 0]
       Branch {
-	ZOrder			182
-	DstBlock		"P-D1"
+	ZOrder			396
+	DstBlock		"P-D3"
 	DstPort			1
       }
       Branch {
@@ -4384,7 +4324,7 @@ Model {
       SrcPort		      2
       Points		      [0, 10; 238, 0]
       Branch {
-	ZOrder			184
+	ZOrder			397
 	DstBlock		"P-D2"
 	DstPort			1
       }
@@ -4444,8 +4384,8 @@ Model {
       SrcPort		      1
       Points		      [0, -5; 390, 0]
       Branch {
-	ZOrder			187
-	DstBlock		"P-D3"
+	ZOrder			391
+	DstBlock		"P-D1"
 	DstPort			1
       }
       Branch {
@@ -4469,7 +4409,7 @@ Model {
       SrcPort		      2
       Points		      [0, -5; 291, 0]
       Branch {
-	ZOrder			189
+	ZOrder			393
 	DstBlock		"P-D4"
 	DstPort			1
       }
@@ -4558,17 +4498,17 @@ Model {
 }
 #Finite State Machines
 #
-#   Stateflow 80000006
+#   Stateflow 80000005
 #
 #
 Stateflow {
   machine {
     id			    1
-    name		    "controller_FINAL"
+    name		    "controller_FINAL_2015"
     created		    "23-May-2016 16:48:35"
     isLibrary		    0
     firstTarget		    40
-    sfVersion		    80000006
+    sfVersion		    80000005
   }
   chart {
     id			    2

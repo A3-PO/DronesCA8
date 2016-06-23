@@ -65,7 +65,7 @@ Z = double(ZA);
 R = RA;
 
 %   LOADING SCRIPT
-scenario = 2;
+scenario = 1;
 if scenario == 1
     fprintf('\nYou chose: 1.Curvature\n');
     load('Scenario1.mat');

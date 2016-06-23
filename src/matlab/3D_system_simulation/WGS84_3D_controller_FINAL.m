@@ -65,7 +65,7 @@ Z = double(ZA);
 R = RA;
 
 %   LOADING SCRIPT
-scenario = 2;
+scenario = 4;
 if scenario == 1
     fprintf('\nYou chose: 1.Angle range\n');
     load('Scenario2.mat');
@@ -165,7 +165,7 @@ drawArrow = @(x,y,z) quiver3(x(1),y(1),z(1),x(2)-x(1),y(2)-y(1),...
 %% RUNNING Simulation of the model with the controller (dronesmodel.mdl)
 time = 0:1/fsampling:(length(lat_drone)-1)/fsampling;    % Time
 
-[T,X,Y] = sim('controller_FINAL',time);
+[T,X,Y] = sim('controller_FINAL_2015',time);
 
 %% Simulation data of angles
 t = theta_d_vec.Time;                       % sample time
@@ -206,41 +206,41 @@ subplot(2,1,2);
     grid on;
     grid minor;
 movegui(f2,'northwest');
-% print('../../../doc/report/figures/Drone_angles.eps','-depsc');
+print('../../../doc/Drone_angles.png','-dpng');
 
-f3 = figure(3);
-subplot(2,1,1);
-    plot(t,rad2deg(theta_gs_vec),'LineWidth',2);
-    hold on;
-    plot(t,rad2deg(opt_theta_gs),'r');
-    xlabel('Sample');
-    ylabel('Angle [deg]');
-    legend('\theta_{GS}','\theta_{OPTIMAL}');
-    title('Azimuth Angle: GS vs OPTIMAL');
-    grid on;
-    grid minor;
-subplot(2,1,2);
-    plot(t,rad2deg(phi_gs_vec),'LineWidth',2);
-    hold on;
-    plot(t,rad2deg(opt_phi_gs),'r');
-    xlabel('Sample');
-    ylabel('Angle [deg]');
-    legend('\phi_{GS}','\phi_{OPTIMAL}');
-    title('Elevation Angle: GS vs OPTIMAL');
-    grid on;
-    grid minor;
-movegui(f3,'southwest');
+% f3 = figure(3);
+% subplot(2,1,1);
+%     plot(t,rad2deg(theta_gs_vec),'LineWidth',2);
+%     hold on;
+%     plot(t,rad2deg(opt_theta_gs),'r');
+%     xlabel('Sample');
+%     ylabel('Angle [deg]');
+%     legend('\theta_{GS}','\theta_{OPTIMAL}');
+%     title('Azimuth Angle: GS vs OPTIMAL');
+%     grid on;
+%     grid minor;
+% subplot(2,1,2);
+%     plot(t,rad2deg(phi_gs_vec),'LineWidth',2);
+%     hold on;
+%     plot(t,rad2deg(opt_phi_gs),'r');
+%     xlabel('Sample');
+%     ylabel('Angle [deg]');
+%     legend('\phi_{GS}','\phi_{OPTIMAL}');
+%     title('Elevation Angle: GS vs OPTIMAL');
+%     grid on;
+%     grid minor;
+% movegui(f3,'southwest');
 % print('../../../doc/report/figures/GS_angles.eps','-depsc');
 
 % 3D
-f4 = figure(4);
-    xlabel('Sample');
-    ylabel('Distance [km]');
-    title('LOS and Distance between GS and UA ');
-    grid on;
-    grid minor;
-    hold on;
-movegui(f4,'northeast');
+% f4 = figure(4);
+%     xlabel('Sample');
+%     ylabel('Distance [km]');
+%     title('LOS and Distance between GS and UA ');
+%     grid on;
+%     grid minor;
+%     hold on;
+% movegui(f4,'northeast');
 for i = 1:length(lat_drone)
        
     % GAINS
@@ -265,32 +265,32 @@ for i = 1:length(lat_drone)
         Prx(i) = -200;
     end
     
-    plot(t(i),los_d_vec(i)/1000,tmp);
+%     plot(t(i),los_d_vec(i)/1000,tmp);
 end
 
 % Define arrow
-f5 = figure(5);
-arrow = arrow3D([-1,0,0] ,[2,0,0]);
-view(45, 25); 
-axis ([-1.5 1.5 -1.5 1.5 -1.5 1.5]);
-grid on;
-grid minor;
-set(gca,'TickLength',[ 0 0 ]);
-set(gca,'XTickLabel',[],'YTickLabel',[],'ZTickLabel',[]);
-xlabel('East Axis'); ylabel('North Axis'); zlabel('Down Axis');
-title('Drone Body Rotation - Local NED Frame');
-set(gca,'xticklabel',[]);
-movegui(f5,'southeast');
-for i = 2:length(yawAngle)
-    yawDif = yawAngle(i)-yawAngle(i-1);
-    pitchDif = pitchAngle(i)-pitchAngle(i-1);
-    rollDif = rollAngle(i)-rollAngle(i-1);
-    
-    rotate(arrow,yaw,yawDif);
-    rotate(arrow,pitch,pitchDif);
-    rotate(arrow,roll,rollDif);
-    drawnow
-end
+% f5 = figure(5);
+% arrow = arrow3D([-1,0,0] ,[2,0,0]);
+% view(45, 25); 
+% axis ([-1.5 1.5 -1.5 1.5 -1.5 1.5]);
+% grid on;
+% grid minor;
+% set(gca,'TickLength',[ 0 0 ]);
+% set(gca,'XTickLabel',[],'YTickLabel',[],'ZTickLabel',[]);
+% xlabel('East Axis'); ylabel('North Axis'); zlabel('Down Axis');
+% title('Drone Body Rotation - Local NED Frame');
+% set(gca,'xticklabel',[]);
+% movegui(f5,'southeast');
+% for i = 2:length(yawAngle)
+%     yawDif = yawAngle(i)-yawAngle(i-1);
+%     pitchDif = pitchAngle(i)-pitchAngle(i-1);
+%     rollDif = rollAngle(i)-rollAngle(i-1);
+%     
+%     rotate(arrow,yaw,yawDif);
+%     rotate(arrow,pitch,pitchDif);
+%     rotate(arrow,roll,rollDif);
+%     drawnow
+% end
 
 % Plotting Power in the receiver
 f6 = figure(6);
@@ -305,3 +305,4 @@ f6 = figure(6);
     ylabel('Relative Amplitude [dBm]');
     axis([1 length(lat_drone) -120 0]);
 movegui(f6,'south');
+print('../../../doc/power.png','-dpng');
